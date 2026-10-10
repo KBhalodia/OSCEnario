@@ -319,7 +319,7 @@ def vhs_record_to_profile(
             min_level=_str(o.get("min_level")) or None))
 
     name = _str(ov.get("name")) or "Unnamed patient"
-    return PatientProfile(
+    profile = PatientProfile(
         id=patient_id or slugify(name),
         persona=Persona(
             name=name, age=ov.get("age"), sex=_str(ov.get("sex")) or None,
@@ -342,6 +342,12 @@ def vhs_record_to_profile(
         assumptions=_list(meta.get("assumptions")),
         optional_details=_list(meta.get("optional_details")),
     )
+    try:   # every imported/generated patient gets a voice automatically (app/voice)
+        from .voice.profiles import ensure_voice
+        ensure_voice(profile)
+    except ImportError:
+        pass
+    return profile
 
 
 def _link(text: str, facts: list[Fact], threshold: float = 0.34, top: int = 3) -> dict:

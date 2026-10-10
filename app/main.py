@@ -141,6 +141,12 @@ def _summary(p: PatientProfile) -> dict:
     }
 
 
+def _student_summary(p: PatientProfile) -> dict:
+    """What a student may see before the interview: who they're meeting, nothing clinical."""
+    return {"id": p.id, "name": p.persona.name, "age": p.persona.age, "sex": p.persona.sex,
+            "portrait": p.persona.portrait_path, "has_voice": getattr(p.persona, "voice", None) is not None}
+
+
 async def _save_upload(file: UploadFile) -> tuple[Path, str]:
     name = Path(file.filename or "file").name
     data = await file.read()
@@ -368,7 +374,7 @@ def create_assignment(req: AssignmentCreate):
 def get_assignments(student_id: Optional[str] = None, created_by: Optional[str] = None):
     out = list_records("assignments")
     if student_id:
-        out = [a for a in out if student_id in a.get("student_ids", [])]
+        out = [a for a in out if not a.get("student_ids") or student_id in a["student_ids"]]   # empty = everyone
     if created_by:
         out = [a for a in out if a.get("created_by") == created_by]
     return sorted(out, key=lambda a: a.get("created_at", ""), reverse=True)
@@ -461,7 +467,7 @@ def create_encounter(req: EncounterCreate):
     save_record("encounters", state.id, rec)
     return {"encounter_id": state.id, "level": state.level,
             "level_label": levels.get_level(state.level)["label"],
-            "patient": _summary(p), "chart": engine.chart_view(p, state)}
+            "patient": _student_summary(p), "chart": engine.chart_view(p, state)}
 
 
 @app.get("/encounters")
@@ -472,8 +478,13 @@ def get_encounters(student_id: Optional[str] = None, assignment_id: Optional[str
             continue
         if assignment_id and e.get("assignment_id") != assignment_id:
             continue
-        out.append({k: e.get(k) for k in ("id", "patient_id", "student_id", "assignment_id", "level",
-                                          "status", "created_at", "ended_at")})
+        row = {k: e.get(k) for k in ("id", "patient_id", "student_id", "assignment_id", "level",
+                                     "status", "created_at", "ended_at", "preview")}
+        pat = get_record("patients", e["patient_id"]) or {}
+        row["patient_name"] = (pat.get("persona") or {}).get("name", "")
+        fb = get_record("feedback", e["id"]) if e.get("status") == "completed" else None
+        row["total"], row["max_total"] = (fb["total"], fb["max_total"]) if fb else (None, None)
+        out.append(row)
     return sorted(out, key=lambda e: e.get("created_at") or "", reverse=True)
 
 
@@ -486,7 +497,8 @@ def get_encounter(encounter_id: str):
                   for t in s.turns if t.speaker.value != "system"]
     return {**{k: rec.get(k) for k in ("id", "patient_id", "student_id", "assignment_id", "level",
                                        "status", "created_at", "ended_at")},
-            "patient": _summary(p), "transcript": transcript, "chart": engine.chart_view(p, s),
+            "patient": _summary(p) if rec.get("status") != "active" else _student_summary(p),
+            "transcript": transcript, "chart": engine.chart_view(p, s),
             "feedback": get_record("feedback", encounter_id)}
 
 

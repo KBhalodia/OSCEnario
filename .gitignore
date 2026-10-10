@@ -10,3 +10,5 @@ encounter-*.json
 feedback-*.json
 *.db
 uploads/
+.next/
+*.tsbuildinfo

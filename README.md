@@ -179,3 +179,16 @@ Rules enforced by the API: students can only start published patients; editing a
 returns it to draft; publish is blocked while errors exist (`force=true` = "publish anyway");
 the year level comes from the assignment; AI failures return 502 with a readable message.
 `python tests/test_api.py` runs the whole teacher -> student -> faculty flow with a fake LLM.
+
+## Voice (from feature/voice-avatar, TTS only)
+
+`app/voice/` was brought over without the rest of that branch: `POST /tts`, `POST /tts/preview`, `GET /voices`,
+`GET /voices/status`, `POST /voices/assign`. Every patient gets a voice automatically (`ensure_voice` on import and
+generate); faculty can change it in the Studio. ElevenLabs is used for text-to-speech only, never their agents:
+the words always come from the encounter engine. Put `ELEVENLABS_API_KEY` in `.env` (backend only). Without it,
+Polly is tried, then the browser speaks. `python tests/test_voice.py` runs offline.
+
+## Frontend
+
+`frontend/` is the combined Next.js app (teacher portal, student portal, voice encounter room). See
+`frontend/README.md`. Run the backend on :8000, then `cd frontend && npm install && npm run dev`.

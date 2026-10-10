@@ -144,6 +144,22 @@ class LearningObjective(BaseModel):
 # Profile sections (dataset shape)
 # --------------------------------------------------------------------------
 
+class VoiceProfile(BaseModel):
+    """How the patient sounds. Text-to-speech only: the words always come from the encounter
+    engine. Filled automatically by app.voice.profiles.assign_voice() when empty; faculty can
+    override it in the Studio (origin="faculty"), and auto-assignment never overwrites that."""
+    provider: str = "elevenlabs"              # "elevenlabs" | "polly" | "browser"
+    voice_id: str = ""                        # ElevenLabs voice id (or Polly voice id)
+    model_id: str = ""                        # ElevenLabs model; empty = our default
+    stability: float = 0.5                    # ElevenLabs voice_settings
+    similarity_boost: float = 0.75
+    style: float = 0.0
+    speed: float = 1.0
+    fallback_polly_voice: str = ""            # used if ElevenLabs fails
+    preset: str = ""                          # which preset it came from, for the Studio UI
+    origin: str = "auto"                      # "auto" (mapped) or "faculty" (chosen by hand)
+
+
 class Persona(BaseModel):
     """Who the patient is and how they talk. Goes into the patient system prompt."""
     name: str
@@ -164,6 +180,7 @@ class Persona(BaseModel):
     support_system: str = ""
     readiness_to_change: str = ""
     portrait_path: Optional[str] = None       # patient image for the avatar
+    voice: Optional[VoiceProfile] = None      # None = assign automatically on create/import
 
 
 class EncounterSettings(BaseModel):
