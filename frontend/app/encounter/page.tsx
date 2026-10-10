@@ -11,6 +11,21 @@ import { type ChartTabId, type Patient } from "./demoPatient";
 import { getPatientResponse } from "./chatEngine";
 import { resolvePortraitSrc } from "./patientPortraits";
 import { getPatientById } from "./patientRegistry";
+import {
+  type EncounterAttempt,
+  type FeedbackReport,
+  type FindingSnapshot,
+} from "./feedback/feedbackTypes";
+import { buildFeedbackReport } from "./feedback/feedbackEngine";
+import { newAttemptId, saveAttempt } from "./feedback/attemptStorage";
+import FeedbackReportView from "./feedback/FeedbackReport";
+import {
+  isValidNetId,
+  normalizeNetId,
+  setActiveNetId,
+  useActiveNetId,
+} from "./netId";
+import Link from "next/link";
 
 // ---------------------------------------------------------------------------
 // Types used only by the UI
@@ -182,6 +197,21 @@ function EncounterExperience({ patient }: { patient: Patient }) {
   // How many seconds the encounter has been running.
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
 
+  // The feedback report, generated when the student ends the encounter. Null
+  // while the encounter is idle/active or after a restart.
+  const [report, setReport] = useState<FeedbackReport | null>(null);
+
+  // The student's demo NetID. We prefill from the stored active NetID (via the
+  // external-store hook) and let the student override it by typing. `netIdDraft`
+  // is null until the student edits; the effective value falls back to the
+  // stored one. Demo identification only — not real auth.
+  const storedNetId = useActiveNetId();
+  const [netIdDraft, setNetIdDraft] = useState<string | null>(null);
+  const netId = netIdDraft ?? storedNetId;
+  const setNetId = (value: string) => setNetIdDraft(value);
+  // Whether to show the NetID prompt (e.g. when Start was clicked without one).
+  const [netIdError, setNetIdError] = useState<string | null>(null);
+
   // We give each message a unique, increasing id. A ref keeps the counter
   // without causing re-renders.
   const nextMessageId = useRef(0);
@@ -243,7 +273,24 @@ function EncounterExperience({ patient }: { patient: Patient }) {
   }
 
   // Start a fresh encounter: reset everything and show the patient's greeting.
+  // Starting (or restarting) clears any previous on-screen report, but saved
+  // attempts in localStorage are never deleted.
   function handleStart() {
+    // Require a valid demo NetID before starting (demo identification, not
+    // real authentication). If it's missing/invalid, show the prompt and stop.
+    if (!isValidNetId(netId)) {
+      setNetIdError(
+        "Enter a demo NetID (letters and numbers, e.g. abc123) to begin.",
+      );
+      return;
+    }
+    // Persist the normalised NetID so it prefills next time and the student's
+    // My Feedback page can filter to it.
+    const normalized = normalizeNetId(netId);
+    setNetId(normalized);
+    setActiveNetId(normalized);
+    setNetIdError(null);
+
     nextMessageId.current = 0;
     setMessages([]);
     setDraft("");
@@ -251,16 +298,50 @@ function EncounterExperience({ patient }: { patient: Patient }) {
     setActiveTab("overview");
     setElapsedSeconds(0);
     setIsPatientTyping(false);
+    setReport(null);
     setStatus("active");
 
     // Greet after a short beat so it feels like the patient is "arriving".
     appendMessage("patient", patient.greeting);
   }
 
-  // End the encounter: stop the timer and lock the input.
+  // End the encounter: stop the timer, lock the input, then save a complete
+  // attempt record and generate the feedback report (shown automatically).
   function handleEnd() {
     setStatus("ended");
     setIsPatientTyping(false);
+
+    // Snapshot every finding with its section + whether it was visible from
+    // the start, so the report can distinguish "discovered" from "missed".
+    const findingsSnapshot: FindingSnapshot[] = [];
+    for (const section of patient.chart) {
+      for (const finding of section.findings) {
+        findingsSnapshot.push({
+          id: finding.id,
+          label: finding.label,
+          value: finding.value,
+          section: section.id,
+          startVisible: finding.disclosed === true,
+        });
+      }
+    }
+
+    const attempt: EncounterAttempt = {
+      attemptId: newAttemptId(),
+      netId: normalizeNetId(netId),
+      patientId: patient.id,
+      patientName: patient.name,
+      endedAt: new Date().toISOString(),
+      durationSeconds: elapsedSeconds,
+      transcript: messages.map((m) => ({ sender: m.sender, text: m.text })),
+      revealedFindingIds: Array.from(disclosedIds),
+      findingsSnapshot,
+      objectivesSnapshot: patient.objectives ?? [],
+    };
+
+    // Persist the attempt (append-only) and show its report immediately.
+    saveAttempt(attempt);
+    setReport(buildFeedbackReport(attempt));
   }
 
   // Send the student's current draft to the patient.
@@ -343,6 +424,34 @@ function EncounterExperience({ patient }: { patient: Patient }) {
               </span>
             </div>
 
+            {/* Demo NetID field. Editable before/after an encounter; locked
+                while active. Demo identification only — not Rutgers auth. */}
+            <div className="flex flex-col items-start">
+              <label
+                htmlFor="netid"
+                className="text-xs font-medium uppercase tracking-wide text-slate-400"
+              >
+                Student NetID
+              </label>
+              {status === "active" ? (
+                <span className="font-mono text-sm font-semibold text-slate-700">
+                  {netId || "—"}
+                </span>
+              ) : (
+                <input
+                  id="netid"
+                  value={netId}
+                  onChange={(e) => {
+                    setNetId(e.target.value);
+                    if (netIdError) setNetIdError(null);
+                  }}
+                  placeholder="e.g. abc123"
+                  autoComplete="off"
+                  className="mt-0.5 w-32 rounded-lg border border-slate-300 px-3 py-1.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-200"
+                />
+              )}
+            </div>
+
             {/* Start / End buttons. Only one is enabled at a time. */}
             {status === "active" ? (
               <button
@@ -363,6 +472,46 @@ function EncounterExperience({ patient }: { patient: Patient }) {
             )}
           </div>
         </div>
+
+        {/* NetID validation message + demo disclaimer. */}
+        {netIdError && (
+          <p className="mt-3 rounded-lg bg-rose-50 px-4 py-2 text-sm text-rose-700">
+            {netIdError}
+          </p>
+        )}
+        <p className="mt-3 text-xs text-slate-400">
+          NetID is for demo identification only — this is not verified Rutgers
+          authentication.
+        </p>
+
+        {/* Feedback report: shown automatically after End Encounter. The
+            split-screen stays below so the student can review the transcript
+            and chart alongside their feedback. */}
+        {report && (
+          <div className="mt-6">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+              <h2 className="text-lg font-semibold text-slate-900">
+                Your feedback
+              </h2>
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={handleStart}
+                  className="inline-flex h-10 items-center justify-center rounded-full bg-teal-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-teal-700"
+                >
+                  Restart Encounter
+                </button>
+                <Link
+                  href="/feedback"
+                  className="inline-flex h-10 items-center justify-center rounded-full border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-700 transition-colors hover:border-slate-400 hover:bg-slate-50"
+                >
+                  View My Feedback
+                </Link>
+              </div>
+            </div>
+            <FeedbackReportView report={report} />
+          </div>
+        )}
 
         {/* Split screen: chat on the left, medical chart on the right. */}
         <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">

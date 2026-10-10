@@ -72,6 +72,11 @@ export type Patient = {
   avatarEmoji: string;
   chart: ChartSection[];
   responseRules: PatientResponseRule[];
+  // Faculty-defined learning objectives, when the patient came from Patient
+  // Studio. Optional: built-in demo patients may not have any, in which case
+  // feedback explains that no objectives were provided rather than inventing
+  // them.
+  objectives?: string[];
 };
 
 // ---------------------------------------------------------------------------

@@ -240,6 +240,12 @@ export function studioProfileToPatient(profile: StudioEncounterProfile): Patient
     findings: findingsByTab[t.id],
   }));
 
+  // Carry faculty learning objectives through, if the profile has any. We keep
+  // only non-empty strings and never synthesise objectives that weren't set.
+  const objectives = Array.isArray(profile.objectives)
+    ? profile.objectives.filter((o) => typeof o === "string" && o.trim() !== "")
+    : [];
+
   return {
     id: profile.id,
     name: profile.name,
@@ -253,6 +259,7 @@ export function studioProfileToPatient(profile: StudioEncounterProfile): Patient
     avatarEmoji: avatarFor(profile.sex),
     chart,
     responseRules,
+    objectives: objectives.length > 0 ? objectives : undefined,
   };
 }
 
