@@ -1,0 +1,109 @@
+{
+  "id": "5972d3fc-e80b-4bdd-aa4e-84d93e359d61",
+  "patient_id": "4d619156-3250-4212-8399-129f3280fab1",
+  "patient_version": 1,
+  "started_at": "2026-10-10T16:50:20.129248Z",
+  "ended_at": null,
+  "trust": 0,
+  "disclosed_fact_ids": [
+    "f007",
+    "f067",
+    "f028",
+    "f033",
+    "f034",
+    "f035",
+    "f037",
+    "f016"
+  ],
+  "released_artifact_ids": [
+    "a001"
+  ],
+  "turns": [
+    {
+      "n": 0,
+      "speaker": "system",
+      "text": "Encounter started",
+      "at": "2026-10-10T16:50:20.129319Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [
+        "a001"
+      ],
+      "tags": []
+    },
+    {
+      "n": 1,
+      "speaker": "student",
+      "text": "Hi Wyatt, I'm a dietetics student working with your care team today. What brings you in?",
+      "at": "2026-10-10T16:51:32.111663Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "introduction",
+        "open_question"
+      ]
+    },
+    {
+      "n": 2,
+      "speaker": "patient",
+      "text": "Um, my doctor said I needed to see a nutrition person. I guess because of my blood sugar and stuff. I'm not really sure what we're gonna talk about.",
+      "at": "2026-10-10T16:51:32.111731Z",
+      "disclosed_fact_ids": [
+        "f007",
+        "f067"
+      ],
+      "released_artifact_ids": [],
+      "tags": []
+    },
+    {
+      "n": 3,
+      "speaker": "student",
+      "text": "That's ok! You are in the right place. Can you walk me through what you ate yesterday?",
+      "at": "2026-10-10T16:52:09.384157Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "open_question",
+        "follow_up"
+      ]
+    },
+    {
+      "n": 4,
+      "speaker": "patient",
+      "text": "Yeah, so... I skipped breakfast because I was late for school. Then at lunch I grabbed some pizza and a soda. For a snack after soccer practice I had some chips, and then at dinner my mom made... I don't know, chicken and stuff, but I had a lot of it. Maybe some more soda too.",
+      "at": "2026-10-10T16:52:09.384211Z",
+      "disclosed_fact_ids": [
+        "f028",
+        "f033",
+        "f034",
+        "f035",
+        "f037"
+      ],
+      "released_artifact_ids": [],
+      "tags": []
+    },
+    {
+      "n": 5,
+      "speaker": "student",
+      "text": "Do you have constipation?",
+      "at": "2026-10-10T16:53:09.392029Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "closed_question"
+      ]
+    },
+    {
+      "n": 6,
+      "speaker": "patient",
+      "text": "Um, yeah... sometimes. It's not a big deal though. Why?",
+      "at": "2026-10-10T16:53:09.392150Z",
+      "disclosed_fact_ids": [
+        "f016"
+      ],
+      "released_artifact_ids": [],
+      "tags": [
+        "deflected"
+      ]
+    }
+  ]
+}
