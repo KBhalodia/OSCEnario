@@ -32,7 +32,19 @@
     "communication_style": "Asks many detailed questions, challenges providers to justify recommendations, becomes overwhelmed easily, may interrupt with questions.",
     "support_system": "Emotionally and financially supported by her husband, who also works long hours. Has a supportive mother-in-law who prepares traditional meals.",
     "readiness_to_change": "Patient is in the contemplation stage: recognizes the need for change but is uncertain about how to implement it and fears the difficulty of adaptation.",
-    "portrait_path": "portraits/e162495c-81de-4cb5-9110-8d69b538dcb2.png"
+    "portrait_path": "portraits/e162495c-81de-4cb5-9110-8d69b538dcb2.png",
+    "voice": {
+      "provider": "elevenlabs",
+      "voice_id": "cgSgspJ2msm6clMCkdW9",
+      "model_id": "eleven_flash_v2_5",
+      "stability": 0.35,
+      "similarity_boost": 0.75,
+      "style": 0.2,
+      "speed": 1.05,
+      "fallback_polly_voice": "Danielle",
+      "preset": "young_female_anxious",
+      "origin": "auto"
+    }
   },
   "settings": {
     "student_role": "Dietetics student",

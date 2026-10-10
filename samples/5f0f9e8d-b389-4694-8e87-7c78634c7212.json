@@ -30,7 +30,19 @@
     "communication_style": "Brief, reserved, often deflecting personal questions with work-related stress",
     "support_system": "Single, lives alone, no immediate family in US",
     "readiness_to_change": "Ambivalent. Prefers to work out of desperation",
-    "portrait_path": "portraits/5f0f9e8d-b389-4694-8e87-7c78634c7212.png"
+    "portrait_path": "portraits/5f0f9e8d-b389-4694-8e87-7c78634c7212.png",
+    "voice": {
+      "provider": "elevenlabs",
+      "voice_id": "iP95p4xoKVk53GoZ742B",
+      "model_id": "eleven_flash_v2_5",
+      "stability": 0.66,
+      "similarity_boost": 0.75,
+      "style": 0.0,
+      "speed": 0.95,
+      "fallback_polly_voice": "Joey",
+      "preset": "young_male_quiet",
+      "origin": "auto"
+    }
   },
   "settings": {
     "student_role": "Dietetics student",

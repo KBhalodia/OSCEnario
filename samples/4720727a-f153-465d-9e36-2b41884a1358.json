@@ -32,7 +32,19 @@
     "communication_style": "Direct and occasionally blunt. He uses slang and may interrupt if he feels unheard. He prefers Spanish and may switch to English if the topic becomes clinical. He shows defensiveness when criticized but opens up when he feels respected.",
     "support_system": "Younger siblings and parents; neighbors who support him in community service",
     "readiness_to_change": "Ambivalent; willing to try small changes but needs to see immediate benefits and feel trusted by his care team.",
-    "portrait_path": "portraits/4720727a-f153-465d-9e36-2b41884a1358.png"
+    "portrait_path": "portraits/4720727a-f153-465d-9e36-2b41884a1358.png",
+    "voice": {
+      "provider": "elevenlabs",
+      "voice_id": "TX3LPaxmHKxFdv7VOQHJ",
+      "model_id": "eleven_flash_v2_5",
+      "stability": 0.58,
+      "similarity_boost": 0.75,
+      "style": 0.2,
+      "speed": 1.0,
+      "fallback_polly_voice": "Stephen",
+      "preset": "young_male_guarded",
+      "origin": "auto"
+    }
   },
   "settings": {
     "student_role": "Dietetics student",

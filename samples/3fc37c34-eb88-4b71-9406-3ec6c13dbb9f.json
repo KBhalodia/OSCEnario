@@ -32,7 +32,19 @@
     "communication_style": "Direct and dismissive. He is often short and snappy at the beginning of the interaction, especially if he perceives the student is a student (often says, 'You look like a kid'). However, if the student acknowledges his experience and listens attentively, he opens up. He has a lot of energy and talks a lot.",
     "support_system": "Sister lives across the country. Has a few neighbors, but he doesn't interact with them. Has a group of retired friends he talks to online (facebook or email), but no in-person support.",
     "readiness_to_change": "Prefears, is in the Precontemplation or Early Contemplation stage. He says things like 'I know I should eat better, but who cares?' but he also says 'I don't want to die on the couch'.",
-    "portrait_path": "portraits/3fc37c34-eb88-4b71-9406-3ec6c13dbb9f.png"
+    "portrait_path": "portraits/3fc37c34-eb88-4b71-9406-3ec6c13dbb9f.png",
+    "voice": {
+      "provider": "elevenlabs",
+      "voice_id": "pqHfZKP75CyOjeRgpyeV",
+      "model_id": "eleven_flash_v2_5",
+      "stability": 0.45,
+      "similarity_boost": 0.75,
+      "style": 0.3,
+      "speed": 0.95,
+      "fallback_polly_voice": "Gregory",
+      "preset": "older_male_gruff",
+      "origin": "auto"
+    }
   },
   "settings": {
     "student_role": "Dietetics student",

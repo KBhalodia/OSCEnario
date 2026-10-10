@@ -32,7 +32,19 @@
     "communication_style": "Concise, avoids eye contact, deflects sensitive topics, responds well to empathetic and non-judgmental interactions",
     "support_system": "Parents who encourage healthy eating, soccer team peers who value performance over fast food",
     "readiness_to_change": "Ambivalent; motivated to improve but hesitant about making significant lifestyle changes",
-    "portrait_path": "portraits/4d619156-3250-4212-8399-129f3280fab1.png"
+    "portrait_path": "portraits/4d619156-3250-4212-8399-129f3280fab1.png",
+    "voice": {
+      "provider": "elevenlabs",
+      "voice_id": "bIHbv24MWmeRgasZH58o",
+      "model_id": "eleven_flash_v2_5",
+      "stability": 0.65,
+      "similarity_boost": 0.75,
+      "style": 0.0,
+      "speed": 0.95,
+      "fallback_polly_voice": "Joey",
+      "preset": "teen_male_reserved",
+      "origin": "auto"
+    }
   },
   "settings": {
     "student_role": "Dietetics student",

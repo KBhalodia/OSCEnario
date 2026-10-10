@@ -32,7 +32,19 @@
     "communication_style": "Direct, literal, and concise; tends to use short sentences and factual statements; prefers practical solutions over emotional processing; may avoid asking clarifying questions unless explicitly prompted",
     "support_system": "Lives alone but has a close relationship with his adult son, who lives in the same city and helps him with shopping and transportation when needed",
     "readiness_to_change": "Precontemplation to early contemplation stage for lifestyle changes; motivated to try and motivated to try to improve his symptoms but is currently undecided on the specific steps to take",
-    "portrait_path": "portraits/e7471161-b487-4804-b009-1b49681247b6.png"
+    "portrait_path": "portraits/e7471161-b487-4804-b009-1b49681247b6.png",
+    "voice": {
+      "provider": "elevenlabs",
+      "voice_id": "nPczCjzI2devNBz1zQrb",
+      "model_id": "eleven_flash_v2_5",
+      "stability": 0.75,
+      "similarity_boost": 0.75,
+      "style": 0.0,
+      "speed": 0.92,
+      "fallback_polly_voice": "Gregory",
+      "preset": "middle_male_stoic",
+      "origin": "auto"
+    }
   },
   "settings": {
     "student_role": "Dietetics student",

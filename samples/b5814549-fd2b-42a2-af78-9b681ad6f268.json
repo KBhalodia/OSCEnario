@@ -32,7 +32,19 @@
     "communication_style": "Direct, concise, pragmatic, resistant to lecturing",
     "support_system": "Spouse who encourages healthy eating but has limited involvement",
     "readiness_to_change": "Precontemplation on medication; contemplation on diet",
-    "portrait_path": "portraits/b5814549-fd2b-42a2-af78-9b681ad6f268.png"
+    "portrait_path": "portraits/b5814549-fd2b-42a2-af78-9b681ad6f268.png",
+    "voice": {
+      "provider": "elevenlabs",
+      "voice_id": "CwhRBWXzGAHq8TQ4Fs17",
+      "model_id": "eleven_flash_v2_5",
+      "stability": 0.63,
+      "similarity_boost": 0.75,
+      "style": 0.15,
+      "speed": 0.96,
+      "fallback_polly_voice": "Matthew",
+      "preset": "middle_male_direct",
+      "origin": "auto"
+    }
   },
   "settings": {
     "student_role": "Dietetics student",

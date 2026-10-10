@@ -32,7 +32,19 @@
     "communication_style": "Asks clarifying questions when confused. May hesitate to ask if she feels she is burdening the provider. Responds well to patient, respectful, and non-judgmental communication. Uses lay terms and needs concepts explained simply with examples.",
     "support_system": "Married with supportive husband who lives with her. Two adult children who live locally and visit regularly. One grandchild. Husband drives her to appointments. Family often pressures her to eat traditional foods at gatherings.",
     "readiness_to_change": "Moderately motivated (Stage of Change: Preparation) but feels overwhelmed by the scale of changes required. Responds well to small, manageable steps and clear, simple explanations. Needs validation and step-by-step guidance.",
-    "portrait_path": "portraits/6ca4cbf9-14ef-427c-b87c-bc9d34ce02b8.png"
+    "portrait_path": "portraits/6ca4cbf9-14ef-427c-b87c-bc9d34ce02b8.png",
+    "voice": {
+      "provider": "elevenlabs",
+      "voice_id": "XrExE9yKIg1WjnnlVkGX",
+      "model_id": "eleven_flash_v2_5",
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": 0.1,
+      "speed": 0.97,
+      "fallback_polly_voice": "Joanna",
+      "preset": "older_female_earnest",
+      "origin": "auto"
+    }
   },
   "settings": {
     "student_role": "Dietetics student",

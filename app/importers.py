@@ -22,6 +22,7 @@ from .schemas import (
     ExpectedDiscovery, Fact, FactCategory, FacultyBrief, LearningObjective,
     Medication, Origin, PatientProfile, Persona, ReleaseRule, ReleaseTrigger,
 )
+from .voice.profiles import ensure_voice
 
 # --------------------------------------------------------------------------
 # Reading the raw files
@@ -318,7 +319,7 @@ def vhs_record_to_profile(
             possible_patient_reactions=_list(o.get("possible_patient_reactions"))))
 
     name = _str(ov.get("name")) or "Unnamed patient"
-    return PatientProfile(
+    profile = PatientProfile(
         id=patient_id or slugify(name),
         persona=Persona(
             name=name, age=ov.get("age"), sex=_str(ov.get("sex")) or None,
@@ -341,6 +342,7 @@ def vhs_record_to_profile(
         assumptions=_list(meta.get("assumptions")),
         optional_details=_list(meta.get("optional_details")),
     )
+    return ensure_voice(profile)   # every imported/generated patient gets a voice automatically
 
 
 def _link(text: str, facts: list[Fact], threshold: float = 0.34, top: int = 3) -> dict:
