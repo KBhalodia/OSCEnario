@@ -81,6 +81,7 @@
   .res.good { border-color: var(--ok); background: var(--ok-soft); }
   .res .must { color: var(--alert); font-weight: 700; }
   .res .warn { font-weight: 700; }
+  .res .info-label { color: var(--muted); font-weight: 700; }
 
   /* ---- AI extraction ---- */
   .ai-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
@@ -399,11 +400,6 @@ function blankCriterion(name) {
 function blankAssessment() {
   return { instructions: "", criteria: [] };
 }
-/* Pre-fill a fresh assessment with the suggested criteria so faculty have a
-   starting point they can trim or rewrite. */
-function suggestedAssessment() {
-  return { instructions: "", criteria: SUGGESTED_CRITERIA.map(n => blankCriterion(n)) };
-}
 /* Ensure a patient has a complete student profile. Older saved records may lack
    it or lack newer keys, so we fill any gaps safely (same approach as temp()). */
 function studentProfile(p) {
@@ -515,9 +511,11 @@ function temp(p) {
 }
 
 function blankPatient() {
+  // New cases start with NO additional faculty objectives (empty criteria list).
+  // Faculty can optionally add their own, or use "Add suggested objectives".
   return { id: uid(), title: "Untitled case", name: "", age: "", sex: "Female", greeting: "Hello, thanks for seeing me.",
            status: "draft", caseText: "", temperament: blankTemperament(),
-           studentProfile: blankStudentProfile(), assessment: suggestedAssessment(),
+           studentProfile: blankStudentProfile(), assessment: blankAssessment(),
            facts: [], sources: [], artifacts: [] };
 }
 function samplePatient() {
@@ -651,16 +649,17 @@ function checkbox(obj, key, label) {
    history, medications, labs and artifacts for contradictions.
    ===================================================================== */
 function runChecks(p) {
-  const errors = [], warnings = [];
+  const errors = [], warnings = [], info = [];
+  // --- Blocking errors: the minimum a case genuinely needs to run. ---
   if (!p.name.trim()) errors.push("Add the patient's name.");
   if (!String(p.age).trim()) errors.push("Add the patient's age.");
-  if (!assessment(p).criteria.some(c => (c.name || "").trim())) errors.push("Add at least one assessment criterion with a name. These are the learning objectives student feedback is built from.");
+  // Assessment criteria are OPTIONAL: a case may be published with none.
   if (!p.facts.length) errors.push("Add clinical facts for the student to discover.");
 
   p.facts.forEach((f, i) => {
     const n = f.label.trim() || ("Fact " + (i + 1));
     if (!f.label.trim() || !f.value.trim()) errors.push(`"${n}" needs both a label and a value.`);
-    // Release words are now auto-derived from the label, so no manual-trigger check.
+    // Release words are auto-derived from the label, so this is only a warning.
     if (f.label.trim() && !deriveTriggers(f.label, f.triggers).length)
       warnings.push(`"${n}" has no usable release words from its label; students may not be able to unlock it. Try a more descriptive label.`);
   });
@@ -668,7 +667,13 @@ function runChecks(p) {
     const n = a.name.trim() || ("Artifact " + (i + 1));
     if (!a.name.trim()) errors.push(`Artifact ${i + 1} needs a name.`);
     if (!a.finding.trim()) errors.push(`"${n}" needs a finding summary. The patient and feedback rely on it.`);
-    if (!a.fileName) warnings.push(`"${n}" has no file attached. Students will see the finding text only.`);
+    // File attachments are optional. Only an artifact explicitly marked
+    // requireFile blocks publication; otherwise it is purely informational,
+    // and the finding text is always shown to students regardless.
+    if (!a.fileName) {
+      if (a.requireFile) errors.push(`"${n}" is marked as requiring a file, but none is attached.`);
+      else info.push(`"${n}" has no file attached. Students will see its finding text only.`);
+    }
     const f = a.finding.toLowerCase();
     if (a.abnormal && /\bnormal\b|unremarkable|within normal/.test(f) && !/abnormal/.test(f))
       warnings.push(`"${n}" is marked abnormal, but its finding reads as normal.`);
@@ -676,47 +681,56 @@ function runChecks(p) {
       warnings.push(`"${n}" is not marked abnormal, but its finding describes an abnormality.`);
   });
 
-  const textOf = (fn) => p.facts.filter(fn).map(f => (f.label + " " + f.value).toLowerCase()).join(" ");
-  const medsText = textOf(f => f.tab === "meds" && !/allerg/i.test(f.label));
-  const historyText = textOf(f => f.tab === "history" || f.tab === "summary");
+  // --- Medication/condition consistency ---
+  // There is no separate "history" section anymore: the full case lives in the
+  // main case text, plus any structured facts. So we check medications against
+  // ALL available clinical text (every fact + the pasted case text), not a
+  // specific history tab.
+  const medsText = p.facts
+    .filter(f => f.tab === "meds" && !/allerg/i.test(f.label))
+    .map(f => (f.label + " " + f.value).toLowerCase())
+    .join(" ");
+  const caseText = (
+    p.facts.map(f => f.label + " " + f.value).join(" ") + " " + (p.caseText || "")
+  ).toLowerCase();
   const rules = [
-    [/statin/, /cholesterol|lipid|coronary|cardiovascular|heart|stroke/, "a statin is listed, but no matching condition (cholesterol or heart disease) appears in the history"],
-    [/pril|sartan|amlodipine|metoprolol|hydrochlorothiazide/, /hypertension|blood pressure|heart failure|kidney|heart|angina/, "a blood pressure medicine is listed, but no matching condition appears in the history"],
-    [/metformin|insulin|glipizide/, /diabet/, "a diabetes medicine is listed, but diabetes is not in the history"],
-    [/levothyroxine/, /thyroid/, "levothyroxine is listed, but thyroid disease is not in the history"],
-    [/inhaler|albuterol|salbutamol/, /asthma|copd|emphysema|bronch/, "an inhaler is listed, but no lung condition appears in the history"]
+    [/statin/, /cholesterol|lipid|coronary|cardiovascular|heart|stroke/, "a statin is listed, but no matching condition (cholesterol or heart disease) appears in the case"],
+    [/pril|sartan|amlodipine|metoprolol|hydrochlorothiazide/, /hypertension|blood pressure|heart failure|kidney|heart|angina/, "a blood pressure medicine is listed, but no matching condition appears in the case"],
+    [/metformin|insulin|glipizide/, /diabet/, "a diabetes medicine is listed, but diabetes is not in the case"],
+    [/levothyroxine/, /thyroid/, "levothyroxine is listed, but thyroid disease is not in the case"],
+    [/inhaler|albuterol|salbutamol/, /asthma|copd|emphysema|bronch/, "an inhaler is listed, but no lung condition appears in the case"]
   ];
-  rules.forEach(([drug, cond, msg]) => { if (drug.test(medsText) && !cond.test(historyText)) warnings.push("Consistency: " + msg + "."); });
+  rules.forEach(([drug, cond, msg]) => { if (drug.test(medsText) && !cond.test(caseText)) warnings.push("Consistency: " + msg + "."); });
 
   if (!p.facts.some(f => /allerg/i.test(f.label))) warnings.push("No allergies recorded. If there are none, add a fact saying \"No known allergies\".");
   if (!p.facts.some(f => f.key)) warnings.push("No facts are marked as key findings, so feedback cannot score what the student missed.");
-  if (!p.sources.length) warnings.push("No knowledge sources attached. The patient will rely only on the facts above.");
+  if (!p.sources.length) info.push("No knowledge sources attached. The patient will rely only on the facts above.");
 
-  // Release words are auto-derived from labels now, so overlap between items is
-  // expected and no longer flagged as a faculty-fixable warning.
-
-  // Assessment criteria: validate weights without ever blocking a save or publish.
-  const a = assessment(p);
-  let weightSum = 0, haveWeights = false, badWeights = false;
-  a.criteria.forEach((c, i) => {
-    const n = (c.name || "").trim() || ("Criterion " + (i + 1));
-    const raw = String(c.weight ?? "").trim();
-    if (raw === "") return;                 // weights are optional
-    const num = Number(raw);
-    if (!isFinite(num) || num < 0) {
-      warnings.push(`Assessment: the weight for "${n}" ("${raw}") is not a valid non-negative number.`);
-      badWeights = true;
-    } else {
-      haveWeights = true;
-      weightSum += num;
+  // --- Assessment criteria: validated only WHEN present; never blocks. ---
+  const criteria = assessment(p).criteria;
+  if (!criteria.some(c => (c.name || "").trim())) {
+    info.push("No assessment criteria added. Publishing is allowed; student feedback will not be scored against criteria.");
+  } else {
+    let weightSum = 0, haveWeights = false, badWeights = false;
+    criteria.forEach((c, i) => {
+      const n = (c.name || "").trim() || ("Criterion " + (i + 1));
+      const raw = String(c.weight ?? "").trim();
+      if (raw === "") return;                 // weights are optional
+      const num = Number(raw);
+      if (!isFinite(num) || num < 0) {
+        warnings.push(`Assessment: the weight for "${n}" ("${raw}") is not a valid non-negative number.`);
+        badWeights = true;
+      } else {
+        haveWeights = true;
+        weightSum += num;
+      }
+    });
+    if (haveWeights && !badWeights && Math.abs(weightSum - 100) > 0.01) {
+      warnings.push(`Assessment: the grading weights add up to ${Math.round(weightSum * 100) / 100}, not 100. Adjust them if you intend percentages.`);
     }
-  });
-  // Only warn about the total when every weight was a valid number and they look like percentages.
-  if (haveWeights && !badWeights && Math.abs(weightSum - 100) > 0.01) {
-    warnings.push(`Assessment: the grading weights add up to ${Math.round(weightSum * 100) / 100}, not 100. Adjust them if you intend percentages.`);
   }
 
-  return { errors, warnings };
+  return { errors, warnings, info };
 }
 
 function showResults(r, published) {
@@ -735,6 +749,11 @@ function showResults(r, published) {
     box.append(h("ul", {}, r.warnings.map(m => h("li", {}, m))));
   } else if (!bad) {
     box.append(h("p", {}, "Everything is consistent."));
+  }
+  // Informational messages: never block, never a "problem" \u2014 just FYI.
+  if (r.info && r.info.length) {
+    box.append(h("p", {}, h("span", { class: "info-label" }, "For your information:")));
+    box.append(h("ul", {}, r.info.map(m => h("li", {}, m))));
   }
   resultsBox.append(box);
   resultsBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -954,8 +973,7 @@ function renderExtractionPreview(p, r, previewBox, aiStatus) {
     ["title", "Case title", p.title],
     ["name", "Patient name", p.name],
     ["age", "Age", String(p.age ?? "")],
-    ["sex", "Sex", p.sex],
-    ["greeting", "Opening line", p.greeting]
+    ["sex", "Sex", p.sex]
   ];
   const scalars = scalarDefs.filter(([k]) => (r[k] ?? "").toString().trim());
   if (scalars.length) {
@@ -1386,7 +1404,6 @@ function renderEditor() {
       field("Case title", textInput(p, "title")),
       field("Patient name", textInput(p, "name"))),
     h("div", { class: "grid3", style: "margin-top:12px" },
-      field("Opening line", textInput(p, "greeting")),
       field("Age", textInput(p, "age", "number")),
       field("Sex", selectInput(p, "sex", ["Female", "Male", "Other"]))));
 
