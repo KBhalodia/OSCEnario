@@ -160,3 +160,22 @@ doesn't have, it is `not_applicable`: its points are removed from the maximum (e
 0/100 when the 30-point audiogram section can't be done), and the report lists what was skipped and why.
 The Studio validator warns faculty first (`checklist_needs_attachment`) so they can upload the file.
 EPA 3 (interpret tests) is not assessed when the chart has no test results at all.
+
+## API (app/main.py)
+
+`uvicorn app.main:app --reload --port 8000`, docs at http://localhost:8000/docs. SQLite file `twinverse.db`
+(gitignored); uploads in `uploads/`. Built on the backend-api branch's structure (db.py + CORS), now wired in.
+
+| Area | Endpoints |
+|---|---|
+| Config | `GET /config/grading` (levels, rubric, EPAs, checklists), `GET /config/levels`, `GET /rubrics`, `POST /rubrics/import` |
+| Studio | `POST /patients/import` (8 seeds, published) · `POST /patients/generate` (multipart: `brief` JSON + `files[]` + `kinds` + `checklist_rubric_ids`) · `GET/PUT /patients/{id}` · `POST /patients/{id}/documents` · `/validate` · `/link` · `/publish?force=` |
+| Assignments | `POST /assignments` (patient, level, students, checklists, attempts) · `GET /assignments?student_id=` · `GET /assignments/{id}/results` |
+| Encounters | `POST /encounters` (`assignment_id` or `patient_id`; `preview=true` lets faculty test drafts) · `POST /encounters/{id}/message` · `GET /encounters/{id}` · `/chart` · `POST /end` (grades) · `GET /feedback` · `PUT /feedback/faculty` |
+| Files | `GET /portraits/{file}` · `POST /portraits` · `GET /uploads/{file}` |
+| Voice | mounted automatically when `app/voice` (feature/voice-avatar) is present; `GET /health` shows `voice: true` |
+
+Rules enforced by the API: students can only start published patients; editing a published patient
+returns it to draft; publish is blocked while errors exist (`force=true` = "publish anyway");
+the year level comes from the assignment; AI failures return 502 with a readable message.
+`python tests/test_api.py` runs the whole teacher -> student -> faculty flow with a fake LLM.
