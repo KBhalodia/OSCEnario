@@ -137,6 +137,7 @@ class LearningObjective(BaseModel):
     expected_discoveries: list[ExpectedDiscovery] = []
     possible_patient_reactions: list[str] = []
     points: Optional[int] = None              # for checklist-style rubrics (pediatric docx)
+    min_level: Optional[str] = None           # lowest year level this is graded at ("M1".."M4"); None = all
 
 
 # --------------------------------------------------------------------------
@@ -170,7 +171,9 @@ class EncounterSettings(BaseModel):
     encounter_goal: str = "Nutrition assessment and counseling (Nutrition Care Process)"
     setting: str = "Outpatient clinic"
     rubric_id: str = "encounter_evaluation_rubric"
+    checklist_rubric_ids: list[str] = []      # extra points checklists, e.g. pediatric_hearing_treatment_checklist
     opening_trust: int = Field(1, ge=0, le=3) # guarded patients (Walter, Dominic) can start at 0
+    difficulty_notes: str = ""                # set per encounter from the year level (levels.py)
 
 
 class FacultyBrief(BaseModel):
@@ -180,6 +183,21 @@ class FacultyBrief(BaseModel):
     notes: str = ""
     personality: str = ""
     summary: str = ""
+
+
+class DocumentKind(str, Enum):
+    patient_record = "patient_record"   # about THIS patient (labs, prior notes): becomes facts/chart items
+    reference = "reference"             # guidelines, papers, syllabus: used for objectives + grading, never spoken
+
+
+class SourceDocument(BaseModel):
+    """A file faculty uploaded. Text is extracted once at upload."""
+    id: str                             # "d1"
+    name: str
+    kind: DocumentKind = DocumentKind.reference
+    file_path: Optional[str] = None     # relative to uploads/
+    text: str = ""
+    summary: str = ""                   # for images: what Claude saw (ECG, X-ray)
 
 
 class ProfileStatus(str, Enum):
@@ -207,7 +225,8 @@ class PatientProfile(BaseModel):
     artifacts: list[Artifact] = []
     objectives: list[LearningObjective] = []
 
-    knowledge_sources: list[str] = []         # extracted text of uploaded guidelines/papers
+    knowledge_sources: list[str] = []         # (legacy) extracted text of uploaded guidelines/papers
+    documents: list[SourceDocument] = []      # faculty uploads: patient records + reference material
     assumptions: list[str] = []               # what the generator inferred -> show for review
     optional_details: list[str] = []          # colour the patient can use in small talk
 
@@ -252,6 +271,9 @@ class EncounterState(BaseModel):
     patient_version: int
     started_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     ended_at: Optional[datetime] = None
+    level: str = "M2"                         # year level the student is assessed at (levels.py)
+    student_id: Optional[str] = None
+    assignment_id: Optional[str] = None
     trust: int = 1
     disclosed_fact_ids: list[str] = []        # ordered by first disclosure
     released_artifact_ids: list[str] = []

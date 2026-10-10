@@ -1222,45 +1222,32 @@
         {
           "id": "o1.d1",
           "text": "Poor adherence to current medications",
-          "linked_fact_ids": [
-            "f019",
-            "f020",
-            "f021",
-            "f071"
-          ],
-          "link_method": "llm"
+          "linked_fact_ids": [],
+          "link_method": "none"
         },
         {
           "id": "o1.d2",
           "text": "Limited intake of fiber-rich foods",
-          "linked_fact_ids": [
-            "f027",
-            "f038",
-            "f053",
-            "f069"
-          ],
-          "link_method": "llm"
+          "linked_fact_ids": [],
+          "link_method": "none"
         },
         {
           "id": "o1.d3",
           "text": "Irregular meal patterns and poor hydration",
           "linked_fact_ids": [
-            "f028",
-            "f029",
-            "f073"
+            "f028"
           ],
-          "link_method": "llm"
+          "link_method": "lexical"
         },
         {
           "id": "o1.d4",
           "text": "Social and environmental barriers to healthy eating",
           "linked_fact_ids": [
-            "f041",
-            "f060",
+            "f074",
             "f061",
-            "f074"
+            "f041"
           ],
-          "link_method": "llm"
+          "link_method": "lexical"
         }
       ],
       "possible_patient_reactions": [
@@ -1278,41 +1265,32 @@
           "id": "o2.d1",
           "text": "Preference for processed foods and sugary beverages",
           "linked_fact_ids": [
-            "f033",
-            "f034",
-            "f035",
-            "f036"
+            "f081",
+            "f070",
+            "f037"
           ],
-          "link_method": "llm"
+          "link_method": "lexical"
         },
         {
           "id": "o2.d2",
           "text": "Lack of meal preparation skills",
           "linked_fact_ids": [
-            "f040",
-            "f059"
+            "f059",
+            "f040"
           ],
-          "link_method": "llm"
+          "link_method": "lexical"
         },
         {
           "id": "o2.d3",
           "text": "Need for strategies to incorporate fiber without increasing bulking",
-          "linked_fact_ids": [
-            "f016",
-            "f010",
-            "f068"
-          ],
-          "link_method": "llm"
+          "linked_fact_ids": [],
+          "link_method": "none"
         },
         {
           "id": "o2.d4",
           "text": "Social dining pressure at sports events",
-          "linked_fact_ids": [
-            "f039",
-            "f041",
-            "f081"
-          ],
-          "link_method": "llm"
+          "linked_fact_ids": [],
+          "link_method": "none"
         }
       ],
       "possible_patient_reactions": [
@@ -1330,32 +1308,24 @@
           "id": "o3.d1",
           "text": "Side effects of medications causing non-adherence",
           "linked_fact_ids": [
-            "f020",
-            "f021",
-            "f056",
-            "f077"
+            "f056"
           ],
-          "link_method": "llm"
+          "link_method": "lexical"
         },
         {
           "id": "o3.d2",
           "text": "Nutrition strategies to reduce gastrointestinal discomfort",
-          "linked_fact_ids": [
-            "f016",
-            "f021",
-            "f025"
-          ],
-          "link_method": "llm"
+          "linked_fact_ids": [],
+          "link_method": "none"
         },
         {
           "id": "o3.d3",
           "text": "Need for consistent medication timing with meals",
           "linked_fact_ids": [
-            "f019",
-            "f022",
-            "f020"
+            "f028",
+            "f019"
           ],
-          "link_method": "llm"
+          "link_method": "lexical"
         }
       ],
       "possible_patient_reactions": [
@@ -1372,35 +1342,20 @@
         {
           "id": "o4.d1",
           "text": "Internal conflict about health goals versus comfort behaviors",
-          "linked_fact_ids": [
-            "f044",
-            "f047",
-            "f054",
-            "f062"
-          ],
-          "link_method": "llm"
+          "linked_fact_ids": [],
+          "link_method": "none"
         },
         {
           "id": "o4.d2",
           "text": "Self-efficacy barriers to change",
-          "linked_fact_ids": [
-            "f052",
-            "f055",
-            "f059",
-            "f063"
-          ],
-          "link_method": "llm"
+          "linked_fact_ids": [],
+          "link_method": "none"
         },
         {
           "id": "o4.d3",
           "text": "Potential to use sports as motivation for dietary changes",
-          "linked_fact_ids": [
-            "f042",
-            "f046",
-            "f050",
-            "f072"
-          ],
-          "link_method": "llm"
+          "linked_fact_ids": [],
+          "link_method": "none"
         }
       ],
       "possible_patient_reactions": [
@@ -1417,30 +1372,22 @@
         {
           "id": "o5.d1",
           "text": "Need for coordination with sports medicine and school health services",
-          "linked_fact_ids": [
-            "f078",
-            "f079"
-          ],
-          "link_method": "llm"
+          "linked_fact_ids": [],
+          "link_method": "none"
         },
         {
           "id": "o5.d2",
           "text": "Access to school nutrition programs and community health resources",
-          "linked_fact_ids": [
-            "f002",
-            "f004"
-          ],
-          "link_method": "llm"
+          "linked_fact_ids": [],
+          "link_method": "none"
         },
         {
           "id": "o5.d3",
           "text": "Peer support networks that can reinforce healthy behaviors",
           "linked_fact_ids": [
-            "f006",
-            "f051",
-            "f081"
+            "f006"
           ],
-          "link_method": "llm"
+          "link_method": "lexical"
         }
       ],
       "possible_patient_reactions": [

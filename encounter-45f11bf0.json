@@ -1,0 +1,28 @@
+{
+  "id": "45f11bf0-6a18-4777-b25a-3aeab701f49d",
+  "patient_id": "maria-lopez-d07e88",
+  "patient_version": 1,
+  "started_at": "2026-10-10T20:22:19.495927Z",
+  "ended_at": "2026-10-10T20:22:42.251852Z",
+  "level": "M1",
+  "student_id": null,
+  "assignment_id": null,
+  "trust": 2,
+  "disclosed_fact_ids": [],
+  "released_artifact_ids": [
+    "a001"
+  ],
+  "turns": [
+    {
+      "n": 0,
+      "speaker": "system",
+      "text": "Encounter started",
+      "at": "2026-10-10T20:22:19.496719Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [
+        "a001"
+      ],
+      "tags": []
+    }
+  ]
+}

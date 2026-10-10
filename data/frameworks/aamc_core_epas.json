@@ -1,0 +1,147 @@
+{
+  "id": "aamc_core_epas",
+  "title": "AAMC Core Entrustable Professional Activities for Entering Residency",
+  "source": "Association of American Medical Colleges (AAMC), Core EPAs for Entering Residency. Day-one-of-residency expectation: perform the Core EPAs without direct supervision.",
+  "scale_note": "Supervision (entrustment) scale. Schools may use a finer-grained version; edit 'scale' to match yours.",
+  "scale": [
+    {
+      "level": 1,
+      "label": "Observe only",
+      "meaning": "Not yet trusted to perform this activity; may observe."
+    },
+    {
+      "level": 2,
+      "label": "Direct supervision",
+      "meaning": "May perform with a supervisor physically present and ready to step in."
+    },
+    {
+      "level": 3,
+      "label": "Indirect supervision",
+      "meaning": "May perform with a supervisor quickly available; findings are reviewed afterwards."
+    },
+    {
+      "level": 4,
+      "label": "Unsupervised",
+      "meaning": "May perform independently."
+    },
+    {
+      "level": 5,
+      "label": "Supervises others",
+      "meaning": "May supervise and teach others."
+    }
+  ],
+  "epas": [
+    {
+      "id": "EPA1",
+      "title": "Gather a history and perform a physical examination",
+      "observable": "partial",
+      "simulation_note": "History-taking and communication only; no physical exam in this simulation."
+    },
+    {
+      "id": "EPA2",
+      "title": "Prioritize a differential diagnosis following a clinical encounter",
+      "observable": "partial",
+      "simulation_note": "Only if the student states an assessment or differential during the encounter."
+    },
+    {
+      "id": "EPA3",
+      "title": "Recommend and interpret common diagnostic and screening tests",
+      "observable": "partial",
+      "simulation_note": "Reviewing the chart's labs and vitals, explaining them, and suggesting follow-up tests.",
+      "requires_any": [
+        "labs",
+        "imaging",
+        "ecg",
+        "xray",
+        "ct",
+        "mri",
+        "ultrasound",
+        "audiogram"
+      ]
+    },
+    {
+      "id": "EPA4",
+      "title": "Enter and discuss orders and prescriptions",
+      "observable": "no"
+    },
+    {
+      "id": "EPA5",
+      "title": "Document a clinical encounter in the patient record",
+      "observable": "no",
+      "simulation_note": "Possible extension: post-encounter note."
+    },
+    {
+      "id": "EPA6",
+      "title": "Provide an oral presentation of a clinical encounter",
+      "observable": "no",
+      "simulation_note": "Possible extension: post-encounter case presentation."
+    },
+    {
+      "id": "EPA7",
+      "title": "Form clinical questions and retrieve evidence to advance patient care",
+      "observable": "no"
+    },
+    {
+      "id": "EPA8",
+      "title": "Give or receive a patient handover to transition care responsibility",
+      "observable": "no"
+    },
+    {
+      "id": "EPA9",
+      "title": "Collaborate as a member of an interprofessional team",
+      "observable": "partial",
+      "simulation_note": "Appropriate referrals and coordination with other professionals and community resources."
+    },
+    {
+      "id": "EPA10",
+      "title": "Recognize a patient requiring urgent or emergent care and initiate evaluation and management",
+      "observable": "partial",
+      "simulation_note": "Recognising and acting on red-flag symptoms the patient reports."
+    },
+    {
+      "id": "EPA11",
+      "title": "Obtain informed consent for tests and/or procedures",
+      "observable": "no"
+    },
+    {
+      "id": "EPA12",
+      "title": "Perform general procedures of a physician",
+      "observable": "no"
+    },
+    {
+      "id": "EPA13",
+      "title": "Identify system failures and contribute to a culture of safety and improvement",
+      "observable": "no"
+    }
+  ],
+  "rubric_map": {
+    "_about": "Which EPAs each rubric domain provides evidence toward. Evidence is partial: a simulated interview shows only part of each EPA.",
+    "opening_and_purpose": [
+      "EPA1"
+    ],
+    "rapport_respect_empathy": [
+      "EPA1"
+    ],
+    "information_gathering": [
+      "EPA1"
+    ],
+    "listening_and_response_to_cues": [
+      "EPA1",
+      "EPA10"
+    ],
+    "explanation_and_shared_decisions": [
+      "EPA1",
+      "EPA3"
+    ],
+    "clinical_reasoning_and_synthesis": [
+      "EPA2",
+      "EPA3",
+      "EPA10"
+    ],
+    "professionalism_safety_closure": [
+      "EPA1",
+      "EPA9",
+      "EPA10"
+    ]
+  }
+}

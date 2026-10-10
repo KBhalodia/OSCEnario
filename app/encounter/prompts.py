@@ -141,6 +141,7 @@ WHAT YOU KNOW AND CAN TALK ABOUT (the only true facts about your health and life
 NEWLY RELEVANT: the student just asked about this. Share it now if a real patient like you would.
 {_fmt(may_share)}
 
+{"" if not s.difficulty_notes else "HOW TO PLAY THIS INTERVIEW (difficulty for this student's level)" + chr(10) + s.difficulty_notes + chr(10)}
 HARMLESS COLOUR you may use for small talk (never clinical):
 {details}
 {"" if not withheld else f'''

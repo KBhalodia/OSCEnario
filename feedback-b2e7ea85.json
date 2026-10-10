@@ -1,0 +1,314 @@
+{
+  "encounter_id": "b2e7ea85-6f2e-4d89-a8ad-3db9e159cdf3",
+  "patient_id": "walter-greene-556286",
+  "patient_name": "Walter Greene",
+  "student_id": null,
+  "assignment_id": null,
+  "level": "M1",
+  "level_label": "Year 1 (pre-clinical)",
+  "rubric": "Patient Encounter Performance Rubric",
+  "generated_at": "2026-10-10T19:22:18.928965+00:00",
+  "total": 10,
+  "max_total": 24,
+  "domains": [
+    {
+      "key": "opening_and_purpose",
+      "score": "2",
+      "rationale": "The student introduced themselves and opened with an open question, which is positive. However, they identified themselves as a 'medical student' rather than a dietetics student, which is inaccurate and potentially misleading to the patient. No agenda was set, no expectations were established, and the student did not clarify their role in the nutrition care process. The opening was functional but contained a role misidentification.",
+      "evidence": [
+        {
+          "turn": 1,
+          "quote": "I am a medical student, and I am here to help you with your troubles."
+        }
+      ],
+      "strength_demonstrated": "Greeted the patient by name and immediately invited him to share his concerns with an open question.",
+      "important_gap_or_missed_opportunity": "Misidentified professional role (said 'medical student' instead of dietetics student); did not set an agenda or explain the purpose of a nutrition assessment.",
+      "safety_or_accuracy_concern": "Introducing oneself as a 'medical student' when one is a dietetics student is a scope-of-practice misrepresentation that could mislead the patient about the nature of the encounter.",
+      "id": 1,
+      "name": "Opening and purpose",
+      "mode": "core",
+      "evidence_verified": true
+    },
+    {
+      "key": "rapport_respect_empathy",
+      "score": "1",
+      "rationale": "The student showed an initial empathetic response in turn 3, but in turn 5 used profane, hostile language ('fuck you') directed at the patient. In turn 7, the student justified this by saying 'I am just matching your energy man. I want to help but you get what you give.' This is dismissive, unprofessional, and emotionally unsafe. While the patient ultimately allowed the encounter to continue, the student's behavior created a hostile environment and breached basic professional conduct. The final trust score of 1 reflects this outcome.",
+      "evidence": [
+        {
+          "turn": 3,
+          "quote": "I am so sorry. I know it must be frustrating to not get an answer for your pain."
+        },
+        {
+          "turn": 5,
+          "quote": "fuck you"
+        },
+        {
+          "turn": 7,
+          "quote": "I am just matching your energy man. I want to help but you get what you give."
+        }
+      ],
+      "strength_demonstrated": "Offered an initial empathetic acknowledgment of the patient's frustration in turn 3.",
+      "important_gap_or_missed_opportunity": "Failed to respond non-defensively to the patient's initial dismissiveness; did not use respectful, patient-centered language when challenged. Asking about the patient's work history and life experience (a known rapport-building strategy with this patient) was never attempted.",
+      "safety_or_accuracy_concern": "Using profanity directed at a patient is a serious professionalism violation that constitutes emotionally unsafe communication and could cause harm to the therapeutic relationship.",
+      "id": 2,
+      "name": "Rapport, respect, and empathy",
+      "mode": "core",
+      "evidence_verified": true
+    },
+    {
+      "key": "information_gathering",
+      "score": "2",
+      "rationale": "The student asked only three questions across the encounter, all open-ended (open question ratio 1.0), which is a strength. However, the dietary recall was extremely superficial. The student asked one broad diet/lifestyle question in turn 9, and while the patient volunteered important information (canned soups, deli meats, sweet tea, meal skipping), the student did not follow up on any of these key sodium or fluid sources. Ibuprofen use, fluid tracking, and specific sodium sources were not explored. Only 2 of 5 dietary recall objectives were captured, and those were volunteered by the patient rather than elicited.",
+      "evidence": [
+        {
+          "turn": 9,
+          "quote": "What has your diet lifestyle been recently?"
+        },
+        {
+          "turn": 3,
+          "quote": "Besides swollen legs is there anything else you noticed that is beyond the ordinary with you?"
+        }
+      ],
+      "strength_demonstrated": "Used exclusively open questions and allowed the patient to speak freely, which enabled the patient to volunteer useful dietary information.",
+      "important_gap_or_missed_opportunity": "Did not follow up on the patient's mention of canned soups, deli meats, or sweet tea to quantify sodium and fluid intake. Did not ask about medications (ibuprofen), supplements, or fluid tracking habits.",
+      "safety_or_accuracy_concern": "None beyond incompleteness.",
+      "id": 3,
+      "name": "Information gathering",
+      "mode": "lenient",
+      "evidence_verified": true
+    },
+    {
+      "key": "listening_and_response_to_cues",
+      "score": "2",
+      "rationale": "The student responded to the patient's correction in turn 4 ('Look, I don't have pain\u2014my legs are just swollen') by partially incorporating this in turn 9, but still included 'shortness of breath' without acknowledging the patient's clarification about pain. The student did not follow up on any of the rich dietary cues the patient offered in turn 10 (canned soups, deli meats, sweet tea). The encounter ended without any follow-up on these cues. The off-script turns (5 and 7) represent a significant failure to track and respond appropriately to the patient's emotional state.",
+      "evidence": [
+        {
+          "turn": 4,
+          "quote": "Look, I don't have pain\u2014my legs are just swollen and I'm beat all the time. You listening or just talking?"
+        },
+        {
+          "turn": 9,
+          "quote": "Your legs are swollen, you're beat, and you're shortness of breath."
+        },
+        {
+          "turn": 10,
+          "quote": "Lot of canned stuff\u2014beans, soups, that kind of thing. Some deli meat, crackers."
+        }
+      ],
+      "strength_demonstrated": "Partially summarized the patient's symptoms in turn 9, showing some attempt to track the narrative.",
+      "important_gap_or_missed_opportunity": "Did not follow up on any of the dietary cues in turn 10 (canned soups, deli meats, sweet tea). The encounter ended after the patient's most information-rich response with no further questions.",
+      "safety_or_accuracy_concern": "None.",
+      "id": 4,
+      "name": "Listening and response to cues",
+      "mode": "lenient",
+      "evidence_verified": true
+    },
+    {
+      "key": "explanation_and_shared_decisions",
+      "score": "2",
+      "rationale": "The student provided no explanation of findings, no education about sodium or fluid, and no shared decision-making. The only forward-looking statement was a vague promise in turn 3 ('I am going to try my best to make sure we can get your problems resolved as quickly as possible'). Understanding was never checked. Given the lenient standard for M1, some basic explanation or next-step framing was still expected and absent.",
+      "evidence": [
+        {
+          "turn": 3,
+          "quote": "I am going to try my best to make sure we can get your problems resolved as quickly as possible."
+        }
+      ],
+      "strength_demonstrated": "Expressed commitment to helping the patient, which is a basic patient-centered gesture.",
+      "important_gap_or_missed_opportunity": "No explanation of the dietitian's role, no summary of what was learned, no next steps discussed, and no check of patient understanding at any point.",
+      "safety_or_accuracy_concern": "None.",
+      "id": 5,
+      "name": "Explanation and shared decisions",
+      "mode": "lenient",
+      "evidence_verified": true
+    },
+    {
+      "key": "clinical_reasoning_and_synthesis",
+      "score": "N/A",
+      "rationale": "Not expected at M1 (Year 1 (pre-clinical)).",
+      "evidence": [],
+      "strength_demonstrated": "N/A",
+      "important_gap_or_missed_opportunity": "N/A",
+      "safety_or_accuracy_concern": "N/A",
+      "id": 6,
+      "name": "Clinical reasoning and synthesis",
+      "mode": "na",
+      "evidence_verified": true
+    },
+    {
+      "key": "professionalism_safety_closure",
+      "score": "1",
+      "rationale": "The student used profanity toward the patient (turn 5) and justified it with a confrontational rationale (turn 7). The encounter was not closed\u2014there was no summary, no next steps, no follow-up plan, and no confirmation of what would happen next. The student also misidentified their professional role. These represent multiple serious professionalism failures. Even under lenient M1 standards, a basic professional close is expected.",
+      "evidence": [
+        {
+          "turn": 5,
+          "quote": "fuck you"
+        },
+        {
+          "turn": 7,
+          "quote": "I am just matching your energy man. I want to help but you get what you give."
+        },
+        {
+          "turn": 1,
+          "quote": "I am a medical student, and I am here to help you with your troubles."
+        }
+      ],
+      "strength_demonstrated": "The student did attempt to restart the encounter after the confrontation, showing some self-correction.",
+      "important_gap_or_missed_opportunity": "No closure whatsoever\u2014no summary, no next steps, no follow-up plan. Role was misrepresented at the outset.",
+      "safety_or_accuracy_concern": "Using profanity directed at a patient is a serious professionalism violation. Misidentifying as a 'medical student' rather than a dietetics student misrepresents scope of practice.",
+      "id": 7,
+      "name": "Professionalism, safety, and closure",
+      "mode": "lenient",
+      "evidence_verified": true
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Establish rapport with a resistant older adult patient using respectful, patient-centered communication.",
+      "items": [
+        {
+          "id": "o1.d1",
+          "text": "Patient is initially dismissive of students and requires a non-defensive, respectful approach",
+          "status": "found",
+          "turn": 2,
+          "fact_ids": [
+            "f092"
+          ]
+        },
+        {
+          "id": "o1.d2",
+          "text": "Asking about his work history and life experience helps him open up",
+          "status": "missed",
+          "turn": null,
+          "fact_ids": [
+            "f100",
+            "f001"
+          ]
+        },
+        {
+          "id": "o1.d3",
+          "text": "Avoiding a lecturing tone is essential to keeping him engaged",
+          "status": "missed",
+          "turn": 5,
+          "fact_ids": [],
+          "comment": "The student adopted a confrontational, profane tone in turn 5 and justified it in turn 7, which is the opposite of avoiding a lecturing or alienating tone. While the student did not lecture, the hostile exchange risked losing the patient entirely."
+        },
+        {
+          "id": "o1.d4",
+          "text": "Humor and directness, when used appropriately, build trust with this patient",
+          "status": "missed",
+          "turn": 7,
+          "fact_ids": [],
+          "comment": "The student's attempt at directness in turn 7 ('I am just matching your energy man') crossed into unprofessional territory rather than the appropriate humor and directness that builds trust with this patient. The patient's response (turn 8) indicates tolerance rather than genuine trust-building."
+        }
+      ],
+      "found": 1,
+      "total": 4
+    },
+    {
+      "id": "o2",
+      "objective": "Conduct a thorough dietary recall and identify key sources of excess sodium and fluid in the patient's diet.",
+      "items": [
+        {
+          "id": "o2.d1",
+          "text": "Canned soups, deli meats, and seasoned convenience foods are primary sodium sources",
+          "status": "missed",
+          "turn": null,
+          "fact_ids": [
+            "f051",
+            "f052",
+            "f057",
+            "f096"
+          ]
+        },
+        {
+          "id": "o2.d2",
+          "text": "Sweet tea consumed throughout the day contributes significantly to fluid intake",
+          "status": "missed",
+          "turn": null,
+          "fact_ids": [
+            "f055",
+            "f060",
+            "f098"
+          ]
+        },
+        {
+          "id": "o2.d3",
+          "text": "Patient does not track fluid intake and is unaware of how much he consumes",
+          "status": "found",
+          "turn": 10,
+          "fact_ids": [
+            "f047"
+          ]
+        },
+        {
+          "id": "o2.d4",
+          "text": "Skipping meals leads to larger, saltier meals later in the day",
+          "status": "found",
+          "turn": 10,
+          "fact_ids": [
+            "f046"
+          ]
+        },
+        {
+          "id": "o2.d5",
+          "text": "Ibuprofen use is an additional concern for fluid retention and kidney function",
+          "status": "missed",
+          "turn": null,
+          "fact_ids": [
+            "f043",
+            "f102",
+            "f110"
+          ]
+        }
+      ],
+      "found": 2,
+      "total": 5
+    }
+  ],
+  "communication": {
+    "student_turns": 5,
+    "questions": 3,
+    "open_questions": 3,
+    "closed_questions": 0,
+    "leading_questions": 0,
+    "open_question_ratio": 1.0,
+    "empathy_or_reflection": 1,
+    "jargon_turns": [],
+    "judgmental_turns": [],
+    "introduced_self": true,
+    "closed_encounter": false,
+    "checked_understanding": false,
+    "deflections_not_followed_up": [],
+    "off_script_turns": [
+      5,
+      7
+    ],
+    "final_trust": 1,
+    "chart_items_opened": 1
+  },
+  "strengths": [
+    "Used exclusively open-ended questions throughout the encounter (open question ratio 1.0), which allowed the patient to share rich dietary information in turn 10 without being led.",
+    "Demonstrated an initial empathetic acknowledgment in turn 3 ('I am so sorry. I know it must be frustrating'), showing awareness that the patient's emotional state needed to be addressed.",
+    "Showed resilience and self-correction by attempting to restart the encounter after the confrontation in turn 9, summarizing the patient's key complaints and pivoting to a relevant dietary question."
+  ],
+  "areas_for_improvement": [
+    "Professionalism and emotional regulation: Using profanity toward a patient and justifying it as 'matching energy' is a serious breach of professional conduct that must not occur in any clinical encounter, regardless of patient behavior.",
+    "Role identification and opening: The student introduced themselves as a 'medical student' rather than a dietetics student, and did not explain the purpose of a nutrition assessment or set an agenda for the encounter.",
+    "Dietary recall follow-up: After the patient volunteered key information about canned soups, deli meats, and sweet tea in turn 10, the student asked no follow-up questions to quantify sodium and fluid intake\u2014the core task of this encounter.",
+    "Closure and next steps: The encounter ended abruptly with no summary, no explanation of findings, no next steps, and no check of patient understanding."
+  ],
+  "next_attempt_suggestions": [
+    "When a patient is dismissive or challenging, respond with calm curiosity rather than defensiveness\u2014try something like: 'I hear you, and I want to make sure this time is actually useful for you. Can you tell me a bit about what's brought you in today?' This keeps the door open without escalating.",
+    "After the patient describes their diet in turn 10, follow up on each specific item: 'You mentioned canned soups\u2014how many cans would you say you have in a typical day?' and 'You said you drink sweet tea all day\u2014roughly how many glasses or cups is that?' These targeted follow-ups are the heart of a dietary recall.",
+    "Before closing any encounter, take 30 seconds to summarize what you heard and state a clear next step: 'So from what you've told me, it sounds like your diet includes quite a bit of sodium from canned foods and deli meats, and you're drinking a lot of sweet tea. I'd like to talk with you about how those might be affecting your swelling\u2014does that make sense to you?' This demonstrates listening, provides education, and checks understanding all at once."
+  ],
+  "summary": "This was a challenging encounter with a resistant patient, and the student showed some genuine strengths\u2014particularly in using open questions and attempting to re-engage after a difficult moment. However, the encounter was significantly undermined by a serious professionalism breach in turn 5, where the student used profanity directed at the patient and then justified it in turn 7. While the patient allowed the encounter to continue, this behavior is not acceptable in any clinical setting and represents the most critical area for growth. Beyond professionalism, the student misidentified their role at the outset, conducted only a very brief dietary recall without following up on the rich information the patient volunteered, and closed the encounter without any summary, education, or next steps. The core task of this encounter\u2014identifying key sources of sodium and fluid in the patient's diet\u2014was largely unmet. The student has a solid foundation in open questioning and shows empathic instincts; the priority for the next attempt is professional conduct under pressure, followed by systematic dietary recall follow-up.",
+  "needs_review": true,
+  "review_reasons": [
+    "Professionalism, safety, and closure scored 1"
+  ],
+  "unverified_quotes_dropped": 0,
+  "interpretation": "Use the total as a discussion aid, not a pass/fail grade. A score of 1 in professionalism, safety, or clinical reasoning should trigger review even when the total is high.",
+  "faculty_notes": ""
+}

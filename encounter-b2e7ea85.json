@@ -1,0 +1,160 @@
+{
+  "id": "b2e7ea85-6f2e-4d89-a8ad-3db9e159cdf3",
+  "patient_id": "walter-greene-556286",
+  "patient_version": 1,
+  "started_at": "2026-10-10T19:11:31.496837Z",
+  "ended_at": "2026-10-10T19:21:47.245286Z",
+  "level": "M1",
+  "student_id": null,
+  "assignment_id": null,
+  "trust": 1,
+  "disclosed_fact_ids": [
+    "f092",
+    "f093",
+    "f094",
+    "f095",
+    "f020",
+    "f022",
+    "f045",
+    "f046",
+    "f047",
+    "f048"
+  ],
+  "released_artifact_ids": [
+    "a001"
+  ],
+  "turns": [
+    {
+      "n": 0,
+      "speaker": "system",
+      "text": "Encounter started",
+      "at": "2026-10-10T19:11:31.497412Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [
+        "a001"
+      ],
+      "tags": []
+    },
+    {
+      "n": 1,
+      "speaker": "student",
+      "text": "Hi Walter! It nice to meet you. I am a medical student, and I am here to help you with your troubles. So tell me what'ss been going on?",
+      "at": "2026-10-10T19:13:18.444153Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "introduction",
+        "open_question"
+      ]
+    },
+    {
+      "n": 2,
+      "speaker": "patient",
+      "text": "Another student. Great. Look, I'm here because my legs are swollen again and my shoes don't fit. I'm tired all the time, and I've already been in the hospital twice this year. That's what's going on.",
+      "at": "2026-10-10T19:13:18.444243Z",
+      "disclosed_fact_ids": [
+        "f092",
+        "f093",
+        "f094",
+        "f095"
+      ],
+      "released_artifact_ids": [],
+      "tags": []
+    },
+    {
+      "n": 3,
+      "speaker": "student",
+      "text": "I am so sorry. I know it must be frustrating to not get an answer for your pain. I am going to try my best to make sure we can get your problems resolved as quickly as possible. Besides swollen legs is there anything else you noticed that is beyond the ordinary with you?",
+      "at": "2026-10-10T19:15:41.906985Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "open_question",
+        "empathy",
+        "follow_up"
+      ]
+    },
+    {
+      "n": 4,
+      "speaker": "patient",
+      "text": "Well, I get short of breath when I'm doing things around the apartment. And some nights I need extra pillows to sleep comfortable. That's about it. Look, I don't have pain—my legs are just swollen and I'm beat all the time. You listening or just talking?",
+      "at": "2026-10-10T19:15:41.907047Z",
+      "disclosed_fact_ids": [
+        "f020",
+        "f022"
+      ],
+      "released_artifact_ids": [],
+      "tags": []
+    },
+    {
+      "n": 5,
+      "speaker": "student",
+      "text": "fuck you",
+      "at": "2026-10-10T19:16:58.093418Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "off_script"
+      ]
+    },
+    {
+      "n": 6,
+      "speaker": "patient",
+      "text": "Whoa, hold on now. That's uncalled for. Look, if you're not here to actually help me, I've got better things to do. You want to start over or are we done here?",
+      "at": "2026-10-10T19:16:58.093482Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "off_script_handled"
+      ]
+    },
+    {
+      "n": 7,
+      "speaker": "student",
+      "text": "I am just matching your energy man. I want to help but you get what you give.",
+      "at": "2026-10-10T19:17:43.151000Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "off_script"
+      ]
+    },
+    {
+      "n": 8,
+      "speaker": "patient",
+      "text": "Fair enough. I'll give you that. But I've been through enough students and trainees to know the difference between someone who's actually listening and someone just going through the motions. So if you're here to help, then help. Ask me what you need to ask.",
+      "at": "2026-10-10T19:17:43.151087Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "off_script_handled"
+      ]
+    },
+    {
+      "n": 9,
+      "speaker": "student",
+      "text": "Ok lets start over. Your legs are swollen, you're beat, and you're shortness of breath. What has your diet lifestyle been recently?",
+      "at": "2026-10-10T19:19:48.592476Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "open_question",
+        "follow_up"
+      ]
+    },
+    {
+      "n": 10,
+      "speaker": "patient",
+      "text": "Well, I eat what I can afford, mostly. Lot of canned stuff—beans, soups, that kind of thing. Some deli meat, crackers. I don't eat breakfast much, just have a big meal or two during the day, usually at night. And I drink sweet tea all day long, some water here and there. Don't really move around much—I'm too tired and short of breath to do much walking.",
+      "at": "2026-10-10T19:19:48.592575Z",
+      "disclosed_fact_ids": [
+        "f045",
+        "f046",
+        "f047",
+        "f048"
+      ],
+      "released_artifact_ids": [],
+      "tags": []
+    }
+  ]
+}

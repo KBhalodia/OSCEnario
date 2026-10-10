@@ -315,7 +315,8 @@ def vhs_record_to_profile(
         objectives.append(LearningObjective(
             id=oid, objective=_str(o.get("learning_objective")),
             expected_discoveries=discoveries,
-            possible_patient_reactions=_list(o.get("possible_patient_reactions"))))
+            possible_patient_reactions=_list(o.get("possible_patient_reactions")),
+            min_level=_str(o.get("min_level")) or None))
 
     name = _str(ov.get("name")) or "Unnamed patient"
     return PatientProfile(

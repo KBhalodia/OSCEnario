@@ -1,0 +1,113 @@
+{
+  "_about": "Year levels. Faculty pick one per assignment. 'patient' changes how hard the virtual patient is to interview; 'grading' changes which rubric domains count and how high the bar is. Edit freely: nothing in code is level-specific. Domain modes: core = graded normally, lenient = graded against the level's expectations, na = not expected yet (always N/A). The rubric itself says to use N/A when a criterion is not appropriate. 'epa_targets' are the supervision level (1-5, see data/frameworks/aamc_core_epas.json) expected at that year for each EPA in focus. These are DEFAULTS chosen to rise toward the AAMC day-one-of-residency goal (level 3, indirect supervision) by M4; each school should set its own.",
+  "order": [
+    "M1",
+    "M2",
+    "M3",
+    "M4"
+  ],
+  "levels": {
+    "M1": {
+      "label": "Year 1 (pre-clinical)",
+      "patient": {
+        "opening_trust_delta": 1,
+        "min_trust_shift": -1,
+        "notes": "This student is a beginner. Be cooperative and forthcoming. Answer clearly and directly, stay on one main concern, and if the student seems stuck, gently mention why you came in. Still don't share sensitive things until asked kindly."
+      },
+      "grading": {
+        "expectations": "First-year student. Expect a clear introduction, respectful and empathetic tone, open questions, and a basic history of the main concern. Do not expect clinical reasoning, a differential, or a management plan; a simple closing is enough. EPA focus: EPA 1 (history-taking) at direct supervision.",
+        "domains": {
+          "opening_and_purpose": "core",
+          "rapport_respect_empathy": "core",
+          "information_gathering": "lenient",
+          "listening_and_response_to_cues": "lenient",
+          "explanation_and_shared_decisions": "lenient",
+          "clinical_reasoning_and_synthesis": "na",
+          "professionalism_safety_closure": "lenient"
+        },
+        "epa_targets": {
+          "EPA1": 2
+        }
+      }
+    },
+    "M2": {
+      "label": "Year 2 (pre-clinical)",
+      "patient": {
+        "opening_trust_delta": 0,
+        "min_trust_shift": 0,
+        "notes": "Behave as described in your profile. Answer what is asked; don't volunteer much beyond your main concern."
+      },
+      "grading": {
+        "expectations": "Second-year student. Expect a structured history with logical follow-up, response to obvious cues, and a clear, jargon-free explanation. Basic clinical reasoning (recognising the key problems) is expected but a full differential is not. EPA focus: EPA 1 and early EPA 2 (naming likely problems), both at direct supervision.",
+        "domains": {
+          "opening_and_purpose": "core",
+          "rapport_respect_empathy": "core",
+          "information_gathering": "core",
+          "listening_and_response_to_cues": "core",
+          "explanation_and_shared_decisions": "lenient",
+          "clinical_reasoning_and_synthesis": "lenient",
+          "professionalism_safety_closure": "core"
+        },
+        "epa_targets": {
+          "EPA1": 2,
+          "EPA2": 2
+        }
+      }
+    },
+    "M3": {
+      "label": "Year 3 (clinical)",
+      "patient": {
+        "opening_trust_delta": 0,
+        "min_trust_shift": 1,
+        "notes": "Be more guarded than usual. Give short answers until the student builds rapport. Mention a second, smaller worry partway through if it fits your profile. Don't make it easy to get sensitive information."
+      },
+      "grading": {
+        "expectations": "Third-year clinical student. Expect a complete, well-sequenced history including psychosocial context, attention to subtle cues and deflections, patient-centred explanation with teach-back, a coherent assessment that recognises uncertainty, and a clear shared plan with follow-up. EPA focus: EPA 1 approaching indirect supervision; EPA 2, 3, 9 and 10 at direct supervision.",
+        "domains": {
+          "opening_and_purpose": "core",
+          "rapport_respect_empathy": "core",
+          "information_gathering": "core",
+          "listening_and_response_to_cues": "core",
+          "explanation_and_shared_decisions": "core",
+          "clinical_reasoning_and_synthesis": "core",
+          "professionalism_safety_closure": "core"
+        },
+        "epa_targets": {
+          "EPA1": 3,
+          "EPA2": 2,
+          "EPA3": 2,
+          "EPA9": 2,
+          "EPA10": 2
+        }
+      }
+    },
+    "M4": {
+      "label": "Year 4 (advanced clinical)",
+      "patient": {
+        "opening_trust_delta": -1,
+        "min_trust_shift": 1,
+        "notes": "Be a challenging but realistic patient: guarded, a little vague about timelines, emotionally affected, and with competing concerns and priorities. Push back once on advice that doesn't fit your life. Never invent facts; challenge comes from how you talk, not from new information."
+      },
+      "grading": {
+        "expectations": "Final-year student, near-independent practice. Hold to a high bar: efficient, hypothesis-driven history; explicit handling of uncertainty and red flags; motivational and shared decision-making; safety-netting and coordination with other services. Minor gaps should lower the score. EPA focus: EPA 1, 2, 3, 9 and 10 at indirect supervision (the AAMC day-one-of-residency expectation).",
+        "domains": {
+          "opening_and_purpose": "core",
+          "rapport_respect_empathy": "core",
+          "information_gathering": "core",
+          "listening_and_response_to_cues": "core",
+          "explanation_and_shared_decisions": "core",
+          "clinical_reasoning_and_synthesis": "core",
+          "professionalism_safety_closure": "core"
+        },
+        "epa_targets": {
+          "EPA1": 3,
+          "EPA2": 3,
+          "EPA3": 3,
+          "EPA9": 3,
+          "EPA10": 3
+        }
+      }
+    }
+  },
+  "framework": "aamc_core_epas"
+}

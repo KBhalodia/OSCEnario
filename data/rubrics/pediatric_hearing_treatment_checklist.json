@@ -1,0 +1,97 @@
+{
+  "id": "pediatric_hearing_treatment_checklist",
+  "type": "checklist",
+  "title": "Pediatric Hearing Treatment Clinical Simulation, Session #1 (SPLP 6510 Aural Rehabilitation)",
+  "context": [
+    "Department of Rehabilitation and Movement Sciences",
+    "Speech-Language Pathology Program",
+    "SPLP 6510 Aural Rehabilitation and Habilitation",
+    "Pediatric Hearing Treatment Clinical Simulation",
+    "Session #1"
+  ],
+  "sections": [
+    {
+      "name": "Introduce yourself to the client",
+      "points": 10,
+      "items": [
+        {
+          "id": "s1.i1",
+          "text": "Behave in a professional manner"
+        },
+        {
+          "id": "s1.i2",
+          "text": "Use professional and empathetic language throughout the session"
+        }
+      ],
+      "id": "s1"
+    },
+    {
+      "name": "Engage in a Needs Assessment with the client",
+      "points": 30,
+      "items": [
+        {
+          "id": "s2.i1",
+          "text": "Review the following info with the client: Age at diagnosis of deafness"
+        },
+        {
+          "id": "s2.i2",
+          "text": "Review the following info with the client: Device use"
+        },
+        {
+          "id": "s2.i3",
+          "text": "Review the following info with the client: Ask about any other auditory complaints (tinnitus, hyperacusis, etc)"
+        },
+        {
+          "id": "s2.i4",
+          "text": "Review the following info with the client: Ask about Educational needs"
+        },
+        {
+          "id": "s2.i5",
+          "text": "Review the following info with the client: Ask about Most important communication challenge/need today"
+        }
+      ],
+      "id": "s2"
+    },
+    {
+      "name": "Review the client\u2019s audiogram with them",
+      "points": 30,
+      "items": [
+        {
+          "id": "s3.i1",
+          "text": "Explain the severity of the client\u2019s hearing loss in a sensitive manner"
+        },
+        {
+          "id": "s3.i2",
+          "text": "Using the Speech Banana, explain what the client can hear with and without their hearing technology"
+        }
+      ],
+      "id": "s3"
+    },
+    {
+      "name": "Discuss realistic expectations for aural rehabilitation",
+      "points": 30,
+      "items": [
+        {
+          "id": "s4.i1",
+          "text": "Explain the difference between an audiologist and an SLP"
+        },
+        {
+          "id": "s4.i2",
+          "text": "Explain what aural rehab is and how it can help"
+        },
+        {
+          "id": "s4.i3",
+          "text": "Express empathy for the challenge(s) faced by the client"
+        },
+        {
+          "id": "s4.i4",
+          "text": "Answer any questions the client has"
+        }
+      ],
+      "id": "s4"
+    }
+  ],
+  "max_points": 100,
+  "scoring": "Each section's points are split evenly across its items. Achieved = full share, partial = half, not achieved = 0.",
+  "source_file": "Rubric for Pediatric Treatment.docx"
+}

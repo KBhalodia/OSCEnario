@@ -1,0 +1,1975 @@
+{
+  "id": "walter-greene-556286",
+  "status": "draft",
+  "version": 1,
+  "created_at": "2026-10-10T19:05:54.157740Z",
+  "persona": {
+    "name": "Walter Greene",
+    "age": 72,
+    "sex": "male",
+    "description": "Walter Greene is a 72-year-old retired African-American janitor living alone with a history of heart failure and multiple related hospitalizations, making him a frequent flier in the outpatient clinic. He is grumpy and blunt but has a dry sense of humor, and he openly dislikes students and trainees. He is noncompliant with his cardiac diet but warms up considerably when conversation turns to his work history or when he feels respected by clinical staff. He presents a significant counseling challenge for dietetics students, requiring strong rapport-building skills, motivational interviewing, and practical sodium- and fluid-restricted dietary guidance tailored to an older adult living alone on a fixed income.",
+    "keywords": [
+      "heart failure",
+      "frequent flier",
+      "dietary noncompliance",
+      "sodium restriction",
+      "fluid restriction",
+      "older adult",
+      "lives alone",
+      "fixed income",
+      "rapport challenge",
+      "motivational interviewing",
+      "medical nutrition therapy"
+    ],
+    "occupation": "Retired janitor",
+    "residence": "Urban apartment, lives alone",
+    "ethnicity": "African-American",
+    "language": "English",
+    "marital_status": "Widowed or divorced (lives alone)",
+    "education_level": "High school diploma or equivalent",
+    "insurance": "Medicare",
+    "cultural_context": "Southern-influenced food traditions; comfort foods such as cured meats, canned goods, and seasoned dishes are culturally significant. Fixed income limits food choices. Strong sense of independence and self-reliance; may resist being told what to do by younger or unfamiliar clinicians.",
+    "personality": "Grumpy, blunt, and initially dismissive, especially toward students and trainees. Has a dry, self-deprecating sense of humor that emerges once he feels comfortable. Proud of his work history and life experience. Values respect and directness over pleasantries.",
+    "communication_style": "Terse and guarded at first; uses humor and sarcasm to deflect. Opens up significantly when asked about his past work or life experiences. Responds poorly to being lectured or talked down to. Engages more when the student listens more than they talk.",
+    "support_system": "Limited formal support; occasional visits from an adult child who lives out of town. Friendly with a few neighbors. Strong relationship with clinic nursing staff and physical therapist.",
+    "readiness_to_change": "Pre-contemplative to contemplative; resistant to dietary changes but acknowledges hospitalizations are disruptive. May shift toward action if approached with respect and practical, low-burden strategies.",
+    "portrait_path": null
+  },
+  "settings": {
+    "student_role": "Dietetics student",
+    "encounter_goal": "Nutrition assessment and counseling (Nutrition Care Process)",
+    "setting": "Outpatient clinic",
+    "rubric_id": "encounter_evaluation_rubric",
+    "opening_trust": 1,
+    "difficulty_notes": ""
+  },
+  "faculty_brief": {
+    "background": "Retired janitor, lives alone",
+    "notes": "Noncompliant with diet but loves \"talking shop\" with PT and nurses.",
+    "personality": "Grumpy but humorous, dislikes students",
+    "summary": "Heart Failure, frequent flier"
+  },
+  "primary_diagnosis": "Heart Failure (HFrEF, chronic, with recurrent exacerbations)",
+  "secondary_diagnoses": [
+    "Hypertension",
+    "Type 2 Diabetes Mellitus",
+    "Chronic Kidney Disease Stage 3a",
+    "Dyslipidemia"
+  ],
+  "medications": [
+    {
+      "name": "Furosemide (Lasix)",
+      "dose": "40 mg",
+      "frequency": "Once daily in the morning",
+      "purpose": "Diuretic to reduce fluid retention and edema",
+      "adherence": "Inconsistent; skips doses when going out to avoid frequent urination",
+      "patient_concerns": "Hates having to use the bathroom all day, especially when he has errands to run"
+    },
+    {
+      "name": "Carvedilol",
+      "dose": "12.5 mg",
+      "frequency": "Twice daily with meals",
+      "purpose": "Beta-blocker for heart failure and blood pressure management",
+      "adherence": "Fairly consistent, takes with breakfast and dinner",
+      "patient_concerns": "Feels it makes him tired and slows him down"
+    },
+    {
+      "name": "Lisinopril",
+      "dose": "10 mg",
+      "frequency": "Once daily",
+      "purpose": "ACE inhibitor for heart failure and blood pressure",
+      "adherence": "Generally adherent",
+      "patient_concerns": "Occasional dry cough that bothers him at night"
+    },
+    {
+      "name": "Spironolactone",
+      "dose": "25 mg",
+      "frequency": "Once daily",
+      "purpose": "Aldosterone antagonist for heart failure; potassium-sparing",
+      "adherence": "Inconsistent; sometimes forgets",
+      "patient_concerns": "Not sure what it is for; does not see the point"
+    },
+    {
+      "name": "Metformin",
+      "dose": "500 mg",
+      "frequency": "Twice daily with meals",
+      "purpose": "Blood glucose management for type 2 diabetes",
+      "adherence": "Moderate; skips when he skips meals",
+      "patient_concerns": "Upsets his stomach occasionally"
+    },
+    {
+      "name": "Atorvastatin",
+      "dose": "40 mg",
+      "frequency": "Once daily at bedtime",
+      "purpose": "Cholesterol management",
+      "adherence": "Good; takes it every night",
+      "patient_concerns": "None reported"
+    }
+  ],
+  "allergies": [
+    "No known drug or food allergies"
+  ],
+  "facts": [
+    {
+      "id": "f001",
+      "category": "social",
+      "topic": "occupation",
+      "content": "Retired janitor",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "faculty",
+      "source_path": "demographics.occupation"
+    },
+    {
+      "id": "f002",
+      "category": "social",
+      "topic": "living situation",
+      "content": "Urban apartment, lives alone",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.residence"
+    },
+    {
+      "id": "f003",
+      "category": "social",
+      "topic": "marital status",
+      "content": "Widowed or divorced (lives alone)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.marital_status"
+    },
+    {
+      "id": "f004",
+      "category": "social",
+      "topic": "education",
+      "content": "High school diploma or equivalent",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.education_level"
+    },
+    {
+      "id": "f005",
+      "category": "social",
+      "topic": "insurance",
+      "content": "Medicare",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.insurance"
+    },
+    {
+      "id": "f006",
+      "category": "social",
+      "topic": "language",
+      "content": "English",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.language"
+    },
+    {
+      "id": "f007",
+      "category": "social",
+      "topic": "support system",
+      "content": "Limited formal support; occasional visits from an adult child who lives out of town. Friendly with a few neighbors. Strong relationship with clinic nursing staff and physical therapist.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.support_system"
+    },
+    {
+      "id": "f008",
+      "category": "diagnosis",
+      "topic": "main diagnosis / reason for visit",
+      "content": "Heart Failure (HFrEF, chronic, with recurrent exacerbations)",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.primary_diagnosis"
+    },
+    {
+      "id": "f009",
+      "category": "diagnosis",
+      "topic": "other condition: Hypertension",
+      "content": "Hypertension",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.secondary_diagnoses[0]"
+    },
+    {
+      "id": "f010",
+      "category": "diagnosis",
+      "topic": "other condition: Type 2 Diabetes Mellitus",
+      "content": "Type 2 Diabetes Mellitus",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.secondary_diagnoses[1]"
+    },
+    {
+      "id": "f011",
+      "category": "diagnosis",
+      "topic": "other condition: Chronic Kidney Disease Stage 3a",
+      "content": "Chronic Kidney Disease Stage 3a",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.secondary_diagnoses[2]"
+    },
+    {
+      "id": "f012",
+      "category": "diagnosis",
+      "topic": "other condition: Dyslipidemia",
+      "content": "Dyslipidemia",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.secondary_diagnoses[3]"
+    },
+    {
+      "id": "f013",
+      "category": "history",
+      "topic": "Heart failure diagnosed approximately 8 years ago",
+      "content": "Heart failure diagnosed approximately 8 years ago",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[0]"
+    },
+    {
+      "id": "f014",
+      "category": "history",
+      "topic": "Multiple hospitalizations for acute decompensated heart…",
+      "content": "Multiple hospitalizations for acute decompensated heart failure (frequent flier)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[1]"
+    },
+    {
+      "id": "f015",
+      "category": "history",
+      "topic": "Longstanding hypertension",
+      "content": "Longstanding hypertension",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[2]"
+    },
+    {
+      "id": "f016",
+      "category": "history",
+      "topic": "Type 2 diabetes diagnosed approximately 12 years ago",
+      "content": "Type 2 diabetes diagnosed approximately 12 years ago",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[3]"
+    },
+    {
+      "id": "f017",
+      "category": "history",
+      "topic": "Chronic kidney disease, stage 3a, identified 3 years ago",
+      "content": "Chronic kidney disease, stage 3a, identified 3 years ago",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[4]"
+    },
+    {
+      "id": "f018",
+      "category": "history",
+      "topic": "Former smoker, quit 15 years ago",
+      "content": "Former smoker, quit 15 years ago",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[5]"
+    },
+    {
+      "id": "f019",
+      "category": "symptom",
+      "topic": "symptom: Bilateral lower extremity edema, worse by…",
+      "content": "Bilateral lower extremity edema, worse by end of day",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[0]"
+    },
+    {
+      "id": "f020",
+      "category": "symptom",
+      "topic": "symptom: Shortness of breath with moderate exertion",
+      "content": "Shortness of breath with moderate exertion",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[1]"
+    },
+    {
+      "id": "f021",
+      "category": "symptom",
+      "topic": "symptom: Fatigue and reduced exercise tolerance",
+      "content": "Fatigue and reduced exercise tolerance",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[2]"
+    },
+    {
+      "id": "f022",
+      "category": "symptom",
+      "topic": "symptom: Occasional orthopnea requiring two pillows…",
+      "content": "Occasional orthopnea requiring two pillows at night",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[3]"
+    },
+    {
+      "id": "f023",
+      "category": "symptom",
+      "topic": "symptom: Decreased appetite",
+      "content": "Decreased appetite",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[4]"
+    },
+    {
+      "id": "f024",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "No known drug or food allergies",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.allergies[0]"
+    },
+    {
+      "id": "f025",
+      "category": "medication",
+      "topic": "medication: Furosemide (Lasix)",
+      "content": "Takes Furosemide (Lasix) 40 mg Once daily in the morning for Diuretic to reduce fluid retention and edema",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[0]"
+    },
+    {
+      "id": "f026",
+      "category": "medication",
+      "topic": "how they take Furosemide (Lasix)",
+      "content": "Furosemide (Lasix) adherence: Inconsistent; skips doses when going out to avoid frequent urination",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[0].adherence"
+    },
+    {
+      "id": "f027",
+      "category": "medication",
+      "topic": "concerns/side effects of Furosemide (Lasix)",
+      "content": "About Furosemide (Lasix): Hates having to use the bathroom all day, especially when he has errands to run",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[0].patient_concerns"
+    },
+    {
+      "id": "f028",
+      "category": "medication",
+      "topic": "medication: Carvedilol",
+      "content": "Takes Carvedilol 12.5 mg Twice daily with meals for Beta-blocker for heart failure and blood pressure management",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[1]"
+    },
+    {
+      "id": "f029",
+      "category": "medication",
+      "topic": "how they take Carvedilol",
+      "content": "Carvedilol adherence: Fairly consistent, takes with breakfast and dinner",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[1].adherence"
+    },
+    {
+      "id": "f030",
+      "category": "medication",
+      "topic": "concerns/side effects of Carvedilol",
+      "content": "About Carvedilol: Feels it makes him tired and slows him down",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[1].patient_concerns"
+    },
+    {
+      "id": "f031",
+      "category": "medication",
+      "topic": "medication: Lisinopril",
+      "content": "Takes Lisinopril 10 mg Once daily for ACE inhibitor for heart failure and blood pressure",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[2]"
+    },
+    {
+      "id": "f032",
+      "category": "medication",
+      "topic": "how they take Lisinopril",
+      "content": "Lisinopril adherence: Generally adherent",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[2].adherence"
+    },
+    {
+      "id": "f033",
+      "category": "medication",
+      "topic": "concerns/side effects of Lisinopril",
+      "content": "About Lisinopril: Occasional dry cough that bothers him at night",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[2].patient_concerns"
+    },
+    {
+      "id": "f034",
+      "category": "medication",
+      "topic": "medication: Spironolactone",
+      "content": "Takes Spironolactone 25 mg Once daily for Aldosterone antagonist for heart failure; potassium-sparing",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[3]"
+    },
+    {
+      "id": "f035",
+      "category": "medication",
+      "topic": "how they take Spironolactone",
+      "content": "Spironolactone adherence: Inconsistent; sometimes forgets",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[3].adherence"
+    },
+    {
+      "id": "f036",
+      "category": "medication",
+      "topic": "concerns/side effects of Spironolactone",
+      "content": "About Spironolactone: Not sure what it is for; does not see the point",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[3].patient_concerns"
+    },
+    {
+      "id": "f037",
+      "category": "medication",
+      "topic": "medication: Metformin",
+      "content": "Takes Metformin 500 mg Twice daily with meals for Blood glucose management for type 2 diabetes",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[4]"
+    },
+    {
+      "id": "f038",
+      "category": "medication",
+      "topic": "how they take Metformin",
+      "content": "Metformin adherence: Moderate; skips when he skips meals",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[4].adherence"
+    },
+    {
+      "id": "f039",
+      "category": "medication",
+      "topic": "concerns/side effects of Metformin",
+      "content": "About Metformin: Upsets his stomach occasionally",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[4].patient_concerns"
+    },
+    {
+      "id": "f040",
+      "category": "medication",
+      "topic": "medication: Atorvastatin",
+      "content": "Takes Atorvastatin 40 mg Once daily at bedtime for Cholesterol management",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[5]"
+    },
+    {
+      "id": "f041",
+      "category": "medication",
+      "topic": "how they take Atorvastatin",
+      "content": "Atorvastatin adherence: Good; takes it every night",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[5].adherence"
+    },
+    {
+      "id": "f042",
+      "category": "medication",
+      "topic": "concerns/side effects of Atorvastatin",
+      "content": "About Atorvastatin: None reported",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[5].patient_concerns"
+    },
+    {
+      "id": "f043",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Occasional ibuprofen for joint pain (not recommended given CKD and heart failure)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.supplements_and_otc[0]"
+    },
+    {
+      "id": "f044",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes No regular vitamin or mineral supplements",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.supplements_and_otc[1]"
+    },
+    {
+      "id": "f045",
+      "category": "nutrition",
+      "topic": "usual diet",
+      "content": "High in sodium from canned goods, processed meats, and seasoned convenience foods; moderate carbohydrate intake with limited fresh produce; low in potassium-rich whole foods; irregular fluid intake often exceeding recommended restriction",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.dietary_pattern"
+    },
+    {
+      "id": "f046",
+      "category": "nutrition",
+      "topic": "meal timing / pattern",
+      "content": "Irregular; often eats one or two large meals per day; skips breakfast frequently; largest meal in the evening; snacks on crackers and deli meat",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.meal_pattern"
+    },
+    {
+      "id": "f047",
+      "category": "nutrition",
+      "topic": "fluids / hydration",
+      "content": "Drinks sweet tea throughout the day and occasional water; total fluid intake likely exceeds 2L daily restriction; does not track fluids",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.hydration"
+    },
+    {
+      "id": "f048",
+      "category": "lifestyle",
+      "topic": "physical activity",
+      "content": "Very limited; short walks around the apartment complex when feeling well; mostly sedentary due to fatigue and dyspnea on exertion",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.physical_activity"
+    },
+    {
+      "id": "f049",
+      "category": "lifestyle",
+      "topic": "alcohol / tobacco / drugs",
+      "content": "Former smoker, quit 15 years ago; occasional beer, approximately 2-3 per week",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.substance_use"
+    },
+    {
+      "id": "f050",
+      "category": "lifestyle",
+      "topic": "sleep",
+      "content": "6 to 7 hours; disrupted by nocturia from diuretic and occasional orthopnea; uses two pillows",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.sleep"
+    },
+    {
+      "id": "f051",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Canned soups and stews",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[0]"
+    },
+    {
+      "id": "f052",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Deli meats and cured sausage",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[1]"
+    },
+    {
+      "id": "f053",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Cornbread and biscuits",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[2]"
+    },
+    {
+      "id": "f054",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Collard greens cooked with smoked ham hocks",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[3]"
+    },
+    {
+      "id": "f055",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Sweet tea",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[4]"
+    },
+    {
+      "id": "f056",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Canned vegetables",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[5]"
+    },
+    {
+      "id": "f057",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Fast food burgers when out running errands",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[6]"
+    },
+    {
+      "id": "f058",
+      "category": "nutrition",
+      "topic": "Heavy reliance on canned and processed foods due to…",
+      "content": "Heavy reliance on canned and processed foods due to convenience and cost",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[0]"
+    },
+    {
+      "id": "f059",
+      "category": "nutrition",
+      "topic": "Use of salt and seasoning blends when cooking at home",
+      "content": "Use of salt and seasoning blends when cooking at home",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[1]"
+    },
+    {
+      "id": "f060",
+      "category": "nutrition",
+      "topic": "Sweet tea consumption throughout the day as primary beverage",
+      "content": "Sweet tea consumption throughout the day as primary beverage",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[2]"
+    },
+    {
+      "id": "f061",
+      "category": "nutrition",
+      "topic": "Skipping meals when appetite is low, then eating large…",
+      "content": "Skipping meals when appetite is low, then eating large salty meals later",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[3]"
+    },
+    {
+      "id": "f062",
+      "category": "nutrition",
+      "topic": "Eating out alone at fast food restaurants for social…",
+      "content": "Eating out alone at fast food restaurants for social interaction",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[4]"
+    },
+    {
+      "id": "f063",
+      "category": "nutrition",
+      "topic": "Resistance to low-sodium alternatives due to taste…",
+      "content": "Resistance to low-sodium alternatives due to taste preferences",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[5]"
+    },
+    {
+      "id": "f064",
+      "category": "nutrition",
+      "topic": "Fluid intake habits and understanding of fluid restriction",
+      "content": "Fluid intake habits and understanding of fluid restriction",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[6]"
+    },
+    {
+      "id": "f065",
+      "category": "psychosocial",
+      "topic": "goal: Stay out of the hospital",
+      "content": "Stay out of the hospital",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[0]"
+    },
+    {
+      "id": "f066",
+      "category": "psychosocial",
+      "topic": "goal: Keep his independence and continue living…",
+      "content": "Keep his independence and continue living alone",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[1]"
+    },
+    {
+      "id": "f067",
+      "category": "psychosocial",
+      "topic": "goal: Feel less tired and breathless day to day",
+      "content": "Feel less tired and breathless day to day",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[2]"
+    },
+    {
+      "id": "f068",
+      "category": "psychosocial",
+      "topic": "goal: Enjoy his food without feeling deprived",
+      "content": "Enjoy his food without feeling deprived",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[3]"
+    },
+    {
+      "id": "f069",
+      "category": "psychosocial",
+      "topic": "motivation: Avoiding another hospitalization, which he…",
+      "content": "Avoiding another hospitalization, which he finds humiliating and disruptive",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.motivations[0]"
+    },
+    {
+      "id": "f070",
+      "category": "psychosocial",
+      "topic": "motivation: Maintaining independence and not needing to…",
+      "content": "Maintaining independence and not needing to move in with family",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.motivations[1]"
+    },
+    {
+      "id": "f071",
+      "category": "psychosocial",
+      "topic": "motivation: Feeling well enough to watch sports and…",
+      "content": "Feeling well enough to watch sports and socialize with neighbors",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.motivations[2]"
+    },
+    {
+      "id": "f072",
+      "category": "psychosocial",
+      "topic": "strength: Candid and self-aware when he trusts the…",
+      "content": "Candid and self-aware when he trusts the clinician",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[0]"
+    },
+    {
+      "id": "f073",
+      "category": "psychosocial",
+      "topic": "strength: Has successfully quit smoking,…",
+      "content": "Has successfully quit smoking, demonstrating capacity for behavior change",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[1]"
+    },
+    {
+      "id": "f074",
+      "category": "psychosocial",
+      "topic": "strength: Good rapport with physical therapist and…",
+      "content": "Good rapport with physical therapist and nursing staff, showing he can engage when respected",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[2]"
+    },
+    {
+      "id": "f075",
+      "category": "psychosocial",
+      "topic": "strength: Practical and resourceful from years of…",
+      "content": "Practical and resourceful from years of working-class independence",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[3]"
+    },
+    {
+      "id": "f076",
+      "category": "psychosocial",
+      "topic": "belief: Food is one of the few pleasures he has…",
+      "content": "Food is one of the few pleasures he has left and he should not have to give it up",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[0]"
+    },
+    {
+      "id": "f077",
+      "category": "psychosocial",
+      "topic": "belief: has lived 72 years eating the way he likes…",
+      "content": "He has lived 72 years eating the way he likes and does not see why that needs to change now",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[1]"
+    },
+    {
+      "id": "f078",
+      "category": "psychosocial",
+      "topic": "belief: Doctors and students do not understand what…",
+      "content": "Doctors and students do not understand what it is like to cook for one person on a fixed income",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[2]"
+    },
+    {
+      "id": "f079",
+      "category": "psychosocial",
+      "topic": "belief: Salt-free food tastes like cardboard and is…",
+      "content": "Salt-free food tastes like cardboard and is not worth eating",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[3]"
+    },
+    {
+      "id": "f080",
+      "category": "psychosocial",
+      "topic": "concern: Worried about losing his independence if…",
+      "content": "Worried about losing his independence if his health declines further",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[0]"
+    },
+    {
+      "id": "f081",
+      "category": "psychosocial",
+      "topic": "concern: Concerned that healthy food is bland and…",
+      "content": "Concerned that healthy food is bland and unaffordable",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[1]"
+    },
+    {
+      "id": "f082",
+      "category": "psychosocial",
+      "topic": "concern: Frustrated by the number of medications and…",
+      "content": "Frustrated by the number of medications and dietary rules he is expected to follow",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[2]"
+    },
+    {
+      "id": "f083",
+      "category": "psychosocial",
+      "topic": "concern: Anxious about kidney function worsening",
+      "content": "Anxious about kidney function worsening",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[3]"
+    },
+    {
+      "id": "f084",
+      "category": "psychosocial",
+      "topic": "barrier: Lives alone with no one to help with meal…",
+      "content": "Lives alone with no one to help with meal preparation",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[0]"
+    },
+    {
+      "id": "f085",
+      "category": "psychosocial",
+      "topic": "barrier: Fixed income limits access to fresh or…",
+      "content": "Fixed income limits access to fresh or specialty low-sodium foods",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[1]"
+    },
+    {
+      "id": "f086",
+      "category": "psychosocial",
+      "topic": "barrier: Strong taste preferences and cultural food…",
+      "content": "Strong taste preferences and cultural food traditions tied to high-sodium cooking",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[2]"
+    },
+    {
+      "id": "f087",
+      "category": "psychosocial",
+      "topic": "barrier: Low motivation to cook elaborate meals for…",
+      "content": "Low motivation to cook elaborate meals for one person",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[3]"
+    },
+    {
+      "id": "f088",
+      "category": "psychosocial",
+      "topic": "barrier: Skips diuretic to maintain mobility,…",
+      "content": "Skips diuretic to maintain mobility, worsening fluid retention",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[4]"
+    },
+    {
+      "id": "f089",
+      "category": "psychosocial",
+      "topic": "fear: Ending up in a nursing home",
+      "content": "Ending up in a nursing home",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.fears[0]"
+    },
+    {
+      "id": "f090",
+      "category": "psychosocial",
+      "topic": "fear: Becoming a burden to his family",
+      "content": "Becoming a burden to his family",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.fears[1]"
+    },
+    {
+      "id": "f091",
+      "category": "psychosocial",
+      "topic": "fear: Dying alone",
+      "content": "Dying alone",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.fears[2]"
+    },
+    {
+      "id": "f092",
+      "category": "other",
+      "topic": "Grumbles about being sent to see another student",
+      "content": "Grumbles about being sent to see another student",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[0]"
+    },
+    {
+      "id": "f093",
+      "category": "other",
+      "topic": "Mentions his legs are swollen again and his shoes feel tight",
+      "content": "Mentions his legs are swollen again and his shoes feel tight",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[1]"
+    },
+    {
+      "id": "f094",
+      "category": "other",
+      "topic": "States he is tired all the time",
+      "content": "States he is tired all the time",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[2]"
+    },
+    {
+      "id": "f095",
+      "category": "other",
+      "topic": "Volunteers that he has been in the hospital twice this…",
+      "content": "Volunteers that he has been in the hospital twice this year already",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[3]"
+    },
+    {
+      "id": "f096",
+      "category": "other",
+      "topic": "Describes his typical daily meals when asked, including…",
+      "content": "Describes his typical daily meals when asked, including canned soups and deli meats",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[0]"
+    },
+    {
+      "id": "f097",
+      "category": "other",
+      "topic": "Admits he skips his water pill some days so he can go out…",
+      "content": "Admits he skips his water pill some days so he can go out without worrying about bathrooms",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[1]"
+    },
+    {
+      "id": "f098",
+      "category": "other",
+      "topic": "Reveals he drinks sweet tea most of the day and does not…",
+      "content": "Reveals he drinks sweet tea most of the day and does not track fluids",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[2]"
+    },
+    {
+      "id": "f099",
+      "category": "other",
+      "topic": "Shares that he eats fast food a few times a week when…",
+      "content": "Shares that he eats fast food a few times a week when running errands because it is easier than cooking",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[3]"
+    },
+    {
+      "id": "f100",
+      "category": "other",
+      "topic": "Opens up about his work history as a janitor and takes…",
+      "content": "Opens up about his work history as a janitor and takes pride in decades of hard work when asked",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[4]"
+    },
+    {
+      "id": "f101",
+      "category": "other",
+      "topic": "Acknowledges he knows salt is bad for him but says…",
+      "content": "Acknowledges he knows salt is bad for him but says low-sodium food is inedible",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[5]"
+    },
+    {
+      "id": "f102",
+      "category": "other",
+      "topic": "Mentions he takes ibuprofen occasionally for sore knees",
+      "content": "Mentions he takes ibuprofen occasionally for sore knees",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[6]"
+    },
+    {
+      "id": "f103",
+      "category": "other",
+      "topic": "Admits, after some rapport is built, that he is lonely and…",
+      "content": "Admits, after some rapport is built, that he is lonely and eating out is partly about getting out of the apartment",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.reluctant_information[0]"
+    },
+    {
+      "id": "f104",
+      "category": "other",
+      "topic": "Concedes that the last hospitalization scared him more…",
+      "content": "Concedes that the last hospitalization scared him more than he lets on",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.reluctant_information[1]"
+    },
+    {
+      "id": "f105",
+      "category": "other",
+      "topic": "Reluctantly acknowledges he has not been following the…",
+      "content": "Reluctantly acknowledges he has not been following the fluid restriction at all",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.reluctant_information[2]"
+    },
+    {
+      "id": "f106",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Medical records show three hospitalizations for acute decompensated heart failure in the past 18 months",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[0]"
+    },
+    {
+      "id": "f107",
+      "category": "other",
+      "topic": "Prior clinic note documents patient was counseled on 2g…",
+      "content": "Prior clinic note documents patient was counseled on 2g sodium and 1.5L fluid restriction at each visit with minimal sustained adherence",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[1]"
+    },
+    {
+      "id": "f108",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Medical records show eGFR has declined from 58 to 48 mL/min over the past two years, consistent with progressive CKD",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[2]"
+    },
+    {
+      "id": "f109",
+      "category": "other",
+      "topic": "Nursing staff notes document that Walter is friendly and…",
+      "content": "Nursing staff notes document that Walter is friendly and talkative with the physical therapist and nurses but dismissive during physician and student encounters",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[3]"
+    },
+    {
+      "id": "f110",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Medical records show ibuprofen use noted as a concern by the prescribing physician given CKD and heart failure risk",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[4]"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a001",
+      "type": "prior_note",
+      "title": "Referral summary",
+      "items": [
+        {
+          "label": "Primary diagnosis",
+          "value": "Heart Failure (HFrEF, chronic, with recurrent exacerbations)",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Hypertension",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Type 2 Diabetes Mellitus",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Chronic Kidney Disease Stage 3a",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Dyslipidemia",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Furosemide (Lasix) 40 mg Once daily in the morning",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Carvedilol 12.5 mg Twice daily with meals",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Lisinopril 10 mg Once daily",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Spironolactone 25 mg Once daily",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Metformin 500 mg Twice daily with meals",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Atorvastatin 40 mg Once daily at bedtime",
+          "flag": null
+        },
+        {
+          "label": "Allergies",
+          "value": "No known drug or food allergies",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "at_start",
+        "request_keywords": [],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a002",
+      "type": "vitals",
+      "title": "Vital signs",
+      "items": [
+        {
+          "label": "Blood Pressure",
+          "value": "148/88 mmHg",
+          "flag": null
+        },
+        {
+          "label": "Heart Rate",
+          "value": "72 bpm",
+          "flag": null
+        },
+        {
+          "label": "Respiratory Rate",
+          "value": "18/min",
+          "flag": null
+        },
+        {
+          "label": "Temperature",
+          "value": "97.9 F",
+          "flag": null
+        },
+        {
+          "label": "O2 Saturation",
+          "value": "95% on room air",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "vitals",
+          "blood pressure",
+          "heart rate",
+          "temperature"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a003",
+      "type": "anthropometrics",
+      "title": "Anthropometrics",
+      "items": [
+        {
+          "label": "Height",
+          "value": "5'9\"",
+          "flag": null
+        },
+        {
+          "label": "Weight",
+          "value": "198 lbs (includes estimated 8-10 lbs fluid retention)",
+          "flag": null
+        },
+        {
+          "label": "BMI",
+          "value": "29.2 kg/m2",
+          "flag": null
+        },
+        {
+          "label": "Usual dry weight",
+          "value": "approximately 188 lbs per prior records",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "weight",
+          "height",
+          "BMI",
+          "measurements",
+          "waist"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a004",
+      "type": "lab_report",
+      "title": "Laboratory results",
+      "items": [
+        {
+          "label": "BNP",
+          "value": "520 pg/mL (elevated)",
+          "flag": "H"
+        },
+        {
+          "label": "Serum sodium",
+          "value": "136 mEq/L",
+          "flag": null
+        },
+        {
+          "label": "Serum potassium",
+          "value": "4.8 mEq/L",
+          "flag": null
+        },
+        {
+          "label": "Serum creatinine",
+          "value": "1.6 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "eGFR",
+          "value": "48 mL/min/1.73m2",
+          "flag": null
+        },
+        {
+          "label": "HbA1c",
+          "value": "7.8%",
+          "flag": null
+        },
+        {
+          "label": "Fasting glucose",
+          "value": "138 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Total cholesterol",
+          "value": "210 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "LDL",
+          "value": "118 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "HDL",
+          "value": "36 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Triglycerides",
+          "value": "195 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Albumin",
+          "value": "3.4 g/dL (low-normal)",
+          "flag": "L"
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "labs",
+          "bloodwork",
+          "blood test",
+          "A1c",
+          "cholesterol",
+          "glucose"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a005",
+      "type": "other",
+      "title": "Clinical findings",
+      "items": [
+        {
+          "label": "",
+          "value": "2+ pitting edema bilateral lower extremities",
+          "flag": null
+        },
+        {
+          "label": "Mild jugular venous distension",
+          "value": "",
+          "flag": null
+        },
+        {
+          "label": "S",
+          "value": "3 gallop on cardiac auscultation",
+          "flag": null
+        },
+        {
+          "label": "Bibasilar crackles on lung auscultation",
+          "value": "",
+          "flag": null
+        },
+        {
+          "label": "Blood pressure elevated above goal",
+          "value": "",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "exam",
+          "findings",
+          "physical exam"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a006",
+      "type": "prior_note",
+      "title": "Prior records & collateral",
+      "items": [],
+      "text": "- Medical records show three hospitalizations for acute decompensated heart failure in the past 18 months\n- Medical records show eGFR has declined from 58 to 48 mL/min over the past two years, consistent with progressive CKD\n- Medical records show ibuprofen use noted as a concern by the prescribing physician given CKD and heart failure risk",
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "records",
+          "prior notes",
+          "chart",
+          "history",
+          "previous visits"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Establish rapport with a resistant older adult patient using respectful, patient-centered communication.",
+      "expected_discoveries": [
+        {
+          "id": "o1.d1",
+          "text": "Patient is initially dismissive of students and requires a non-defensive, respectful approach",
+          "linked_fact_ids": [
+            "f092",
+            "f109"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o1.d2",
+          "text": "Asking about his work history and life experience helps him open up",
+          "linked_fact_ids": [
+            "f100",
+            "f001"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o1.d3",
+          "text": "Avoiding a lecturing tone is essential to keeping him engaged",
+          "linked_fact_ids": [
+            "f072",
+            "f078"
+          ],
+          "link_method": "llm_skill"
+        },
+        {
+          "id": "o1.d4",
+          "text": "Humor and directness, when used appropriately, build trust with this patient",
+          "linked_fact_ids": [
+            "f072",
+            "f074"
+          ],
+          "link_method": "llm_skill"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May open with a sarcastic comment about being seen by a student again",
+        "Will test the student with blunt remarks to see how they respond under pressure",
+        "Warms noticeably if the student asks a genuine question about his life or work",
+        "May disengage or shut down if he feels he is being talked down to"
+      ],
+      "points": null,
+      "min_level": "M1"
+    },
+    {
+      "id": "o2",
+      "objective": "Conduct a thorough dietary recall and identify key sources of excess sodium and fluid in the patient's diet.",
+      "expected_discoveries": [
+        {
+          "id": "o2.d1",
+          "text": "Canned soups, deli meats, and seasoned convenience foods are primary sodium sources",
+          "linked_fact_ids": [
+            "f051",
+            "f052",
+            "f057",
+            "f096"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o2.d2",
+          "text": "Sweet tea consumed throughout the day contributes significantly to fluid intake",
+          "linked_fact_ids": [
+            "f055",
+            "f060",
+            "f098"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o2.d3",
+          "text": "Patient does not track fluid intake and is unaware of how much he consumes",
+          "linked_fact_ids": [
+            "f047",
+            "f064",
+            "f098",
+            "f105"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o2.d4",
+          "text": "Skipping meals leads to larger, saltier meals later in the day",
+          "linked_fact_ids": [
+            "f046",
+            "f061"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o2.d5",
+          "text": "Ibuprofen use is an additional concern for fluid retention and kidney function",
+          "linked_fact_ids": [
+            "f043",
+            "f102",
+            "f110"
+          ],
+          "link_method": "llm"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May minimize or underreport food intake initially",
+        "Will become more forthcoming about diet details once he feels the student is not judging him",
+        "May express frustration that everything he enjoys is on the restricted list"
+      ],
+      "points": null,
+      "min_level": "M1"
+    },
+    {
+      "id": "o3",
+      "objective": "Develop a practical, individualized medical nutrition therapy plan for heart failure in an older adult living alone on a fixed income.",
+      "expected_discoveries": [
+        {
+          "id": "o3.d1",
+          "text": "Standard 2g sodium and 1.5L fluid restriction recommendations need to be translated into concrete, affordable food swaps",
+          "linked_fact_ids": [
+            "f107",
+            "f085"
+          ],
+          "link_method": "llm_skill"
+        },
+        {
+          "id": "o3.d2",
+          "text": "Patient needs low-burden strategies that do not require extensive cooking for one person",
+          "linked_fact_ids": [
+            "f084",
+            "f087",
+            "f002"
+          ],
+          "link_method": "llm_skill"
+        },
+        {
+          "id": "o3.d3",
+          "text": "Low-sodium canned goods and seasoning alternatives can address both cost and taste concerns",
+          "linked_fact_ids": [
+            "f079",
+            "f081",
+            "f063",
+            "f085"
+          ],
+          "link_method": "llm_skill"
+        },
+        {
+          "id": "o3.d4",
+          "text": "Fluid restriction counseling must address sweet tea specifically as a culturally preferred beverage",
+          "linked_fact_ids": [
+            "f055",
+            "f060",
+            "f086"
+          ],
+          "link_method": "llm_skill"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Will resist any plan that feels like total deprivation of preferred foods",
+        "More receptive to small, specific changes than an overhaul of his entire diet",
+        "May ask pointed questions about cost and practicality that the student must be prepared to answer"
+      ],
+      "points": null,
+      "min_level": "M2"
+    },
+    {
+      "id": "o4",
+      "objective": "Apply motivational interviewing techniques to explore ambivalence and identify the patient's own reasons for change.",
+      "expected_discoveries": [
+        {
+          "id": "o4.d1",
+          "text": "Fear of rehospitalization and loss of independence are the patient's strongest motivators",
+          "linked_fact_ids": [
+            "f065",
+            "f066",
+            "f069",
+            "f104"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o4.d2",
+          "text": "Patient has demonstrated capacity for behavior change by quitting smoking",
+          "linked_fact_ids": [
+            "f018",
+            "f049",
+            "f073"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o4.d3",
+          "text": "Ambivalence is present: he dislikes hospitalizations but also dislikes dietary restrictions",
+          "linked_fact_ids": [
+            "f076",
+            "f077",
+            "f082",
+            "f068"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o4.d4",
+          "text": "Eliciting his own words about what he wants to avoid is more effective than providing external reasons",
+          "linked_fact_ids": [
+            "f065",
+            "f066",
+            "f070"
+          ],
+          "link_method": "llm_skill"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May initially respond to open-ended questions with short, dismissive answers",
+        "Will engage more deeply if the student reflects his stated values back to him",
+        "May surprise the student with candid self-awareness once trust is established"
+      ],
+      "points": null,
+      "min_level": "M2"
+    },
+    {
+      "id": "o5",
+      "objective": "Recognize the intersection of medication adherence and dietary behavior in heart failure management and communicate concerns appropriately.",
+      "expected_discoveries": [
+        {
+          "id": "o5.d1",
+          "text": "Patient skips furosemide to avoid urinary urgency, directly contributing to fluid retention and edema",
+          "linked_fact_ids": [
+            "f026",
+            "f027",
+            "f097",
+            "f088"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o5.d2",
+          "text": "Ibuprofen use is contraindicated given CKD and heart failure and should be flagged for the supervising clinician",
+          "linked_fact_ids": [
+            "f043",
+            "f102",
+            "f110"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o5.d3",
+          "text": "Inconsistent metformin use is tied to irregular meal patterns",
+          "linked_fact_ids": [
+            "f038",
+            "f046"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o5.d4",
+          "text": "Student should understand the dietitian's role in flagging medication-nutrition interactions and coordinating with the care team",
+          "linked_fact_ids": [],
+          "link_method": "llm_skill"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May be defensive when diuretic skipping is raised",
+        "Will likely not volunteer ibuprofen use unless specifically asked about over-the-counter medications",
+        "May be receptive to a practical suggestion about timing the diuretic to fit his schedule"
+      ],
+      "points": null,
+      "min_level": "M3"
+    },
+    {
+      "id": "o6",
+      "objective": "Address social determinants of health and identify community or interprofessional resources to support dietary adherence in an isolated older adult.",
+      "expected_discoveries": [
+        {
+          "id": "o6.d1",
+          "text": "Patient lives alone with limited social support, which affects meal preparation and motivation",
+          "linked_fact_ids": [
+            "f002",
+            "f007",
+            "f084"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o6.d2",
+          "text": "Loneliness contributes to eating out at fast food restaurants as a form of social engagement",
+          "linked_fact_ids": [
+            "f062",
+            "f099",
+            "f103"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o6.d3",
+          "text": "Community resources such as Meals on Wheels, senior center meal programs, or food pantries with low-sodium options may be appropriate",
+          "linked_fact_ids": [],
+          "link_method": "llm_skill"
+        },
+        {
+          "id": "o6.d4",
+          "text": "Coordination with the clinic social worker and the patient's existing rapport with nursing and PT staff can support a team-based approach",
+          "linked_fact_ids": [
+            "f007",
+            "f074"
+          ],
+          "link_method": "llm_skill"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May initially reject the idea of meal delivery programs as charity or a sign of dependence",
+        "Could be open to senior center programs if framed around social connection rather than need",
+        "May respond well if the student acknowledges his independence while presenting options as tools, not crutches"
+      ],
+      "points": null,
+      "min_level": "M3"
+    }
+  ],
+  "knowledge_sources": [],
+  "documents": [],
+  "assumptions": [
+    "Heart failure type assumed to be HFrEF based on typical presentation and medication regimen; faculty did not specify ejection fraction.",
+    "Secondary diagnoses of hypertension, type 2 diabetes, CKD stage 3a, and dyslipidemia were added as common, direct comorbidities of chronic heart failure in a 72-year-old African-American male; none were specified by faculty.",
+    "Marital status listed as widowed or divorced based on faculty note that patient lives alone; exact status not confirmed.",
+    "Anthropometrics, vital signs, and laboratory values are plausible estimates consistent with a decompensated heart failure patient with CKD and diabetes; none were provided by faculty.",
+    "Medication regimen reflects standard guideline-directed medical therapy for HFrEF; no medications were specified by faculty.",
+    "Ibuprofen OTC use was added as a realistic and clinically significant finding for an older adult with joint pain, CKD, and heart failure; it was not specified by faculty.",
+    "Southern-influenced dietary pattern assumed based on African-American cultural background and age cohort; this is a plausible assumption and not a stereotype, but should be confirmed in simulation.",
+    "Medicare insurance assumed based on age 72 and retired status in the United States.",
+    "Education level of high school diploma assumed based on occupation as a janitor; not specified by faculty.",
+    "Three hospitalizations in 18 months assumed to reflect frequent flier status as described by faculty."
+  ],
+  "optional_details": [
+    "Has an adult child who lives out of town and calls occasionally",
+    "Watches sports on television as a primary leisure activity",
+    "Has a good relationship with the clinic's physical therapist and nursing staff",
+    "Previously worked in a large municipal building for over 30 years and takes pride in that career",
+    "May reference coworkers or the physical therapist by name when warming up to conversation"
+  ]
+}

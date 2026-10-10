@@ -1,0 +1,1539 @@
+{
+  "id": "maria-lopez-d07e88",
+  "status": "draft",
+  "version": 1,
+  "created_at": "2026-10-10T19:57:08.120250Z",
+  "persona": {
+    "name": "Maria Lopez",
+    "age": 58,
+    "sex": "female",
+    "description": "Maria Lopez is a 58-year-old woman with a 10-year history of uncontrolled Type 2 Diabetes, presenting with an A1c of 9.4%. She is anxious, talkative, and frequently redirects conversation toward worries about her family. She takes metformin 1000 mg twice daily but often skips lunch, contributing to irregular medication timing and poor glycemic control. Counseling must address meal regularity, carbohydrate distribution, and the emotional drivers behind her eating patterns while navigating her tendency to deflect from her own health needs.",
+    "keywords": [
+      "uncontrolled type 2 diabetes",
+      "A1c 9.4",
+      "metformin",
+      "skips lunch",
+      "irregular meal pattern",
+      "anxiety",
+      "family-focused",
+      "middle-aged woman",
+      "medical nutrition therapy",
+      "carbohydrate distribution"
+    ],
+    "occupation": "Part-time homemaker and caregiver for elderly parent",
+    "residence": "Urban or suburban community",
+    "ethnicity": "Hispanic or Latino",
+    "language": "English and Spanish (bilingual)",
+    "marital_status": "Married",
+    "education_level": "High school diploma",
+    "insurance": "Public insurance (Medicaid) or employer-sponsored through spouse",
+    "cultural_context": "Traditional home-cooked meals are central to family life; food is strongly tied to cultural identity and expressions of care. Prioritizing family members' needs over her own health is common.",
+    "personality": "Warm, anxious, and highly talkative; tends to center conversations on her family's needs and worries rather than her own health; caring and self-sacrificing by nature",
+    "communication_style": "Verbose and expressive; frequently brings up family members during health discussions; responds well to empathetic listening and validation; may need gentle redirection to stay focused on her own needs",
+    "support_system": "Husband and adult children at home; cares for an elderly parent; family is generally supportive but not specifically engaged in her diabetes management",
+    "readiness_to_change": "Contemplative to preparation stage; aware that changes are needed and expresses desire to improve, but uncertain where to start and worried about disrupting family routines",
+    "portrait_path": null
+  },
+  "settings": {
+    "student_role": "Dietetics student",
+    "encounter_goal": "Nutrition assessment and counseling (Nutrition Care Process)",
+    "setting": "Outpatient clinic",
+    "rubric_id": "encounter_evaluation_rubric",
+    "opening_trust": 1,
+    "difficulty_notes": ""
+  },
+  "faculty_brief": {
+    "background": "",
+    "notes": "Type 2 diabetes for 10 years, A1c 9.4, takes metformin 1000 mg twice daily, often skips lunch",
+    "personality": "anxious, talkative, worries about her family",
+    "summary": "Uncontrolled type 2 diabetes"
+  },
+  "primary_diagnosis": "Type 2 Diabetes Mellitus (Uncontrolled)",
+  "secondary_diagnoses": [
+    "Overweight or Obesity",
+    "Hypertension (presumed, consistent with metabolic profile)"
+  ],
+  "medications": [
+    {
+      "name": "Metformin",
+      "dose": "1000 mg",
+      "frequency": "Twice daily (morning and evening with meals)",
+      "purpose": "To lower blood glucose levels in Type 2 Diabetes",
+      "adherence": "Takes morning dose consistently; evening dose is generally taken; midday dose timing is disrupted because she skips lunch and does not associate a meal with a dose",
+      "patient_concerns": "Occasionally notices stomach upset; worries more about whether the medication is actually working given her high blood sugar readings"
+    }
+  ],
+  "allergies": [],
+  "facts": [
+    {
+      "id": "f001",
+      "category": "social",
+      "topic": "occupation",
+      "content": "Part-time homemaker and caregiver for elderly parent",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.occupation"
+    },
+    {
+      "id": "f002",
+      "category": "social",
+      "topic": "living situation",
+      "content": "Urban or suburban community",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.residence"
+    },
+    {
+      "id": "f003",
+      "category": "social",
+      "topic": "marital status",
+      "content": "Married",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.marital_status"
+    },
+    {
+      "id": "f004",
+      "category": "social",
+      "topic": "education",
+      "content": "High school diploma",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.education_level"
+    },
+    {
+      "id": "f005",
+      "category": "social",
+      "topic": "insurance",
+      "content": "Public insurance (Medicaid) or employer-sponsored through spouse",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.insurance"
+    },
+    {
+      "id": "f006",
+      "category": "social",
+      "topic": "language",
+      "content": "English and Spanish (bilingual)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.language"
+    },
+    {
+      "id": "f007",
+      "category": "social",
+      "topic": "support system",
+      "content": "Husband and adult children at home; cares for an elderly parent; family is generally supportive but not specifically engaged in her diabetes management",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.support_system"
+    },
+    {
+      "id": "f008",
+      "category": "diagnosis",
+      "topic": "main diagnosis / reason for visit",
+      "content": "Type 2 Diabetes Mellitus (Uncontrolled)",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "faculty",
+      "source_path": "clinical_profile.primary_diagnosis"
+    },
+    {
+      "id": "f009",
+      "category": "diagnosis",
+      "topic": "other condition: Overweight or Obesity",
+      "content": "Overweight or Obesity",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.secondary_diagnoses[0]"
+    },
+    {
+      "id": "f010",
+      "category": "diagnosis",
+      "topic": "other condition: Hypertension (presumed, consistent…",
+      "content": "Hypertension (presumed, consistent with metabolic profile)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.secondary_diagnoses[1]"
+    },
+    {
+      "id": "f011",
+      "category": "history",
+      "topic": "Diagnosis of Type 2 Diabetes approximately 10 years ago",
+      "content": "Diagnosis of Type 2 Diabetes approximately 10 years ago",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "faculty",
+      "source_path": "clinical_profile.medical_history[0]"
+    },
+    {
+      "id": "f012",
+      "category": "history",
+      "topic": "No documented history of diabetic complications at this time",
+      "content": "No documented history of diabetic complications at this time",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[1]"
+    },
+    {
+      "id": "f013",
+      "category": "history",
+      "topic": "Family history of Type 2 Diabetes (mother)",
+      "content": "Family history of Type 2 Diabetes (mother)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "faculty",
+      "source_path": "clinical_profile.medical_history[2]"
+    },
+    {
+      "id": "f014",
+      "category": "symptom",
+      "topic": "symptom: Fatigue and low energy",
+      "content": "Fatigue and low energy",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[0]"
+    },
+    {
+      "id": "f015",
+      "category": "symptom",
+      "topic": "symptom: Frequent thirst and increased urination",
+      "content": "Frequent thirst and increased urination",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[1]"
+    },
+    {
+      "id": "f016",
+      "category": "symptom",
+      "topic": "symptom: Occasional headaches",
+      "content": "Occasional headaches",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[2]"
+    },
+    {
+      "id": "f017",
+      "category": "symptom",
+      "topic": "symptom: Difficulty sleeping",
+      "content": "Difficulty sleeping",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[3]"
+    },
+    {
+      "id": "f018",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "No known allergies",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.allergies"
+    },
+    {
+      "id": "f019",
+      "category": "medication",
+      "topic": "medication: Metformin",
+      "content": "Takes Metformin 1000 mg Twice daily (morning and evening with meals) for To lower blood glucose levels in Type 2 Diabetes",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "faculty",
+      "source_path": "medication_profile.medications[0]"
+    },
+    {
+      "id": "f020",
+      "category": "medication",
+      "topic": "how they take Metformin",
+      "content": "Metformin adherence: Takes morning dose consistently; evening dose is generally taken; midday dose timing is disrupted because she skips lunch and does not associate a meal with a dose",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[0].adherence"
+    },
+    {
+      "id": "f021",
+      "category": "medication",
+      "topic": "concerns/side effects of Metformin",
+      "content": "About Metformin: Occasionally notices stomach upset; worries more about whether the medication is actually working given her high blood sugar readings",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[0].patient_concerns"
+    },
+    {
+      "id": "f022",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Occasional use of herbal teas believed to help with blood sugar (e.g., cinnamon tea)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.supplements_and_otc[0]"
+    },
+    {
+      "id": "f023",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Multivitamin taken inconsistently",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.supplements_and_otc[1]"
+    },
+    {
+      "id": "f024",
+      "category": "nutrition",
+      "topic": "usual diet",
+      "content": "Mixed traditional home-cooked meals and convenience foods; moderate to high in refined carbohydrates, white rice, tortillas, and sweetened beverages; low in non-starchy vegetables and lean proteins at midday",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.dietary_pattern"
+    },
+    {
+      "id": "f025",
+      "category": "nutrition",
+      "topic": "meal timing / pattern",
+      "content": "Eats breakfast (often sweetened coffee and pan dulce), skips lunch regularly, and has a large dinner with the family; occasional evening snacking",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.meal_pattern"
+    },
+    {
+      "id": "f026",
+      "category": "nutrition",
+      "topic": "fluids / hydration",
+      "content": "Primarily sweetened coffee, juice, and some water; low plain water intake throughout the day",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.hydration"
+    },
+    {
+      "id": "f027",
+      "category": "lifestyle",
+      "topic": "physical activity",
+      "content": "Minimal structured exercise; light household activity and caregiving tasks; no regular walking or exercise routine",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.physical_activity"
+    },
+    {
+      "id": "f028",
+      "category": "lifestyle",
+      "topic": "alcohol / tobacco / drugs",
+      "content": "None reported",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.substance_use"
+    },
+    {
+      "id": "f029",
+      "category": "lifestyle",
+      "topic": "sleep",
+      "content": "6 to 7 hours; reports difficulty falling asleep and waking at night, possibly related to nocturia from hyperglycemia",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.sleep"
+    },
+    {
+      "id": "f030",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "White rice and beans",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[0]"
+    },
+    {
+      "id": "f031",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Corn tortillas and flour tortillas",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[1]"
+    },
+    {
+      "id": "f032",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Sweetened coffee or café de olla in the morning",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[2]"
+    },
+    {
+      "id": "f033",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Pan dulce or sweet bread as a snack",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[3]"
+    },
+    {
+      "id": "f034",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Home-cooked stews and soups for dinner",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[4]"
+    },
+    {
+      "id": "f035",
+      "category": "nutrition",
+      "topic": "Skipping lunch entirely most days of the week",
+      "content": "Skipping lunch entirely most days of the week",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[0]"
+    },
+    {
+      "id": "f036",
+      "category": "nutrition",
+      "topic": "Large carbohydrate-heavy dinners after a day of minimal…",
+      "content": "Large carbohydrate-heavy dinners after a day of minimal eating",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[1]"
+    },
+    {
+      "id": "f037",
+      "category": "nutrition",
+      "topic": "Sweetened beverage intake including juice and sweetened…",
+      "content": "Sweetened beverage intake including juice and sweetened coffee",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[2]"
+    },
+    {
+      "id": "f038",
+      "category": "nutrition",
+      "topic": "Cooking for family without modifying portions for herself",
+      "content": "Cooking for family without modifying portions for herself",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[3]"
+    },
+    {
+      "id": "f039",
+      "category": "nutrition",
+      "topic": "Emotional eating or stress-driven snacking in the evening",
+      "content": "Emotional eating or stress-driven snacking in the evening",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[4]"
+    },
+    {
+      "id": "f040",
+      "category": "nutrition",
+      "topic": "Use of herbal remedies as perceived blood sugar management",
+      "content": "Use of herbal remedies as perceived blood sugar management",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[5]"
+    },
+    {
+      "id": "f041",
+      "category": "psychosocial",
+      "topic": "goal: Have enough energy to care for her family…",
+      "content": "Have enough energy to care for her family and elderly parent",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[0]"
+    },
+    {
+      "id": "f042",
+      "category": "psychosocial",
+      "topic": "goal: Avoid serious diabetes complications so she…",
+      "content": "Avoid serious diabetes complications so she can be there for her children",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[1]"
+    },
+    {
+      "id": "f043",
+      "category": "psychosocial",
+      "topic": "goal: Understand what she should be eating to…",
+      "content": "Understand what she should be eating to bring her blood sugar down",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[2]"
+    },
+    {
+      "id": "f044",
+      "category": "psychosocial",
+      "topic": "goal: Lose some weight if possible",
+      "content": "Lose some weight if possible",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[3]"
+    },
+    {
+      "id": "f045",
+      "category": "psychosocial",
+      "topic": "motivation: Being healthy enough to care for her family…",
+      "content": "Being healthy enough to care for her family and grandchildren in the future",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.motivations[0]"
+    },
+    {
+      "id": "f046",
+      "category": "psychosocial",
+      "topic": "motivation: Reducing fatigue so she has more energy…",
+      "content": "Reducing fatigue so she has more energy throughout the day",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.motivations[1]"
+    },
+    {
+      "id": "f047",
+      "category": "psychosocial",
+      "topic": "motivation: Avoiding insulin injections if possible",
+      "content": "Avoiding insulin injections if possible",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.motivations[2]"
+    },
+    {
+      "id": "f048",
+      "category": "psychosocial",
+      "topic": "strength: Motivated by family and deeply invested in…",
+      "content": "Motivated by family and deeply invested in her long-term health for their sake",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[0]"
+    },
+    {
+      "id": "f049",
+      "category": "psychosocial",
+      "topic": "strength: Already cooks most meals at home, providing…",
+      "content": "Already cooks most meals at home, providing an opportunity for modification",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[1]"
+    },
+    {
+      "id": "f050",
+      "category": "psychosocial",
+      "topic": "strength: Open to learning if information is…",
+      "content": "Open to learning if information is practical and family-inclusive",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[2]"
+    },
+    {
+      "id": "f051",
+      "category": "psychosocial",
+      "topic": "strength: Consistent with morning medication routine",
+      "content": "Consistent with morning medication routine",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[3]"
+    },
+    {
+      "id": "f052",
+      "category": "psychosocial",
+      "topic": "belief: Believes she must cook traditional foods to…",
+      "content": "Believes she must cook traditional foods to show love and care for her family",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[0]"
+    },
+    {
+      "id": "f053",
+      "category": "psychosocial",
+      "topic": "belief: Thinks skipping lunch saves calories and…",
+      "content": "Thinks skipping lunch saves calories and might help with weight loss",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[1]"
+    },
+    {
+      "id": "f054",
+      "category": "psychosocial",
+      "topic": "belief: Believes herbal teas can help control blood…",
+      "content": "Believes herbal teas can help control blood sugar naturally",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[2]"
+    },
+    {
+      "id": "f055",
+      "category": "psychosocial",
+      "topic": "belief: Feels that eating less overall is the right…",
+      "content": "Feels that eating less overall is the right approach to managing diabetes",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[3]"
+    },
+    {
+      "id": "f056",
+      "category": "psychosocial",
+      "topic": "concern: Worried that her diabetes will get worse…",
+      "content": "Worried that her diabetes will get worse and she will become a burden to her family",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[0]"
+    },
+    {
+      "id": "f057",
+      "category": "psychosocial",
+      "topic": "concern: Concerned about the cost of special…",
+      "content": "Concerned about the cost of special diabetic foods",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[1]"
+    },
+    {
+      "id": "f058",
+      "category": "psychosocial",
+      "topic": "concern: Unsure how to change her cooking without…",
+      "content": "Unsure how to change her cooking without upsetting family members who do not have diabetes",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[2]"
+    },
+    {
+      "id": "f059",
+      "category": "psychosocial",
+      "topic": "concern: Anxious about what her blood sugar numbers…",
+      "content": "Anxious about what her blood sugar numbers mean",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[3]"
+    },
+    {
+      "id": "f060",
+      "category": "psychosocial",
+      "topic": "barrier: Skipping lunch due to being busy with…",
+      "content": "Skipping lunch due to being busy with caregiving and household tasks",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[0]"
+    },
+    {
+      "id": "f061",
+      "category": "psychosocial",
+      "topic": "barrier: Cooking one shared meal for the whole…",
+      "content": "Cooking one shared meal for the whole family without diabetes-friendly modifications",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[1]"
+    },
+    {
+      "id": "f062",
+      "category": "psychosocial",
+      "topic": "barrier: Limited nutrition knowledge specific to…",
+      "content": "Limited nutrition knowledge specific to diabetes management",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[2]"
+    },
+    {
+      "id": "f063",
+      "category": "psychosocial",
+      "topic": "barrier: Anxiety and stress from caregiving…",
+      "content": "Anxiety and stress from caregiving responsibilities affecting eating habits",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[3]"
+    },
+    {
+      "id": "f064",
+      "category": "psychosocial",
+      "topic": "barrier: Belief that healthy food is expensive or…",
+      "content": "Belief that healthy food is expensive or requires special products",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[4]"
+    },
+    {
+      "id": "f065",
+      "category": "psychosocial",
+      "topic": "fear: Developing complications such as blindness…",
+      "content": "Developing complications such as blindness or kidney failure",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.fears[0]"
+    },
+    {
+      "id": "f066",
+      "category": "psychosocial",
+      "topic": "fear: Needing insulin and what that would mean…",
+      "content": "Needing insulin and what that would mean for her independence",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.fears[1]"
+    },
+    {
+      "id": "f067",
+      "category": "psychosocial",
+      "topic": "fear: Being unable to care for her family if her…",
+      "content": "Being unable to care for her family if her health declines",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.fears[2]"
+    },
+    {
+      "id": "f068",
+      "category": "other",
+      "topic": "Reports feeling tired all the time and not having enough…",
+      "content": "Reports feeling tired all the time and not having enough energy",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[0]"
+    },
+    {
+      "id": "f069",
+      "category": "other",
+      "topic": "Mentions her blood sugar has been high and her doctor is…",
+      "content": "Mentions her blood sugar has been high and her doctor is concerned",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[1]"
+    },
+    {
+      "id": "f070",
+      "category": "other",
+      "topic": "Quickly shifts to talking about stress from caring for her…",
+      "content": "Quickly shifts to talking about stress from caring for her mother and worrying about her children",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[2]"
+    },
+    {
+      "id": "f071",
+      "category": "other",
+      "topic": "States she tries to eat well but is not sure what that…",
+      "content": "States she tries to eat well but is not sure what that means for diabetes",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[3]"
+    },
+    {
+      "id": "f072",
+      "category": "other",
+      "topic": "Skips lunch most days because she is too busy caring for…",
+      "content": "Skips lunch most days because she is too busy caring for others to stop and eat",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[0]"
+    },
+    {
+      "id": "f073",
+      "category": "other",
+      "topic": "Eats a large dinner with the family that is high in white…",
+      "content": "Eats a large dinner with the family that is high in white rice, tortillas, and starchy foods",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[1]"
+    },
+    {
+      "id": "f074",
+      "category": "other",
+      "topic": "Drinks sweetened coffee in the morning and sometimes juice…",
+      "content": "Drinks sweetened coffee in the morning and sometimes juice during the day",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[2]"
+    },
+    {
+      "id": "f075",
+      "category": "other",
+      "topic": "Takes metformin in the morning and evening but the midday…",
+      "content": "Takes metformin in the morning and evening but the midday pattern is disrupted by skipping lunch",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[3]"
+    },
+    {
+      "id": "f076",
+      "category": "other",
+      "topic": "Uses cinnamon tea and believes it helps her blood sugar",
+      "content": "Uses cinnamon tea and believes it helps her blood sugar",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[4]"
+    },
+    {
+      "id": "f077",
+      "category": "other",
+      "topic": "Has not been checking her blood glucose at home regularly",
+      "content": "Has not been checking her blood glucose at home regularly",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[5]"
+    },
+    {
+      "id": "f078",
+      "category": "other",
+      "topic": "Does not exercise regularly but is on her feet doing…",
+      "content": "Does not exercise regularly but is on her feet doing housework and caregiving",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[6]"
+    },
+    {
+      "id": "f079",
+      "category": "other",
+      "topic": "Admits she sometimes eats pan dulce or sweet snacks in the…",
+      "content": "Admits she sometimes eats pan dulce or sweet snacks in the evening when she is stressed or lonely",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.reluctant_information[0]"
+    },
+    {
+      "id": "f080",
+      "category": "other",
+      "topic": "Acknowledges she has not been following any specific meal…",
+      "content": "Acknowledges she has not been following any specific meal plan despite being told to by her doctor",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.reluctant_information[1]"
+    },
+    {
+      "id": "f081",
+      "category": "other",
+      "topic": "Hesitantly shares that she feels guilty prioritizing her…",
+      "content": "Hesitantly shares that she feels guilty prioritizing her own meals when she is busy taking care of everyone else",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.reluctant_information[2]"
+    },
+    {
+      "id": "f082",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Medical records show A1c has been above 8.5% for the past two years with minimal improvement",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[0]"
+    },
+    {
+      "id": "f083",
+      "category": "other",
+      "topic": "Prior clinic note documents that patient was counseled on…",
+      "content": "Prior clinic note documents that patient was counseled on meal planning at last visit but did not follow up with dietitian",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[1]"
+    },
+    {
+      "id": "f084",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Chart indicates fasting glucose readings consistently above 200 mg/dL on home log when available",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[2]"
+    },
+    {
+      "id": "f085",
+      "category": "other",
+      "topic": "Provider note documents concern about progression to…",
+      "content": "Provider note documents concern about progression to insulin therapy if A1c does not improve within the next 3 to 6 months",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[3]"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a001",
+      "type": "prior_note",
+      "title": "Referral summary",
+      "items": [
+        {
+          "label": "Primary diagnosis",
+          "value": "Type 2 Diabetes Mellitus (Uncontrolled)",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Overweight or Obesity",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Hypertension (presumed, consistent with metabolic profile)",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Metformin 1000 mg Twice daily (morning and evening with meals)",
+          "flag": null
+        },
+        {
+          "label": "Allergies",
+          "value": "NKA",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "at_start",
+        "request_keywords": [],
+        "after_fact_id": null
+      },
+      "origin": "faculty"
+    },
+    {
+      "id": "a002",
+      "type": "vitals",
+      "title": "Vital signs",
+      "items": [
+        {
+          "label": "Heart Rate",
+          "value": "80 bpm",
+          "flag": null
+        },
+        {
+          "label": "Blood Pressure",
+          "value": "134/86 mmHg",
+          "flag": null
+        },
+        {
+          "label": "Respiratory Rate",
+          "value": "16/min",
+          "flag": null
+        },
+        {
+          "label": "Temperature",
+          "value": "98.6 F",
+          "flag": null
+        },
+        {
+          "label": "O2 Saturation",
+          "value": "98%",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "vitals",
+          "blood pressure",
+          "heart rate",
+          "temperature"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a003",
+      "type": "anthropometrics",
+      "title": "Anthropometrics",
+      "items": [
+        {
+          "label": "Height",
+          "value": "5'3\"",
+          "flag": null
+        },
+        {
+          "label": "Weight",
+          "value": "170 lbs",
+          "flag": null
+        },
+        {
+          "label": "BMI",
+          "value": "30.1 kg/m2",
+          "flag": null
+        },
+        {
+          "label": "Waist circumference",
+          "value": "37 inches (estimated)",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "weight",
+          "height",
+          "BMI",
+          "measurements",
+          "waist"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a004",
+      "type": "lab_report",
+      "title": "Laboratory results",
+      "items": [
+        {
+          "label": "HbA1c",
+          "value": "9.4%",
+          "flag": null
+        },
+        {
+          "label": "Fasting glucose",
+          "value": "approximately 210 mg/dL (consistent with A1c)",
+          "flag": null
+        },
+        {
+          "label": "Lipid panel",
+          "value": "pending or not recently reviewed",
+          "flag": null
+        },
+        {
+          "label": "Kidney function",
+          "value": "not recently reviewed",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "labs",
+          "bloodwork",
+          "blood test",
+          "A1c",
+          "cholesterol",
+          "glucose"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "faculty"
+    },
+    {
+      "id": "a005",
+      "type": "other",
+      "title": "Clinical findings",
+      "items": [
+        {
+          "label": "BMI approximately",
+          "value": "30 kg/m2 (overweight to obese range)",
+          "flag": null
+        },
+        {
+          "label": "Blood pressure",
+          "value": "134/86 mmHg",
+          "flag": null
+        },
+        {
+          "label": "No peripheral neuropathy documented at this visit",
+          "value": "",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "exam",
+          "findings",
+          "physical exam"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "faculty"
+    },
+    {
+      "id": "a006",
+      "type": "prior_note",
+      "title": "Prior records & collateral",
+      "items": [],
+      "text": "- Medical records show A1c has been above 8.5% for the past two years with minimal improvement\n- Chart indicates fasting glucose readings consistently above 200 mg/dL on home log when available",
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "records",
+          "prior notes",
+          "chart",
+          "history",
+          "previous visits"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Conduct a thorough diet history and identify specific eating behaviors contributing to uncontrolled blood glucose.",
+      "expected_discoveries": [
+        {
+          "id": "o1.d1",
+          "text": "Patient skips lunch daily, creating a prolonged fasting period followed by a large carbohydrate-heavy dinner",
+          "linked_fact_ids": [
+            "f035",
+            "f036",
+            "f072",
+            "f073"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o1.d2",
+          "text": "High intake of refined carbohydrates including white rice, tortillas, and pan dulce",
+          "linked_fact_ids": [
+            "f030",
+            "f031",
+            "f033",
+            "f024"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o1.d3",
+          "text": "Sweetened beverages such as café de olla and juice contribute significant added sugar",
+          "linked_fact_ids": [
+            "f032",
+            "f037",
+            "f026",
+            "f074"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o1.d4",
+          "text": "Irregular meal timing disrupts consistent carbohydrate distribution throughout the day",
+          "linked_fact_ids": [
+            "f025",
+            "f035",
+            "f036"
+          ],
+          "link_method": "llm"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Will talk at length about what she cooks for her family rather than what she personally eats",
+        "May not initially recognize skipping lunch as a problem, believing it helps with weight or is unavoidable",
+        "Responds openly when asked about a typical day in a non-judgmental way"
+      ],
+      "points": null,
+      "min_level": "M1"
+    },
+    {
+      "id": "o2",
+      "objective": "Build rapport with an anxious, family-focused patient and redirect the conversation to her own health needs.",
+      "expected_discoveries": [
+        {
+          "id": "o2.d1",
+          "text": "Patient frequently deflects to family concerns when asked about herself",
+          "linked_fact_ids": [
+            "f070",
+            "f081"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o2.d2",
+          "text": "Anxiety about being a burden to her family is a core emotional driver",
+          "linked_fact_ids": [
+            "f056",
+            "f067"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o2.d3",
+          "text": "Validating her caregiving role before addressing her health increases engagement",
+          "linked_fact_ids": [],
+          "link_method": "llm_skill"
+        },
+        {
+          "id": "o2.d4",
+          "text": "Patient responds well to framing her own health as necessary for her family's wellbeing",
+          "linked_fact_ids": [
+            "f041",
+            "f045",
+            "f048"
+          ],
+          "link_method": "llm"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May spend several minutes discussing her mother's or children's health before returning to her own",
+        "Will become more focused and engaged when the student acknowledges her caregiving responsibilities",
+        "May become tearful or emotional when discussing fears about complications"
+      ],
+      "points": null,
+      "min_level": "M1"
+    },
+    {
+      "id": "o3",
+      "objective": "Develop a realistic, culturally appropriate nutrition intervention for Type 2 Diabetes management.",
+      "expected_discoveries": [
+        {
+          "id": "o3.d1",
+          "text": "Traditional foods such as beans, vegetables, and lean proteins can be incorporated into a diabetes-friendly meal plan",
+          "linked_fact_ids": [
+            "f030",
+            "f034"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o3.d2",
+          "text": "Portion modification and carbohydrate distribution across three meals is more achievable than eliminating cultural foods",
+          "linked_fact_ids": [],
+          "link_method": "llm_skill"
+        },
+        {
+          "id": "o3.d3",
+          "text": "Adding a structured lunch would improve glycemic control and support consistent metformin timing",
+          "linked_fact_ids": [
+            "f035",
+            "f075",
+            "f060"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o3.d4",
+          "text": "Replacing sweetened beverages with water or unsweetened drinks is a high-impact, low-barrier change",
+          "linked_fact_ids": [
+            "f026",
+            "f037",
+            "f074"
+          ],
+          "link_method": "llm"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May worry that a diabetes meal plan means she cannot cook traditional foods for her family",
+        "Will be receptive to strategies that do not require cooking separate meals",
+        "May express concern about cost of dietary changes and need reassurance that modifications use familiar ingredients"
+      ],
+      "points": null,
+      "min_level": "M2"
+    },
+    {
+      "id": "o4",
+      "objective": "Explain the relationship between meal skipping, carbohydrate distribution, and blood glucose control.",
+      "expected_discoveries": [
+        {
+          "id": "o4.d1",
+          "text": "Patient believes skipping lunch reduces calorie intake and may help with weight or blood sugar",
+          "linked_fact_ids": [
+            "f053",
+            "f055"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o4.d2",
+          "text": "Student should explain how skipping meals leads to larger postprandial glucose spikes at dinner",
+          "linked_fact_ids": [],
+          "link_method": "llm_skill"
+        },
+        {
+          "id": "o4.d3",
+          "text": "Consistent meal timing supports more stable blood glucose throughout the day",
+          "linked_fact_ids": [],
+          "link_method": "llm_skill"
+        },
+        {
+          "id": "o4.d4",
+          "text": "Metformin is best tolerated and most effective when taken with food, reinforcing the importance of eating lunch",
+          "linked_fact_ids": [
+            "f019",
+            "f020",
+            "f075"
+          ],
+          "link_method": "llm"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May be surprised to learn that skipping meals can worsen blood sugar control",
+        "Will likely ask practical questions about what a lunch should look like given her busy schedule",
+        "May express relief that small, manageable lunches are sufficient rather than elaborate meal preparation"
+      ],
+      "points": null,
+      "min_level": "M2"
+    },
+    {
+      "id": "o5",
+      "objective": "Apply motivational interviewing techniques to explore ambivalence and support behavior change.",
+      "expected_discoveries": [
+        {
+          "id": "o5.d1",
+          "text": "Patient's primary motivation is her family, which can be leveraged to support self-care",
+          "linked_fact_ids": [
+            "f041",
+            "f042",
+            "f045",
+            "f048"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o5.d2",
+          "text": "She is in the contemplative to preparation stage and is open to change but needs practical guidance",
+          "linked_fact_ids": [
+            "f043",
+            "f050",
+            "f080"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o5.d3",
+          "text": "Exploring her beliefs about herbal remedies opens a non-judgmental conversation about evidence-based care",
+          "linked_fact_ids": [
+            "f022",
+            "f054",
+            "f076",
+            "f040"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o5.d4",
+          "text": "Identifying one small, achievable change such as adding lunch builds self-efficacy",
+          "linked_fact_ids": [],
+          "link_method": "llm_skill"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Will respond positively to affirmations about her strengths as a caregiver and cook",
+        "May become anxious if the student presents too many changes at once",
+        "Will engage more deeply when asked what she thinks she could realistically change first"
+      ],
+      "points": null,
+      "min_level": "M2"
+    },
+    {
+      "id": "o6",
+      "objective": "Identify the role of the dietitian within the interprofessional team and recognize when to coordinate care or refer.",
+      "expected_discoveries": [
+        {
+          "id": "o6.d1",
+          "text": "Provider has documented concern about escalation to insulin if A1c does not improve, making dietitian intervention timely and critical",
+          "linked_fact_ids": [
+            "f082",
+            "f085"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o6.d2",
+          "text": "Patient has not previously followed through with dietitian referral, highlighting the importance of addressing barriers to follow-up",
+          "linked_fact_ids": [
+            "f083"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o6.d3",
+          "text": "Coordination with the prescribing provider about metformin timing relative to meals is appropriate",
+          "linked_fact_ids": [
+            "f019",
+            "f020",
+            "f075"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o6.d4",
+          "text": "Community resources such as diabetes self-management education programs may benefit this patient",
+          "linked_fact_ids": [],
+          "link_method": "llm_skill"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May not be aware of diabetes education programs or community resources available to her",
+        "Will likely be receptive to resources that are practical, low-cost, and family-inclusive",
+        "May ask whether the dietitian can communicate with her doctor about her progress"
+      ],
+      "points": null,
+      "min_level": "M3"
+    }
+  ],
+  "knowledge_sources": [],
+  "documents": [],
+  "assumptions": [
+    "Height and weight were estimated to produce a BMI consistent with overweight or mild obesity, which is plausible given a 10-year history of Type 2 Diabetes and no faculty-specified anthropometrics; these values should be updated if actual measurements are available.",
+    "Hypertension was added as a secondary diagnosis because it is a very common comorbidity in patients with a 10-year history of uncontrolled Type 2 Diabetes and the estimated BMI; faculty did not mention it and it should be removed if not applicable.",
+    "Fasting glucose of approximately 210 mg/dL was estimated as consistent with an A1c of 9.4% using standard A1c-to-average glucose conversion; no lab values were provided by faculty.",
+    "Metformin is prescribed twice daily per faculty input; the standard regimen is with morning and evening meals. Because the patient skips lunch, there is no midday dose, which is consistent with a twice-daily regimen. The adherence note reflects disruption to meal-based timing rather than a missed third dose.",
+    "Ethnicity, language, occupation, and cultural context were inferred as plausible given the name Maria Lopez; these are assumptions only and should not be treated as definitive. The record avoids stereotyping and these details can be modified.",
+    "Herbal tea use was added as a plausible OTC behavior common in patients who seek complementary approaches to blood sugar management; faculty did not specify this and it can be removed.",
+    "Lipid panel and kidney function labs were listed as pending or not recently reviewed because faculty provided only the A1c value; these should be updated with actual results."
+  ],
+  "optional_details": [
+    "Has adult children living at home or nearby",
+    "Cares for an elderly parent in addition to managing her household",
+    "Has not previously completed a formal diabetes self-management education program",
+    "Expresses interest in understanding her condition better but has not had time to research it"
+  ]
+}

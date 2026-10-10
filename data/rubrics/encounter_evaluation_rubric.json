@@ -1,0 +1,132 @@
+{
+  "title": "Patient Encounter Performance Rubric",
+  "instructions": "Rate the student’s performance as supported by the encounter. Rate only what the scenario makes possible to observe; use N/A when a criterion is not appropriate.",
+  "rating_scale": [
+    {
+      "score": 4,
+      "label": "Strong",
+      "meaning": "Consistent, effective, appropriate"
+    },
+    {
+      "score": 3,
+      "label": "Competent",
+      "meaning": "Usually effective; minor gaps"
+    },
+    {
+      "score": 2,
+      "label": "Developing",
+      "meaning": "Partly effective; important gaps"
+    },
+    {
+      "score": 1,
+      "label": "Unsafe or absent",
+      "meaning": "Not demonstrated, misleading, or harmful"
+    }
+  ],
+  "allowed_scores": [
+    4,
+    3,
+    2,
+    1,
+    "N/A"
+  ],
+  "domains": [
+    {
+      "id": 1,
+      "key": "opening_and_purpose",
+      "name": "Opening and purpose",
+      "triggers_review_if_score_1": false,
+      "descriptors": {
+        "4": "Introduces self and role; establishes purpose and agenda; confirms the patient’s immediate concern; sets expectations.",
+        "3": "Opens clearly and establishes a workable focus.",
+        "2": "Opening is understandable but misses role, agenda, or patient priorities.",
+        "1": "Begins abruptly, creates confusion, or lacks a clinically appropriate purpose."
+      }
+    },
+    {
+      "id": 2,
+      "key": "rapport_respect_empathy",
+      "name": "Rapport, respect, and empathy",
+      "triggers_review_if_score_1": false,
+      "descriptors": {
+        "4": "Uses attentive, nonjudgmental, culturally responsive language; acknowledges emotion and patient perspective; builds trust.",
+        "3": "Consistently respectful and responsive; patient appears heard.",
+        "2": "Generally respectful but responses feel formulaic, rushed, or insufficiently attuned.",
+        "1": "Dismissive, judgmental, confusing, or emotionally unsafe communication."
+      }
+    },
+    {
+      "id": 3,
+      "key": "information_gathering",
+      "name": "Information gathering",
+      "triggers_review_if_score_1": false,
+      "descriptors": {
+        "4": "Uses open questions, focused follow-up, clarification, and appropriate sequencing; explores relevant history, context, risks, and goals.",
+        "3": "Gathers most relevant information with logical follow-up.",
+        "2": "Gathers some relevant information but is incomplete, disorganized, or overly leading.",
+        "1": "Misses essential information or cannot sustain a useful history."
+      }
+    },
+    {
+      "id": 4,
+      "key": "listening_and_response_to_cues",
+      "name": "Listening and response to cues",
+      "triggers_review_if_score_1": false,
+      "descriptors": {
+        "4": "Recognizes verbal cues, uncertainty, concerns, questions, and changes in the patient’s story; avoids interrupting or ignoring information.",
+        "3": "Tracks the patient’s narrative and follows up appropriately.",
+        "2": "Responds to obvious cues but overlooks subtler concerns or inconsistencies.",
+        "1": "Ignores, contradicts, or prematurely redirects important information."
+      }
+    },
+    {
+      "id": 5,
+      "key": "explanation_and_shared_decisions",
+      "name": "Explanation and shared decisions",
+      "triggers_review_if_score_1": false,
+      "descriptors": {
+        "4": "Explains findings or next steps clearly; checks understanding; invites questions; incorporates preferences and readiness when relevant.",
+        "3": "Provides clear, patient-centered explanations and checks understanding.",
+        "2": "Explanation is partly clear but uses jargon, gives limited rationale, or does not check understanding.",
+        "1": "Provides inaccurate, overly technical, coercive, or absent explanation when needed."
+      }
+    },
+    {
+      "id": 6,
+      "key": "clinical_reasoning_and_synthesis",
+      "name": "Clinical reasoning and synthesis",
+      "triggers_review_if_score_1": true,
+      "descriptors": {
+        "4": "Identifies important findings; distinguishes relevant from irrelevant information; recognizes red flags or uncertainty; forms a plausible assessment or differential when appropriate.",
+        "3": "Reasoning is clinically coherent and appropriately cautious.",
+        "2": "Recognizes some key findings but misses connections, alternatives, or uncertainty.",
+        "1": "Reasoning is unsupported, unsafe, internally inconsistent, or absent when required."
+      }
+    },
+    {
+      "id": 7,
+      "key": "professionalism_safety_closure",
+      "name": "Professionalism, safety, and closure",
+      "triggers_review_if_score_1": true,
+      "descriptors": {
+        "4": "Maintains boundaries; protects privacy; communicates limitations; summarizes; confirms next steps, follow-up, or escalation when relevant.",
+        "3": "Professional and safe throughout; closes with a clear shared plan.",
+        "2": "Mostly professional but closure, limitations, or safety-netting is incomplete.",
+        "1": "Creates safety risk, overstates certainty, breaches boundaries, or ends without an appropriate plan."
+      }
+    }
+  ],
+  "scoring": {
+    "max_total": 28,
+    "interpretation": "Use the total as a discussion aid, not a pass/fail grade. A score of 1 in professionalism, safety, or clinical reasoning should trigger review even when the total is high.",
+    "review_trigger_domain_ids": [
+      6,
+      7
+    ]
+  },
+  "evidence_fields": [
+    "strength_demonstrated",
+    "important_gap_or_missed_opportunity",
+    "safety_or_accuracy_concern"
+  ]
+}

@@ -225,6 +225,71 @@ def check_faculty_drift(p: PatientProfile) -> list[Issue]:
     return []
 
 
+FACULTY_NUM = re.compile(r"\d+(?:\.\d+)?(?:/\d+)?")
+
+
+def check_faculty_numbers(p: PatientProfile) -> list[Issue]:
+    """Every number faculty typed in notes/summary (LDL 145, BP 155/110, BMI 32) must appear
+    in the profile. Small rounding is fine (32 vs 32.1). Ages and ranges are skipped."""
+    if not p.faculty_brief:
+        return []
+    src = " ".join([p.faculty_brief.notes, p.faculty_brief.summary])
+    src = re.sub(r"\d+\s*-\s*\d+", " ", src)                    # ranges like "2-8 drinks"
+    wanted = [n for n in FACULTY_NUM.findall(src) if n != str(p.persona.age or "")]
+    corpus = " ".join([*(f.content for f in p.facts),
+                       *(f"{i.label} {i.value}" for a in p.artifacts for i in a.items),
+                       *((a.text or "") for a in p.artifacts)])
+    have = FACULTY_NUM.findall(corpus)
+    have_set = set(have)
+
+    def close(n: str) -> bool:
+        if n in have_set:
+            return True
+        if "/" in n:
+            return False
+        try:
+            v = float(n)
+        except ValueError:
+            return False
+        return any("/" not in h and abs(float(h) - v) <= 0.5 for h in have)
+
+    missing = sorted({n for n in wanted if not close(n)}, key=lambda x: float(x.split("/")[0]))
+    if missing:
+        return [Issue(severity="error", code="faculty_number_missing",
+                      message="Faculty wrote " + ", ".join(missing) +
+                              " but the profile doesn't contain " + ("it." if len(missing) == 1 else "them."))]
+    return []
+
+
+def check_checklist_attachments(p: PatientProfile) -> list[Issue]:
+    """Warn faculty when part of an attached checklist rubric can't be graded for this patient."""
+    import json as _json
+    from pathlib import Path as _Path
+    from . import attachments
+    issues = []
+    rubric_dir = _Path(__file__).resolve().parents[1] / "data" / "rubrics"
+    for rid in p.settings.checklist_rubric_ids:
+        try:
+            rubric = _json.loads((rubric_dir / f"{rid}.json").read_text(encoding="utf-8"))
+        except OSError:
+            issues.append(Issue(severity="error", code="checklist_missing",
+                                message=f"Checklist rubric '{rid}' was not found."))
+            continue
+        app_ = attachments.checklist_applicability(p, rubric)
+        for sec in rubric["sections"]:
+            miss = sorted({m for it in sec["items"] for m in app_.get(it["id"], [])})
+            n = sum(bool(app_.get(it["id"])) for it in sec["items"])
+            if miss:
+                need = ", ".join(attachments.label(m) for m in miss)
+                pts = round(sec["points"] * n / len(sec["items"]), 1)
+                issues.append(Issue(
+                    severity="warning", code="checklist_needs_attachment",
+                    message=f"{rubric['title']}: \u201c{sec['name']}\u201d ({pts:g} of {sec['points']} pts) "
+                            f"will be skipped because no {need} is attached. Upload one as a patient record "
+                            f"to grade it."))
+    return issues
+
+
 def check_disclosure_balance(p: PatientProfile) -> list[Issue]:
     tiers = defaultdict(int)
     for f in p.facts:
@@ -239,8 +304,9 @@ def check_disclosure_balance(p: PatientProfile) -> list[Issue]:
     return issues
 
 
-CHECKS = [check_faculty_drift, check_bmi, check_med_indications, check_vitals_agree,
-          check_duplicates, check_misplaced_rows, check_objectives, check_disclosure_balance]
+CHECKS = [check_faculty_drift, check_faculty_numbers, check_bmi, check_med_indications, check_vitals_agree,
+          check_duplicates, check_misplaced_rows, check_objectives, check_checklist_attachments,
+          check_disclosure_balance]
 
 
 def validate(p: PatientProfile) -> list[Issue]:

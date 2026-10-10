@@ -1,0 +1,59 @@
+{
+  "_about": "Words in a rubric item that mean it needs a specific chart item/attachment, and how to recognise that the patient has one. If a rubric item needs something the patient doesn't have, it is marked not applicable and its points are removed from the maximum. Edit freely.",
+  "kinds": {
+    "audiogram": {
+      "label": "audiogram",
+      "rubric_words": ["audiogram", "speech banana", "audiometry", "hearing test results"],
+      "artifact_types": [],
+      "artifact_words": ["audiogram", "audiometry", "audiometric", "hearing test", "pure tone", "pure-tone"]
+    },
+    "xray": {
+      "label": "X-ray",
+      "rubric_words": ["x-ray", "xray", "radiograph", "chest film"],
+      "artifact_types": [],
+      "artifact_words": ["x-ray", "xray", "radiograph", "cxr", "chest film"]
+    },
+    "ct": {
+      "label": "CT scan",
+      "rubric_words": ["ct scan", "ct image", "computed tomography", "the ct"],
+      "artifact_types": [],
+      "artifact_words": ["ct scan", "ct of", "computed tomography", " ct "]
+    },
+    "mri": {
+      "label": "MRI",
+      "rubric_words": ["mri", "magnetic resonance"],
+      "artifact_types": [],
+      "artifact_words": ["mri", "magnetic resonance"]
+    },
+    "ultrasound": {
+      "label": "ultrasound",
+      "rubric_words": ["ultrasound", "sonogram", "echocardiogram", "echo report"],
+      "artifact_types": [],
+      "artifact_words": ["ultrasound", "sonogram", "echocardiogram", "echo "]
+    },
+    "imaging": {
+      "label": "imaging study",
+      "rubric_words": ["imaging", "scan results"],
+      "artifact_types": ["imaging"],
+      "artifact_words": ["x-ray", "xray", "radiograph", "ct scan", "mri", "ultrasound", "imaging"]
+    },
+    "ecg": {
+      "label": "ECG",
+      "rubric_words": ["ecg", "ekg", "electrocardiogram", "rhythm strip"],
+      "artifact_types": ["ecg"],
+      "artifact_words": ["ecg", "ekg", "electrocardiogram", "rhythm strip"]
+    },
+    "labs": {
+      "label": "lab results",
+      "rubric_words": ["lab results", "laboratory", "labs", "bloodwork", "blood work", "blood test", "lab report"],
+      "artifact_types": ["lab_report"],
+      "artifact_words": ["laboratory", "lab report", "lipid panel", "cbc", "metabolic panel", "a1c"]
+    },
+    "prior_records": {
+      "label": "prior records",
+      "rubric_words": ["prior note", "previous note", "medical record", "chart review", "discharge summary"],
+      "artifact_types": ["prior_note"],
+      "artifact_words": ["prior", "previous", "discharge", "referral", "record"]
+    }
+  }
+}

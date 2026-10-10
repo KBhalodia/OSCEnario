@@ -1,0 +1,119 @@
+{
+  "id": "d171fd81-f97e-4654-bc7a-60b5714b0527",
+  "patient_id": "4d619156-3250-4212-8399-129f3280fab1",
+  "patient_version": 1,
+  "started_at": "2026-10-10T17:15:39.954590Z",
+  "ended_at": null,
+  "trust": 2,
+  "disclosed_fact_ids": [
+    "f067"
+  ],
+  "released_artifact_ids": [
+    "a001",
+    "a004",
+    "a002"
+  ],
+  "turns": [
+    {
+      "n": 0,
+      "speaker": "system",
+      "text": "Encounter started",
+      "at": "2026-10-10T17:15:39.955134Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [
+        "a001"
+      ],
+      "tags": []
+    },
+    {
+      "n": 1,
+      "speaker": "student",
+      "text": "Hi Wyatt, I'm a dietetics student. Thanks for coming in today.",
+      "at": "2026-10-10T17:15:48.067779Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "introduction"
+      ]
+    },
+    {
+      "n": 2,
+      "speaker": "patient",
+      "text": "Yeah, no problem. My doctor said I should come talk to you about, um, my diet and stuff.",
+      "at": "2026-10-10T17:15:48.067840Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": []
+    },
+    {
+      "n": 3,
+      "speaker": "student",
+      "text": "yes! you're in the right place, and we can help you out.tut. Is it okay if I take a look at your recent lab results?",
+      "at": "2026-10-10T17:16:16.124706Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [
+        "a004"
+      ],
+      "tags": [
+        "affirmation",
+        "introduction"
+      ]
+    },
+    {
+      "n": 4,
+      "speaker": "patient",
+      "text": "Yeah, that's fine. I think they're in my chart or whatever. My blood sugar's been pretty high, I know that much.",
+      "at": "2026-10-10T17:16:16.124741Z",
+      "disclosed_fact_ids": [
+        "f067"
+      ],
+      "released_artifact_ids": [],
+      "tags": []
+    },
+    {
+      "n": 5,
+      "speaker": "student",
+      "text": "That's ok! I am just looking at your chart right now, but What was your blood pressure at your last visit? if yound me asking",
+      "at": "2026-10-10T17:17:24.838132Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [
+        "a002"
+      ],
+      "tags": [
+        "closed_question",
+        "follow_up"
+      ]
+    },
+    {
+      "n": 6,
+      "speaker": "patient",
+      "text": "I'm not sure, you'd have to check my chart. They take it every time I come in but I don't really pay attention to the numbers.",
+      "at": "2026-10-10T17:17:24.838215Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": []
+    },
+    {
+      "n": 7,
+      "speaker": "student",
+      "text": "/quir",
+      "at": "2026-10-10T18:39:12.870048Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "off_script"
+      ]
+    },
+    {
+      "n": 8,
+      "speaker": "patient",
+      "text": "Um, what? I'm not sure what you mean.",
+      "at": "2026-10-10T18:39:12.870706Z",
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [],
+      "tags": [
+        "off_script_handled"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1815 @@
+{
+  "id": "nisha-patel-752f6e",
+  "status": "draft",
+  "version": 1,
+  "created_at": "2026-10-10T19:10:01.075469Z",
+  "persona": {
+    "name": "Nisha Patel",
+    "age": 29,
+    "sex": "female",
+    "description": "Nisha Patel is a 29-year-old Indian-American IT professional who has been newly diagnosed with multiple sclerosis (MS) following her first hospitalization. She is highly intelligent and analytically minded, asking detailed questions about every aspect of her diagnosis and care. She is emotionally overwhelmed by the diagnosis and oscillates between wanting to take control through information-gathering and feeling anxious and tearful. As a dietetics patient, she is eager to understand how nutrition can influence her MS symptoms and disease course, but she is also skeptical and will challenge recommendations that she cannot verify. She requires empathetic, evidence-informed counseling that respects her need for detail while addressing her emotional state.",
+    "keywords": [
+      "newly diagnosed MS",
+      "multiple sclerosis",
+      "young adult",
+      "Indian-American",
+      "IT professional",
+      "anxiety",
+      "emotionally overwhelmed",
+      "nutrition and MS",
+      "first hospitalization",
+      "medical nutrition therapy",
+      "detail-oriented",
+      "health literacy"
+    ],
+    "occupation": "IT professional (software developer)",
+    "residence": "Urban apartment",
+    "ethnicity": "Indian-American",
+    "language": "English (primary); conversational Hindi",
+    "marital_status": "Married",
+    "education_level": "Bachelor's degree in Computer Science",
+    "insurance": "Employer-sponsored private insurance",
+    "cultural_context": "South Asian dietary background with vegetarian family traditions; acculturated to American food environment; family places high value on education and professional achievement; health decisions often involve consulting family members and researching online.",
+    "personality": "Highly intelligent, analytical, and detail-oriented; emotionally overwhelmed since her MS diagnosis; oscillates between wanting to take control through research and feeling frightened and tearful; tends to intellectualize emotions as a coping mechanism",
+    "communication_style": "Articulate and direct; asks many detailed follow-up questions; may challenge recommendations by citing things she has read online; responds best to evidence-based explanations delivered with empathy; can become visibly distressed if she feels dismissed or patronized",
+    "support_system": "Husband is supportive and involved; parents and in-laws are aware of diagnosis and offer emotional support; close friend group, though Nisha has not yet told most colleagues about her diagnosis",
+    "readiness_to_change": "High readiness to change; actively seeking guidance and motivated to act; may attempt too many changes at once without professional direction",
+    "portrait_path": null
+  },
+  "settings": {
+    "student_role": "Dietetics student",
+    "encounter_goal": "Nutrition assessment and counseling (Nutrition Care Process)",
+    "setting": "Outpatient clinic",
+    "rubric_id": "encounter_evaluation_rubric",
+    "opening_trust": 1,
+    "difficulty_notes": ""
+  },
+  "faculty_brief": {
+    "background": "IT professional, married, first hospitalization",
+    "notes": "Challenges providers with questions; emotionally overwhelmed.",
+    "personality": "Intelligent, anxious, wants to understand every detail",
+    "summary": "Young adult with newly diagnosed MS"
+  },
+  "primary_diagnosis": "Multiple Sclerosis, newly diagnosed (relapsing-remitting type presumed)",
+  "secondary_diagnoses": [
+    "Anxiety (situational, related to new diagnosis)",
+    "Vitamin D deficiency (common comorbidity in MS)"
+  ],
+  "medications": [
+    {
+      "name": "Vitamin D3 (prescription-strength)",
+      "dose": "50,000 IU",
+      "frequency": "Once weekly",
+      "purpose": "To correct Vitamin D deficiency, which is associated with MS disease activity",
+      "adherence": "Good; takes it on a set day each week",
+      "patient_concerns": "Wants to know if she should also change her diet to get more Vitamin D; asks whether the dose is safe long-term"
+    },
+    {
+      "name": "Dimethyl fumarate (Tecfidera)",
+      "dose": "240 mg",
+      "frequency": "Twice daily with food",
+      "purpose": "Disease-modifying therapy for relapsing-remitting MS",
+      "adherence": "Early in therapy; compliant so far but anxious about side effects",
+      "patient_concerns": "Experiences flushing and mild nausea after doses; worried this will interfere with eating; has read extensively about side effects online"
+    }
+  ],
+  "allergies": [
+    "No known drug or food allergies"
+  ],
+  "facts": [
+    {
+      "id": "f001",
+      "category": "social",
+      "topic": "occupation",
+      "content": "IT professional (software developer)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.occupation"
+    },
+    {
+      "id": "f002",
+      "category": "social",
+      "topic": "living situation",
+      "content": "Urban apartment",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.residence"
+    },
+    {
+      "id": "f003",
+      "category": "social",
+      "topic": "marital status",
+      "content": "Married",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "faculty",
+      "source_path": "demographics.marital_status"
+    },
+    {
+      "id": "f004",
+      "category": "social",
+      "topic": "education",
+      "content": "Bachelor's degree in Computer Science",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.education_level"
+    },
+    {
+      "id": "f005",
+      "category": "social",
+      "topic": "insurance",
+      "content": "Employer-sponsored private insurance",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.insurance"
+    },
+    {
+      "id": "f006",
+      "category": "social",
+      "topic": "language",
+      "content": "English (primary); conversational Hindi",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "demographics.language"
+    },
+    {
+      "id": "f007",
+      "category": "social",
+      "topic": "support system",
+      "content": "Husband is supportive and involved; parents and in-laws are aware of diagnosis and offer emotional support; close friend group, though Nisha has not yet told most colleagues about her diagnosis",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.support_system"
+    },
+    {
+      "id": "f008",
+      "category": "diagnosis",
+      "topic": "main diagnosis / reason for visit",
+      "content": "Multiple Sclerosis, newly diagnosed (relapsing-remitting type presumed)",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.primary_diagnosis"
+    },
+    {
+      "id": "f009",
+      "category": "diagnosis",
+      "topic": "other condition: Anxiety (situational, related to new…",
+      "content": "Anxiety (situational, related to new diagnosis)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.secondary_diagnoses[0]"
+    },
+    {
+      "id": "f010",
+      "category": "diagnosis",
+      "topic": "other condition: Vitamin D deficiency (common…",
+      "content": "Vitamin D deficiency (common comorbidity in MS)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.secondary_diagnoses[1]"
+    },
+    {
+      "id": "f011",
+      "category": "history",
+      "topic": "First hospitalization for neurological symptoms leading to…",
+      "content": "First hospitalization for neurological symptoms leading to MS diagnosis",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[0]"
+    },
+    {
+      "id": "f012",
+      "category": "history",
+      "topic": "No prior chronic medical conditions",
+      "content": "No prior chronic medical conditions",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[1]"
+    },
+    {
+      "id": "f013",
+      "category": "history",
+      "topic": "No prior surgeries",
+      "content": "No prior surgeries",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[2]"
+    },
+    {
+      "id": "f014",
+      "category": "history",
+      "topic": "Family history: mother with hypothyroidism; no known…",
+      "content": "Family history: mother with hypothyroidism; no known family history of MS or autoimmune disease",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.medical_history[3]"
+    },
+    {
+      "id": "f015",
+      "category": "symptom",
+      "topic": "symptom: Fatigue (primary complaint)",
+      "content": "Fatigue (primary complaint)",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[0]"
+    },
+    {
+      "id": "f016",
+      "category": "symptom",
+      "topic": "symptom: Intermittent numbness and tingling in left…",
+      "content": "Intermittent numbness and tingling in left hand and forearm",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[1]"
+    },
+    {
+      "id": "f017",
+      "category": "symptom",
+      "topic": "symptom: Mild balance difficulties",
+      "content": "Mild balance difficulties",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[2]"
+    },
+    {
+      "id": "f018",
+      "category": "symptom",
+      "topic": "symptom: Blurred vision in right eye (partially…",
+      "content": "Blurred vision in right eye (partially resolved after hospitalization)",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[3]"
+    },
+    {
+      "id": "f019",
+      "category": "symptom",
+      "topic": "symptom: Difficulty concentrating at work",
+      "content": "Difficulty concentrating at work",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.current_symptoms[4]"
+    },
+    {
+      "id": "f020",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "No known drug or food allergies",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "clinical_profile.allergies[0]"
+    },
+    {
+      "id": "f021",
+      "category": "medication",
+      "topic": "medication: Vitamin D3 (prescription-strength)",
+      "content": "Takes Vitamin D3 (prescription-strength) 50,000 IU Once weekly for To correct Vitamin D deficiency, which is associated with MS disease activity",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[0]"
+    },
+    {
+      "id": "f022",
+      "category": "medication",
+      "topic": "how they take Vitamin D3 (prescription-strength)",
+      "content": "Vitamin D3 (prescription-strength) adherence: Good; takes it on a set day each week",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[0].adherence"
+    },
+    {
+      "id": "f023",
+      "category": "medication",
+      "topic": "concerns/side effects of Vitamin D3 (prescription-strength)",
+      "content": "About Vitamin D3 (prescription-strength): Wants to know if she should also change her diet to get more Vitamin D; asks whether the dose is safe long-term",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[0].patient_concerns"
+    },
+    {
+      "id": "f024",
+      "category": "medication",
+      "topic": "medication: Dimethyl fumarate (Tecfidera)",
+      "content": "Takes Dimethyl fumarate (Tecfidera) 240 mg Twice daily with food for Disease-modifying therapy for relapsing-remitting MS",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[1]"
+    },
+    {
+      "id": "f025",
+      "category": "medication",
+      "topic": "how they take Dimethyl fumarate (Tecfidera)",
+      "content": "Dimethyl fumarate (Tecfidera) adherence: Early in therapy; compliant so far but anxious about side effects",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[1].adherence"
+    },
+    {
+      "id": "f026",
+      "category": "medication",
+      "topic": "concerns/side effects of Dimethyl fumarate (Tecfidera)",
+      "content": "About Dimethyl fumarate (Tecfidera): Experiences flushing and mild nausea after doses; worried this will interfere with eating; has read extensively about side effects online",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.medications[1].patient_concerns"
+    },
+    {
+      "id": "f027",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Omega-3 fish oil 1000 mg daily (self-initiated after reading about MS and inflammation)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.supplements_and_otc[0]"
+    },
+    {
+      "id": "f028",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Multivitamin (standard women's formula, taken inconsistently)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "medication_profile.supplements_and_otc[1]"
+    },
+    {
+      "id": "f029",
+      "category": "nutrition",
+      "topic": "usual diet",
+      "content": "Semi-vegetarian; largely lacto-vegetarian at home with occasional chicken or fish; diet includes traditional Indian foods (lentils, rice, roti, vegetables) alongside convenience foods and takeout due to busy work schedule",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.dietary_pattern"
+    },
+    {
+      "id": "f030",
+      "category": "nutrition",
+      "topic": "meal timing / pattern",
+      "content": "Irregular; often skips breakfast or has only coffee; eats lunch at desk; cooks a traditional dinner a few nights per week; relies on takeout or packaged foods on busy nights",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.meal_pattern"
+    },
+    {
+      "id": "f031",
+      "category": "nutrition",
+      "topic": "fluids / hydration",
+      "content": "Moderate water intake; relies heavily on coffee; occasionally drinks chai with whole milk",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.hydration"
+    },
+    {
+      "id": "f032",
+      "category": "lifestyle",
+      "topic": "physical activity",
+      "content": "Light; walks during lunch break occasionally; no structured exercise routine since hospitalization due to fatigue and fear of worsening symptoms",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.physical_activity"
+    },
+    {
+      "id": "f033",
+      "category": "lifestyle",
+      "topic": "alcohol / tobacco / drugs",
+      "content": "Occasional glass of wine on weekends; denies tobacco or recreational drug use",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.substance_use"
+    },
+    {
+      "id": "f034",
+      "category": "lifestyle",
+      "topic": "sleep",
+      "content": "6 to 7 hours; disrupted by anxiety since diagnosis; difficulty falling asleep due to rumination about MS",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.sleep"
+    },
+    {
+      "id": "f035",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Lentil dishes (dal)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[0]"
+    },
+    {
+      "id": "f036",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Rice and roti",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[1]"
+    },
+    {
+      "id": "f037",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Yogurt and paneer",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[2]"
+    },
+    {
+      "id": "f038",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Salads with dressing",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[3]"
+    },
+    {
+      "id": "f039",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Coffee (2-3 cups daily)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[4]"
+    },
+    {
+      "id": "f040",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Takeout Indian or Mediterranean food",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[5]"
+    },
+    {
+      "id": "f041",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Packaged snack bars at work",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.food_preferences[6]"
+    },
+    {
+      "id": "f042",
+      "category": "nutrition",
+      "topic": "Frequency of convenience and takeout meals due to long…",
+      "content": "Frequency of convenience and takeout meals due to long work hours",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[0]"
+    },
+    {
+      "id": "f043",
+      "category": "nutrition",
+      "topic": "Adequacy of omega-3 and anti-inflammatory food sources…",
+      "content": "Adequacy of omega-3 and anti-inflammatory food sources given MS diagnosis",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[1]"
+    },
+    {
+      "id": "f044",
+      "category": "nutrition",
+      "topic": "Calcium and Vitamin D intake from dairy and fortified foods",
+      "content": "Calcium and Vitamin D intake from dairy and fortified foods",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[2]"
+    },
+    {
+      "id": "f045",
+      "category": "nutrition",
+      "topic": "Iron and B12 adequacy given low-normal labs and…",
+      "content": "Iron and B12 adequacy given low-normal labs and semi-vegetarian diet",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[3]"
+    },
+    {
+      "id": "f046",
+      "category": "nutrition",
+      "topic": "Caffeine intake and its relationship to MS fatigue and sleep",
+      "content": "Caffeine intake and its relationship to MS fatigue and sleep",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[4]"
+    },
+    {
+      "id": "f047",
+      "category": "nutrition",
+      "topic": "Emotional eating or appetite changes since diagnosis",
+      "content": "Emotional eating or appetite changes since diagnosis",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[5]"
+    },
+    {
+      "id": "f048",
+      "category": "nutrition",
+      "topic": "Use of self-prescribed supplements and online dietary…",
+      "content": "Use of self-prescribed supplements and online dietary protocols for MS",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[6]"
+    },
+    {
+      "id": "f049",
+      "category": "psychosocial",
+      "topic": "goal: Understand how diet can influence MS…",
+      "content": "Understand how diet can influence MS symptoms and disease progression",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[0]"
+    },
+    {
+      "id": "f050",
+      "category": "psychosocial",
+      "topic": "goal: Reduce fatigue so she can continue working…",
+      "content": "Reduce fatigue so she can continue working effectively",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[1]"
+    },
+    {
+      "id": "f051",
+      "category": "psychosocial",
+      "topic": "goal: Feel a sense of control over her health…",
+      "content": "Feel a sense of control over her health after a frightening diagnosis",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[2]"
+    },
+    {
+      "id": "f052",
+      "category": "psychosocial",
+      "topic": "goal: Learn whether specific diets (e.g.,…",
+      "content": "Learn whether specific diets (e.g., anti-inflammatory, Mediterranean, Swank) are supported by evidence",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[3]"
+    },
+    {
+      "id": "f053",
+      "category": "psychosocial",
+      "topic": "goal: Support her husband in understanding her…",
+      "content": "Support her husband in understanding her new dietary needs",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.goals[4]"
+    },
+    {
+      "id": "f054",
+      "category": "psychosocial",
+      "topic": "motivation: Maintaining her career and cognitive function",
+      "content": "Maintaining her career and cognitive function",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.motivations[0]"
+    },
+    {
+      "id": "f055",
+      "category": "psychosocial",
+      "topic": "motivation: Staying healthy for her marriage and future…",
+      "content": "Staying healthy for her marriage and future family plans",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.motivations[1]"
+    },
+    {
+      "id": "f056",
+      "category": "psychosocial",
+      "topic": "motivation: Feeling empowered and in control of her…",
+      "content": "Feeling empowered and in control of her disease",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.motivations[2]"
+    },
+    {
+      "id": "f057",
+      "category": "psychosocial",
+      "topic": "motivation: Reducing fatigue and neurological symptoms",
+      "content": "Reducing fatigue and neurological symptoms",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.motivations[3]"
+    },
+    {
+      "id": "f058",
+      "category": "psychosocial",
+      "topic": "strength: High health literacy and strong motivation…",
+      "content": "High health literacy and strong motivation to learn",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[0]"
+    },
+    {
+      "id": "f059",
+      "category": "psychosocial",
+      "topic": "strength: Supportive husband who is willing to adjust…",
+      "content": "Supportive husband who is willing to adjust household meals",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[1]"
+    },
+    {
+      "id": "f060",
+      "category": "psychosocial",
+      "topic": "strength: Existing foundation of nutritious…",
+      "content": "Existing foundation of nutritious traditional foods in her diet",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[2]"
+    },
+    {
+      "id": "f061",
+      "category": "psychosocial",
+      "topic": "strength: Financially stable with access to quality…",
+      "content": "Financially stable with access to quality food options",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[3]"
+    },
+    {
+      "id": "f062",
+      "category": "psychosocial",
+      "topic": "strength: Proactive in seeking professional guidance",
+      "content": "Proactive in seeking professional guidance",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.strengths[4]"
+    },
+    {
+      "id": "f063",
+      "category": "psychosocial",
+      "topic": "belief: Diet is a powerful tool and she can…",
+      "content": "Diet is a powerful tool and she can influence her MS through what she eats",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[0]"
+    },
+    {
+      "id": "f064",
+      "category": "psychosocial",
+      "topic": "belief: Information and research are the best ways…",
+      "content": "Information and research are the best ways to cope with uncertainty",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[1]"
+    },
+    {
+      "id": "f065",
+      "category": "psychosocial",
+      "topic": "belief: Traditional Indian foods are generally…",
+      "content": "Traditional Indian foods are generally healthy but she is unsure if they are right for MS",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[2]"
+    },
+    {
+      "id": "f066",
+      "category": "psychosocial",
+      "topic": "belief: Supplements she has read about online may…",
+      "content": "Supplements she has read about online may help even if her doctor has not mentioned them",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.beliefs[3]"
+    },
+    {
+      "id": "f067",
+      "category": "psychosocial",
+      "topic": "concern: Worried that MS will progress and affect…",
+      "content": "Worried that MS will progress and affect her career and independence",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[0]"
+    },
+    {
+      "id": "f068",
+      "category": "psychosocial",
+      "topic": "concern: Concerned that her current diet may be…",
+      "content": "Concerned that her current diet may be making her MS worse",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[1]"
+    },
+    {
+      "id": "f069",
+      "category": "psychosocial",
+      "topic": "concern: Anxious about the long-term side effects of…",
+      "content": "Anxious about the long-term side effects of her disease-modifying therapy",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[2]"
+    },
+    {
+      "id": "f070",
+      "category": "psychosocial",
+      "topic": "concern: Unsure which of the many MS diet claims she…",
+      "content": "Unsure which of the many MS diet claims she has found online are credible",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[3]"
+    },
+    {
+      "id": "f071",
+      "category": "psychosocial",
+      "topic": "concern: Worried about the financial burden of…",
+      "content": "Worried about the financial burden of specialty foods or supplements",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.concerns[4]"
+    },
+    {
+      "id": "f072",
+      "category": "psychosocial",
+      "topic": "barrier: Long work hours limiting time for meal…",
+      "content": "Long work hours limiting time for meal preparation",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[0]"
+    },
+    {
+      "id": "f073",
+      "category": "psychosocial",
+      "topic": "barrier: Emotional distress reducing motivation and…",
+      "content": "Emotional distress reducing motivation and appetite",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[1]"
+    },
+    {
+      "id": "f074",
+      "category": "psychosocial",
+      "topic": "barrier: Information overload from online MS…",
+      "content": "Information overload from online MS communities and unvetted sources",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[2]"
+    },
+    {
+      "id": "f075",
+      "category": "psychosocial",
+      "topic": "barrier: Fatigue making cooking and grocery shopping…",
+      "content": "Fatigue making cooking and grocery shopping difficult",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[3]"
+    },
+    {
+      "id": "f076",
+      "category": "psychosocial",
+      "topic": "barrier: Uncertainty about which dietary changes are…",
+      "content": "Uncertainty about which dietary changes are truly evidence-based",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.barriers[4]"
+    },
+    {
+      "id": "f077",
+      "category": "psychosocial",
+      "topic": "fear: Losing independence or cognitive ability…",
+      "content": "Losing independence or cognitive ability due to MS progression",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.fears[0]"
+    },
+    {
+      "id": "f078",
+      "category": "psychosocial",
+      "topic": "fear: Being seen as less capable at work because…",
+      "content": "Being seen as less capable at work because of her diagnosis",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.fears[1]"
+    },
+    {
+      "id": "f079",
+      "category": "psychosocial",
+      "topic": "fear: That nothing she does will make a…",
+      "content": "That nothing she does will make a difference to her disease course",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.fears[2]"
+    },
+    {
+      "id": "f080",
+      "category": "psychosocial",
+      "topic": "fear: Becoming a burden to her husband or family",
+      "content": "Becoming a burden to her husband or family",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "psychosocial_profile.fears[3]"
+    },
+    {
+      "id": "f081",
+      "category": "other",
+      "topic": "States she was just diagnosed with MS after her first…",
+      "content": "States she was just diagnosed with MS after her first hospitalization and is trying to understand everything she can",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[0]"
+    },
+    {
+      "id": "f082",
+      "category": "other",
+      "topic": "Mentions significant fatigue as her most disruptive…",
+      "content": "Mentions significant fatigue as her most disruptive current symptom",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[1]"
+    },
+    {
+      "id": "f083",
+      "category": "other",
+      "topic": "Volunteers that she has already started taking fish oil…",
+      "content": "Volunteers that she has already started taking fish oil supplements after reading about MS and inflammation",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[2]"
+    },
+    {
+      "id": "f084",
+      "category": "other",
+      "topic": "Expresses that she has been researching MS diets online…",
+      "content": "Expresses that she has been researching MS diets online and is overwhelmed by conflicting information",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.initial_information[3]"
+    },
+    {
+      "id": "f085",
+      "category": "other",
+      "topic": "Describes her semi-vegetarian diet and typical meal…",
+      "content": "Describes her semi-vegetarian diet and typical meal pattern when asked about her eating habits",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[0]"
+    },
+    {
+      "id": "f086",
+      "category": "other",
+      "topic": "Reveals she frequently skips breakfast and relies on…",
+      "content": "Reveals she frequently skips breakfast and relies on coffee to get through the morning",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[1]"
+    },
+    {
+      "id": "f087",
+      "category": "other",
+      "topic": "Discloses she is taking dimethyl fumarate and experiencing…",
+      "content": "Discloses she is taking dimethyl fumarate and experiencing flushing and nausea, which is affecting her willingness to eat before doses",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[2]"
+    },
+    {
+      "id": "f088",
+      "category": "other",
+      "topic": "Shares that she has read about the Swank diet, the Wahls…",
+      "content": "Shares that she has read about the Swank diet, the Wahls Protocol, and the Mediterranean diet and wants to know which is best",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[3]"
+    },
+    {
+      "id": "f089",
+      "category": "other",
+      "topic": "Acknowledges her diet has become more irregular and…",
+      "content": "Acknowledges her diet has become more irregular and reliant on takeout since her hospitalization due to stress and fatigue",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[4]"
+    },
+    {
+      "id": "f090",
+      "category": "other",
+      "topic": "Mentions her Vitamin D was found to be low and she is on…",
+      "content": "Mentions her Vitamin D was found to be low and she is on weekly high-dose supplementation",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.discoverable_information[5]"
+    },
+    {
+      "id": "f091",
+      "category": "other",
+      "topic": "Admits she has been crying frequently and is struggling…",
+      "content": "Admits she has been crying frequently and is struggling emotionally more than she lets on to her husband",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.reluctant_information[0]"
+    },
+    {
+      "id": "f092",
+      "category": "other",
+      "topic": "Shares, after building rapport, that she is afraid her MS…",
+      "content": "Shares, after building rapport, that she is afraid her MS will affect her ability to have children in the future",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.reluctant_information[1]"
+    },
+    {
+      "id": "f093",
+      "category": "other",
+      "topic": "Reluctantly discloses she has been considering trying an…",
+      "content": "Reluctantly discloses she has been considering trying an extreme elimination diet she found in an MS online forum, but is embarrassed to mention it because she suspects it is not evidence-based",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.reluctant_information[2]"
+    },
+    {
+      "id": "f094",
+      "category": "other",
+      "topic": "Acknowledges she sometimes skips her multivitamin because…",
+      "content": "Acknowledges she sometimes skips her multivitamin because she is not sure it is doing anything",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.reluctant_information[3]"
+    },
+    {
+      "id": "f095",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Medical records show MRI findings consistent with relapsing-remitting MS with two distinct lesion sites",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[0]"
+    },
+    {
+      "id": "f096",
+      "category": "other",
+      "topic": "Neurology note documents Vitamin D deficiency at 18 ng/mL…",
+      "content": "Neurology note documents Vitamin D deficiency at 18 ng/mL and low-normal B12 at 310 pg/mL flagged for dietary follow-up",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[1]"
+    },
+    {
+      "id": "f097",
+      "category": "other",
+      "topic": "Discharge summary recommends dietitian referral to address…",
+      "content": "Discharge summary recommends dietitian referral to address nutritional optimization and supplement safety in the context of MS and disease-modifying therapy",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[2]"
+    },
+    {
+      "id": "f098",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Medical records show CRP mildly elevated at 4.2 mg/L, noted as consistent with inflammatory state",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "generated",
+      "source_path": "information_disclosure.hidden_information[3]"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a001",
+      "type": "prior_note",
+      "title": "Referral summary",
+      "items": [
+        {
+          "label": "Primary diagnosis",
+          "value": "Multiple Sclerosis, newly diagnosed (relapsing-remitting type presumed)",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Anxiety (situational, related to new diagnosis)",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Vitamin D deficiency (common comorbidity in MS)",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Vitamin D3 (prescription-strength) 50,000 IU Once weekly",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Dimethyl fumarate (Tecfidera) 240 mg Twice daily with food",
+          "flag": null
+        },
+        {
+          "label": "Allergies",
+          "value": "No known drug or food allergies",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "at_start",
+        "request_keywords": [],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a002",
+      "type": "vitals",
+      "title": "Vital signs",
+      "items": [
+        {
+          "label": "Heart Rate",
+          "value": "82 bpm",
+          "flag": null
+        },
+        {
+          "label": "Blood Pressure",
+          "value": "112/72 mmHg",
+          "flag": null
+        },
+        {
+          "label": "Respiratory Rate",
+          "value": "16/min",
+          "flag": null
+        },
+        {
+          "label": "Temperature",
+          "value": "98.6 F",
+          "flag": null
+        },
+        {
+          "label": "O2 Saturation",
+          "value": "99%",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "vitals",
+          "blood pressure",
+          "heart rate",
+          "temperature"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a003",
+      "type": "anthropometrics",
+      "title": "Anthropometrics",
+      "items": [
+        {
+          "label": "Height",
+          "value": "5'4\"",
+          "flag": null
+        },
+        {
+          "label": "Weight",
+          "value": "128 lbs",
+          "flag": null
+        },
+        {
+          "label": "BMI",
+          "value": "22.0 kg/m2",
+          "flag": null
+        },
+        {
+          "label": "Waist circumference",
+          "value": "28 inches",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "weight",
+          "height",
+          "BMI",
+          "measurements",
+          "waist"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a004",
+      "type": "lab_report",
+      "title": "Laboratory results",
+      "items": [
+        {
+          "label": "Vitamin D (25-OH)",
+          "value": "18 ng/mL (deficient)",
+          "flag": null
+        },
+        {
+          "label": "CBC",
+          "value": "within normal limits",
+          "flag": null
+        },
+        {
+          "label": "CMP",
+          "value": "within normal limits",
+          "flag": null
+        },
+        {
+          "label": "TSH",
+          "value": "1.8 mIU/L (normal)",
+          "flag": null
+        },
+        {
+          "label": "CRP",
+          "value": "4.2 mg/L (mildly elevated)",
+          "flag": "H"
+        },
+        {
+          "label": "Ferritin",
+          "value": "22 ng/mL (low-normal)",
+          "flag": "L"
+        },
+        {
+          "label": "B12",
+          "value": "310 pg/mL (low-normal)",
+          "flag": "L"
+        },
+        {
+          "label": "Fasting lipid panel",
+          "value": "within normal limits",
+          "flag": null
+        },
+        {
+          "label": "Fasting glucose",
+          "value": "88 mg/dL (normal)",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "labs",
+          "bloodwork",
+          "blood test",
+          "A1c",
+          "cholesterol",
+          "glucose"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a005",
+      "type": "other",
+      "title": "Clinical findings",
+      "items": [
+        {
+          "label": "Neurological exam",
+          "value": "mild left upper extremity sensory deficit, otherwise intact",
+          "flag": null
+        },
+        {
+          "label": "MRI brain and spine",
+          "value": "demyelinating lesions consistent with MS (per neurology note)",
+          "flag": null
+        },
+        {
+          "label": "No significant musculoskeletal findings",
+          "value": "",
+          "flag": null
+        },
+        {
+          "label": "Mood",
+          "value": "anxious and tearful at times during clinical encounters",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "exam",
+          "findings",
+          "physical exam"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    },
+    {
+      "id": "a006",
+      "type": "prior_note",
+      "title": "Prior records & collateral",
+      "items": [],
+      "text": "- Medical records show MRI findings consistent with relapsing-remitting MS with two distinct lesion sites\n- Medical records show CRP mildly elevated at 4.2 mg/L, noted as consistent with inflammatory state",
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "records",
+          "prior notes",
+          "chart",
+          "history",
+          "previous visits"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "generated"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Conduct a thorough nutrition-focused assessment for a patient with a newly diagnosed neurological condition.",
+      "expected_discoveries": [
+        {
+          "id": "o1.d1",
+          "text": "Irregular meal pattern with frequent breakfast skipping and reliance on takeout",
+          "linked_fact_ids": [
+            "f030",
+            "f042",
+            "f086",
+            "f089"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o1.d2",
+          "text": "Low-normal B12 and ferritin in the context of a semi-vegetarian diet",
+          "linked_fact_ids": [
+            "f045",
+            "f096",
+            "f029"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o1.d3",
+          "text": "Vitamin D deficiency already identified and being treated",
+          "linked_fact_ids": [
+            "f010",
+            "f021",
+            "f090",
+            "f096"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o1.d4",
+          "text": "Self-initiated fish oil supplementation without professional guidance",
+          "linked_fact_ids": [
+            "f027",
+            "f048",
+            "f083"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o1.d5",
+          "text": "Fatigue and medication side effects disrupting normal eating patterns",
+          "linked_fact_ids": [
+            "f015",
+            "f026",
+            "f087",
+            "f075"
+          ],
+          "link_method": "llm"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Will answer dietary questions thoroughly but may redirect conversation to MS-specific diet research she has done",
+        "May become emotional when discussing how her eating habits have changed since diagnosis",
+        "Will ask the student to explain the relevance of each question she is asked"
+      ],
+      "points": null,
+      "min_level": "M1"
+    },
+    {
+      "id": "o2",
+      "objective": "Establish rapport and use empathetic communication with a patient who is emotionally overwhelmed and intellectually challenging.",
+      "expected_discoveries": [
+        {
+          "id": "o2.d1",
+          "text": "Patient is highly anxious and oscillates between analytical questioning and emotional distress",
+          "linked_fact_ids": [
+            "f009",
+            "f067",
+            "f069",
+            "f091"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o2.d2",
+          "text": "She responds positively when her intelligence and research efforts are acknowledged without being dismissed",
+          "linked_fact_ids": [
+            "f058",
+            "f084",
+            "f088"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o2.d3",
+          "text": "She needs space to express fear and grief about her diagnosis before she can engage productively with counseling",
+          "linked_fact_ids": [
+            "f091",
+            "f092",
+            "f073"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o2.d4",
+          "text": "She may challenge the student with questions that require honest acknowledgment of uncertainty",
+          "linked_fact_ids": [
+            "f070",
+            "f074",
+            "f076"
+          ],
+          "link_method": "llm"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May test the student with detailed clinical questions to assess credibility",
+        "Will disengage or become tearful if she feels rushed or patronized",
+        "Will become more cooperative and open once she feels heard and respected",
+        "May apologize for asking too many questions and need reassurance that her questions are welcome"
+      ],
+      "points": null,
+      "min_level": "M1"
+    },
+    {
+      "id": "o3",
+      "objective": "Provide evidence-based nutrition counseling addressing MS-relevant dietary patterns and supplement safety.",
+      "expected_discoveries": [
+        {
+          "id": "o3.d1",
+          "text": "Patient has encountered multiple unvetted MS diet protocols online and needs help evaluating them",
+          "linked_fact_ids": [
+            "f084",
+            "f088",
+            "f074"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o3.d2",
+          "text": "Mediterranean and anti-inflammatory dietary patterns have the strongest current evidence base relevant to MS",
+          "linked_fact_ids": [
+            "f052",
+            "f088"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o3.d3",
+          "text": "Her existing lacto-vegetarian foundation aligns well with evidence-based recommendations with targeted modifications",
+          "linked_fact_ids": [
+            "f029",
+            "f035",
+            "f037",
+            "f065"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o3.d4",
+          "text": "Fish oil supplementation she self-initiated is generally considered safe but dose and quality should be reviewed",
+          "linked_fact_ids": [
+            "f027",
+            "f043",
+            "f083"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o3.d5",
+          "text": "Extreme elimination diets she is considering carry risk of nutritional deficiency and are not evidence-based",
+          "linked_fact_ids": [
+            "f093"
+          ],
+          "link_method": "llm"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Will ask for citations or specific studies to support recommendations",
+        "May push back if recommendations conflict with what she has read online",
+        "Will be receptive to a structured, logical explanation of the evidence hierarchy",
+        "May express relief when told her traditional Indian diet is largely compatible with anti-inflammatory eating"
+      ],
+      "points": null,
+      "min_level": "M2"
+    },
+    {
+      "id": "o4",
+      "objective": "Address nutrient adequacy concerns specific to a semi-vegetarian patient with MS, including Vitamin D, B12, iron, and omega-3 fatty acids.",
+      "expected_discoveries": [
+        {
+          "id": "o4.d1",
+          "text": "Low-normal B12 is a concern given semi-vegetarian diet and should be monitored; dietary sources and supplementation options should be discussed",
+          "linked_fact_ids": [
+            "f045",
+            "f096",
+            "f029"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o4.d2",
+          "text": "Low-normal ferritin may contribute to fatigue alongside MS-related fatigue",
+          "linked_fact_ids": [
+            "f045",
+            "f015",
+            "f096"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o4.d3",
+          "text": "Vitamin D is being supplemented but dietary sources and sun exposure habits should also be assessed",
+          "linked_fact_ids": [
+            "f010",
+            "f021",
+            "f044",
+            "f090"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o4.d4",
+          "text": "Omega-3 intake from diet is likely low given infrequent fish consumption; current supplement dose and quality should be evaluated",
+          "linked_fact_ids": [
+            "f027",
+            "f029",
+            "f043"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o4.d5",
+          "text": "Calcium adequacy should be assessed given Vitamin D deficiency and dairy-based diet",
+          "linked_fact_ids": [
+            "f037",
+            "f044",
+            "f010"
+          ],
+          "link_method": "llm"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Will be highly engaged with this topic and may already know some of the relevant nutrients",
+        "May ask whether she needs additional testing beyond what has already been done",
+        "Will want specific food sources and amounts rather than general advice",
+        "May express concern about taking too many supplements and ask how to prioritize"
+      ],
+      "points": null,
+      "min_level": "M2"
+    },
+    {
+      "id": "o5",
+      "objective": "Develop a realistic, individualized nutrition care plan that accounts for fatigue, medication side effects, work schedule, and cultural food preferences.",
+      "expected_discoveries": [
+        {
+          "id": "o5.d1",
+          "text": "Dimethyl fumarate-related nausea and flushing can be mitigated by taking the medication with a low-fat meal or snack",
+          "linked_fact_ids": [
+            "f024",
+            "f026",
+            "f087"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o5.d2",
+          "text": "Fatigue management strategies include regular meal timing, iron and B12 optimization, and adequate hydration",
+          "linked_fact_ids": [
+            "f015",
+            "f031",
+            "f046",
+            "f086"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o5.d3",
+          "text": "Meal prep strategies that reduce reliance on takeout are needed given long work hours",
+          "linked_fact_ids": [
+            "f030",
+            "f042",
+            "f072",
+            "f075"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o5.d4",
+          "text": "Traditional Indian foods such as dal, leafy greens, and yogurt can be highlighted as nutritionally beneficial and culturally affirming",
+          "linked_fact_ids": [
+            "f029",
+            "f035",
+            "f037",
+            "f065"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o5.d5",
+          "text": "Husband's involvement in meal planning is a practical strength to leverage",
+          "linked_fact_ids": [
+            "f007",
+            "f053",
+            "f059"
+          ],
+          "link_method": "llm"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Will respond well to a written or structured plan she can review and research further",
+        "May initially want to change everything at once and will need guidance on prioritization",
+        "Will appreciate when traditional foods are incorporated rather than replaced by unfamiliar Western alternatives",
+        "May ask follow-up questions about each recommendation before agreeing to try it"
+      ],
+      "points": null,
+      "min_level": "M3"
+    },
+    {
+      "id": "o6",
+      "objective": "Recognize the role of interprofessional collaboration in MS nutrition care and identify appropriate referrals and community resources.",
+      "expected_discoveries": [
+        {
+          "id": "o6.d1",
+          "text": "Neurology team has already flagged dietary follow-up in the discharge summary, establishing a collaborative care context",
+          "linked_fact_ids": [
+            "f097",
+            "f096"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o6.d2",
+          "text": "Emotional distress and anxiety may warrant referral to a psychologist or MS support group",
+          "linked_fact_ids": [
+            "f009",
+            "f091",
+            "f092"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o6.d3",
+          "text": "MS Society resources and registered dietitian follow-up should be recommended",
+          "linked_fact_ids": [
+            "f097"
+          ],
+          "link_method": "llm_skill"
+        },
+        {
+          "id": "o6.d4",
+          "text": "Physical activity guidance in coordination with neurology and physical therapy is relevant to fatigue management",
+          "linked_fact_ids": [
+            "f032",
+            "f017",
+            "f015"
+          ],
+          "link_method": "llm"
+        },
+        {
+          "id": "o6.d5",
+          "text": "Patient may benefit from connecting with an MS-specialized dietitian for ongoing support",
+          "linked_fact_ids": [
+            "f097"
+          ],
+          "link_method": "llm_skill"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May not be aware of MS-specific community and support resources",
+        "Will be receptive to referrals framed as expanding her team of experts",
+        "May resist mental health referral initially but may be open if framed around coping with a major life change",
+        "Will likely research any resource provided before her next appointment"
+      ],
+      "points": null,
+      "min_level": "M3"
+    }
+  ],
+  "knowledge_sources": [],
+  "documents": [],
+  "assumptions": [
+    "Relapsing-remitting MS is assumed as the most common subtype in a 29-year-old at first diagnosis; faculty did not specify subtype",
+    "Dimethyl fumarate was selected as a plausible first-line disease-modifying therapy for newly diagnosed RRMS; faculty did not specify medication",
+    "Vitamin D deficiency was added as a secondary diagnosis because it is a well-established and very common comorbidity in MS and is clinically expected at first workup",
+    "Situational anxiety was added as a secondary diagnosis given faculty description of emotional overwhelm; no psychiatric history is assumed",
+    "Lab values (Vitamin D, B12, ferritin, CRP) were invented to be consistent with a newly diagnosed MS patient on a semi-vegetarian diet; all values are plausible and conservative",
+    "Semi-vegetarian lacto-vegetarian dietary pattern was assumed as plausible for an Indian-American woman; faculty did not specify diet",
+    "Dimethyl fumarate GI side effects (flushing, nausea) are a known and common effect of this medication and were included as a realistic counseling touchpoint",
+    "Husband's supportiveness was assumed as a strength given faculty noted she is married; no details about husband were provided by faculty",
+    "BMI and anthropometrics were invented to be within normal range, consistent with no mention of weight-related conditions by faculty",
+    "Self-initiated fish oil supplementation was added as a plausible behavior for a highly research-oriented newly diagnosed MS patient"
+  ],
+  "optional_details": [
+    "Works full-time in a corporate IT environment, likely with sedentary desk-based work",
+    "Has not disclosed her MS diagnosis to colleagues",
+    "Grew up in a household where home-cooked Indian meals were the norm; cooking skills are moderate",
+    "Uses health and science forums and peer-reviewed article summaries online to research her condition",
+    "No children currently; has expressed private concerns about future family planning in the context of MS"
+  ]
+}

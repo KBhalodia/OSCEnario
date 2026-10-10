@@ -22,6 +22,7 @@ from ..schemas import (
     Artifact, Disclosure, EncounterState, Fact, PatientProfile,
     ProfileStatus, ReleaseTrigger, Speaker, Turn,
 )
+from .. import levels
 from . import prompts
 
 
@@ -39,11 +40,18 @@ class TurnResult:
 # Start
 # --------------------------------------------------------------------------
 
-def start_encounter(profile: PatientProfile, require_published: bool = True) -> EncounterState:
+def start_encounter(profile: PatientProfile, require_published: bool = True,
+                    level: str | None = None, student_id: str | None = None,
+                    assignment_id: str | None = None) -> EncounterState:
+    """`level` is the student's year (M1..M4, see data/levels.json). It tunes how hard the
+    patient is and how the encounter is graded; the stored profile is never modified."""
     if require_published and profile.status != ProfileStatus.published:
         raise ValueError("Patient profile is not published.")
-    state = EncounterState(id=str(uuid.uuid4()), patient_id=profile.id,
-                           patient_version=profile.version, trust=profile.settings.opening_trust)
+    level = levels.get_level(level)["key"]
+    leveled = levels.apply_level(profile, level)
+    state = EncounterState(id=str(uuid.uuid4()), patient_id=profile.id, level=level,
+                           student_id=student_id, assignment_id=assignment_id,
+                           patient_version=profile.version, trust=leveled.settings.opening_trust)
     for a in profile.artifacts:
         if a.release.trigger == ReleaseTrigger.at_start:
             state.released_artifact_ids.append(a.id)
@@ -133,6 +141,7 @@ def take_turn(profile: PatientProfile, state: EncounterState, message: str, llm:
     message = message.strip()
     if not message:
         raise ValueError("Empty message")
+    profile = levels.apply_level(profile, state.level)   # same tuning every turn
 
     # 1. ROUTER
     route = llm.call_json(
