@@ -102,6 +102,30 @@
   .preview .missing { background: var(--marker-soft); border: 1px solid var(--marker); border-radius: 8px; padding: 8px 10px; margin-top: 8px; }
   .preview .pv-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
 
+  /* ---- Subsections inside a top-level card ---- */
+  .subsection { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 16px; }
+  .subsection:first-of-type { border-top: 0; margin-top: 6px; padding-top: 0; }
+  .subsection > h3 { margin: 0 0 4px; font-size: 15px; }
+  .subsection > .hint { margin: 0 0 12px; color: var(--muted); }
+
+  /* ---- Year rubric panel ---- */
+  .rubric { border: 1px solid var(--line); border-radius: var(--radius); background: #f6f9f9; padding: 14px 16px; margin-top: 10px; }
+  .rubric h4 { margin: 0 0 8px; font-size: 14px; }
+  .rubric .exp { margin: 0 0 12px; padding-left: 18px; }
+  .rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .rubric th, .rubric td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .rubric th { color: var(--muted); font-size: 13px; }
+  .mode { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; border: 1px solid var(--line); }
+  .mode.core { background: var(--ok-soft); color: var(--ok); border-color: var(--ok); }
+  .mode.lenient { background: var(--marker-soft); border-color: var(--marker); color: #6b5300; }
+  .mode.na { background: #eef1f1; color: var(--muted); }
+  .rubric .epa { margin: 10px 0 0; padding-left: 18px; }
+  .rubric .reviewnote { margin-top: 10px; font-size: 13px; color: var(--alert); }
+  .rubric .scalekey { display: flex; gap: 10px; flex-wrap: wrap; margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+  .rubric .scalekey span { white-space: nowrap; }
+  .official-badge { display: inline-block; background: #e2ecf0; border: 1px solid var(--primary); color: var(--primary);
+                    font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 999px; margin-left: 6px; }
+
   @media (max-width: 860px) {
     .layout { grid-template-columns: 1fr; }
     aside { position: static; }
@@ -169,6 +193,308 @@ const TEMPERAMENT_AI_MAP = [
   { ai: "facultyNotes",       key: "notes",       label: "Additional instructions" }
 ];
 
+/* =====================================================================
+   MEDICAL STUDENT PROFILE & ASSESSMENT CRITERIA
+   Who the learner is, and what faculty want them graded on. All of this is
+   optional and additive: an empty profile adds nothing to the exported JSON,
+   so existing encounter consumers keep working unchanged.
+   ===================================================================== */
+const STUDENT_YEAR_OPTIONS = [
+  "Year 1", "Year 2", "Year 3", "Year 4",
+  "Intern / PGY-1", "Resident / PGY-2+", "Other / Custom"
+];
+const SPECIALTY_OPTIONS = [
+  "Internal Medicine", "Family Medicine", "Emergency Medicine", "Pediatrics",
+  "Surgery", "Obstetrics and Gynecology", "Psychiatry", "Neurology",
+  "Cardiology", "Other / Custom"
+];
+/* Starter grading criteria faculty can edit, remove, or replace. These are
+   suggestions only; nothing forces a case to use them. */
+const SUGGESTED_CRITERIA = [
+  "History Taking",
+  "Physical Examination",
+  "Clinical Reasoning and Differential Diagnosis",
+  "Diagnostic Test Selection and Interpretation",
+  "Management and Treatment Planning",
+  "Communication and Empathy",
+  "Professionalism",
+  "Patient Safety"
+];
+
+/* =====================================================================
+   YEAR-APPROPRIATE ASSESSMENT RUBRIC  (single source of truth)
+   Built entirely from the product requirements. This is NOT loaded from any
+   external rubric file. It is reference/discussion configuration: it is shown
+   to faculty, saved with the scenario, and exported in the encounter JSON, but
+   NOTHING in this project auto-grades against it (there is no grading engine).
+   ===================================================================== */
+const MED_YEAR_OPTIONS = ["M1", "M2", "M3", "M4"];
+
+// The seven assessment domains, in order, with a stable key for each.
+const RUBRIC_DOMAINS = [
+  { key: "opening",         name: "Opening and purpose" },
+  { key: "rapport",         name: "Rapport, respect, and empathy" },
+  { key: "infoGathering",   name: "Information gathering" },
+  { key: "listeningCues",   name: "Listening and response to cues" },
+  { key: "explanation",     name: "Explanation and shared decisions" },
+  { key: "reasoning",       name: "Clinical reasoning and synthesis" },
+  { key: "professionalism", name: "Professionalism, safety, and closure" }
+];
+
+// The four-point scale. Only the short labels are provided in the requirements;
+// we do NOT invent per-domain descriptor text.
+const RATING_SCALE = [
+  { score: 4, label: "Strong" },
+  { score: 3, label: "Competent" },
+  { score: 2, label: "Developing" },
+  { score: 1, label: "Unsafe or absent" }
+];
+
+// Assessment modes. "na" is excluded from the max total and never scored as 0.
+const DOMAIN_MODES = {
+  core:    "Core \u2014 graded with the rubric as written",
+  lenient: "Lenient \u2014 graded against this year's expectations",
+  na:      "N/A \u2014 not expected this year (excluded from the total)"
+};
+
+// Domains whose rating of 1 should always trigger review, regardless of total.
+const REVIEW_TRIGGER_DOMAINS = ["professionalism", "reasoning"];
+
+/* The authoritative per-year configuration. domainModes maps every domain key
+   to "core" | "lenient" | "na". maxTotal is given by the requirements. */
+const YEAR_CONFIG = {
+  M1: {
+    label: "M1 \u2014 Year 1 (pre-clinical)",
+    expectations: [
+      "Introduces themselves clearly.",
+      "Uses a respectful and empathetic tone.",
+      "Asks open-ended questions.",
+      "Obtains a basic history of the main concern.",
+      "Closes the encounter simply and appropriately.",
+      "Advanced clinical reasoning, differential diagnosis, and management are not expected."
+    ],
+    domainModes: {
+      opening: "core", rapport: "core", infoGathering: "lenient",
+      listeningCues: "lenient", explanation: "lenient", reasoning: "na",
+      professionalism: "lenient"
+    },
+    maxTotal: 24,
+    epas: [
+      { id: "EPA1", name: "Gather a history and perform a physical examination", level: "Level 2", supervision: "Direct supervision" }
+    ],
+    patientDifficulty: [
+      "Beginner-friendly and cooperative.",
+      "Forthcoming with clear answers.",
+      "Focused on the main concern.",
+      "May require gentle prompting from the student."
+    ]
+  },
+  M2: {
+    label: "M2 \u2014 Year 2 (pre-clinical)",
+    expectations: [
+      "Takes a structured history.",
+      "Asks logical follow-up questions.",
+      "Responds to obvious patient cues.",
+      "Explains information without excessive medical jargon.",
+      "Recognizes basic key problems.",
+      "Does not need to produce a complete or advanced differential diagnosis."
+    ],
+    domainModes: {
+      opening: "core", rapport: "core", infoGathering: "core",
+      listeningCues: "core", explanation: "lenient", reasoning: "lenient",
+      professionalism: "core"
+    },
+    maxTotal: 28,
+    epas: [
+      { id: "EPA1", name: "Gather a history and perform a physical examination", level: "Level 2", supervision: "Direct supervision" },
+      { id: "EPA2", name: "Prioritize a differential diagnosis following a clinical encounter", level: "Level 2", supervision: "Direct supervision" }
+    ],
+    patientDifficulty: [
+      "Answers questions when asked.",
+      "Does not volunteer much information beyond the main concern."
+    ]
+  },
+  M3: {
+    label: "M3 \u2014 Year 3 (clinical)",
+    expectations: [
+      "Obtains a complete, well-sequenced history, including psychosocial context.",
+      "Recognizes subtle patient cues.",
+      "Gives patient-centered explanations and uses teach-back where appropriate.",
+      "Demonstrates clinical reasoning while acknowledging uncertainty.",
+      "Develops a shared plan and discusses follow-up."
+    ],
+    domainModes: {
+      opening: "core", rapport: "core", infoGathering: "core",
+      listeningCues: "core", explanation: "core", reasoning: "core",
+      professionalism: "core"
+    },
+    maxTotal: 28,
+    epas: [
+      { id: "EPA1", name: "Gather a history and perform a physical examination", level: "Level 3", supervision: "Indirect supervision" },
+      { id: "EPA2", name: "Prioritize a differential diagnosis following a clinical encounter", level: "Level 2", supervision: "Direct supervision" },
+      { id: "EPA3", name: "Recommend and interpret common diagnostic/screening tests", level: "Level 2", supervision: "Direct supervision" },
+      { id: "EPA9", name: "Collaborate as an interprofessional team", level: "Level 2", supervision: "Direct supervision" },
+      { id: "EPA10", name: "Recognize an urgent/emergent patient and initiate evaluation/management", level: "Level 2", supervision: "Direct supervision" }
+    ],
+    patientDifficulty: [
+      "Somewhat guarded.",
+      "Gives short answers until rapport is established.",
+      "May introduce a secondary concern partway through the encounter."
+    ]
+  },
+  M4: {
+    label: "M4 \u2014 Year 4 (advanced clinical)",
+    expectations: [
+      "Takes an efficient, hypothesis-driven history.",
+      "Identifies red flags.",
+      "Communicates uncertainty appropriately.",
+      "Uses motivational approaches and shared decision-making.",
+      "Provides safety-netting advice.",
+      "Considers coordination of care.",
+      "Minor omissions should lower scores proportionately rather than automatically making the encounter unsuccessful."
+    ],
+    domainModes: {
+      opening: "core", rapport: "core", infoGathering: "core",
+      listeningCues: "core", explanation: "core", reasoning: "core",
+      professionalism: "core"
+    },
+    maxTotal: 28,
+    epas: [
+      { id: "EPA1", name: "Gather a history and perform a physical examination", level: "Level 3", supervision: "Indirect supervision" },
+      { id: "EPA2", name: "Prioritize a differential diagnosis following a clinical encounter", level: "Level 3", supervision: "Indirect supervision" },
+      { id: "EPA3", name: "Recommend and interpret common diagnostic/screening tests", level: "Level 3", supervision: "Indirect supervision" },
+      { id: "EPA9", name: "Collaborate as an interprofessional team", level: "Level 3", supervision: "Indirect supervision" },
+      { id: "EPA10", name: "Recognize an urgent/emergent patient and initiate evaluation/management", level: "Level 3", supervision: "Indirect supervision" }
+    ],
+    patientDifficulty: [
+      "Challenging but realistic.",
+      "May be guarded, provide vague timelines, be emotionally affected, or raise competing concerns.",
+      "May push back once when advice does not fit their circumstances.",
+      "Create difficulty through communication and interaction, not by inventing unsupported clinical facts."
+    ]
+  }
+};
+/* Compute the maximum total for a year by summing the non-N/A domains (each
+   worth up to 4). This matches the stated max totals (M1 = 6 scored x 4 = 24,
+   M2-M4 = 7 scored x 4 = 28) and keeps the two in sync if modes ever change. */
+function yearMaxTotal(yearKey) {
+  const cfg = YEAR_CONFIG[yearKey];
+  if (!cfg) return 0;
+  return RUBRIC_DOMAINS.reduce((sum, d) => sum + (cfg.domainModes[d.key] === "na" ? 0 : 4), 0);
+}
+
+/* Who the learner is. Every field is optional. "year" is the M1-M4 selection
+   that drives the year-appropriate rubric; specialty is faculty free choice. */
+function blankStudentProfile() {
+  return { year: "", yearCustom: "", specialty: "", specialtyCustom: "", expectedLevel: "" };
+}
+/* One grading criterion. Only the name is really meaningful; the rest guide faculty. */
+function blankCriterion(name) {
+  return { id: uid(), name: name || "", description: "", weight: "", scale: "", notes: "" };
+}
+/* The assessment block: overall instructions plus a list of criteria. */
+function blankAssessment() {
+  return { instructions: "", criteria: [] };
+}
+/* Pre-fill a fresh assessment with the suggested criteria so faculty have a
+   starting point they can trim or rewrite. */
+function suggestedAssessment() {
+  return { instructions: "", criteria: SUGGESTED_CRITERIA.map(n => blankCriterion(n)) };
+}
+/* Ensure a patient has a complete student profile. Older saved records may lack
+   it or lack newer keys, so we fill any gaps safely (same approach as temp()). */
+function studentProfile(p) {
+  if (!p.studentProfile || typeof p.studentProfile !== "object") p.studentProfile = blankStudentProfile();
+  else { const b = blankStudentProfile(); for (const k in b) if (!(k in p.studentProfile)) p.studentProfile[k] = b[k]; }
+  // Migrate older free-text year labels to the M1-M4 keys this build uses.
+  const YEAR_MIGRATE = { "Year 1": "M1", "Year 2": "M2", "Year 3": "M3", "Year 4": "M4" };
+  const y = p.studentProfile.year;
+  if (y && YEAR_MIGRATE[y]) p.studentProfile.year = YEAR_MIGRATE[y];
+  else if (y && !YEAR_CONFIG[y]) { p.studentProfile.yearCustom = p.studentProfile.yearCustom || y; p.studentProfile.year = ""; }
+  return p.studentProfile;
+}
+/* Ensure a patient has a complete assessment object with a criteria array.
+   Learning objectives were merged into assessment criteria: a criterion's NAME
+   is the thing the student should accomplish, and the extra fields say how it is
+   graded. This also migrates any older record that still has a separate
+   `objectives` list by folding those objectives in as criteria (name = text),
+   then clearing the old list so there is a single source of truth. */
+function assessment(p) {
+  if (!p.assessment || typeof p.assessment !== "object") p.assessment = blankAssessment();
+  if (!Array.isArray(p.assessment.criteria)) p.assessment.criteria = [];
+  if (typeof p.assessment.instructions !== "string") p.assessment.instructions = "";
+  // Backfill any missing keys on each criterion.
+  p.assessment.criteria = p.assessment.criteria.map(c => {
+    const b = blankCriterion(); const out = { ...b, ...c };
+    if (!out.id) out.id = uid();
+    return out;
+  });
+  // One-time migration of a legacy objectives list into criteria.
+  if (Array.isArray(p.objectives)) {
+    const existingNames = new Set(p.assessment.criteria.map(c => (c.name || "").trim().toLowerCase()).filter(Boolean));
+    p.objectives.forEach(o => {
+      const text = (o || "").trim();
+      if (text && !existingNames.has(text.toLowerCase())) {
+        p.assessment.criteria.push(blankCriterion(text));
+        existingNames.add(text.toLowerCase());
+      }
+    });
+    delete p.objectives;   // objectives now live entirely inside assessment criteria
+  }
+  return p.assessment;
+}
+
+/* Release words used to drive progressive disclosure in the Encounter screen.
+   Faculty no longer type these; we derive them from the fact label / artifact
+   name (plus any the fact already carries, e.g. from AI extraction or older
+   records). Short filler words are dropped so disclosure stays meaningful. */
+const TRIGGER_STOPWORDS = new Set(["the","a","an","and","or","of","to","in","on","for","with","is","are","was","were","his","her","their","patient","no","not"]);
+function deriveTriggers(label, existing) {
+  const words = String(label || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter(w => w.length > 2 && !TRIGGER_STOPWORDS.has(w));
+  const merged = new Set([...(Array.isArray(existing) ? existing : []), ...words]);
+  return [...merged].filter(Boolean);
+}
+
+/* =====================================================================
+   PEDIATRICS RUBRIC  (shown ONLY when Specialty = "Pediatrics")
+   An INFORMATIONAL guide (not a scoring interface). It lists the four categories
+   and their original point values (10/30/30/30, total 100) so users understand
+   the relative emphasis, plus what the rubric looks for in each. There is no
+   scoring UI, no earned points, no totals and no pass/fail on this page.
+   ===================================================================== */
+const PEDS_SPECIALTY = "Pediatrics";
+const PEDS_RUBRIC = {
+  title: "Pediatric Hearing Treatment Clinical Simulation \u2014 Session #1",
+  maxTotal: 100,
+  criteria: [
+    { id: "peds_intro", name: "Introduce yourself to the client", max: 10, points: [
+      "Behaves in a professional manner.",
+      "Uses professional and empathetic language throughout the session."
+    ] },
+    { id: "peds_needs", name: "Engage in a Needs Assessment with the client", max: 30, points: [
+      "Reviews the age at diagnosis of deafness.",
+      "Reviews device use.",
+      "Asks about other auditory complaints, such as tinnitus or hyperacusis.",
+      "Asks about educational needs.",
+      "Identifies the client's most important communication challenge or need today."
+    ] },
+    { id: "peds_audiogram", name: "Review the client's audiogram with them", max: 30, points: [
+      "Explains the severity of the client's hearing loss sensitively.",
+      "Uses the Speech Banana to explain what the client can hear with and without their hearing technology."
+    ] },
+    { id: "peds_rehab", name: "Discuss realistic expectations for aural rehabilitation", max: 30, points: [
+      "Explains the difference between an audiologist and a speech-language pathologist (SLP).",
+      "Explains what aural rehabilitation is and how it can help.",
+      "Expresses empathy for the challenges faced by the client.",
+      "Answers the client's questions."
+    ] }
+  ]
+};
+
 /* How the virtual patient behaves and communicates. Every field is optional. */
 function blankTemperament() {
   return {
@@ -188,7 +514,8 @@ function temp(p) {
 function blankPatient() {
   return { id: uid(), title: "Untitled case", name: "", age: "", sex: "Female", greeting: "Hello, thanks for seeing me.",
            status: "draft", caseText: "", temperament: blankTemperament(),
-           objectives: [""], facts: [], sources: [], artifacts: [] };
+           studentProfile: blankStudentProfile(), assessment: suggestedAssessment(),
+           facts: [], sources: [], artifacts: [] };
 }
 function samplePatient() {
   const F = (tab, label, value, triggers, key) => ({ id: uid(), tab, label, value, triggers, key: !!key });
@@ -196,11 +523,6 @@ function samplePatient() {
     id: uid(), title: "Chest pain in a smoker", name: "Marcus Delgado", age: 58, sex: "Male",
     greeting: "Hello, doctor. Thanks for seeing me.", status: "draft",
     caseText: "Marcus Delgado is a 58-year-old man who presents with chest pressure that started about 2 hours ago while climbing stairs.\n\nThe pain is like a tight band and spreads to the left arm and jaw. He smokes 1 pack per day and his father had a heart attack at age 52.\n\nPast medical history: high blood pressure, high cholesterol.\nMedications: Lisinopril 20 mg daily, Atorvastatin 40 mg daily.\nAllergies: Penicillin (rash).",
-    objectives: [
-      "Elicit a complete pain history (onset, character, radiation, severity, associated symptoms)",
-      "Identify cardiac risk factors: smoking, family history, hypertension, cholesterol",
-      "Confirm medications and allergies before any treatment"
-    ],
     facts: [
       F("summary", "Chief complaint", "Chest pressure, started about 2 hours ago", ["what brings you", "what happened", "problem", "today", "how can i help"], true),
       F("summary", "Vitals", "BP 158/94, HR 98, RR 20, SpO2 96%", ["vital", "examine", "check you"], false),
@@ -225,6 +547,20 @@ function samplePatient() {
       empathyResponse: "Calms and shares more when the learner slows down and acknowledges his fear.",
       progression: "Starts guarded; opens up once he feels taken seriously.",
       notes: ""
+    },
+    studentProfile: {
+      year: "M3", yearCustom: "",
+      specialty: "Internal Medicine", specialtyCustom: "",
+      expectedLevel: "A third-year clerkship student should take a focused chest-pain history, recognise cardiac risk factors, build a differential that includes acute coronary syndrome, and know which first-line tests to order."
+    },
+    assessment: {
+      instructions: "Grade on the quality of the focused cardiac work-up and on clear, empathetic communication with an anxious patient.",
+      criteria: [
+        { id: uid(), name: "History Taking", description: "Elicits onset, character, radiation, severity and associated symptoms; screens cardiac risk factors.", weight: "25", scale: "0-4", notes: "" },
+        { id: uid(), name: "Clinical Reasoning and Differential Diagnosis", description: "Prioritises acute coronary syndrome and justifies the differential.", weight: "25", scale: "0-4", notes: "" },
+        { id: uid(), name: "Diagnostic Test Selection and Interpretation", description: "Orders and correctly interprets ECG and troponin.", weight: "25", scale: "0-4", notes: "" },
+        { id: uid(), name: "Communication and Empathy", description: "Acknowledges the patient's fear and explains next steps clearly.", weight: "25", scale: "0-4", notes: "" }
+      ]
     }
   };
 }
@@ -311,19 +647,20 @@ function runChecks(p) {
   const errors = [], warnings = [];
   if (!p.name.trim()) errors.push("Add the patient's name.");
   if (!String(p.age).trim()) errors.push("Add the patient's age.");
-  if (!p.objectives.some(o => o.trim())) errors.push("Add at least one learning objective. Student feedback is built from these.");
+  if (!assessment(p).criteria.some(c => (c.name || "").trim())) errors.push("Add at least one assessment criterion with a name. These are the learning objectives student feedback is built from.");
   if (!p.facts.length) errors.push("Add clinical facts for the student to discover.");
 
   p.facts.forEach((f, i) => {
     const n = f.label.trim() || ("Fact " + (i + 1));
     if (!f.label.trim() || !f.value.trim()) errors.push(`"${n}" needs both a label and a value.`);
-    if (!f.triggers.length) errors.push(`"${n}" has no release words, so students can never unlock it.`);
+    // Release words are now auto-derived from the label, so no manual-trigger check.
+    if (f.label.trim() && !deriveTriggers(f.label, f.triggers).length)
+      warnings.push(`"${n}" has no usable release words from its label; students may not be able to unlock it. Try a more descriptive label.`);
   });
   p.artifacts.forEach((a, i) => {
     const n = a.name.trim() || ("Artifact " + (i + 1));
     if (!a.name.trim()) errors.push(`Artifact ${i + 1} needs a name.`);
     if (!a.finding.trim()) errors.push(`"${n}" needs a finding summary. The patient and feedback rely on it.`);
-    if (!a.triggers.length) errors.push(`"${n}" has no release words, so students can never see it.`);
     if (!a.fileName) warnings.push(`"${n}" has no file attached. Students will see the finding text only.`);
     const f = a.finding.toLowerCase();
     if (a.abnormal && /\bnormal\b|unremarkable|within normal/.test(f) && !/abnormal/.test(f))
@@ -348,10 +685,29 @@ function runChecks(p) {
   if (!p.facts.some(f => f.key)) warnings.push("No facts are marked as key findings, so feedback cannot score what the student missed.");
   if (!p.sources.length) warnings.push("No knowledge sources attached. The patient will rely only on the facts above.");
 
-  const seen = {};
-  const everything = p.facts.map(f => [f.label || "Fact", f.triggers]).concat(p.artifacts.map(a => [a.name || "Artifact", a.triggers]));
-  everything.forEach(([label, words]) => words.forEach(w => { (seen[w] = seen[w] || []).push(label); }));
-  Object.entries(seen).forEach(([w, labels]) => { if (labels.length > 1) warnings.push(`The release word "${w}" unlocks several items at once: ${labels.join(", ")}.`); });
+  // Release words are auto-derived from labels now, so overlap between items is
+  // expected and no longer flagged as a faculty-fixable warning.
+
+  // Assessment criteria: validate weights without ever blocking a save or publish.
+  const a = assessment(p);
+  let weightSum = 0, haveWeights = false, badWeights = false;
+  a.criteria.forEach((c, i) => {
+    const n = (c.name || "").trim() || ("Criterion " + (i + 1));
+    const raw = String(c.weight ?? "").trim();
+    if (raw === "") return;                 // weights are optional
+    const num = Number(raw);
+    if (!isFinite(num) || num < 0) {
+      warnings.push(`Assessment: the weight for "${n}" ("${raw}") is not a valid non-negative number.`);
+      badWeights = true;
+    } else {
+      haveWeights = true;
+      weightSum += num;
+    }
+  });
+  // Only warn about the total when every weight was a valid number and they look like percentages.
+  if (haveWeights && !badWeights && Math.abs(weightSum - 100) > 0.01) {
+    warnings.push(`Assessment: the grading weights add up to ${Math.round(weightSum * 100) / 100}, not 100. Adjust them if you intend percentages.`);
+  }
 
   return { errors, warnings };
 }
@@ -403,14 +759,89 @@ function temperamentForExport(p) {
   return Object.values(out).some(v => v) ? out : null;
 }
 
+/* Turn the student profile into a clean object for export. "Other / Custom"
+   choices resolve to the typed custom text. Returns null when nothing is filled
+   in, so an empty profile adds nothing to the JSON (backward-compatible). */
+function studentProfileForExport(p) {
+  const s = studentProfile(p);
+  const specialty = s.specialty === "Other / Custom" ? (s.specialtyCustom || "").trim() : (s.specialty || "").trim();
+  const out = {
+    year: (s.year || "").trim(),                                   // "M1".."M4"
+    yearLabel: YEAR_CONFIG[s.year] ? YEAR_CONFIG[s.year].label : "",
+    specialty,
+    expectedLevel: (s.expectedLevel || "").trim()
+  };
+  return Object.values(out).some(v => v) ? out : null;
+}
+
+/* The official year rubric as a plain object for export/reference. Returns null
+   when no M1-M4 year is selected. This is additive and reference-only: nothing
+   in the project grades against it automatically. */
+function rubricForExport(p) {
+  const yearKey = studentProfile(p).year;
+  const cfg = YEAR_CONFIG[yearKey];
+  if (!cfg) return null;
+  return {
+    year: yearKey,
+    label: cfg.label,
+    note: "Reference rubric for faculty discussion. The total is not an automatic pass/fail grade; a rating of 1 in professionalism, safety, and closure or clinical reasoning and synthesis should trigger review.",
+    ratingScale: RATING_SCALE.map(s => ({ score: s.score, label: s.label })),
+    expectations: cfg.expectations.slice(),
+    domains: RUBRIC_DOMAINS.map(d => ({ key: d.key, name: d.name, mode: cfg.domainModes[d.key] || "core" })),
+    maxTotal: cfg.maxTotal,
+    epas: cfg.epas.map(e => ({ id: e.id, name: e.name, level: e.level, supervision: e.supervision })),
+    patientDifficulty: cfg.patientDifficulty.slice()
+  };
+}
+
+/* The Pediatrics rubric as a plain object for export. Used only when Specialty
+   = Pediatrics. This is an INFORMATIONAL guide: it carries the categories, their
+   point values and what the rubric looks for \u2014 no scores, totals or percentages,
+   because this page does not implement scoring. */
+function pedsRubricForExport() {
+  return {
+    type: "pediatrics",
+    title: PEDS_RUBRIC.title,
+    maxTotal: PEDS_RUBRIC.maxTotal,
+    note: "Informational Pediatrics rubric. Point values show relative emphasis only; this page does not implement scoring.",
+    criteria: PEDS_RUBRIC.criteria.map(c => ({ id: c.id, name: c.name, points: c.max, lookFor: c.points.slice() }))
+  };
+}
+
+/* Turn the assessment criteria into a clean object for export. Empty criteria
+   (no name and no description) are dropped. Weight is exported as a number when
+   it is a valid non-negative value, otherwise omitted. Returns null when there
+   is nothing to export, keeping the JSON backward-compatible. */
+function assessmentForExport(p) {
+  const a = assessment(p);
+  const criteria = a.criteria
+    .filter(c => (c.name || "").trim() || (c.description || "").trim())
+    .map(c => {
+      const out = { name: (c.name || "").trim(), description: (c.description || "").trim() };
+      const w = String(c.weight ?? "").trim();
+      if (w !== "" && isFinite(Number(w)) && Number(w) >= 0) out.weight = Number(w);
+      if ((c.scale || "").trim()) out.scale = (c.scale || "").trim();
+      if ((c.notes || "").trim()) out.notes = (c.notes || "").trim();
+      return out;
+    });
+  const instructions = (a.instructions || "").trim();
+  if (!instructions && !criteria.length) return null;
+  const out = {};
+  if (instructions) out.instructions = instructions;
+  if (criteria.length) out.criteria = criteria;
+  return out;
+}
+
 /* The file below is what the Encounter screen loads as its PATIENT object */
 function toEncounterProfile(p) {
   const facts = [{ id: "demo", tab: "summary", label: "Patient", value: `${p.name}, ${p.age}-year-old ${p.sex.toLowerCase()}`, start: true }];
-  p.facts.forEach(f => facts.push({ id: f.id, tab: f.tab, label: f.label, value: f.value, key: f.key, triggers: f.triggers }));
+  // Release words are auto-derived from the label/name so progressive disclosure
+  // keeps working now that faculty no longer type them.
+  p.facts.forEach(f => facts.push({ id: f.id, tab: f.tab, label: f.label, value: f.value, key: f.key, triggers: deriveTriggers(f.label, f.triggers) }));
   p.artifacts.forEach(a => facts.push({
     id: a.id, tab: a.type === "Lab report" ? "labs" : "artifacts", label: a.name, value: a.finding,
     flag: a.abnormal ? "Abnormal" : undefined, artifact: a.type === "ECG" ? "ecg" : undefined, fileName: a.fileName || undefined,
-    triggers: a.triggers
+    triggers: deriveTriggers(a.name, a.triggers)
   }));
   const profile = {
     name: p.name, age: Number(p.age), sex: p.sex, greeting: p.greeting,
@@ -418,10 +849,23 @@ function toEncounterProfile(p) {
     fallback: "I'm not sure what you mean. Could you ask me another way?",
     tabs: [{ id: "summary", label: "Summary" }, { id: "history", label: "History" }, { id: "meds", label: "Meds & allergies" },
            { id: "labs", label: "Labs" }, { id: "artifacts", label: "ECG & imaging" }, { id: "log", label: "Disclosure log" }],
-    facts, objectives: p.objectives.filter(o => o.trim()), sources: p.sources.map(s => ({ title: s.title, note: s.note }))
+    facts, objectives: assessment(p).criteria.map(c => (c.name || "").trim()).filter(Boolean), sources: p.sources.map(s => ({ title: s.title, note: s.note }))
   };
   const behaviour = temperamentForExport(p);
   if (behaviour) profile.temperament = behaviour;   // additive: only present when filled in
+  const learner = studentProfileForExport(p);
+  if (learner) profile.studentProfile = learner;    // additive: learner metadata for faculty reference
+  const grading = assessmentForExport(p);
+  if (grading) profile.assessment = grading;        // additive: grading criteria stored for faculty reference
+  // Exactly one rubric is exported, mirroring what the UI shows: the Pediatrics
+  // rubric when Specialty = Pediatrics, otherwise the general M1-M4 rubric.
+  // Never both, so stale scores from one never ride along with the other.
+  if (studentProfile(p).specialty === PEDS_SPECIALTY) {
+    profile.rubric = pedsRubricForExport();          // additive: informational Pediatrics rubric
+  } else {
+    const rubric = rubricForExport(p);
+    if (rubric) profile.rubric = rubric;             // additive: official year rubric for reference
+  }
   return profile;
 }
 function download() {
@@ -552,7 +996,7 @@ function renderExtractionPreview(p, r, previewBox, aiStatus) {
   }
 
   // How to handle lists: add alongside existing, or replace existing.
-  const hasLists = (p.facts.length || p.artifacts.length || p.objectives.some(o => o.trim()) || p.sources.length);
+  const hasLists = (p.facts.length || p.artifacts.length || assessment(p).criteria.some(c => (c.name || "").trim()) || p.sources.length);
   const modeNote = h("p", { class: "hint" },
     hasLists
       ? "You already have some facts/objectives. \u201cAdd\u201d keeps yours and appends the AI ones. \u201cReplace\u201d clears yours first."
@@ -599,7 +1043,10 @@ function applyExtraction(p, r, mode) {
   }
   setIfEmpty("greeting", r.greeting, isDefaultGreeting);
 
+  // Learning objectives now live as assessment criteria, so AI-suggested
+  // objectives become criteria rows (the objective text is the criterion name).
   const incomingObjectives = (r.objectives || []).filter(o => o && o.trim());
+  const incomingCriteria = incomingObjectives.map(o => { const c = blankCriterion(o.trim()); c.aiReview = true; return c; });
   const incomingFacts = (r.facts || []).map(f => ({
     id: uid(), tab: f.tab, label: f.label || "", value: f.value || "",
     triggers: f.triggers || [], key: !!f.key, aiReview: true
@@ -612,16 +1059,15 @@ function applyExtraction(p, r, mode) {
     id: uid(), title: s.title || "", note: s.note || "", fileName: "", aiReview: true
   }));
 
+  const asmt = assessment(p);   // ensures the criteria array exists (and migrates any legacy objectives)
   if (mode === "replace") {
-    if (incomingObjectives.length) p.objectives = incomingObjectives.slice();
+    if (incomingCriteria.length) asmt.criteria = incomingCriteria.slice();
     if (incomingFacts.length) p.facts = incomingFacts;
     if (incomingArtifacts.length) p.artifacts = incomingArtifacts;
     if (incomingSources.length) p.sources = incomingSources;
   } else {
-    // add: keep existing, drop any empty starter objective, then append
-    const existingObj = p.objectives.filter(o => o.trim());
-    p.objectives = existingObj.concat(incomingObjectives);
-    if (!p.objectives.length) p.objectives = [""];
+    // add: keep existing criteria, append the AI-suggested ones
+    asmt.criteria = asmt.criteria.concat(incomingCriteria);
     p.facts = p.facts.concat(incomingFacts);
     p.artifacts = p.artifacts.concat(incomingArtifacts);
     p.sources = p.sources.concat(incomingSources);
@@ -665,6 +1111,81 @@ function renderSidebar() {
   });
 }
 
+/* Build the read-only panel that shows the selected year's expectations,
+   domain modes, EPA targets and patient difficulty. Returns an empty node when
+   no M1-M4 year is selected. This is the official rubric view; it is derived
+   from YEAR_CONFIG and never edited directly by faculty. */
+function renderYearRubric(yearKey) {
+  const cfg = YEAR_CONFIG[yearKey];
+  if (!cfg) {
+    return h("p", { class: "hint" },
+      "Choose a medical student year (M1\u2013M4) to load the year-appropriate expectations, scoring modes, EPA targets and patient difficulty.");
+  }
+  const box = h("div", { class: "rubric" });
+
+  box.append(h("h4", {}, "Expected performance \u2014 " + cfg.label));
+  box.append(h("ul", { class: "exp" }, cfg.expectations.map(e => h("li", {}, e))));
+
+  // Domain table: name + mode. "na" rows are clearly excluded from the total.
+  const rows = RUBRIC_DOMAINS.map(d => {
+    const mode = cfg.domainModes[d.key] || "core";
+    return h("tr", {},
+      h("td", {}, d.name),
+      h("td", {}, h("span", { class: "mode " + mode, title: DOMAIN_MODES[mode] },
+        mode === "na" ? "N/A" : (mode.charAt(0).toUpperCase() + mode.slice(1)))));
+  });
+  box.append(h("table", {},
+    h("thead", {}, h("tr", {}, h("th", {}, "Assessment domain"), h("th", {}, "Mode this year"))),
+    h("tbody", {}, rows)));
+
+  box.append(h("div", { class: "scalekey" },
+    RATING_SCALE.map(s => h("span", {}, s.score + " \u2014 " + s.label))));
+
+  box.append(h("p", { class: "hint", style: "margin:10px 0 0" },
+    "Maximum total this year: " + cfg.maxTotal + " points (N/A domains are excluded, never counted as zero). " +
+    "The total is a discussion aid, not an automatic pass/fail grade."));
+
+  // EPA targets
+  box.append(h("h4", { style: "margin-top:12px" }, "EPA targets"));
+  box.append(h("ul", { class: "epa" }, cfg.epas.map(e =>
+    h("li", {}, h("b", {}, e.id + " \u2014 "), e.name + ": " + e.level + ", " + e.supervision))));
+
+  // Patient difficulty guidance
+  box.append(h("h4", { style: "margin-top:12px" }, "Patient difficulty guidance"));
+  box.append(h("ul", { class: "epa" }, cfg.patientDifficulty.map(d => h("li", {}, d))));
+
+  const reviewNames = REVIEW_TRIGGER_DOMAINS
+    .map(k => (RUBRIC_DOMAINS.find(d => d.key === k) || {}).name)
+    .filter(Boolean).join(" or ");
+  box.append(h("p", { class: "reviewnote" },
+    "A rating of 1 in " + reviewNames + " should trigger review even if the overall total is high."));
+
+  return box;
+}
+
+/* Build the INFORMATIONAL Pediatrics rubric guide. Shown ONLY when Specialty =
+   "Pediatrics". This is a read-only reference: it lists the four categories and
+   their original point values so users understand the relative emphasis, plus
+   what the rubric looks for in each. There is intentionally NO scoring here \u2014
+   no inputs, no earned points, no totals, no percentages, no pass/fail. */
+function renderPedsRubric() {
+  const box = h("div", { class: "rubric" });
+  box.append(h("h4", {}, PEDS_RUBRIC.title));
+  box.append(h("p", { class: "hint", style: "margin:0 0 10px" },
+    "Informational guide only. The point values show the relative emphasis of each category; this page is for reviewing assessment expectations, not for entering scores."));
+
+  PEDS_RUBRIC.criteria.forEach((c, idx) => {
+    box.append(h("div", { class: "sub" },
+      h("div", { class: "row-end" },
+        h("span", {}, h("b", {}, (idx + 1) + ". " + c.name)),
+        h("span", { class: "filename" }, c.max + " points")),
+      h("div", {}, h("b", { style: "font-size:13px" }, "What the rubric looks for:")),
+      h("ul", { class: "exp", style: "margin:4px 0 0" }, c.points.map(pt => h("li", {}, pt)))));
+  });
+
+  return box;
+}
+
 function renderEditor() {
   const p = current();
   const root = document.getElementById("editor");
@@ -683,47 +1204,180 @@ function renderEditor() {
   updatePill();
 
   /* 0. Patient Case Information (main way to enter a case) */
+  // Small helper: a titled subsection block that lives INSIDE a top-level card.
+  const subsection = (title, hint, ...nodes) =>
+    h("div", { class: "subsection" },
+      h("h3", {}, title),
+      hint ? h("p", { class: "hint" }, hint) : null,
+      ...nodes);
+
+  /* =====================================================================
+     SECTION A: MEDICAL STUDENT PROFILE
+     Year (M1-M4) + specialty + the official year rubric + Assessment Criteria.
+     ===================================================================== */
+  const sp = studentProfile(p);
+
+  // --- A1. Year, specialty, and the live year-appropriate rubric ---
+  const rubricPanel = h("div", {});
+  // Specialty decides which rubric shows: Pediatrics -> informational Pediatrics
+  // rubric guide; anything else -> the general M1-M4 rubric. Only one is ever
+  // shown. Neither displays or stores scores.
+  const drawRubricPanel = () => {
+    rubricPanel.textContent = "";
+    rubricPanel.append(sp.specialty === PEDS_SPECIALTY
+      ? renderPedsRubric()
+      : renderYearRubric(sp.year));
+  };
+
+  const profileBox = h("div", {});
+  const drawProfile = () => {
+    profileBox.textContent = "";
+    // Specialty keeps its "Other / Custom" reveal. Changing specialty must
+    // immediately swap the rubric panel (and re-draw the Assessment Criteria
+    // note, which mentions the year rubric).
+    const specialtyWrap = h("div", {});
+    specialtyWrap.append(field("Specialty", selectInput(sp, "specialty", [""].concat(SPECIALTY_OPTIONS), () => { drawRubricPanel(); drawProfile(); })));
+    if (sp.specialty === "Other / Custom") {
+      specialtyWrap.append(h("div", { style: "margin-top:8px" },
+        field("Custom specialty",
+          h("input", { type: "text", value: sp.specialtyCustom ?? "", placeholder: "Enter the specialty",
+            oninput: (e) => { sp.specialtyCustom = e.target.value; touch(); } }))));
+    }
+    profileBox.append(h("div", { class: "grid2" },
+      field("Medical student year", selectInput(sp, "year", [""].concat(MED_YEAR_OPTIONS), () => { drawRubricPanel(); drawProfile(); })),
+      specialtyWrap
+    ));
+  };
+  drawProfile();
+
+  // --- A2. Assessment Criteria (official year rubric + optional faculty objectives) ---
+  const asmt = assessment(p);
+  const asmtBox = h("div", {});
+  const drawAssessment = () => {
+    asmtBox.textContent = "";
+    asmtBox.append(field("Overall assessment instructions (optional)",
+      h("textarea", { rows: "3", value: asmt.instructions ?? "",
+        placeholder: "Any overall note on how to assess this case (optional).",
+        oninput: (e) => { asmt.instructions = e.target.value; touch(); } })));
+
+    // Clearly separate the OFFICIAL rubric (shown above) from faculty objectives.
+    asmtBox.append(h("p", { class: "hint", style: "margin:14px 0 4px" },
+      h("b", {}, "Official rubric"),
+      h("span", { class: "official-badge" }, "Read-only")));
+    if (sp.specialty === PEDS_SPECIALTY) {
+      asmtBox.append(h("p", { class: "hint", style: "margin:0 0 8px" },
+        "Specialty is Pediatrics, so the " + PEDS_RUBRIC.title +
+        " is shown above as an informational guide instead of the general rubric. This page does not score it."));
+    } else {
+      asmtBox.append(sp.year
+        ? h("p", { class: "hint", style: "margin:0 0 8px" },
+            "The seven domains, modes, maximum total and EPA targets above come from the selected year (" +
+            sp.year + ") and update automatically when you change the year. They are stored with the scenario for reference.")
+        : h("p", { class: "hint", style: "margin:0 0 8px" }, "Select a medical student year above to load the official rubric."));
+    }
+
+    asmtBox.append(h("p", { class: "hint", style: "margin:14px 0 4px" },
+      h("b", {}, "Additional faculty objectives (optional)")));
+    asmtBox.append(h("p", { class: "hint", style: "margin:0 0 8px" },
+      "Scenario-specific objectives you want to track in addition to the official rubric. These do not change the year rubric or its maximum total."));
+
+    const totalLine = h("p", { class: "hint", style: "margin:10px 0 4px" });
+    const refreshTotal = () => {
+      let sum = 0, bad = false, any = false;
+      asmt.criteria.forEach(c => {
+        const raw = String(c.weight ?? "").trim();
+        if (raw === "") return;
+        const num = Number(raw);
+        if (!isFinite(num) || num < 0) { bad = true; } else { sum += num; any = true; }
+      });
+      if (bad) { totalLine.textContent = "Some weights are not valid non-negative numbers."; totalLine.style.color = "var(--alert)"; }
+      else if (!any) { totalLine.textContent = "Weights are optional. If you use percentages, they should total 100."; totalLine.style.color = "var(--muted)"; }
+      else if (Math.abs(sum - 100) > 0.01) { totalLine.textContent = "Weights total " + (Math.round(sum * 100) / 100) + " (not 100). You can still save."; totalLine.style.color = "var(--alert)"; }
+      else { totalLine.textContent = "Weights total 100."; totalLine.style.color = "var(--ok)"; }
+    };
+
+    asmt.criteria.forEach((c, i) => {
+      asmtBox.append(h("div", { class: "sub" },
+        field("Objective / criterion name", textInput(c, "name")),
+        field("Description of expected performance", textArea(c, "description", 2)),
+        h("div", { class: "grid2" },
+          field("Weight or percentage (optional)",
+            h("input", { type: "text", inputmode: "decimal", value: c.weight ?? "", placeholder: "e.g. 25",
+              oninput: (e) => { c.weight = e.target.value; touch(); refreshTotal(); } })),
+          field("Scoring scale (optional)",
+            h("input", { type: "text", value: c.scale ?? "", placeholder: "e.g. 0-4, Pass/Fail, 1-5",
+              oninput: (e) => { c.scale = e.target.value; touch(); } }))),
+        field("Notes for faculty (optional)", textArea(c, "notes", 2)),
+        h("div", { class: "row-end" },
+          h("span", {}),
+          h("button", { class: "btn danger small", type: "button",
+            onclick: () => { asmt.criteria.splice(i, 1); touch(); drawAssessment(); } }, "Remove objective"))));
+    });
+    if (!asmt.criteria.length) asmtBox.append(h("p", { class: "hint" }, "No extra objectives. The official year rubric still applies."));
+
+    asmtBox.append(totalLine);
+    refreshTotal();
+
+    asmtBox.append(h("div", { style: "display:flex;gap:10px;flex-wrap:wrap;margin-top:4px" },
+      h("button", { class: "btn ghost small", type: "button",
+        onclick: () => { asmt.criteria.push(blankCriterion()); touch(); drawAssessment(); } }, "Add objective"),
+      h("button", { class: "btn ghost small", type: "button",
+        onclick: () => {
+          if (asmt.criteria.length && !confirm("Add the suggested objectives to the ones you already have?")) return;
+          SUGGESTED_CRITERIA.forEach(n => asmt.criteria.push(blankCriterion(n)));
+          touch(); drawAssessment();
+        } }, "Add suggested objectives")));
+  };
+  drawAssessment();
+
+  drawRubricPanel();
+  root.append(h("section", { class: "card" },
+    h("h2", {}, "Medical Student Profile"),
+    h("p", { class: "hint" }, "Choose the learner's year and specialty. The year sets the official assessment rubric, scoring modes, EPA targets and patient difficulty."),
+    subsection("Student year and specialty",
+      "Pick M1\u2013M4. Changing the year updates the rubric below. Your extra objectives are never erased.",
+      profileBox, rubricPanel),
+    subsection("Assessment Criteria",
+      "The official year rubric (above) plus any scenario-specific objectives you add. Nothing here auto-grades \u2014 the criteria are saved for faculty reference and feedback discussion.",
+      asmtBox)
+  ));
+
+  /* =====================================================================
+     SECTION B: PATIENT CASE INFORMATION
+     Main case text + AI, then Patient Basics, Temperament, Clinical Artifacts,
+     Knowledge Sources. (The "Clinical Record & Release Rules" editing UI was
+     removed; p.facts data is still populated by AI and used for disclosure.)
+     ===================================================================== */
+
+  // --- B0. Main case text + AI extraction ---
   const caseArea = h("textarea", {
     rows: "14",
-    placeholder: "Paste the complete clinical case here, including: patient history, symptoms, examination findings, vital signs, medications, allergies, investigations and results, diagnosis and differential diagnoses, and the treatment or management plan. Paragraphs and line breaks are kept exactly as you paste them.",
+    placeholder: "Paste the complete clinical case here: history, symptoms, exam findings, vitals, medications, allergies, investigations and results, diagnosis and plan. Line breaks are kept.",
     value: p.caseText ?? "",
     oninput: (e) => { p.caseText = e.target.value; touch(); }
   });
-
   const aiStatus = h("span", { class: "ai-status" });
-  const previewBox = h("div", {});   // the review-before-apply panel renders here
+  const previewBox = h("div", {});
   const aiBtn = h("button", {
     class: "btn ai", type: "button",
     onclick: () => runAiExtraction(p, caseArea, aiBtn, aiStatus, previewBox)
   }, "Fill Other Fields with AI");
 
-  root.append(h("section", { class: "card" },
-    h("h2", {}, "Patient Case Information"),
-    h("p", { class: "hint" }, "The main way to enter a case. Paste the entire clinical case below, then let AI draft the structured fields for you to review. The AI never publishes and never overwrites your text without asking \u2014 you review every field first."),
-    field("Patient Case Information", caseArea),
-    h("div", { class: "ai-row" }, aiBtn, aiStatus),
-    previewBox
-  ));
-
-  /* 1. Basics */
-  root.append(h("section", { class: "card" },
-    h("h2", {}, "Patient basics"),
-    h("p", { class: "hint" }, "Who the student is about to meet."),
+  // --- B1. Patient basics ---
+  const basicsBox = h("div", {},
     h("div", { class: "grid2" },
-      field("Case title (for your library)", textInput(p, "title")),
+      field("Case title", textInput(p, "title")),
       field("Patient name", textInput(p, "name"))),
     h("div", { class: "grid3", style: "margin-top:12px" },
-      field("Opening line the patient says", textInput(p, "greeting")),
+      field("Opening line", textInput(p, "greeting")),
       field("Age", textInput(p, "age", "number")),
-      field("Sex", selectInput(p, "sex", ["Female", "Male", "Other"])))
-  ));
+      field("Sex", selectInput(p, "sex", ["Female", "Male", "Other"]))));
 
-  /* 1b. Patient temperament & communication style */
+  // --- B2. Patient temperament & communication style ---
   const t = temp(p);
   const tempBox = h("div", {});
   const drawTemperament = () => {
     tempBox.textContent = "";
-    // A dropdown; when "Custom" is chosen, reveal a text box for the custom value.
     const dropdownWithCustom = (label, key, customKey, options, customPlaceholder) => {
       const wrap = h("div", {});
       wrap.append(field(label, selectInput(t, key, [""].concat(options), () => drawTemperament())));
@@ -745,67 +1399,46 @@ function renderEditor() {
           oninput: (e) => { t[key] = e.target.value; touch(); } })));
     tempBox.append(
       area("Emotional cues and observable behaviours", "cues",
-        "e.g. avoids eye contact, speaks softly, appears restless, becomes tearful, shows visible frustration"),
+        "e.g. avoids eye contact, speaks softly, appears restless, becomes tearful"),
       area("Triggers and sensitive topics", "triggers",
-        "e.g. feeling blamed, being rushed, questions about alcohol, mention of surgery"),
+        "e.g. feeling blamed, being rushed, questions about alcohol"),
       area("Response to empathy and reassurance", "empathyResponse",
-        "e.g. relaxes and shares more when the learner listens and validates concerns; opens up after a clear explanation"),
+        "e.g. opens up when the learner listens and validates concerns"),
       area("Behavioural progression during the encounter", "progression",
-        "e.g. starts guarded, becomes calmer once trust builds; may get tearful when discussing prognosis"),
+        "e.g. starts guarded, becomes calmer once trust builds"),
       area("Additional faculty instructions (optional)", "notes",
         "Any other behavioural details the simulated patient should follow")
     );
   };
   drawTemperament();
-  root.append(h("section", { class: "card" },
-    h("h2", {}, "Patient Temperament & Communication Style",
-      t.aiReview ? h("span", { class: "ai-badge" }, "AI \u2014 review") : null),
-    h("p", { class: "hint" }, "Define how the virtual patient behaves and communicates so the encounter feels realistic. All fields are optional \u2014 fill in what matters for this case."),
-    tempBox));
 
-  /* 2. Learning objectives */
-  const objBox = h("div", {});
-  const drawObjs = () => {
-    objBox.textContent = "";
-    p.objectives.forEach((o, i) => {
-      objBox.append(h("div", { class: "objrow" },
-        h("input", { type: "text", value: o, "aria-label": "Learning objective " + (i + 1), oninput: (e) => { p.objectives[i] = e.target.value; touch(); } }),
-        h("button", { class: "btn danger small", type: "button", onclick: () => { p.objectives.splice(i, 1); touch(); drawObjs(); } }, "Remove")));
-    });
-    objBox.append(h("button", { class: "btn ghost small", type: "button", onclick: () => { p.objectives.push(""); touch(); drawObjs(); } }, "Add objective"));
-  };
-  drawObjs();
-  root.append(h("section", { class: "card" },
-    h("h2", {}, "Learning objectives"),
-    h("p", { class: "hint" }, "What the student should accomplish. Feedback after the encounter is scored against these."), objBox));
+  // Note: the "Clinical Record & Release Rules" editing UI was removed. The
+  // underlying p.facts data model is preserved: facts are still populated by AI
+  // extraction and still power progressive disclosure in the encounter export.
 
-  /* 3. Clinical facts */
-  const factBox = h("div", {});
-  const drawFacts = () => {
-    factBox.textContent = "";
-    p.facts.forEach((f, i) => {
-      factBox.append(h("div", { class: "sub" },
-        aiBadge(f),
+  // --- B4. Clinical artifacts (release words auto-derived; no manual input) ---
+  const artBox = h("div", {});
+  const drawArtifacts = () => {
+    artBox.textContent = "";
+    p.artifacts.forEach((a, i) => {
+      artBox.append(h("div", { class: "sub" },
+        aiBadge(a),
         h("div", { class: "grid2" },
-          field("Label", textInput(f, "label")),
-          field("Chart section", selectInput(f, "tab", TABS))),
-        field("What the chart shows", textArea(f, "value", 2)),
-        field("Release when the student's question contains (separate with commas)", wordsInput(f, "triggers")),
+          field("Name", textInput(a, "name")),
+          field("Type", selectInput(a, "type", ARTIFACT_TYPES))),
+        field("Finding summary (must match the patient's history)", textArea(a, "finding", 2)),
         h("div", { class: "row-end" },
-          checkbox(f, "key", "Key finding for feedback"),
-          h("button", { class: "btn danger small", type: "button", onclick: () => { p.facts.splice(i, 1); touch(); drawFacts(); } }, "Remove fact"))));
+          checkbox(a, "abnormal", "Abnormal result"),
+          fileAttach(a, "fileName", "Attach artifact file"),
+          h("button", { class: "btn danger small", type: "button", onclick: () => { p.artifacts.splice(i, 1); touch(); drawArtifacts(); } }, "Remove artifact"))));
     });
-    if (!p.facts.length) factBox.append(h("p", { class: "hint" }, "No facts yet. Add the first thing the student could discover."));
-    factBox.append(h("button", { class: "btn ghost small", type: "button", onclick: () => {
-      p.facts.push({ id: uid(), tab: "history", label: "", value: "", triggers: [], key: false }); touch(); drawFacts();
-    } }, "Add clinical fact"));
+    artBox.append(h("button", { class: "btn ghost small", type: "button", onclick: () => {
+      p.artifacts.push({ id: uid(), name: "", type: "Lab report", fileName: "", finding: "", abnormal: false, triggers: [] }); touch(); drawArtifacts();
+    } }, "Add artifact"));
   };
-  drawFacts();
-  root.append(h("section", { class: "card" },
-    h("h2", {}, "Clinical record and release rules"),
-    h("p", { class: "hint" }, "Each fact appears in the student's chart only after they ask about it. The patient can only say what is written here."), factBox));
+  drawArtifacts();
 
-  /* 4. Knowledge sources */
+  // --- B5. Knowledge sources ---
   const srcBox = h("div", {});
   const drawSources = () => {
     srcBox.textContent = "";
@@ -821,51 +1454,38 @@ function renderEditor() {
     srcBox.append(h("button", { class: "btn ghost small", type: "button", onclick: () => { p.sources.push({ id: uid(), title: "", note: "", fileName: "" }); touch(); drawSources(); } }, "Add knowledge source"));
   };
   drawSources();
-  root.append(h("section", { class: "card" },
-    h("h2", {}, "Knowledge sources"),
-    h("p", { class: "hint" }, "Papers, guidelines, or institutional protocols that ground the patient and the feedback."), srcBox));
 
-  /* 5. Artifacts */
-  const artBox = h("div", {});
-  const drawArtifacts = () => {
-    artBox.textContent = "";
-    p.artifacts.forEach((a, i) => {
-      artBox.append(h("div", { class: "sub" },
-        aiBadge(a),
-        h("div", { class: "grid2" },
-          field("Name", textInput(a, "name")),
-          field("Type", selectInput(a, "type", ARTIFACT_TYPES))),
-        field("Finding summary (must match the patient's history)", textArea(a, "finding", 2)),
-        field("Release when the student's question contains (separate with commas)", wordsInput(a, "triggers")),
-        h("div", { class: "row-end" },
-          checkbox(a, "abnormal", "Abnormal result"),
-          fileAttach(a, "fileName", "Attach artifact file"),
-          h("button", { class: "btn danger small", type: "button", onclick: () => { p.artifacts.splice(i, 1); touch(); drawArtifacts(); } }, "Remove artifact"))));
-    });
-    artBox.append(h("button", { class: "btn ghost small", type: "button", onclick: () => {
-      p.artifacts.push({ id: uid(), name: "", type: "Lab report", fileName: "", finding: "", abnormal: false, triggers: [] }); touch(); drawArtifacts();
-    } }, "Add artifact"));
-  };
-  drawArtifacts();
   root.append(h("section", { class: "card" },
-    h("h2", {}, "Clinical artifacts"),
-    h("p", { class: "hint" }, "Lab reports, ECGs, X-rays, CT scans, or prior notes. Each one appears in the chart when the student asks for it."), artBox));
+    h("h2", {}, "Patient Case Information"),
+    h("p", { class: "hint" }, "Paste the full clinical case once, then let AI draft the structured fields for you to review. The AI never publishes and never overwrites your text without asking."),
+    subsection("Full case text",
+      null,
+      field("Paste the complete clinical case", caseArea),
+      h("div", { class: "ai-row" }, aiBtn, aiStatus),
+      previewBox),
+    subsection("Patient Basics", "Who the student is about to meet.", basicsBox),
+    subsection("Patient Temperament & Communication Style" + (t.aiReview ? "  (AI \u2014 review)" : ""),
+      "How the virtual patient behaves and communicates. All fields optional.", tempBox),
+    subsection("Clinical Artifacts",
+      "Lab reports, ECGs, X-rays, CT scans or prior notes. Each appears when the student asks for it; release words are generated automatically from the name.",
+      artBox),
+    subsection("Knowledge Sources",
+      "Papers, guidelines or protocols that ground the patient and the feedback.",
+      srcBox)
+  ));
 
-  /* 6. Library actions */
-  root.append(h("section", { class: "card" },
-    h("h2", {}, "Manage this patient"),
-    h("p", { class: "hint" }, "Reuse a good case as the starting point for a new one."),
-    h("div", { style: "display:flex;gap:10px;flex-wrap:wrap" },
-      h("button", { class: "btn ghost", type: "button", onclick: () => {
-        const copy = JSON.parse(JSON.stringify(p)); copy.id = uid(); copy.title = (p.title || "Untitled case") + " (copy)"; copy.status = "draft";
-        db.patients.push(copy); db.currentId = copy.id; save(); renderAll();
-      } }, "Duplicate patient"),
-      h("button", { class: "btn danger", type: "button", onclick: () => {
-        if (!confirm("Delete \"" + (p.title || "Untitled case") + "\"? This cannot be undone.")) return;
-        db.patients = db.patients.filter(x => x.id !== p.id);
-        if (!db.patients.length) db.patients.push(blankPatient());
-        db.currentId = db.patients[0].id; save(); renderAll();
-      } }, "Delete patient"))));
+  /* Library actions (toolbar-style, not a form section) */
+  root.append(h("div", { style: "display:flex;gap:10px;flex-wrap:wrap;margin:4px 2px 0" },
+    h("button", { class: "btn ghost", type: "button", onclick: () => {
+      const copy = JSON.parse(JSON.stringify(p)); copy.id = uid(); copy.title = (p.title || "Untitled case") + " (copy)"; copy.status = "draft";
+      db.patients.push(copy); db.currentId = copy.id; save(); renderAll();
+    } }, "Duplicate patient"),
+    h("button", { class: "btn danger", type: "button", onclick: () => {
+      if (!confirm("Delete \"" + (p.title || "Untitled case") + "\"? This cannot be undone.")) return;
+      db.patients = db.patients.filter(x => x.id !== p.id);
+      if (!db.patients.length) db.patients.push(blankPatient());
+      db.currentId = db.patients[0].id; save(); renderAll();
+    } }, "Delete patient")));
 }
 
 function renderAll() { renderSidebar(); renderEditor(); window.scrollTo(0, 0); }
