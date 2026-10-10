@@ -152,7 +152,24 @@
 
 <script>
 /* =====================================================================
-   AI EXTRACTION CONFIG
+   PATIENT STUDIO  —  contents of this script
+   ---------------------------------------------------------------------
+    1. Config               — AI endpoint
+    2. Data model           — constants + blank/sample patient + helpers
+    3. Student profile       — profile & assessment-criteria config/helpers
+    4. Year rubric config    — general M1–M4 rubric (single source of truth)
+    5. Pediatrics rubric      — informational Pediatrics rubric config/helper
+    6. Storage               — load/save to localStorage
+    7. DOM & field helpers    — h() hyperscript + input builders
+    8. Consistency checks     — runChecks + results panel
+    9. Export & publish       — toEncounterProfile, download, publish
+   10. AI extraction          — fetch, preview, apply
+   11. Rendering             — sidebar, rubric panels, editor
+   12. Bootstrap             — load() + first render
+   ===================================================================== */
+
+/* =====================================================================
+   1. CONFIG
    The AI call runs on a small LOCAL server (see scripts/studio_server.py in
    the Twinverse_HealthHack project), never in this page, so AWS keys stay out
    of the browser. This is just the URL of that local server's /extract route.
@@ -160,7 +177,7 @@
 const AI_ENDPOINT = "http://127.0.0.1:8000/extract";
 
 /* =====================================================================
-   DATA MODEL
+   2. DATA MODEL
    One patient = one object. Facts carry auto-derived "release words" (see
    deriveTriggers) and the line the patient says. The Encounter screen only
    reads this data.
@@ -193,7 +210,7 @@ const TEMPERAMENT_AI_MAP = [
 ];
 
 /* =====================================================================
-   MEDICAL STUDENT PROFILE & ASSESSMENT CRITERIA
+   3. STUDENT PROFILE & ASSESSMENT CRITERIA
    Who the learner is, and what faculty want them graded on. All of this is
    optional and additive: an empty profile adds nothing to the exported JSON,
    so existing encounter consumers keep working unchanged.
@@ -217,7 +234,7 @@ const SUGGESTED_CRITERIA = [
 ];
 
 /* =====================================================================
-   YEAR-APPROPRIATE ASSESSMENT RUBRIC  (single source of truth)
+   4. YEAR-APPROPRIATE ASSESSMENT RUBRIC  (single source of truth)
    Built entirely from the product requirements. This is NOT loaded from any
    external rubric file. It is reference/discussion configuration: it is shown
    to faculty, saved with the scenario, and exported in the encounter JSON, but
@@ -446,7 +463,7 @@ function deriveTriggers(label, existing) {
 }
 
 /* =====================================================================
-   PEDIATRICS RUBRIC  (shown ONLY when Specialty = "Pediatrics")
+   5. PEDIATRICS RUBRIC  (shown ONLY when Specialty = "Pediatrics")
    An INFORMATIONAL guide (not a scoring interface). It lists the four categories
    and their original point values (10/30/30/30, total 100) so users understand
    the relative emphasis, plus what the rubric looks for in each. There is no
@@ -551,7 +568,9 @@ function samplePatient() {
   };
 }
 
-/* ---------- Storage (saved in your browser so patients persist) ---------- */
+/* =====================================================================
+   6. STORAGE  (saved in the browser so patients persist)
+   ===================================================================== */
 let db = { patients: [], currentId: null };
 function save() { try { localStorage.setItem("twinverse.studio", JSON.stringify(db)); } catch (e) { /* storage unavailable: keep working in memory */ } }
 function load() {
@@ -561,7 +580,12 @@ function load() {
 }
 const current = () => db.patients.find(p => p.id === db.currentId);
 
-/* ---------- Tiny DOM helper ---------- */
+/* =====================================================================
+   7. DOM & FIELD HELPERS
+   h() is a tiny hyperscript helper; the rest build reusable form controls
+   (text, textarea, select, checkbox, file attach) and the editing "touch"
+   bookkeeping that marks a patient dirty and re-saves.
+   ===================================================================== */
 function h(tag, props, ...kids) {
   const e = document.createElement(tag);
   Object.entries(props || {}).forEach(([k, v]) => {
@@ -575,7 +599,7 @@ function h(tag, props, ...kids) {
   return e;
 }
 
-/* ---------- Editing helpers ---------- */
+/* -- Editing bookkeeping: touch() marks dirty + re-renders; field builders below -- */
 let pill = null, resultsBox = null, titleSpan = null;
 function touch() {
   const p = current();
@@ -622,7 +646,7 @@ function checkbox(obj, key, label) {
 }
 
 /* =====================================================================
-   CONSISTENCY CHECKS
+   8. CONSISTENCY CHECKS
    Rule-based stand-in. The real system adds an LLM pass that cross-checks
    history, medications, labs and artifacts for contradictions.
    ===================================================================== */
@@ -716,7 +740,12 @@ function showResults(r, published) {
   resultsBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
-/* ---------- Publish and download ---------- */
+/* =====================================================================
+   9. EXPORT & PUBLISH
+   publish() runs the checks and flips status; the *ForExport helpers shape
+   the additive, backward-compatible encounter JSON; toEncounterProfile
+   assembles it and download() saves it.
+   ===================================================================== */
 function publish() {
   const p = current();
   const r = runChecks(p);
@@ -859,7 +888,7 @@ function download() {
 }
 
 /* =====================================================================
-   AI EXTRACTION (frontend side)
+   10. AI EXTRACTION (frontend side)
    Sends the pasted case text to the LOCAL server, then shows a preview so
    faculty can review before anything is applied. Nothing here saves,
    publishes, or runs the consistency checks automatically.
@@ -1082,7 +1111,12 @@ function applyExtraction(p, r, mode) {
   save();
 }
 
-/* ---------- Rendering ---------- */
+/* =====================================================================
+   11. RENDERING
+   renderSidebar (patient list), renderYearRubric / renderPedsRubric (the two
+   mutually-exclusive rubric panels), and renderEditor (the two top-level
+   sections: Medical Student Profile and Patient Case Information).
+   ===================================================================== */
 function renderSidebar() {
   const list = document.getElementById("plist");
   list.textContent = "";
@@ -1473,6 +1507,10 @@ function renderEditor() {
 
 function renderAll() { renderSidebar(); renderEditor(); window.scrollTo(0, 0); }
 
+/* =====================================================================
+   12. BOOTSTRAP
+   Wire the "New patient" button, load saved data, and do the first render.
+   ===================================================================== */
 document.getElementById("newBtn").addEventListener("click", () => {
   const p = blankPatient(); db.patients.push(p); db.currentId = p.id; save(); renderAll();
 });
