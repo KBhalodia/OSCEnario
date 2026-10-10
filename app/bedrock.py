@@ -57,6 +57,22 @@ class BedrockLLM:
             region_name=region or os.environ.get("AWS_REGION", "us-east-1"),
             config=Config(retries={"max_attempts": 5, "mode": "adaptive"}, read_timeout=120),
         )
+        self._no_temperature: set[str] = set()
+
+    def _converse(self, model: str, temperature: float, max_tokens: int, **kwargs) -> dict:
+        """converse() that copes with newer models rejecting `temperature`:
+        on that error, retry without it and remember the model for next time."""
+        cfg: dict[str, Any] = {"maxTokens": max_tokens}
+        if model not in self._no_temperature:
+            cfg["temperature"] = temperature
+        try:
+            return self.client.converse(modelId=model, inferenceConfig=cfg, **kwargs)
+        except self.client.exceptions.ValidationException as e:
+            if "temperature" not in str(e) or "temperature" not in cfg:
+                raise
+            self._no_temperature.add(model)
+            cfg.pop("temperature")
+            return self.client.converse(modelId=model, inferenceConfig=cfg, **kwargs)
 
     def call_json(self, *, model, system, schema, tool_name, messages=None, user=None,
                   max_tokens=1024, temperature=0.0) -> dict:
@@ -65,11 +81,10 @@ class BedrockLLM:
         msgs = list(messages or []) + ([user_msg(user)] if user else [])
         last_err: Exception | None = None
         for attempt in range(2):  # one retry if the model skips the tool
-            resp = self.client.converse(
-                modelId=model,
+            resp = self._converse(
+                model, temperature, max_tokens,
                 system=[{"text": system}],
                 messages=msgs,
-                inferenceConfig={"maxTokens": max_tokens, "temperature": temperature},
                 toolConfig={
                     "tools": [{"toolSpec": {
                         "name": tool_name,
@@ -88,9 +103,8 @@ class BedrockLLM:
         raise last_err  # type: ignore[misc]
 
     def call_text(self, *, model, system, messages, max_tokens=1024, temperature=0.7) -> str:
-        resp = self.client.converse(
-            modelId=model, system=[{"text": system}], messages=messages,
-            inferenceConfig={"maxTokens": max_tokens, "temperature": temperature})
+        resp = self._converse(model, temperature, max_tokens,
+                              system=[{"text": system}], messages=messages)
         return "".join(b.get("text", "") for b in resp["output"]["message"]["content"])
 
 
