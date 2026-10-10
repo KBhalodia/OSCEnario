@@ -1,0 +1,1472 @@
+{
+  "id": "4720727a-f153-465d-9e36-2b41884a1358",
+  "status": "draft",
+  "version": 1,
+  "created_at": "2026-10-10T15:33:08.727013Z",
+  "persona": {
+    "name": "Dominic Rivera",
+    "age": 22,
+    "sex": "Male",
+    "description": "A 22-year-old Puerto Rican male college student recovering from a gunshot wound trauma. He is a community volunteer and feels protective over his younger siblings. He has a history of Type 2 Diabetes (prediabetic history) but is now poorly controlled. He is skeptical of healthcare systems and authority figures, showing resistance to standard medical advice. He has limited health literacy and low motivation to adhere to strict dietary or medication regimens. He values his role in the community and is protective of his family, which can be a lever for motivation but also a source of stress.",
+    "keywords": [
+      "young adult male",
+      "poorly controlled type 2 diabetes",
+      "healthcare mistrust",
+      "cultural humility",
+      "nutrition education",
+      "resilient",
+      "community volunteer",
+      "low adherence",
+      "health literacy",
+      "trauma recovery"
+    ],
+    "occupation": "Part-time community volunteer and student",
+    "residence": "Urban Latino neighborhood in Puerto Rico",
+    "ethnicity": "Puerto Rican",
+    "language": "Spanish (primary) and English (functional, but prefers Spanish)",
+    "marital_status": "Single",
+    "education_level": "In-college (associate degree seeking)",
+    "insurance": "Public health insurance",
+    "cultural_context": "Strong family ties, collectivist values, cultural foods include pork, rice, beans, plantains, coconut milk. Values 'cuidado' and respect for elders but struggles with 'authority' figures in healthcare. Trust issues stem from negative experiences during his trauma recovery.",
+    "personality": "Resilient and pragmatic, but skeptical of authority. He values independence and self-reliance, but feels frustrated by limitations imposed by his diagnosis and recovery. He is protective of his younger siblings and sees them as his motivation to be healthy, though he masks this vulnerability.",
+    "communication_style": "Direct and occasionally blunt. He uses slang and may interrupt if he feels unheard. He prefers Spanish and may switch to English if the topic becomes clinical. He shows defensiveness when criticized but opens up when he feels respected.",
+    "support_system": "Younger siblings and parents; neighbors who support him in community service",
+    "readiness_to_change": "Ambivalent; willing to try small changes but needs to see immediate benefits and feel trusted by his care team.",
+    "portrait_path": "portraits/4720727a-f153-465d-9e36-2b41884a1358.png"
+  },
+  "settings": {
+    "student_role": "Dietetics student",
+    "encounter_goal": "Nutrition assessment and counseling (Nutrition Care Process)",
+    "setting": "Outpatient clinic",
+    "rubric_id": "encounter_evaluation_rubric",
+    "opening_trust": 1
+  },
+  "faculty_brief": {
+    "background": "College student and community volunteer",
+    "notes": "Mistrusts authority; key for cultural humility scenarios.",
+    "personality": "Resilient, skeptical of healthcare system, protective of younger siblings",
+    "summary": "Recovering from gunshot wound, trauma service"
+  },
+  "primary_diagnosis": "Poorly controlled Type 2 Diabetes Mellitus",
+  "secondary_diagnoses": [
+    "History of prediabetes (2 years)",
+    "Recent gunshot wound (recovering, 2 months ago)",
+    "Mild trauma-related stress"
+  ],
+  "medications": [
+    {
+      "name": "Metformin",
+      "dose": "500 mg",
+      "frequency": "1 dose daily",
+      "purpose": "Improve insulin sensitivity and lower blood glucose",
+      "adherence": "Poor (takes it intermittently, sometimes forgets)",
+      "patient_concerns": "Experiences mild GI side effects; skeptical it will help; thinks diet alone can fix his sugar"
+    },
+    {
+      "name": "Lisinopril",
+      "dose": "10 mg",
+      "frequency": "1 dose daily",
+      "purpose": "Manage blood pressure",
+      "adherence": "Fair (takes it consistently if reminded)",
+      "patient_concerns": "None significant"
+    }
+  ],
+  "allergies": [
+    "No known allergies"
+  ],
+  "facts": [
+    {
+      "id": "f001",
+      "category": "social",
+      "topic": "occupation",
+      "content": "Part-time community volunteer and student",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.occupation"
+    },
+    {
+      "id": "f002",
+      "category": "social",
+      "topic": "living situation",
+      "content": "Urban Latino neighborhood in Puerto Rico",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.residence"
+    },
+    {
+      "id": "f003",
+      "category": "social",
+      "topic": "marital status",
+      "content": "Single",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.marital_status"
+    },
+    {
+      "id": "f004",
+      "category": "social",
+      "topic": "education",
+      "content": "In-college (associate degree seeking)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.education_level"
+    },
+    {
+      "id": "f005",
+      "category": "social",
+      "topic": "insurance",
+      "content": "Public health insurance",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.insurance"
+    },
+    {
+      "id": "f006",
+      "category": "social",
+      "topic": "language",
+      "content": "Spanish (primary) and English (functional, but prefers Spanish)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.language"
+    },
+    {
+      "id": "f007",
+      "category": "social",
+      "topic": "support system",
+      "content": "Younger siblings and parents; neighbors who support him in community service",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.support_system"
+    },
+    {
+      "id": "f008",
+      "category": "diagnosis",
+      "topic": "main diagnosis / reason for visit",
+      "content": "Poorly controlled Type 2 Diabetes Mellitus",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.primary_diagnosis"
+    },
+    {
+      "id": "f009",
+      "category": "diagnosis",
+      "topic": "other condition: History of prediabetes (2 years)",
+      "content": "History of prediabetes (2 years)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[0]"
+    },
+    {
+      "id": "f010",
+      "category": "diagnosis",
+      "topic": "other condition: Recent gunshot wound (recovering, 2…",
+      "content": "Recent gunshot wound (recovering, 2 months ago)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[1]"
+    },
+    {
+      "id": "f011",
+      "category": "diagnosis",
+      "topic": "other condition: Mild trauma-related stress",
+      "content": "Mild trauma-related stress",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[2]"
+    },
+    {
+      "id": "f012",
+      "category": "history",
+      "topic": "Family history of Type 2 Diabetes (mother)",
+      "content": "Family history of Type 2 Diabetes (mother)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[0]"
+    },
+    {
+      "id": "f013",
+      "category": "history",
+      "topic": "Recent emergency surgery for gunshot wound",
+      "content": "Recent emergency surgery for gunshot wound",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[1]"
+    },
+    {
+      "id": "f014",
+      "category": "history",
+      "topic": "History of weight fluctuation",
+      "content": "History of weight fluctuation",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[2]"
+    },
+    {
+      "id": "f015",
+      "category": "symptom",
+      "topic": "symptom: Frequent thirst and urination",
+      "content": "Frequent thirst and urination",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[0]"
+    },
+    {
+      "id": "f016",
+      "category": "symptom",
+      "topic": "symptom: Fatigue and low energy",
+      "content": "Fatigue and low energy",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[1]"
+    },
+    {
+      "id": "f017",
+      "category": "symptom",
+      "topic": "symptom: Occasional cravings for sweet foods",
+      "content": "Occasional cravings for sweet foods",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[2]"
+    },
+    {
+      "id": "f018",
+      "category": "symptom",
+      "topic": "symptom: Mild headache and blurred vision occasionally",
+      "content": "Mild headache and blurred vision occasionally",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[3]"
+    },
+    {
+      "id": "f019",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "No known allergies",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.allergies[0]"
+    },
+    {
+      "id": "f020",
+      "category": "medication",
+      "topic": "medication: Metformin",
+      "content": "Takes Metformin 500 mg 1 dose daily for Improve insulin sensitivity and lower blood glucose",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0]"
+    },
+    {
+      "id": "f021",
+      "category": "medication",
+      "topic": "how they take Metformin",
+      "content": "Metformin adherence: Poor (takes it intermittently, sometimes forgets)",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].adherence"
+    },
+    {
+      "id": "f022",
+      "category": "medication",
+      "topic": "concerns/side effects of Metformin",
+      "content": "About Metformin: Experiences mild GI side effects; skeptical it will help; thinks diet alone can fix his sugar",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].patient_concerns"
+    },
+    {
+      "id": "f023",
+      "category": "medication",
+      "topic": "medication: Lisinopril",
+      "content": "Takes Lisinopril 10 mg 1 dose daily for Manage blood pressure",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1]"
+    },
+    {
+      "id": "f024",
+      "category": "medication",
+      "topic": "how they take Lisinopril",
+      "content": "Lisinopril adherence: Fair (takes it consistently if reminded)",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].adherence"
+    },
+    {
+      "id": "f025",
+      "category": "medication",
+      "topic": "concerns/side effects of Lisinopril",
+      "content": "About Lisinopril: None significant",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].patient_concerns"
+    },
+    {
+      "id": "f026",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Vitamin C (occasional)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[0]"
+    },
+    {
+      "id": "f027",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Coiflory root tea (as requested by his mother)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[1]"
+    },
+    {
+      "id": "f028",
+      "category": "nutrition",
+      "topic": "usual diet",
+      "content": "Mediterranean-Latino, but high in refined carbs and processed meats",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.dietary_pattern"
+    },
+    {
+      "id": "f029",
+      "category": "nutrition",
+      "topic": "meal timing / pattern",
+      "content": "Irregular meals; often skips breakfast, eats lunch at work, dinners with family",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.meal_pattern"
+    },
+    {
+      "id": "f030",
+      "category": "nutrition",
+      "topic": "fluids / hydration",
+      "content": "High intake of sugary fruit juices and sodas; low water intake",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.hydration"
+    },
+    {
+      "id": "f031",
+      "category": "lifestyle",
+      "topic": "physical activity",
+      "content": "Low to moderate (walking for community work, no structured exercise)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.physical_activity"
+    },
+    {
+      "id": "f032",
+      "category": "lifestyle",
+      "topic": "alcohol / tobacco / drugs",
+      "content": "Non-smoker; no alcohol",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.substance_use"
+    },
+    {
+      "id": "f033",
+      "category": "lifestyle",
+      "topic": "sleep",
+      "content": "Poor sleep quality due to stress and PTSD symptoms",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.sleep"
+    },
+    {
+      "id": "f034",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Rice and beans",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[0]"
+    },
+    {
+      "id": "f035",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Plantains",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[1]"
+    },
+    {
+      "id": "f036",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Pork",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[2]"
+    },
+    {
+      "id": "f037",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Coconut milk dishes",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[3]"
+    },
+    {
+      "id": "f038",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Sweet treats like 'quesillos'",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[4]"
+    },
+    {
+      "id": "f039",
+      "category": "nutrition",
+      "topic": "Snacking habits late at night",
+      "content": "Snacking habits late at night",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[0]"
+    },
+    {
+      "id": "f040",
+      "category": "nutrition",
+      "topic": "Preference for sugary drinks (Jus de Piña)",
+      "content": "Preference for sugary drinks (Jus de Piña)",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[1]"
+    },
+    {
+      "id": "f041",
+      "category": "nutrition",
+      "topic": "Cooking frequency (often relies on pre-made foods due to…",
+      "content": "Cooking frequency (often relies on pre-made foods due to trauma recovery)",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[2]"
+    },
+    {
+      "id": "f042",
+      "category": "psychosocial",
+      "topic": "goal: To regain independence and return to work",
+      "content": "To regain independence and return to work",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[0]"
+    },
+    {
+      "id": "f043",
+      "category": "psychosocial",
+      "topic": "goal: To lower his sugar levels so he can play…",
+      "content": "To lower his sugar levels so he can play with his siblings",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[1]"
+    },
+    {
+      "id": "f044",
+      "category": "psychosocial",
+      "topic": "goal: To avoid hospital readmission",
+      "content": "To avoid hospital readmission",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[2]"
+    },
+    {
+      "id": "f045",
+      "category": "psychosocial",
+      "topic": "motivation: Protecting his siblings",
+      "content": "Protecting his siblings",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[0]"
+    },
+    {
+      "id": "f046",
+      "category": "psychosocial",
+      "topic": "motivation: Resuming his volunteer work",
+      "content": "Resuming his volunteer work",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[1]"
+    },
+    {
+      "id": "f047",
+      "category": "psychosocial",
+      "topic": "motivation: Financial stability (wants to work and earn…",
+      "content": "Financial stability (wants to work and earn money)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[2]"
+    },
+    {
+      "id": "f048",
+      "category": "psychosocial",
+      "topic": "strength: Community support network",
+      "content": "Community support network",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[0]"
+    },
+    {
+      "id": "f049",
+      "category": "psychosocial",
+      "topic": "strength: Resilience and adaptability",
+      "content": "Resilience and adaptability",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[1]"
+    },
+    {
+      "id": "f050",
+      "category": "psychosocial",
+      "topic": "strength: Strong family bond",
+      "content": "Strong family bond",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[2]"
+    },
+    {
+      "id": "f051",
+      "category": "psychosocial",
+      "topic": "strength: Willingness to try if it feels practical",
+      "content": "Willingness to try if it feels practical",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[3]"
+    },
+    {
+      "id": "f052",
+      "category": "psychosocial",
+      "topic": "belief: Sugar is not the only cause of diabetes",
+      "content": "Sugar is not the only cause of diabetes",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[0]"
+    },
+    {
+      "id": "f053",
+      "category": "psychosocial",
+      "topic": "belief: Healthcare professionals don't understand…",
+      "content": "Healthcare professionals don't understand his culture",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[1]"
+    },
+    {
+      "id": "f054",
+      "category": "psychosocial",
+      "topic": "belief: Diet is just about eating 'good' foods",
+      "content": "Diet is just about eating 'good' foods",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[2]"
+    },
+    {
+      "id": "f055",
+      "category": "psychosocial",
+      "topic": "concern: Fear of losing his job as a volunteer",
+      "content": "Fear of losing his job as a volunteer",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[0]"
+    },
+    {
+      "id": "f056",
+      "category": "psychosocial",
+      "topic": "concern: Concern about side effects of medication",
+      "content": "Concern about side effects of medication",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[1]"
+    },
+    {
+      "id": "f057",
+      "category": "psychosocial",
+      "topic": "concern: Fear of becoming a burden to his family",
+      "content": "Fear of becoming a burden to his family",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[2]"
+    },
+    {
+      "id": "f058",
+      "category": "psychosocial",
+      "topic": "barrier: Limited health literacy",
+      "content": "Limited health literacy",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[0]"
+    },
+    {
+      "id": "f059",
+      "category": "psychosocial",
+      "topic": "barrier: Inconsistent work hours",
+      "content": "Inconsistent work hours",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[1]"
+    },
+    {
+      "id": "f060",
+      "category": "psychosocial",
+      "topic": "barrier: Food deserts in his neighborhood",
+      "content": "Food deserts in his neighborhood",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[2]"
+    },
+    {
+      "id": "f061",
+      "category": "psychosocial",
+      "topic": "barrier: Mistrust of medical advice",
+      "content": "Mistrust of medical advice",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[3]"
+    },
+    {
+      "id": "f062",
+      "category": "psychosocial",
+      "topic": "barrier: Stress and trauma symptoms",
+      "content": "Stress and trauma symptoms",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[4]"
+    },
+    {
+      "id": "f063",
+      "category": "psychosocial",
+      "topic": "fear: Dependency on family",
+      "content": "Dependency on family",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[0]"
+    },
+    {
+      "id": "f064",
+      "category": "psychosocial",
+      "topic": "fear: Further health complications",
+      "content": "Further health complications",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[1]"
+    },
+    {
+      "id": "f065",
+      "category": "psychosocial",
+      "topic": "fear: Returning to hospital",
+      "content": "Returning to hospital",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[2]"
+    },
+    {
+      "id": "f066",
+      "category": "other",
+      "topic": "mentions feeling tired and thirsty often",
+      "content": "He mentions feeling tired and thirsty often",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[0]"
+    },
+    {
+      "id": "f067",
+      "category": "other",
+      "topic": "mentions skipping medication sometimes",
+      "content": "He mentions skipping medication sometimes",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[1]"
+    },
+    {
+      "id": "f068",
+      "category": "other",
+      "topic": "mentions eating rice and beans most of the time",
+      "content": "He mentions eating rice and beans most of the time",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[2]"
+    },
+    {
+      "id": "f069",
+      "category": "other",
+      "topic": "mentions his recent injury",
+      "content": "He mentions his recent injury",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[3]"
+    },
+    {
+      "id": "f070",
+      "category": "other",
+      "topic": "mentions his sister is sick",
+      "content": "He mentions his sister is sick",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[4]"
+    },
+    {
+      "id": "f071",
+      "category": "other",
+      "topic": "reveals he only takes his meds when he has a good day",
+      "content": "He reveals he only takes his meds when he has a good day",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[0]"
+    },
+    {
+      "id": "f072",
+      "category": "other",
+      "topic": "admits he likes juice over water",
+      "content": "He admits he likes juice over water",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[1]"
+    },
+    {
+      "id": "f073",
+      "category": "other",
+      "topic": "mentions he works irregular hours",
+      "content": "He mentions he works irregular hours",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[2]"
+    },
+    {
+      "id": "f074",
+      "category": "other",
+      "topic": "shares he trusts his mother's advice more than doctors'",
+      "content": "He shares he trusts his mother's advice more than doctors'",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[3]"
+    },
+    {
+      "id": "f075",
+      "category": "other",
+      "topic": "mentions he skips breakfast to save money on lunch",
+      "content": "He mentions he skips breakfast to save money on lunch",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[4]"
+    },
+    {
+      "id": "f076",
+      "category": "other",
+      "topic": "hides that he skips breakfast to avoid cost",
+      "content": "He initially hides that he skips breakfast to avoid cost",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[0]"
+    },
+    {
+      "id": "f077",
+      "category": "other",
+      "topic": "hesitates to mention his trauma-related stress affects his…",
+      "content": "He hesitates to mention his trauma-related stress affects his eating",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[1]"
+    },
+    {
+      "id": "f078",
+      "category": "other",
+      "topic": "hides his desire to be more active but feels too weak",
+      "content": "He hides his desire to be more active but feels too weak",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[2]"
+    },
+    {
+      "id": "f079",
+      "category": "other",
+      "topic": "downplays the fear of being a burden to his family",
+      "content": "He initially downplays the fear of being a burden to his family",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[3]"
+    },
+    {
+      "id": "f080",
+      "category": "other",
+      "topic": "has a history of eating disorders related to body image…",
+      "content": "He has a history of eating disorders related to body image and family dynamics",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[0]"
+    },
+    {
+      "id": "f081",
+      "category": "other",
+      "topic": "is struggling with PTSD symptoms that affect his sleep and…",
+      "content": "He is struggling with PTSD symptoms that affect his sleep and eating",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[1]"
+    },
+    {
+      "id": "f082",
+      "category": "other",
+      "topic": "has been using supplements to lower blood sugar but knows…",
+      "content": "He has been using supplements to lower blood sugar but knows they are not proven",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[2]"
+    },
+    {
+      "id": "f083",
+      "category": "other",
+      "topic": "has a strong cultural belief that he should be the…",
+      "content": "He has a strong cultural belief that he should be the provider for his family",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[3]"
+    },
+    {
+      "id": "f084",
+      "category": "other",
+      "topic": "is financially strained and cannot afford healthy food…",
+      "content": "He is financially strained and cannot afford healthy food consistently",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[4]"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a001",
+      "type": "prior_note",
+      "title": "Referral summary",
+      "items": [
+        {
+          "label": "Primary diagnosis",
+          "value": "Poorly controlled Type 2 Diabetes Mellitus",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "History of prediabetes (2 years)",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Recent gunshot wound (recovering, 2 months ago)",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Mild trauma-related stress",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Metformin 500 mg 1 dose daily",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Lisinopril 10 mg 1 dose daily",
+          "flag": null
+        },
+        {
+          "label": "Allergies",
+          "value": "No known allergies",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "at_start",
+        "request_keywords": [],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a002",
+      "type": "vitals",
+      "title": "Vital signs",
+      "items": [
+        {
+          "label": "BP",
+          "value": "128/82 mmHg",
+          "flag": null
+        },
+        {
+          "label": "HR",
+          "value": "78 bpm",
+          "flag": null
+        },
+        {
+          "label": "Temp",
+          "value": "98.6°F",
+          "flag": null
+        },
+        {
+          "label": "Respiratory Rate",
+          "value": "16 bpm",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "vitals",
+          "blood pressure",
+          "heart rate",
+          "temperature"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a003",
+      "type": "anthropometrics",
+      "title": "Anthropometrics",
+      "items": [
+        {
+          "label": "Height",
+          "value": "5'9\"",
+          "flag": null
+        },
+        {
+          "label": "Weight",
+          "value": "178 lbs",
+          "flag": null
+        },
+        {
+          "label": "BMI",
+          "value": "27.8 (Overweight)",
+          "flag": null
+        },
+        {
+          "label": "Recent weight gain",
+          "value": "5 lbs over 3 months",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "weight",
+          "height",
+          "BMI",
+          "measurements",
+          "waist"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a004",
+      "type": "lab_report",
+      "title": "Laboratory results",
+      "items": [
+        {
+          "label": "HbA1c",
+          "value": "9.8%",
+          "flag": null
+        },
+        {
+          "label": "Fasting Glucose",
+          "value": "180 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Total Cholesterol",
+          "value": "220 mg/dL",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "labs",
+          "bloodwork",
+          "blood test",
+          "A1c",
+          "cholesterol",
+          "glucose"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a005",
+      "type": "other",
+      "title": "Clinical findings",
+      "items": [
+        {
+          "label": "Recent HbA",
+          "value": "1c of 9.8% (target < 7.0%)",
+          "flag": null
+        },
+        {
+          "label": "Elevated fasting blood glucose (",
+          "value": "180 mg/dL)",
+          "flag": null
+        },
+        {
+          "label": "Slightly elevated lipid panel",
+          "value": "",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "exam",
+          "findings",
+          "physical exam"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Apply the Nutrition Care Process",
+      "expected_discoveries": [
+        {
+          "id": "o1.d1",
+          "text": "Patient's dietary history",
+          "linked_fact_ids": [
+            "f080",
+            "f014",
+            "f012"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o1.d2",
+          "text": "Lifestyle factors affecting glucose levels",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d3",
+          "text": "Social barriers to nutrition care",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d4",
+          "text": "Motivation and readiness to change",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Defensiveness if the student starts diagnosing without listening",
+        "Reluctance to discuss food without being asked respectfully",
+        "Engagement when discussing family or community support"
+      ],
+      "points": null
+    },
+    {
+      "id": "o2",
+      "objective": "Develop an appropriate PES statement",
+      "expected_discoveries": [
+        {
+          "id": "o2.d1",
+          "text": "Problem: High HbA1c",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o2.d2",
+          "text": "Evaluation: Patient's beliefs and barriers",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o2.d3",
+          "text": "Strategy: Culturally sensitive meal planning",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Skepticism if the PES is generic",
+        "Engagement if the PES addresses his specific barriers (e.g., food cost)",
+        "Disinterest if the strategy feels impractical"
+      ],
+      "points": null
+    },
+    {
+      "id": "o3",
+      "objective": "Develop evidence-based nutrition interventions",
+      "expected_discoveries": [
+        {
+          "id": "o3.d1",
+          "text": "Patient's specific needs (e.g., hydration, fiber)",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d2",
+          "text": "Patient's preferences (e.g., Puerto Rican foods)",
+          "linked_fact_ids": [
+            "f038",
+            "f037",
+            "f036"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o3.d3",
+          "text": "Patient's readiness to change",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Openness to try new recipes if they are familiar",
+        "Resistance to 'Western' diet advice",
+        "Engagement when discussing family meals"
+      ],
+      "points": null
+    },
+    {
+      "id": "o4",
+      "objective": "Integrate medication management with nutrition care",
+      "expected_discoveries": [
+        {
+          "id": "o4.d1",
+          "text": "Patient's adherence issues",
+          "linked_fact_ids": [
+            "f024",
+            "f021"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d2",
+          "text": "Side effects related to food",
+          "linked_fact_ids": [
+            "f056",
+            "f025",
+            "f022"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d3",
+          "text": "Timing of meds with meals",
+          "linked_fact_ids": [
+            "f029"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Defensiveness if reprimanded for non-adherence",
+        "Reluctance to discuss meds without permission",
+        "Engagement if the student addresses side effects empathetically"
+      ],
+      "points": null
+    },
+    {
+      "id": "o5",
+      "objective": "Use motivational interviewing",
+      "expected_discoveries": [
+        {
+          "id": "o5.d1",
+          "text": "Patient's ambivalence",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o5.d2",
+          "text": "His goals and values",
+          "linked_fact_ids": [
+            "f044",
+            "f043",
+            "f042"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o5.d3",
+          "text": "His fears and barriers",
+          "linked_fact_ids": [
+            "f079",
+            "f065",
+            "f064"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Resistance if the student is too directive",
+        "Engagement if the student uses open-ended questions",
+        "Skepticism if the student doesn't validate his experiences"
+      ],
+      "points": null
+    },
+    {
+      "id": "o6",
+      "objective": "Address lifestyle and behavioral barriers",
+      "expected_discoveries": [
+        {
+          "id": "o6.d1",
+          "text": "Patient's work schedule",
+          "linked_fact_ids": [
+            "f073",
+            "f059",
+            "f047"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o6.d2",
+          "text": "Food access issues",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o6.d3",
+          "text": "Cultural influences on food choices",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Defensiveness if barriers are blamed on the patient",
+        "Engagement if the student offers practical solutions",
+        "Reluctance to discuss sensitive barriers (e.g., financial) without trust"
+      ],
+      "points": null
+    },
+    {
+      "id": "o7",
+      "objective": "Consider interprofessional and community resources",
+      "expected_discoveries": [
+        {
+          "id": "o7.d1",
+          "text": "Patient's community connections",
+          "linked_fact_ids": [
+            "f048",
+            "f031",
+            "f007"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o7.d2",
+          "text": "Patient's trust in local resources",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o7.d3",
+          "text": "Patient's need for mental health support",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Skepticism of institutional resources",
+        "Engagement if the student involves family or community leaders",
+        "Openness to discuss mental health if framed as strength"
+      ],
+      "points": null
+    }
+  ],
+  "knowledge_sources": [],
+  "assumptions": [
+    "Patient has limited English proficiency but uses functional English",
+    "Patient's trauma history affects his mental health and sleep",
+    "Patient's family dynamics are supportive but not actively involved in his care",
+    "Patient's financial status is strained but stable enough to access care"
+  ],
+  "optional_details": [
+    "He has a pet dog that he cares for and walks",
+    "He attends a community meeting weekly to discuss local issues",
+    "He has a history of eating disorders related to body image",
+    "He has been using supplements to lower his blood sugar",
+    "He has a strong belief that he should be the provider for his family"
+  ]
+}

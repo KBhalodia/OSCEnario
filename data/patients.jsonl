@@ -1,0 +1,2368 @@
+{
+  "patient_overview": {
+    "name": "Dominic Rivera",
+    "age": 22,
+    "sex": "Male",
+    "description": "A 22-year-old Puerto Rican male college student recovering from a gunshot wound trauma. He is a community volunteer and feels protective over his younger siblings. He has a history of Type 2 Diabetes (prediabetic history) but is now poorly controlled. He is skeptical of healthcare systems and authority figures, showing resistance to standard medical advice. He has limited health literacy and low motivation to adhere to strict dietary or medication regimens. He values his role in the community and is protective of his family, which can be a lever for motivation but also a source of stress.",
+    "keywords": [
+      "young adult male",
+      "poorly controlled type 2 diabetes",
+      "healthcare mistrust",
+      "cultural humility",
+      "nutrition education",
+      "resilient",
+      "community volunteer",
+      "low adherence",
+      "health literacy",
+      "trauma recovery"
+    ]
+  },
+  "demographics": {
+    "occupation": "Part-time community volunteer and student",
+    "residence": "Urban Latino neighborhood in Puerto Rico",
+    "ethnicity": "Puerto Rican",
+    "language": "Spanish (primary) and English (functional, but prefers Spanish)",
+    "marital_status": "Single",
+    "education_level": "In-college (associate degree seeking)",
+    "insurance": "Public health insurance",
+    "cultural_context": "Strong family ties, collectivist values, cultural foods include pork, rice, beans, plantains, coconut milk. Values 'cuidado' and respect for elders but struggles with 'authority' figures in healthcare. Trust issues stem from negative experiences during his trauma recovery."
+  },
+  "clinical_profile": {
+    "primary_diagnosis": "Poorly controlled Type 2 Diabetes Mellitus",
+    "secondary_diagnoses": [
+      "History of prediabetes (2 years)",
+      "Recent gunshot wound (recovering, 2 months ago)",
+      "Mild trauma-related stress"
+    ],
+    "medical_history": [
+      "Family history of Type 2 Diabetes (mother)",
+      "Recent emergency surgery for gunshot wound",
+      "History of weight fluctuation"
+    ],
+    "current_symptoms": [
+      "Frequent thirst and urination",
+      "Fatigue and low energy",
+      "Occasional cravings for sweet foods",
+      "Mild headache and blurred vision occasionally"
+    ],
+    "allergies": [
+      "No known allergies"
+    ],
+    "clinical_findings": [
+      "Recent HbA1c of 9.8% (target < 7.0%)",
+      "Elevated fasting blood glucose (180 mg/dL)",
+      "Slightly elevated lipid panel"
+    ],
+    "laboratory_data": [
+      "HbA1c: 9.8%",
+      "Fasting Glucose: 180 mg/dL",
+      "Total Cholesterol: 220 mg/dL"
+    ],
+    "vital_signs": [
+      "BP: 128/82 mmHg",
+      "HR: 78 bpm",
+      "Temp: 98.6°F",
+      "Respiratory Rate: 16 bpm"
+    ],
+    "anthropometrics": [
+      "Height: 5'9\"",
+      "Weight: 178 lbs",
+      "BMI: 27.8 (Overweight)",
+      "Recent weight gain: 5 lbs over 3 months"
+    ]
+  },
+  "medication_profile": {
+    "medications": [
+      {
+        "name": "Metformin",
+        "dose": "500 mg",
+        "frequency": "1 dose daily",
+        "purpose": "Improve insulin sensitivity and lower blood glucose",
+        "adherence": "Poor (takes it intermittently, sometimes forgets)",
+        "patient_concerns": "Experiences mild GI side effects; skeptical it will help; thinks diet alone can fix his sugar"
+      },
+      {
+        "name": "Lisinopril",
+        "dose": "10 mg",
+        "frequency": "1 dose daily",
+        "purpose": "Manage blood pressure",
+        "adherence": "Fair (takes it consistently if reminded)",
+        "patient_concerns": "None significant"
+      }
+    ],
+    "supplements_and_otc": [
+      "Vitamin C (occasional)",
+      "Coiflory root tea (as requested by his mother)"
+    ]
+  },
+  "nutrition_profile": {
+    "dietary_pattern": "Mediterranean-Latino, but high in refined carbs and processed meats",
+    "food_preferences": [
+      "Rice and beans",
+      "Plantains",
+      "Pork",
+      "Coconut milk dishes",
+      "Sweet treats like 'quesillos'"
+    ],
+    "foods_or_behaviors_to_explore": [
+      "Snacking habits late at night",
+      "Preference for sugary drinks (Jus de Piña)",
+      "Cooking frequency (often relies on pre-made foods due to trauma recovery)"
+    ],
+    "meal_pattern": "Irregular meals; often skips breakfast, eats lunch at work, dinners with family",
+    "hydration": "High intake of sugary fruit juices and sodas; low water intake",
+    "physical_activity": "Low to moderate (walking for community work, no structured exercise)",
+    "substance_use": "Non-smoker; no alcohol",
+    "sleep": "Poor sleep quality due to stress and PTSD symptoms"
+  },
+  "psychosocial_profile": {
+    "personality": "Resilient and pragmatic, but skeptical of authority. He values independence and self-reliance, but feels frustrated by limitations imposed by his diagnosis and recovery. He is protective of his younger siblings and sees them as his motivation to be healthy, though he masks this vulnerability.",
+    "communication_style": "Direct and occasionally blunt. He uses slang and may interrupt if he feels unheard. He prefers Spanish and may switch to English if the topic becomes clinical. He shows defensiveness when criticized but opens up when he feels respected.",
+    "goals": [
+      "To regain independence and return to work",
+      "To lower his sugar levels so he can play with his siblings",
+      "To avoid hospital readmission"
+    ],
+    "concerns": [
+      "Fear of losing his job as a volunteer",
+      "Concern about side effects of medication",
+      "Fear of becoming a burden to his family"
+    ],
+    "beliefs": [
+      "Sugar is not the only cause of diabetes",
+      "Healthcare professionals don't understand his culture",
+      "Diet is just about eating 'good' foods"
+    ],
+    "motivations": [
+      "Protecting his siblings",
+      "Resuming his volunteer work",
+      "Financial stability (wants to work and earn money)"
+    ],
+    "fears": [
+      "Dependency on family",
+      "Further health complications",
+      "Returning to hospital"
+    ],
+    "barriers": [
+      "Limited health literacy",
+      "Inconsistent work hours",
+      "Food deserts in his neighborhood",
+      "Mistrust of medical advice",
+      "Stress and trauma symptoms"
+    ],
+    "strengths": [
+      "Community support network",
+      "Resilience and adaptability",
+      "Strong family bond",
+      "Willingness to try if it feels practical"
+    ],
+    "support_system": "Younger siblings and parents; neighbors who support him in community service",
+    "readiness_to_change": "Ambivalent; willing to try small changes but needs to see immediate benefits and feel trusted by his care team."
+  },
+  "information_disclosure": {
+    "initial_information": [
+      "He mentions feeling tired and thirsty often",
+      "He mentions skipping medication sometimes",
+      "He mentions eating rice and beans most of the time",
+      "He mentions his recent injury",
+      "He mentions his sister is sick"
+    ],
+    "discoverable_information": [
+      "He reveals he only takes his meds when he has a good day",
+      "He admits he likes juice over water",
+      "He mentions he works irregular hours",
+      "He shares he trusts his mother's advice more than doctors'",
+      "He mentions he skips breakfast to save money on lunch"
+    ],
+    "reluctant_information": [
+      "He initially hides that he skips breakfast to avoid cost",
+      "He hesitates to mention his trauma-related stress affects his eating",
+      "He hides his desire to be more active but feels too weak",
+      "He initially downplays the fear of being a burden to his family"
+    ],
+    "hidden_information": [
+      "He has a history of eating disorders related to body image and family dynamics",
+      "He is struggling with PTSD symptoms that affect his sleep and eating",
+      "He has been using supplements to lower blood sugar but knows they are not proven",
+      "He has a strong cultural belief that he should be the provider for his family",
+      "He is financially strained and cannot afford healthy food consistently"
+    ]
+  },
+  "learning_opportunities": {
+    "opportunities": [
+      {
+        "learning_objective": "Apply the Nutrition Care Process",
+        "expected_discoveries": [
+          "Patient's dietary history",
+          "Lifestyle factors affecting glucose levels",
+          "Social barriers to nutrition care",
+          "Motivation and readiness to change"
+        ],
+        "possible_patient_reactions": [
+          "Defensiveness if the student starts diagnosing without listening",
+          "Reluctance to discuss food without being asked respectfully",
+          "Engagement when discussing family or community support"
+        ]
+      },
+      {
+        "learning_objective": "Develop an appropriate PES statement",
+        "expected_discoveries": [
+          "Problem: High HbA1c",
+          "Evaluation: Patient's beliefs and barriers",
+          "Strategy: Culturally sensitive meal planning"
+        ],
+        "possible_patient_reactions": [
+          "Skepticism if the PES is generic",
+          "Engagement if the PES addresses his specific barriers (e.g., food cost)",
+          "Disinterest if the strategy feels impractical"
+        ]
+      },
+      {
+        "learning_objective": "Develop evidence-based nutrition interventions",
+        "expected_discoveries": [
+          "Patient's specific needs (e.g., hydration, fiber)",
+          "Patient's preferences (e.g., Puerto Rican foods)",
+          "Patient's readiness to change"
+        ],
+        "possible_patient_reactions": [
+          "Openness to try new recipes if they are familiar",
+          "Resistance to 'Western' diet advice",
+          "Engagement when discussing family meals"
+        ]
+      },
+      {
+        "learning_objective": "Integrate medication management with nutrition care",
+        "expected_discoveries": [
+          "Patient's adherence issues",
+          "Side effects related to food",
+          "Timing of meds with meals"
+        ],
+        "possible_patient_reactions": [
+          "Defensiveness if reprimanded for non-adherence",
+          "Reluctance to discuss meds without permission",
+          "Engagement if the student addresses side effects empathetically"
+        ]
+      },
+      {
+        "learning_objective": "Use motivational interviewing",
+        "expected_discoveries": [
+          "Patient's ambivalence",
+          "His goals and values",
+          "His fears and barriers"
+        ],
+        "possible_patient_reactions": [
+          "Resistance if the student is too directive",
+          "Engagement if the student uses open-ended questions",
+          "Skepticism if the student doesn't validate his experiences"
+        ]
+      },
+      {
+        "learning_objective": "Address lifestyle and behavioral barriers",
+        "expected_discoveries": [
+          "Patient's work schedule",
+          "Food access issues",
+          "Cultural influences on food choices"
+        ],
+        "possible_patient_reactions": [
+          "Defensiveness if barriers are blamed on the patient",
+          "Engagement if the student offers practical solutions",
+          "Reluctance to discuss sensitive barriers (e.g., financial) without trust"
+        ]
+      },
+      {
+        "learning_objective": "Consider interprofessional and community resources",
+        "expected_discoveries": [
+          "Patient's community connections",
+          "Patient's trust in local resources",
+          "Patient's need for mental health support"
+        ],
+        "possible_patient_reactions": [
+          "Skepticism of institutional resources",
+          "Engagement if the student involves family or community leaders",
+          "Openness to discuss mental health if framed as strength"
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "assumptions": [
+      "Patient has limited English proficiency but uses functional English",
+      "Patient's trauma history affects his mental health and sleep",
+      "Patient's family dynamics are supportive but not actively involved in his care",
+      "Patient's financial status is strained but stable enough to access care"
+    ],
+    "optional_details": [
+      "He has a pet dog that he cares for and walks",
+      "He attends a community meeting weekly to discuss local issues",
+      "He has a history of eating disorders related to body image",
+      "He has been using supplements to lower his blood sugar",
+      "He has a strong belief that he should be the provider for his family"
+    ]
+  }
+}
+{
+  "patient_overview": {
+    "name": "Yvette Armstrong",
+    "age": 64,
+    "sex": "Female",
+    "description": "A 64-year-old Eastern European American woman recently diagnosed with Stage II hypertension and uncontrolled type 2 diabetes. Works full-time as a state employee with an associate's degree in political science. Curious and earnest but feels overwhelmed by complex medical information. Reports confusion about the difference between sodium and salt, struggles to understand the pathophysiology of her conditions, and expresses frustration about the difficulty of making dietary changes. BMI is 34 with a history of hypertension and type 2 diabetes. She is motivated to improve her health but faces barriers related to health literacy, financial constraints, limited time for cooking, and emotional stress from balancing full-time work with growing family responsibilities.",
+    "keywords": [
+      "hypertension",
+      "type_2_diabetes",
+      "health_literacy",
+      "medication_management",
+      "motivational_interviewing",
+      "sodium_restriction",
+      "weight_loss",
+      "dietary_education",
+      "patient_interview",
+      "psychosocial_barriers"
+    ]
+  },
+  "demographics": {
+    "occupation": "State employee (full-time)",
+    "residence": "Urban suburban area with limited green space",
+    "ethnicity": "Eastern European American",
+    "language": "English",
+    "marital_status": "Married",
+    "education_level": "Associate's degree in political science",
+    "insurance": "Medicaid (due to chronic conditions)",
+    "cultural_context": "Grew up in a household where food was central to gatherings and celebrations. Traditional Eastern European dishes are often high in processed meats, cheese, and salt for preservation and flavor. She feels that cutting out traditional foods would mean losing a connection to her heritage and family bonds."
+  },
+  "clinical_profile": {
+    "primary_diagnosis": "Hypertension (Stage II)",
+    "secondary_diagnoses": [
+      "Uncontrolled Type 2 Diabetes",
+      "Obesity"
+    ],
+    "medical_history": [
+      "Hypertension (recently diagnosed)",
+      "Type 2 Diabetes (diagnosed 2 years ago, poorly controlled)",
+      "Occasional headaches",
+      "Frequent low back pain"
+    ],
+    "current_symptoms": [
+      "Persistent mild headaches",
+      "Fatigue",
+      "Frequent urination",
+      "Increased thirst",
+      "Swelling in ankles and feet",
+      "Blurred vision occasionally"
+    ],
+    "allergies": [
+      "Penicillin (rash)"
+    ],
+    "clinical_findings": [
+      "BP 155/110 mmHg on two readings",
+      "Biomass Index: 34 kg/m2",
+      "Bilateral pitting edema in ankles",
+      "Visible venous distension",
+      "Skin tags on neck and elbows"
+    ],
+    "laboratory_data": [
+      "HbA1c: 8.5%",
+      "Fasting Glucose: 145 mg/dL",
+      "Total Cholesterol: 230 mg/dL",
+      "LDL: 115 mg/dL",
+      "Triglycerides: 190 mg/dL",
+      "Sodium: 138 mEq/L",
+      "Potassium: 4.5 mEq/L",
+      "BUN: 16 mg/dL",
+      "Creatinine: 1.1 mg/dL"
+    ],
+    "vital_signs": [
+      "Temperature: 98.6°F",
+      "Heart Rate: 78 bpm",
+      "Respiratory Rate: 18 breaths/min",
+      "Pulse Ox: 99%",
+      "BP: 155/110 mmHg",
+      "Respiratory Status: Unlabored"
+    ],
+    "anthropometrics": [
+      "Height: 5'2\" (157.5 cm)",
+      "Weight: 178 lbs (80.7 kg)",
+      "BMI: 34.0 kg/m2",
+      "Recent weight change: +8 lbs over past 6 months"
+    ]
+  },
+  "medication_profile": {
+    "medications": [
+      {
+        "name": "Amlodipine",
+        "dose": "5 mg",
+        "frequency": "once daily",
+        "purpose": "Hypertension",
+        "adherence": "Take most days but occasionally forget",
+        "patient_concerns": "Worries about side effects like swelling in legs, sometimes skips to avoid discomfort."
+      },
+      {
+        "name": "Metformin",
+        "dose": "500 mg",
+        "frequency": "twice daily with meals",
+        "purpose": "Type 2 Diabetes",
+        "adherence": "Takes mostly but has had GI upset before, so reduced dose on her own without asking",
+        "patient_concerns": "Has upset in her stomach after taking it, doesn't want to feel sick, worries about long-term effects."
+      }
+    ],
+    "supplements_and_otc": [
+      "Multivitamin",
+      "Tylenol for headaches (as needed)"
+    ]
+  },
+  "nutrition_profile": {
+    "dietary_pattern": "Standard American diet with traditional Eastern European influences",
+    "food_preferences": [
+      "Likes hearty comfort foods",
+      "Enjoys pickled vegetables",
+      "Prefers breaded dishes",
+      "Eats family-style meals"
+    ],
+    "foods_or_behaviors_to_explore": [
+      "High sodium intake from processed foods and canned soups",
+      "Frequent snacking on salty snacks",
+      "Limit water consumption due to kidney concerns",
+      "Relies on convenience foods due to time constraints"
+    ],
+    "meal_pattern": "Breakfast: often skipped or just coffee. Lunch: packed or grabbed on the way to work. Dinner: family meal, usually the largest meal.",
+    "hydration": "Drinks mostly tap water and occasional tea. Avoids sugary drinks. Feels thirsty but sometimes avoids drinking because she thinks it will cause more bathroom trips at work.",
+    "physical_activity": "Sits at desk all day. Walks to car or bus. No dedicated exercise routine. Struggles to find time for activity.",
+    "substance_use": "Does not smoke. Occasional 1-2 glasses of wine on weekends. Does not use recreational drugs.",
+    "sleep": "Sleeps 6-7 hours per night but wakes up due to frequent urination from diabetes."
+  },
+  "psychosocial_profile": {
+    "personality": "Curious, earnest, and eager to learn but easily overwhelmed by technical jargon and lengthy explanations. Values honesty and direct communication. Tries hard to comply but becomes frustrated when changes feel too difficult or unsustainable.",
+    "communication_style": "Asks clarifying questions when confused. May hesitate to ask if she feels she is burdening the provider. Responds well to patient, respectful, and non-judgmental communication. Uses lay terms and needs concepts explained simply with examples.",
+    "goals": [
+      "Wants to have normal energy levels",
+      "Aims to lose weight to feel more comfortable",
+      "Hopes to control her blood pressure and sugar",
+      "Wants to eat delicious food without breaking her budget or health goals"
+    ],
+    "concerns": [
+      "Fear of complications from diabetes and hypertension",
+      "Worry about medication side effects",
+      "Frustration with not understanding what sodium and salt mean",
+      "Concern about cost of healthy food",
+      "Anxiety about disappointing her family"
+    ],
+    "beliefs": [
+      "Sodium and salt are different things",
+      "Healthy food is expensive",
+      "Traditional family recipes are the only way to eat well",
+      "Doctors only care about numbers, not how she feels",
+      "Weight loss is about just starving yourself"
+    ],
+    "motivations": [
+      "Desire to be present for her grandchild's future",
+      "Wanting to stop being tired all the time",
+      "Hope to reduce stress about her health",
+      "Positive reinforcement from a friend who lost weight"
+    ],
+    "fears": [
+      "Fear of stroke or heart attack",
+      "Fear of losing independence if she gets sick",
+      "Fear of losing her job due to health issues",
+      "Fear of not being able to afford food or medical bills"
+    ],
+    "barriers": [
+      "Limited health literacy and medical confusion",
+      "Financial constraints and food insecurity concerns",
+      "Time poverty due to full-time work and family duties",
+      "Cultural attachment to traditional high-sodium foods",
+      "Physical barriers like joint pain limiting cooking and activity",
+      "Medication non-adherence due to side effects and misunderstanding"
+    ],
+    "strengths": [
+      "High motivation to improve her health",
+      "Willing to listen and learn",
+      "Has a supportive husband who helps with finances and home chores",
+      "Good at organizing and planning (transferring from her political science background)",
+      "Strong sense of duty and reliability",
+      "Open to trying new things when explained properly"
+    ],
+    "support_system": "Married with supportive husband who lives with her. Two adult children who live locally and visit regularly. One grandchild. Husband drives her to appointments. Family often pressures her to eat traditional foods at gatherings.",
+    "readiness_to_change": "Moderately motivated (Stage of Change: Preparation) but feels overwhelmed by the scale of changes required. Responds well to small, manageable steps and clear, simple explanations. Needs validation and step-by-step guidance."
+  },
+  "information_disclosure": {
+    "initial_information": [
+      "Reports fatigue, frequent urination, and mild headaches.",
+      "Mentions her doctor told her she has "
+       ,  "She says she doesn't know what sodium limits mean and is confused about salt vs. sodium.",
+      "States she works full-time and struggles to find time for cooking.",
+      "Wants to understand why she needs to change her diet and meds.",
+      "Mentions her diet is a mix of traditional recipes and convenience foods."
+    ],
+    "discoverable_information": [
+      "Adherence issues with meds",
+      "Specific details about her daily diet and meals",
+      "Concerns about the cost of healthy food",
+      "Her husband's role in her care and home life",
+      "Her emotional state and stress level from balancing work and health"
+    ],
+    "reluctant_information": [
+      "She feels embarrassed about her weight and lifestyle choices",
+      "She worries about being judged for eating traditional foods",
+      "She hides that she skips meds or buys cheap, high-sodium foods due to budget",
+      "She hides the fact that she sometimes lies down to rest mid-day",
+      "She hides the fact that she doesn't want to eat traditional foods because she feels guilty about changing her culture"
+    ],
+    "hidden_information": [
+      "Her medical history indicates poor dietary intake from limited grocery options",
+      "Her medication history shows she self-adjusted dose",
+      "Her social context shows limited access to healthy food and safe walking areas"
+    ]
+  },
+  "learning_opportunities": {
+    "opportunities": [
+      {
+        "learning_objective": "Gather health history and assess patient understanding of medical terms like sodium and salt.",
+        "expected_discoveries": [
+          "Patient's confusion about medical jargon",
+          "Specific dietary habits and meal patterns",
+          "Patient's baseline understanding of hypertension and diabetes"
+        ],
+        "possible_patient_reactions": [
+          "Asking for clarification when terms are used",
+          "Feeling defensive if corrected harshly",
+          "Providing detailed history if felt supported and non-judgmental",
+          "Withdrawing if overwhelmed by rapid questioning"
+        ]
+      },
+      {
+        "learning_objective": "Develop an appropriate PES statement for nutrition intervention.",
+        "expected_discoveries": [
+          "Patient's specific dietary behaviors related to sodium and weight",
+          "Patient's ability and willingness to change behaviors",
+          "Identifiable barriers to lifestyle change"
+        ],
+        "possible_patient_reactions": [
+          "Relating to the problem statement",
+          "Agreeing with identified problems and goals",
+          "Resisting if changes feel too drastic or unrealistic",
+          "Feeling empowered if solutions are practical and realistic"
+        ]
+      },
+      {
+        "learning_objective": "Develop evidence-based nutrition interventions tailored to the patient's needs.",
+        "expected_discoveries": [
+          "Patient's specific food preferences and cultural context",
+          "Patient's barriers to implementation",
+          "Opportunities for gradual, sustainable changes"
+        ],
+        "possible_patient_reactions": [
+          "Engaging with concrete meal examples",
+          "Asking questions about feasibility",
+          "Showing enthusiasm if interventions align with goals",
+          "Feeling discouraged if interventions ignore cultural or financial realities"
+        ]
+      },
+      {
+        "learning_objective": "Integrate medication management with nutrition care.",
+        "expected_discoveries": [
+          "Patient's current medication use and adherence",
+          "Patient's misconceptions about medication and diet synergy",
+          "Opportunities for education on nutrition and medication side effects"
+        ],
+        "possible_patient_reactions": [
+          "Sharing experiences with medication side effects",
+          "Asking about how diet affects her blood sugar and blood pressure",
+          "Expressing relief when explained how diet and meds work together",
+          "Feeling anxious if told to make drastic changes that might worsen meds"
+        ]
+      },
+      {
+        "learning_objective": "Use motivational interviewing to explore readiness and ambivalence.",
+        "expected_discoveries": [
+          "Patient's personal motivations and fears",
+          "Patient's ambivalence about changing habits",
+          "Specific goals and values that align with behavior change"
+        ],
+        "possible_patient_reactions": [
+          "Discussing personal health goals",
+          "Revealing barriers to change when asked open questions",
+          "Expressing relief when heard without judgment",
+          "Showing increased confidence when exploring personal reasons for change"
+        ]
+      },
+      {
+        "learning_objective": "Address lifestyle and behavioral barriers and problem solve.",
+        "expected_discoveries": [
+          "Financial, time, and emotional barriers",
+          "Strategies for problem-solving"
+        ],
+        "possible_patient_reactions": [
+          "Relating to practical solutions",
+          "Providing input on what might work for her",
+          "Feeling more confident and less overwhelmed when barriers are tackled collaboratively",
+          "Feeling frustrated if solutions are unrealistic or dismissive of her constraints"
+        ]
+      },
+      {
+        "learning_objective": "Consider interprofessional and community resources.",
+        "expected_discoveries": [
+          "Patient's access to resources, support systems, and barriers to accessing them",
+          "Opportunities for referrals to dietitians, educators, or social services"
+        ],
+        "possible_patient_reactions": [
+          "Revealing lack of knowledge about available resources",
+          "Expressing interest in learning more about resources",
+          "Accepting resources that are convenient, accessible, and culturally appropriate",
+          "Showing relief when given information on free or low-cost resources"
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "assumptions": [
+      "Medication history inferred based on standard treatments for hypertension and type 2 diabetes in this demographic.",
+      "Dietary patterns inferred based on cultural background and economic constraints.",
+      "Readiness to change inferred based on stated concerns and motivations.",
+      "Assumption that patient can communicate effectively in English without interpreter.",
+      "Assumption that patient has basic access to groceries and water. No assumption of food insecurity unless prompted."
+    ],
+    "optional_details": [
+      "Patient has a small garden she enjoys tending to.",
+      "She has a routine of drinking tea in the evening.",
+      "She has a pet dog she cares for.",
+      "She has a background of community involvement through local political groups."
+    ]
+  }
+}
+{
+  "patient_overview": {
+    "name": "Nisha Patel",
+    "age": 29,
+    "sex": "Female",
+    "description": "Nisha Patel is a 29-year-old Indian-American woman who recently experienced her first hospitalization due to uncontrolled type 2 diabetes with symptoms of fatigue, excessive thirst, and blurred vision. While the prompt mentioned newly diagnosed MS, it is clinically inconsistent with the topic of uncontrolled type 2 diabetes. As per the directive to avoid introducing unrelated diagnoses and maintain clinical coherence with the specified clinical topic, the profile focuses on uncontrolled type 2 diabetes and associated complications. Nisha is an IT professional, married, and highly intelligent but currently emotionally overwhelmed. She is anxious, wants to understand every detail, and may challenge providers with questions. She struggles with health literacy in a healthcare context despite her high cognitive ability, and her motivation to understand is driven by fear of worsening her health. She is in the precontemplation/contemplation stage of change regarding lifestyle modification.",
+    "keywords": [
+      "Type 2 Diabetes",
+      "Health Literacy",
+      "Anxiety",
+      "Motivational Interviewing",
+      "Lifestyle Modification",
+      "IT Professional",
+      "Indian-American",
+      "Healthcare Navigation",
+      "First Hospitalization",
+      "PES Statement"
+    ]
+  },
+  "demographics": {
+    "occupation": "Senior Software Engineer",
+    "residence": "Suburban area near urban center",
+    "ethnicity": "Indian-American",
+    "language": "English (fluent), Gujarati (home language)",
+    "marital_status": "Married",
+    "education_level": "Master's degree in Computer Science",
+    "insurance": "Employer-sponsored health insurance",
+    "cultural_context": "Values her husband's health and family responsibilities; may view strict dietary restrictions through the lens of cultural food traditions and family obligations."
+  },
+  "clinical_profile": {
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "secondary_diagnoses": [
+      "Metabolic Syndrome",
+      "Anxiety Disorder"
+    ],
+    "medical_history": [
+      "Recent first hospitalization for hyperglycemic state and symptomatic hyperglycemia",
+      "Family history of type 2 diabetes in mother and maternal grandmother"
+    ],
+    "current_symptoms": [
+      "Excessive thirst and frequent urination over 2 months",
+      "Persistent fatigue and difficulty concentrating at work",
+      "Weight loss of 8 pounds over 3 months",
+      "Blurred vision",
+      "Slowly healing cuticles"
+    ],
+    "allergies": [
+      "Penicillin: No reaction",
+      "Food allergies: None"
+    ],
+    "clinical_findings": [
+      "Blood pressure: 120/85 mmHg",
+      "Heart rate: 76 bpm"
+    ],
+    "laboratory_data": [
+      "HbA1c: 8.8% (Target: <7.0%)",
+      "Fasting blood glucose: 185 mg/dL (Target: <126 mg/dL)",
+      "Total cholesterol: 210 mg/dL",
+      "HDL cholesterol: 38 mg/dL",
+      "Triglycerides: 190 mg/dL",
+      "Urea nitrogen: 17 mg/dL",
+      "Creatinine: 0.9 mg/dL",
+      "Total bilirubin: 1.2 mg/dL"
+    ],
+    "vital_signs": [
+      "BP: 120/85 mmHg",
+      "HR: 76 bpm",
+      "RR: 12 breaths/min",
+      "Temp: 98.6 F",
+      "SpO2: 99% on room air"
+    ],
+    "anthropometrics": [
+      "Height: 5'2\" (157 cm)",
+      "Weight: 145 lbs (65.8 kg)",
+      "BMI: 26.1 kg/m2"
+    ]
+  },
+  "medication_profile": {
+    "medications": [
+      {
+        "name": "Metformin 500 mg",
+        "dose": "500 mg",
+        "frequency": "Twice daily with meals",
+        "purpose": "To improve insulin sensitivity and lower blood glucose levels",
+        "adherence": "Patient reports taking it but frequently forgets due to long work hours",
+        "patient_concerns": "Concerns about gastrointestinal side effects like nausea"
+      },
+      {
+        "name": "Insulin Glargine 10 units",
+        "dose": "10 units",
+        "frequency": "Once daily at bedtime",
+        "purpose": "To control blood sugar levels at night and reduce HbA1c",
+        "adherence": "Inconsistent adherence; reports feeling overwhelmed by the injection process and fear of hypoglycemia",
+        "patient_concerns": "Fear of hypoglycemia, concerns about the cost and complexity of daily insulin injections"
+      }
+    ],
+    "supplements_and_otc": [
+      "Multivitamin (once daily)",
+      "Magnesium gummies"
+    ]
+  },
+  "nutrition_profile": {
+    "dietary_pattern": "Traditional Indian diet with high carbohydrate intake (white rice, chapati, sugar-heavy beverages)",
+    "food_preferences": ["Sweets during festivals", "Coffee with sugar", "Spicy flavors"],
+    "foods_or_behaviors_to_explore": [
+      "High intake of refined carbohydrates",
+      "Irregular meal timing due to work schedule",
+      "Snacking on sugary snacks in the evening"
+    ],
+    "meal_pattern": "Irregular: Skips breakfast, large lunch, often eats dinner late after work",
+    "hydration": "Drinks sugary beverages and coffee throughout the day",
+    "physical_activity": "Sedentary job; reports wanting to exercise but lacks time and motivation",
+    "substance_use": "Drinks coffee with sugar daily",
+    "sleep": "Poor sleep quality due to anxiety and evening snacks"
+  },
+  "psychosocial_profile": {
+    "personality": "Intelligent, analytical, detail-oriented, but highly anxious and prone to overthinking. Seeks control and certainty, which makes uncertainty in health information particularly distressing.",
+    "communication_style": "Asks many detailed questions, challenges providers to justify recommendations, becomes overwhelmed easily, may interrupt with questions.",
+    "goals": [
+      "Want to control diabetes and avoid future hospitalizations",
+      "Understand the pathophysiology of diabetes",
+      "Maintain her successful career while managing health"
+    ],
+    "concerns": [
+      "Fear of developing severe complications like blindness or kidney failure",
+      "Worry about burdening her husband",
+      "Anxiety about medication side effects"
+    ],
+    "beliefs": [
+      "Believes diabetes is primarily a failure of willpower",
+      "Thinks that strict elimination diets are necessary for success",
+      "Believes that her high intelligence will allow her to manage diabetes easily"
+    ],
+    "motivations": [
+      "Desires to be an active, independent person",
+      "Wants to protect her husband and provide for the family"
+    ],
+    "fears": [
+      "Fear of losing cognitive function or mental sharpness",
+      "Fear of becoming a burden on her husband",
+      "Fear of losing her job due to health complications"
+    ],
+    "barriers": [
+      "Time constraints due to high-demand job",
+      "Feeling overwhelmed by complex lifestyle changes",
+      "Health literacy challenges when facing medical explanations",
+      "Social pressure to eat traditional foods during celebrations"
+    ],
+    "strengths": [
+      "High motivation to understand her condition",
+      "Strong support from husband",
+      "Excellent problem-solving skills"
+    ],
+    "support_system": "Emotionally and financially supported by her husband, who also works long hours. Has a supportive mother-in-law who prepares traditional meals.",
+    "readiness_to_change": "Patient is in the contemplation stage: recognizes the need for change but is uncertain about how to implement it and fears the difficulty of adaptation."
+  },
+  "information_disclosure": {
+    "initial_information": [
+      "I've been diagnosed with type 2 diabetes and was recently hospitalized for my first time.",
+      "I keep forgetting to take my metformin because I work long hours and it's confusing.",
+      "I take insulin sometimes, but I'm really scared of getting hypoglycemia and passing out.",
+      "I'm so tired and my blood sugar keeps spiking. I just don't understand why."
+    ],
+    "discoverable_information": [
+      "Skips breakfast and eats large, late dinners due to work schedule.",
+      "Has a high intake of refined carbohydrates and sugar.",
+      "Uses sugar-laden beverages frequently.",
+      "Has a history of anxiety and feelings of being overwhelmed."
+    ],
+    "reluctant_information": [
+      "Feels embarrassed about eating sugar and sweets due to guilt.",
+      "Admits feeling embarrassed to ask questions in a clinical setting.",
+      "Has been experiencing anxiety symptoms like racing heart and sleep disturbances due to health worries."
+    ],
+    "hidden_information": [
+      "She has been trying to count her carbohydrates but finds it mentally exhausting.",
+      "She fears that her doctor will impose overly restrictive diets or become dismissive of her concerns.",
+      "She has been secretly researching alternative supplements and treatments online to supplement her prescribed regimen."
+    ]
+  },
+  "learning_opportunities": {
+    "opportunities": [
+      {
+        "learning_objective": "Develop an appropriate PES statement.",
+        "expected_discoveries": [
+          "Patient's history of non-adherence to medication.",
+          "Patient's high intake of refined carbohydrates due to work stress and irregular meal timing.",
+          "Patient's fear of hypoglycemia and guilt regarding sugar consumption."
+        ],
+        "possible_patient_reactions": [
+          "If the student simply lists her symptoms, she may feel dismissed and ask for the underlying physiological reasons.",
+          "She may challenge the relevance of her lifestyle factors if not linked to her symptoms.",
+          "She may admit her struggle with time and mental overwhelm when asked about barriers."
+        ]
+      },
+      {
+        "learning_objective": "Use motivational interviewing.",
+        "expected_discoveries": [
+          "Patient's internal conflict regarding the need for change vs. the difficulty of adapting.",
+          "Patient's high motivation rooted in her desire for independence.",
+          "Patient's fear of hypoglycemia and guilt regarding sugar."
+        ],
+        "possible_patient_reactions": [
+          "She may respond positively to open-ended questions.",
+          "She may become defensive if advice is given directly.",
+          "She may express frustration and feel overwhelmed if the student focuses solely on her problems rather than her strengths.",
+          "She may engage in collaborative problem-solving if offered support and validation."
+        ]
+      },
+      {
+        "learning_objective": "Address lifestyle and behavioral barriers.",
+        "expected_discoveries": [
+          "Patient's irregular meal timing due to work schedule.",
+          "Patient's lack of time and energy for grocery shopping or meal preparation.",
+          "Patient's desire to control her health but feeling confused and overwhelmed."
+        ],
+        "possible_patient_reactions": [
+          "If the student asks about her schedule, she may explain the reality of her life and admit her feelings of being overwhelmed.",
+          "She may become frustrated if recommended a regimen she cannot realistically implement.",
+          "She may respond positively to small, actionable steps."
+        ]
+      },
+      {
+        "learning_objective": "Integrate medication management with nutrition care.",
+        "expected_discoveries": [
+          "Patient's irregular adherence to metformin and insulin due to complexity and fear.",
+          "Patient's fear of hypoglycemia and its impact on her ability to take her medication.",
+          "Patient's confusion about how to manage her blood sugar with food and medication."
+        ],
+        "possible_patient_reactions": [
+          "She may explain her difficulties with her daily routine regarding her medication.",
+          "She may feel a sense of relief if the student helps her understand the connection between her meal timing, medication, and blood sugar.",
+          "She may admit to fearing that she will fail if she makes mistakes."
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "assumptions": [
+      "The patient's anxiety is linked to her first hospitalization and the new diagnosis.",
+      "The patient's husband supports her emotionally and financially.",
+      "The patient's high intelligence does not directly translate to better health literacy due to stress and anxiety."
+    ],
+    "optional_details": [
+      "She is a tech enthusiast who often researches health topics online."
+    ]
+  }
+}
+{
+  "patient_overview": {
+    "name": "Omar Sinclair",
+    "age": 45,
+    "sex": "Male",
+    "description": "Omar is a 45-year-old African-American aircraft mechanic presenting with dyslipidemia. He is independent and pragmatic but skeptical of pharmaceutical interventions. Despite a BMI of 29 and waist circumference of 43 inches, he has low health literacy regarding cardiovascular risk. He struggles with medication adherence due to perceived side effects and requires evidence-based nutrition counseling to manage lipids and reduce future cardiovascular risk.",
+    "keywords": [
+      "dyslipidemia",
+      "skeptical patient",
+      "medication non-adherence",
+      "clinical nutrition therapy",
+      "cardiovascular risk",
+      "motivational interviewing",
+      "low health literacy",
+      "lifestyle modification",
+      "medication counseling",
+      "mechanic"
+    ]
+  },
+  "demographics": {
+    "occupation": "Airplane mechanic",
+    "residence": "Suburban area",
+    "ethnicity": "African-American",
+    "language": "English",
+    "marital_status": "Married",
+    "education_level": "High school diploma",
+    "insurance": "Employment-based insurance",
+    "cultural_context": "Work-focused culture with long shifts and reliance on convenience foods; strong value placed on self-reliance and practical solutions."
+  },
+  "clinical_profile": {
+    "primary_diagnosis": "Dyslipidemia",
+    "secondary_diagnoses": [
+      "Prediabetes",
+      "Essential Hypertension"
+    ],
+    "medical_history": [
+      "Family history of early coronary artery disease",
+      "Prior episodes of severe migraine",
+      "No prior cardiac events"
+    ],
+    "current_symptoms": [
+      "No specific symptoms"
+    ],
+    "allergies": [
+      "No known food or medication allergies"
+    ],
+    "clinical_findings": [
+      "Waist circumference 43 inches",
+      "Blood pressure 148/92 mmHg",
+      "Elevated LDL cholesterol"
+    ],
+    "laboratory_data": [
+      "Total cholesterol 260 mg/dL",
+      "LDL cholesterol 195 mg/dL",
+      "HDL cholesterol 30 mg/dL",
+      " Triglycerides 180 mg/dL",
+      "HbA1c 5.8%",
+      " fasting glucose 110 mg/dL"
+    ],
+    "vital_signs": [
+      "Heart rate: 82 bpm",
+      "Blood pressure: 148/92 mmHg",
+      "Temperature: 98.4°F",
+      "Respiratory rate: 16 breaths/min",
+      "Oxygen saturation: 97%"
+    ],
+    "anthropometrics": [
+      "Height: 5'10\"",
+      "Weight: 228 lbs",
+      "BMI: 29.2",
+      "Waist circumference: 43 inches",
+      "Body fat estimate: 28%"
+    ]
+  },
+  "medication_profile": {
+    "medications": [
+      {
+        "name": "Atorvastatin",
+        "dose": "40 mg",
+        "frequency": "Once daily",
+        "purpose": "Lower LDL cholesterol and reduce cardiovascular risk",
+        "adherence": "Inconsistent; misses doses occasionally",
+        "patient_concerns": "Feels dizzy after taking it and worries about "
+      },
+      {
+        "name": "Lisinopril",
+        "dose": "20 mg",
+        "frequency": "Once daily",
+        "purpose": "Control blood pressure",
+        "adherence": "Consistent",
+        "patient_concerns": "Experience a persistent dry cough."
+      }
+    ],
+    "supplements_and_otc": [
+      "Fish oil",
+      "Vitamin D3",
+      "Multivitamin"
+    ]
+  },
+  "nutrition_profile": {
+    "dietary_pattern": "Western-style diet",
+    "food_preferences": [
+      "High-carb convenience foods",
+      "Burgers and pizza for quick meals"
+    ],
+    "foods_or_behaviors_to_explore": [
+      "High intake of saturated fats",
+      "Low fruit and vegetable consumption",
+      "Heavy consumption of processed meats"
+    ],
+    "meal_pattern": "Irregular; breakfast skipped, heavy dinner",
+    "hydration": "Inadequate water intake; frequently drinks soda",
+    "physical_activity": "Sedentary; limited movement during long shifts",
+    "substance_use": "Non-smoker; moderate alcohol consumption",
+    "sleep": "Inconsistent sleep due to shift work"
+  },
+  "psychosocial_profile": {
+    "personality": "Independent, skeptical, practical, resistant to authority",
+    "communication_style": "Direct, concise, pragmatic, resistant to lecturing",
+    "goals": [
+      "Return to full work shifts without fatigue",
+      "Control cholesterol levels without side effects",
+      "Reduce cardiovascular risk without lifestyle changes"
+    ],
+    "concerns": [
+      "Medication side effects",
+      "Dietary changes are too restrictive",
+      "Misunderstanding of cholesterol numbers"
+    ],
+    "beliefs": [
+      "Statins cause muscle pain",
+      "Cholesterol is normal",
+      "Healthy eating is too expensive"
+    ],
+    "motivations": [
+      "Avoid heart attack",
+      "Play with grandkids",
+      "Return to full work"
+    ],
+    "fears": [
+      "Heart attack",
+      "Medication costs",
+      "Losing job"
+    ],
+    "barriers": [
+      "Medication side effects",
+      "Low health literacy",
+      "Busy schedule",
+      "Food accessibility"
+    ],
+    "strengths": [
+      "Pragmatic mindset",
+      "Desire for family",
+      "Ability to understand practical advice"
+    ],
+    "support_system": "Spouse who encourages healthy eating but has limited involvement",
+    "readiness_to_change": "Precontemplation on medication; contemplation on diet"
+  },
+  "information_disclosure": {
+    "initial_information": [
+      "Name: Omar Sinclair",
+      "Age: 45",
+      "Occupation: Airplane mechanic"
+    ],
+    "discoverable_information": [
+      "Lives with spouse",
+      "Lives with young children",
+      "Eats 3 meals a day"
+    ],
+    "reluctant_information": [
+      "Medication side effects cause dizziness",
+      "Inconsistent medication adherence",
+      "Fear of being told what to eat"
+    ],
+    "hidden_information": [
+      "Recent weight gain due to long shifts",
+      "Low fruit and vegetable consumption",
+      "Heavy alcohol consumption",
+      "Irregular sleep due to shift work",
+      "Poor understanding of cholesterol"
+    ]
+  },
+  "learning_opportunities": {
+    "opportunities": [
+      {
+        "learning_objective": "Apply the Nutrition Care Process",
+        "expected_discoveries": [
+          "Identify nutritional deficiencies",
+          "Assess medication interactions",
+          "Evaluate lifestyle factors"
+        ],
+        "possible_patient_reactions": [
+          "Resistant to the process initially",
+          "Copes well with structured approach"
+        ]
+      },
+      {
+        "learning_objective": "Develop an appropriate PES statement",
+        "expected_discoveries": [
+          "Identify the problem with LDL",
+          "Identify the cause of poor lipid profile",
+          "Identify effect on cardiovascular risk"
+        ],
+        "possible_patient_reactions": [
+          "Misunderstand PES format",
+          "Respond well to practical explanation"
+        ]
+      },
+      {
+        "learning_objective": "Develop evidence-based nutrition interventions",
+        "expected_discoveries": [
+          "Identify dietary habits",
+          "Identify dietary barriers",
+          "Develop specific dietary changes"
+        ],
+        "possible_patient_reactions": [
+          "Resist dietary changes",
+          "Explore changes when explained"
+        ]
+      },
+      {
+        "learning_objective": "Integrate medication management with nutrition care",
+        "expected_discoveries": [
+          "Identify medication non-adherence",
+          "Identify medication side effects",
+          "Identify potential interactions"
+        ],
+        "possible_patient_reactions": [
+          "Fear of side effects",
+          "Willing to adjust diet"
+        ]
+      },
+      {
+        "learning_objective": "Use motivational interviewing",
+        "expected_discoveries": [
+          "Identify values",
+          "Identify readiness",
+          "Identify barriers"
+        ],
+        "possible_patient_reactions": [
+          "Initial resistance",
+          "Open to non-confrontational approach"
+        ]
+      },
+      {
+        "learning_objective": "Address lifestyle and behavioral barriers",
+        "expected_discoveries": [
+          "Identify barriers",
+          "Identify strengths",
+          "Develop realistic solutions"
+        ],
+        "possible_patient_reactions": [
+          "Feeling overwhelmed",
+          "Appreciate practical strategies"
+        ]
+      },
+      {
+        "learning_objective": "Consider interprofessional and community resources",
+        "expected_discoveries": [
+          "Identify need for PCP follow-up",
+          "Identify need for dietitian counseling"
+        ],
+        "possible_patient_reactions": [
+          "Skepticism about referrals",
+          "Open to community resources"
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "assumptions": [
+      "Patient has employment-based insurance",
+      "Patient is married with children",
+      "Patient has no other underlying conditions"
+    ],
+    "optional_details": [
+      "Patient enjoys grilling on weekends",
+      "Patient watches football with neighbors",
+      "Patient takes vitamins"
+    ]
+  }
+}
+{
+  "patient_overview": {
+    "name": "Marcus Ramirez",
+    "age": 59,
+    "sex": "Male",
+    "description": "A 59-year-old Hispanic/Latino sales associate with a history of heart failure (NYHA Stage C) and newly diagnosed type 2 diabetes. He is cautious, stoic, and practical, presenting with early satiety and uncertainty about how diet affects his symptoms. He seeks clear, straightforward explanations about his conditions and the role of nutrition in managing them, though he is unsure of the connection between his heart and blood sugar issues.",
+    "keywords": [
+      "Type 2 Diabetes",
+      "Heart Failure",
+      "Medical Nutrition Therapy",
+      "Uncontrolled Glucose",
+      "Early Satiety",
+      "Hispanic/Latino",
+      "Motivational Interviewing",
+      "Nutrition Care Process",
+      "BMI 19",
+      "NYHA Stage C"
+    ]
+  },
+  "demographics": {
+    "occupation": "Sales associate at Westwood One",
+    "residence": "Urban apartment in the city, lives alone",
+    "ethnicity": "Hispanic/Latino",
+    "language": "English (fluent), Spanish (fluent)",
+    "marital_status": "Divorced",
+    "education_level": "High school diploma, some community college credits",
+    "insurance": "Medicaid/Medicare (qualifying through disability status)",
+    "cultural_context": "Values strong, simple explanations and practical advice; prefers Spanish when discussing food preferences and family topics; respects authority but values being treated as a capable adult in his own health decisions."
+  },
+  "clinical_profile": {
+    "primary_diagnosis": "Poorly controlled Type 2 Diabetes",
+    "secondary_diagnoses": [
+      "Heart Failure (NYHA Stage C)",
+      "Essential Hypertension",
+      "Metabolic Syndrome"
+    ],
+    "medical_history": [
+      "2 years with Heart Failure (NYHA Stage C)",
+      "Newly diagnosed Type 2 Diabetes 6 months ago",
+      "Prior coronary artery bypass graft (CABG) 10 years ago",
+      "History of smoking (pack-year history of 30, quit 15 years ago)",
+      "Multiple upper GI endoscopies with normal findings"
+    ],
+    "current_symptoms": [
+      "Early satiety after small meals",
+      "Persistent fatigue and low energy",
+      "Mild leg swelling, particularly in the right ankle",
+      "Random daytime thirst and frequent urination",
+      "Occasional heart palpitations, usually after eating",
+      "Difficulty initiating physical activity due to fatigue"
+    ],
+    "allergies": [
+      "No known allergies (NKDA)",
+      "Penicillin (mild rash in 2012)"
+    ],
+    "clinical_findings": [
+      "BMI of 19.0 (underweight/low weight for age)",
+      "Right-sided pitting edema in ankles and feet",
+      "Junctional crackles in right lung base",
+      "S1 heart murmur at apex",
+      "Lung exam: Decreased bowel sounds on right lower quadrant"
+    ],
+    "laboratory_data": [
+      "Hemoglobin A1c: 9.2%",
+      "Random blood glucose: 245 mg/dL",
+      "Lipid Panel: Total 210, HDL 38, LDL 110, Triglycerides 155",
+      "Renal Function: eGFR 67, Creatinine 1.3 mg/dL",
+      "Electrolytes: Sodium 138, Potassium 4.1",
+      "CBC: Hemoglobin 12.5 g/dL"
+    ],
+    "vital_signs": [
+      "Temperature: 98.6°F (37.0°C)",
+      "Pulse: 88 bpm (irregular)",
+      "Blood Pressure: 132/84 mmHg",
+      "Respiratory Rate: 18/min",
+      "SpO2: 97% on room air"
+    ],
+    "anthropometrics": [
+      "BMI: 19.0 (underweight/low weight for age)",
+      "Height: 5'11\"",
+      "Weight: 145 lbs (65.8 kg)",
+      "Weight change: Down 10 lbs over the last 6 months",
+      "BMI Category: 18.5–24.9 (Borderline low/underweight risk due to HF)",
+      "BMI Category: 18.5–24.9 (Borderline low/underweight risk due to HF)"
+    ]
+  },
+  "medication_profile": {
+    "medications": [
+      {
+        "name": "Lisinopril",
+        "dose": "10 mg",
+        "frequency": "Every morning",
+        "purpose": "Heart failure and blood pressure management",
+        "adherence": "High (takes daily without fail)",
+        "patient_concerns": "Fears dizziness when standing up"
+      },
+      {
+        "name": "Metoprolol succinate",
+        "dose": "25 mg",
+        "frequency": "Every morning",
+        "purpose": "Heart failure and rate control",
+        "adherence": "High",
+        "patient_concerns": "Worries about low energy levels and being 'too sluggish'"
+      },
+      {
+        "name": "Metformin",
+        "dose": "500 mg",
+        "frequency": "Once daily with dinner",
+        "purpose": "Blood sugar control",
+        "adherence": "Inconsistent (takes it when he remembers)",
+        "patient_concerns": "Fears stomach upset and doesn't see much difference in symptoms"
+      },
+      {
+        "name": "Carvedilol",
+        "dose": "8 mg",
+        "frequency": "Twice daily",
+        "purpose": "Heart failure management",
+        "adherence": "High",
+        "patient_concerns": "None stated"
+      }
+    ],
+    "supplements_and_otc": [
+      "Sageleaf Herbal Tea (drinks when feeling unwell)",
+      "Fish Oil (1 g/day, started on his own)",
+      "Multivitamin (once weekly)"
+    ]
+  },
+  "nutrition_profile": {
+    "dietary_pattern": "Irregular meals, tends to skip breakfast and eats large, heavy dinner",
+    "food_preferences": [
+      "Enjoys spicy Latin dishes but avoids them due to fear of bloating",
+      "Prefers simple, familiar comfort foods",
+      "Avoids fruits due to fear of blood sugar spikes",
+      "Avoids dairy due to mild lactose intolerance symptoms"
+    ],
+    "foods_or_behaviors_to_explore": [
+      "Eats a large dinner (4–5 hours after starting to eat) that often causes symptoms later",
+      "Skips breakfast, leading to low energy in the afternoon",
+      "Consumes only water or tea for hydration, rarely drinks enough fluid to prevent dehydration",
+      "Consumes only water or tea for hydration, rarely drinks enough fluid to prevent dehydration"
+    ],
+    "meal_pattern": "Irregular; breakfast skipped or minimal, lunch is small, dinner is large and late (often 8 PM or later)",
+    "hydration": "Inconsistent; drinks water only when thirsty, often dehydrated during the day",
+    "physical_activity": "Rarely active; limited mobility due to heart failure; feels too fatigued to walk more than a short distance"
+  },
+  "psychosocial_profile": {
+    "personality": "Cautious, stoic, practical; avoids emotional discussions; highly observant but reluctant to express vulnerability",
+    "communication_style": "Direct, literal, and concise; tends to use short sentences and factual statements; prefers practical solutions over emotional processing; may avoid asking clarifying questions unless explicitly prompted",
+    "goals": [
+      "Maintain stability in his symptoms",
+      "Improve daily energy levels",
+      "Avoid hospitalizations or need for more medications",
+      "Have simple, actionable steps he can follow consistently"
+    ],
+    "concerns": [
+      "Worries that diet changes will be too complicated or time-consuming",
+      "Concerned that early satiety is a permanent part of his life",
+      "Believes his symptoms are primarily medical and does not fully grasp how diet impacts them",
+      "Fears that weight loss will lead to more frailty",
+      "Uncertainty about how to manage symptoms without feeling burdened"
+    ],
+    "beliefs": [
+      "Diet matters, but he is unsure of the specifics",
+      "Medications are the main treatment; food is secondary",
+      "Spicy food causes bloating and is unhealthy",
+      "Fruit is too high in sugar for him",
+      "He understands basic health concepts but struggles with the connection between heart and diabetes",
+      "Heart disease and diabetes are separate problems that can be managed independently"
+    ],
+    "motivations": [
+      "Desire to avoid hospitalization and dependence on family",
+      "Goal to remain independent and active in daily tasks",
+      "Valuing simple, practical solutions over complex advice",
+      "Concern about not wanting to burden his family with extra care",
+      "Fear of worsening symptoms",
+      "Desire to be in control of his health"
+    ],
+    "fears": [
+      "Losing further independence",
+      "Hospitalization or hospitalizations or dependence on family",
+      "Becoming a burden to his son or daughters",
+      "Being overwhelmed by complex medical advice",
+      "That he will forget to take his medications or eat appropriately",
+      "That his symptoms will worsen despite efforts",
+      "Forgetting to take his medications or eat appropriately"
+    ],
+    "barriers": [
+      "Low health literacy regarding the role of nutrition in disease management",
+      "Limited financial resources for fresh produce or specialty diets",
+      "Inconsistent meal timing due to work shifts",
+      "Fatigue and low energy limiting preparation of complex meals",
+      "Difficulty understanding medical instructions due to low health literacy",
+      "Difficulty understanding medical instructions due to low health literacy",
+      "Difficulty understanding medical instructions due to low health literacy"
+    ],
+    "strengths": [
+      "Strong desire to avoid hospitalization and dependence on family",
+      "High self-efficacy in learning and adapting to new information when explained clearly",
+      "Strong social support from his family who is willing to help",
+      "Strong history of following medical advice when it is simple and clear",
+      "Willingness to follow medical advice when it is simple and clear",
+      "Willingness to follow medical advice when it is simple and clear"
+    ],
+    "support_system": "Lives alone but has a close relationship with his adult son, who lives in the same city and helps him with shopping and transportation when needed",
+    "readiness_to_change": "Precontemplation to early contemplation stage for lifestyle changes; motivated to try and motivated to try to improve his symptoms but is currently undecided on the specific steps to take"
+  },
+  "information_disclosure": {
+    "initial_information": [
+      "He will likely mention his symptoms of early satiety, fatigue, and leg swelling when asked",
+      "He will state that he is taking Metformin and other medications for his conditions",
+      "He will mention that he has been diagnosed with Type 2 Diabetes and Heart Failure",
+      "He will state that he finds it difficult to maintain a regular meal schedule due to fatigue and work shifts"
+    ],
+    "discoverable_information": [
+      "When asked about his diet, he will describe his irregular meal pattern and preference for simple foods",
+      "When asked about his medications, he will mention that he takes them regularly but has concerns about their side effects",
+      "When asked about his sleep, he will mention that he has difficulty sleeping due to frequent urination at night",
+      "When asked about his stress, he will mention that he feels stress about his work and family but doesn't know how to manage it",
+      "When asked about his support system, he will mention his son but clarify that he prefers to manage his health independently"
+    ],
+    "reluctant_information": [
+      "He may hesitate to mention his financial limitations when asked about groceries or cooking costs",
+      "He may be reluctant to admit that he is struggling with low energy levels and fatigue",
+      "He may be reluctant to mention his concerns about weight loss and fear of frailty",
+      "He may be reluctant to admit that he is struggling with low energy levels and fatigue"
+    ],
+    "hidden_information": [
+      "His HbA1c is 9.2% (poorly controlled diabetes)",
+      "His BMI is 19.0 (underweight/low weight for age)",
+      "He has NYHA Stage C heart failure",
+      "He has an irregular heart rate and mild edema",
+      "He has not been diagnosed with dysphagia or GERD",
+      "He has not been diagnosed with dysphagia or GERD"
+    ]
+  },
+  "learning_opportunities": {
+    "opportunities": [
+      {
+        "learning_objective": "Apply the Nutrition Care Process to develop a PES statement and comprehensive care plan",
+        "expected_discoveries": [
+          "The student will discover that the student will discover that the patient has a low BMI and weight loss due to early satiety and malnutrition",
+          "The student will discover that the patient has a significant weight gain over the last year due to heart failure, the patient has NYHA Stage C heart failure and diabetes",
+          "The student will discover that the patient has NYHA Stage C heart failure and diabetes",
+          "The student will discover that the patient has NYHA Stage C heart failure and diabetes"
+        ],
+        "possible_patient_reactions": [
+          "He may respond positively to clear, structured explanations of the Nutrition Care Process",
+          "He may feel overwhelmed if the terminology is too complex, leading to disengagement",
+          "He may ask clarifying questions to better understand the role of nutrition in his conditions"
+        ]
+      },
+      {
+        "learning_objective": "Integrate medication management with nutrition care",
+        "expected_discoveries": [
+          "The student will discover that the patient is taking Metformin for diabetes and has concerns about its side effects",
+          "The student will discover that the patient has a history of heart failure and takes Lisinopril and Metoprolol",
+          "The student will discover that the patient has a history of heart failure and takes Lisinopril and Metoprolol",
+          "The student will discover that the patient has a history of heart failure and takes Lisinopril and Metoprolol"
+        ],
+        "possible_patient_reactions": [
+          "He may express concern about his medications and ask for clarification",
+          "He may appreciate being asked about his medications and feel more involved in his care",
+          "He may worry that his medications and his diet will conflict, leading to questions about adjustments"
+        ]
+      },
+      {
+        "learning_objective": "Use motivational interviewing to address lifestyle and behavioral barriers",
+        "expected_discoveries": [
+          "The student will discover that the student will discover that the patient has a low BMI and weight loss due to early satiety and malnutrition",
+          "The student will discover that the patient has a significant weight gain over the last year due to heart failure, the patient has NYHA Stage C heart failure and diabetes",
+          "The student will discover that the patient has NYHA Stage C heart failure and diabetes",
+          "The student will discover that the patient has NYHA Stage C heart failure and diabetes"
+        ],
+        "possible_patient_reactions": [
+          "He may initially resist change, especially when asked about lifestyle modifications",
+          "He may express hesitation about the time and effort required for dietary changes",
+          "He may become more open to change when the student validates his feelings and asks open-ended questions"
+        ]
+      },
+      {
+        "learning_objective": "Address interprofessional and community resources",
+        "expected_discoveries": [
+          "The student will discover that the patient has a support system including his adult son",
+          "The student will discover that the patient lives alone but has access to transportation and help with shopping",
+          "The student will discover that the patient has a history of heart failure and takes Lisinopril and Metoprolol"
+        ],
+        "possible_patient_reactions": [
+          "He may appreciate suggestions to involve his son in his care, but may also feel protective of his independence",
+          "He may express interest in community resources like meal delivery or food banks",
+          "He may feel overwhelmed by suggestions to involve multiple providers or services"
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "assumptions": [
+      "The patient's primary language is English, though he is fluent in Spanish, which may be used for certain topics",
+      "The patient's heart failure is primarily due to ischemic heart disease from his prior CABG",
+      "The patient's Type 2 Diabetes is likely exacerbated by his sedentary lifestyle and diet",
+      "The patient's BMI of 19.0 is a result of both heart failure and potential malnutrition",
+      "The patient's son is willing to help with groceries and transportation but may need guidance on how to support his father",
+      "The patient's diet is likely high in sodium and low in fiber, contributing to his symptoms and diabetes management"
+    ],
+    "optional_details": [
+      "The patient has a history of smoking but quit 15 years ago",
+      "The patient has a history of smoking but quit 15 years ago",
+      "The patient has a history of smoking but quit 15 years ago"
+    ]
+  }
+}
+{
+  "patient_overview": {
+    "name": "Walter Greene",
+    "age": 72,
+    "sex": "Male",
+    "description": "A 72-year-old African-American retired janitor with uncontrolled Type 2 Diabetes and congestive heart failure. Walter presents as a 'frequent flier' with non-adherent to dietary recommendations. He is grumpy and sarcastic toward students but can engage humorously when he feels understood or when he has a strong desire to be part of the care process. He tends to dominate conversations with 'shop talk' but reveals deeper fears about hospitalization and loss of independence if pressed empathetically.",
+    "keywords": [
+      "uncontrolled diabetes",
+      "heart failure",
+      "dietary nonadherence",
+      "motivational interviewing",
+      "medical nutrition therapy",
+      "aging",
+      "social isolation",
+      "health literacy",
+      "patient empowerment",
+      "interprofessional communication"
+    ]
+  },
+  "demographics": {
+    "occupation": "Retired janitor",
+    "residence": "Suburban area, lives alone in a two-bedroom apartment",
+    "ethnicity": "African-American",
+    "language": "English",
+    "marital_status": "Widowed",
+    "education_level": "High school diploma",
+    "insurance": "Medicare (Primary) and Medicaid (Secondary)",
+    "cultural_context": "Values self-sufficiency and doesn't like being treated like he is 'too old' for care plans he doesn't like. May be skeptical of modern dietary guidelines that conflict with his lifelong diet."
+  },
+  "clinical_profile": {
+    "primary_diagnosis": "Uncontrolled Type 2 Diabetes Mellitus",
+    "secondary_diagnoses": [
+      "Congestive Heart Failure (HFREF, EF 40%)",
+      "Hypertension",
+      "Chronic Kidney Disease Stage 3",
+      "Coronary Artery Disease"
+    ],
+    "medical_history": [
+      "Type 2 Diabetes for 15 years",
+      "Cardiac surgery (CABG) 5 years ago",
+      "Recurrent heart failure decompensations requiring hospitalization",
+      "Previous non-compliance with diet and medication"
+    ],
+    "current_symptoms": [
+      "Chronic fatigue",
+      "Shortness of breath with minimal exertion",
+      "Pedal edema (2+ bilateral)",
+      "Polyuria and polydipsia",
+      "Poor weight loss despite attempts to eat 'less'",
+      "Soreness and stiffness in joints"
+    ],
+    "allergies": [
+      "Penicillin (hives)",
+      "Shellfish (anaphylaxis)",
+      "Sulfa"
+    ],
+    "clinical_findings": [
+      "Heart murmur at apex",
+      "Bilateral lung crackles",
+      "Peripheral pulse 3+ in lower extremities",
+      "Skin warm, dry, with poor venous filling time",
+      "Gum disease (mild)"
+    ],
+    "laboratory_data": [
+      "HbA1c: 8.7% (High; <7% is target)",
+      "Fasting Glucose: 165 mg/dL",
+      "BUN: 28 mg/dL",
+      "Creatinine: 1.6 mg/dL",
+      "Sodium: 136 mEq/L",
+      "Potassium: 4.1 mEq/L",
+      "LDL: 125 mg/dL"
+    ],
+    "vital_signs": [
+      "BP: 158/92 mmHg",
+      "HR: 78 bpm",
+      "RR: 18 breaths/min",
+      "Temp: 98.6°F (37.0°C)",
+      "SpO2: 96% on room air"
+    ],
+    "anthropometrics": [
+      "Height: 5'8\"",
+      "Weight: 198 lbs",
+      "BMI: 31.2 kg/m²",
+      "Recent weight change: Lost 10 lbs unintentionally in the last month",
+      "Waist circumference: 43 inches"
+    ]
+  },
+  "medication_profile": {
+    "medications": [
+      {
+        "name": "Metformin",
+        "dose": "500 mg",
+        "frequency": "Twice daily with meals",
+        "purpose": "Type 2 Diabetes Control",
+        "adherence": "Inconsistent; skips sometimes due to nausea",
+        "patient_concerns": "He complains it makes him vomit or have an upset stomach."
+      },
+      {
+        "name": "Lisinopril",
+        "dose": "20 mg",
+        "frequency": "Once daily in the morning",
+        "purpose": "Hypertension and Heart Failure",
+        "adherence": "Takes daily",
+        "patient_concerns": "Believes it's only for his blood pressure, not his diabetes."
+      },
+      {
+        "name": "Epirocil (Eplerenone)",
+        "dose": "25 mg",
+        "frequency": "Once daily",
+        "purpose": "Diuretic for Heart Failure",
+        "adherence": "Sometimes forgets to take it",
+        "patient_concerns": "Worries about low blood pressure and fainting."
+      }
+    ],
+    "supplements_and_otc": [
+      "Melatonin 5 mg at night",
+      "Advil (Ibuprofen) 400 mg PRN for back pain (takes 2-3 times a week)",
+      "Gum (sugar-free)"
+    ]
+  },
+  "nutrition_profile": {
+    "dietary_pattern": "American Heart Association 'diet', but modified by family recipes and personal taste. High in processed convenience foods, high-fat meats, and refined carbohydrates. Low in fiber and fruits/vegetables.",
+    "food_preferences": [
+      "Prefers fried foods and heavy sauces",
+      "Loves macaroni and cheese and fried chicken",
+      "Enjoys sweet tea and soda",
+      "Dislikes bitter vegetables"
+    ],
+    "foods_or_behaviors_to_explore": [
+      "Eats out with a local group twice a week",
+      "Order 'special' versions of standard menu items that are higher in sodium",
+      "Uses high-sodium canned soups for comfort food",
+      "Eats breakfast with toast and syrup if he has it",
+      "Drinks soda instead of water to make meals taste better"
+    ],
+    "meal_pattern": "Irregular eating. Usually skips breakfast, eats a large lunch around noon, and snacks in the evening. Dinner varies; sometimes has it with the dinner club, sometimes just eats leftovers.",
+    "hydration": "Dehydrates easily but avoids drinking water consistently due to excessive thirst. Prefers sugary sodas and fruit punch. Takes fluids mostly during lunch."
+     ,
+    "physical_activity": "Sits at his computer at the computer, mostly stationary. Limited physical ability due to shortness of breath and fatigue. Walks around the house only. Has a history of being very active, and feels frustrated that he can't do so much anymore.",
+    "substance_use": "Drinks 1-2 small cups of beer during TV at night. No smoking history (never smoked).",
+    "sleep": "Experiences insomnia due to excessive night urination (nocturia). Wakes up multiple times at night to urinate, which disrupts his sleep cycle."
+  },
+  "psychosocial_profile": {
+    "personality": "Cynical and sarcastic. He masks his anxiety and fear with humor and grumpiness. He doesn't like people who pity him or make him feel like a child. He can become very engaged when discussing his "
+     ,
+    "communication_style": "Direct and dismissive. He is often short and snappy at the beginning of the interaction, especially if he perceives the student is a student (often says, 'You look like a kid'). However, if the student acknowledges his experience and listens attentively, he opens up. He has a lot of energy and talks a lot.",
+    "goals": [
+      "Avoid going back to the hospital",
+      "Be able to eat his favorite foods without getting sick",
+      "Manage his medications without feeling dazed",
+      "Keep his independence",
+      "Understand exactly how his diabetes and heart failure are connected"
+    ],
+    "concerns": [
+      "Loses his home in the hospital because his heart condition makes him feel so much fatigue.",
+      "He knows he is losing weight and he's scared of losing his muscle mass",
+      "He is scared of the future and being a burden on his sister who lives across the country",
+      "Medication side effects like stomach upset or dizziness"
+    ],
+    "beliefs": [
+      "He believes that 'healthy eating' is just for the young, healthy, and rich. He thinks food is about comfort and joy, not calories.",
+      "He thinks his heart failure and diabetes are just the same thing. His 'sick thing'"
+      ,
+      "He thinks doctors just want to keep him in the hospital to make money.",
+      "He is skeptical about the low-sodium diet because he loves salty food."
+    ],
+    "motivations": [
+      "Wants to see his family more often",
+      "Does not want to lose his independence",
+      "Wants to reduce his fatigue and not need to sit so much",
+      "Likes to feel in control"
+    ],
+    "fears": [
+      "Dying",
+      "Being a burden on his sister or friends",
+      "Losing his ability to go out for dinner with his friends",
+      "Losing weight"
+    ],
+    "barriers": [
+      "Health literacy: He doesn't understand the medical jargon around heart failure vs. diabetes",
+      "Financial: His fixed income makes fresh food and medications expensive",
+      "Social: His dinner club eats out twice a week, and the food is heavy on fried and salty foods.",
+      "Physiological: He is thirsty and tired, so he lacks the energy or motivation to prepare meals or exercise.",
+      "Medical: His medications cause stomach upset and dizziness, making him feel sick."
+    ],
+    "strengths": [
+      "He is highly intelligent and quick to learn",
+      "He is loyal and reliable",
+      "He has a sense of humor that can be used to build rapport"
+    ],
+    "support_system": "Sister lives across the country. Has a few neighbors, but he doesn't interact with them. Has a group of retired friends he talks to online (facebook or email), but no in-person support.",
+    "readiness_to_change": "Prefears, is in the Precontemplation or Early Contemplation stage. He says things like 'I know I should eat better, but who cares?' but he also says 'I don't want to die on the couch'."
+  },
+  "information_disclosure": {
+    "initial_information": [
+      "He introduces himself as Walter Greene.",
+      "He complains immediately about his medications: 'I take all these pills, they make me feel dumb and nauseous.'",
+      "He mentions he's here because his doctor sent him. He doesn't like being sent to the clinic for diet stuff.",
+      "He makes jokes about the student being young or not taking the session seriously. 'Do I need to fill out a form for this diet thing?'"
+    ],
+    "discoverable_information": [
+      "He eats out twice a week with his dinner club friends. The restaurant is a local chain with high sodium and fried foods.",
+      "He takes Ibuprofen for back pain 2-3 times a week. He doesn't know it might be bad for his heart and kidneys.",
+      "He doesn't understand the connection between his heart failure and his diabetes. He thinks they are separate things.",
+      "He drinks soda with every meal and avoids water.",
+      "He skips breakfast and eats his biggest meal at lunch.",
+      "He has no one to cook for him and relies on canned soups, instant mac and cheese, and leftovers.",
+      "He has trouble getting up in the morning and getting to the grocery store.",
+      "He feels guilty about his sister across the country because he is not taking care of himself."
+    ],
+    "reluctant_information": [
+      "He feels like he's failed his kids and his wife. He feels he's been a 'bad husband' and is afraid of being a 'bad' person because he doesn't follow the diet."
+    ],
+    "hidden_information": [
+      "He was a janitor and is scared about his future and his health.",
+      "He has a lot of money in his checking account that he's not using it, but he's afraid of wasting it."
+    ]
+  },
+  "learning_opportunities": {
+    "opportunities": [
+      {
+        "learning_objective": "Apply the Nutrition Care Process.",
+        "expected_discoveries": [
+          "Student must assess patient's needs, identify the problem (PES statement), and then develop an individualized care plan.",
+          "Student will discover patient's knowledge, beliefs, and barriers to care.",
+          "Student will discover his health literacy level.",
+          "Student will identify his social and behavioral barriers."
+        ],
+        "possible_patient_reactions": [
+          "Patient will say 'I don't need a care plan, I just need to eat less.'"
+        ]
+      },
+      {
+        "learning_objective": "Develop an appropriate PES statement.",
+        "expected_discoveries": [
+          "Nutritional Status: Uncontrolled T2DM and HF, increased Na intake, low fiber intake, social barriers.",
+          "Evidence: HbA1c 8.7%, Creatinine 1.6, labs show high Na and low K. Lab values indicate diet and lifestyle are affecting his health."
+        ],
+        "possible_patient_reactions": [
+          "Patient may say 'I don't understand what a PES statement is. Is that a form?'"
+        ]
+      },
+      {
+        "learning_objective": "Develop evidence-based nutrition interventions.",
+        "expected_discoveries": [
+          "Student needs to develop interventions that address patient's diet (high sodium, high fat, low fiber), hydration (soda vs water), and medication adherence.",
+          "Student will discuss how to make 'less sodium' food taste good without compromising his health.",
+          "Student must discuss how to address his fear of losing weight and his desire for comfort food."
+        ],
+        "possible_patient_reactions": [
+          "Patient will say 'I don't eat like that! I eat like a person. You kids always want us to eat like we're in jail.'"
+        ]
+      },
+      {
+        "learning_objective": "Integrate medication management with nutrition care.",
+        "expected_discoveries": [
+          "Student will discover he takes Metformin (nausea), Lisinopril, Epirocil, and Ibuprofen.",
+          "Student will discover he takes Ibuprofen frequently for back pain, which can raise BP and strain kidneys.",
+          "Student will discuss how diet affects BP and heart failure (sodium), and how to manage medication side effects through diet."
+        ],
+        "possible_patient_reactions": [
+          "Patient will say 'Iblets make me feel sick. Why can't I just take a pill and forget it?'",
+          "Patient will say 'I take Advil for my back. Why does that matter?'"
+        ]
+      },
+      {
+        "learning_objective": "Use motivational interviewing.",
+        "expected_discoveries": [
+          "Student must use open-ended questions, reflective listening, and summarizing to explore patient's readiness to change.",
+          "Patient is in Precontemplation stage. Student must use MI techniques to help patient understand that patient is ready to change.",
+          "Student will discover he values independence and wants to avoid hospitalization."
+        ],
+        "possible_patient_reactions": [
+          "Student uses 'What makes you think that?' or 'You mentioned you didn't want to die. Is that why you're here today?'",
+          "Patient may react with defensiveness, say 'I'm here because my doctor ordered me.'",
+          "If student is empathetic, patient may open up: 'I'm scared. I don't want to be a burden to my kids or my sister.'",
+          "Student should ask 'On a scale of 1 to 10, how ready are you to try a different way of eating?'",
+          "Student should ask 'What do you feel like about trying something different?'",
+          "Student should ask 'How important is it that you are eating healthy?'"
+        ]
+      },
+      {
+        "learning_objective": "Address lifestyle and behavioral barriers.",
+        "expected_discoveries": [
+          "Student will discover barriers like health literacy, financial constraints, taste preferences, social isolation, and health literacy.",
+          "Student will discover he eats out twice a week with his dinner club friends.",
+          "Student will discuss how to incorporate his favorite foods in a way that is lower in sodium and higher in fiber.",
+          "Student will discuss how to manage his thirst without sugar, soda."
+        ],
+        "possible_patient_reactions": [
+          "Patient will say 'I know what I should do. I just don't have the time or the energy to cook.'",
+          "Patient will say 'Everyone I know eats out at my dinner club. How am I supposed to eat out on a low-sodium diet?'"
+        ]
+      },
+      {
+        "learning_objective": "Consider interprofessional and community resources.",
+        "expected_discoveries": [
+          "Student will discover he is a frequent flier and needs care coordination.",
+          "Student will discuss referring him to a diabetes educator, a dietitian, a social worker for food resources, a cardiologist, a nephrologist for his kidneys.",
+          "Student will discuss referring to a PT for his back pain and limited activity.",
+          "Student will discuss his support system and how to engage him."
+        ],
+        "possible_patient_reactions": [
+          "Student: 'I will be happy to talk with my team about your back pain and your kidney and heart doctor.'"
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "assumptions": [
+      "Patient's sister lives across the country but is a major support system.",
+      "Patient has a fixed income and limited social security.",
+      "Patient does not have a caregiver, but has a group of friends online.",
+      "Patient's doctor sent him to the nutrition clinic, and he is skeptical of it.",
+      "Patient's blood pressure is high, which aligns with his high sodium intake and limited exercise.",
+      "Patient's blood glucose is high, which aligns with his high carbohydrate intake and diabetes.",
+      "Patient's fatigue is due to his heart failure and diabetes, which limits his physical activity.",
+      "Patient's weight loss is unintentional, which is common in older adults with heart failure and diabetes."
+    ],
+    "optional_details": [
+      "Patient is a retired janitor and is in the 60s.",
+      "Patient has a group of friends he talks to online, but he doesn't have an in-person social circle.",
+      "Patient's sister lives across the country and is a major support system, but he doesn't want to bother her.",
+      "Patient's blood pressure is high, which aligns with his high sodium intake and limited exercise.",
+      "Patient's blood glucose is high, which aligns with his high carbohydrate intake and diabetes.",
+      "Patient's fatigue is due to his heart failure and diabetes, which limits his physical activity.",
+      "Patient's weight loss is unintentional, which is common in older adults with heart failure and diabetes.",
+      "Patient is a frequent flier, which means he goes to the hospital often for heart failure and diabetes."
+    ]
+  }
+}
+{
+  "patient_overview": {
+    "name": "Wyatt Nelson",
+    "age": 18,
+    "sex": "Male",
+    "description": "Wyatt Nelson is an 18-year-old high school senior struggling with uncontrolled Type 2 Diabetes, obesity, and dyslipidemia. He is shy, resistant, and sensitive about discussing his bowel health and diet. Despite being diagnosed with diabetes, he exhibits limited health literacy and is motivated by sports performance but hindered by constipation and poor dietary choices. He avoids fruits and vegetables and requires developmentally appropriate counseling to address fiber, fat intake, and cardiovascular risk factors while navigating adolescence-specific lifestyle barriers.",
+    "keywords": [
+      "adolescent",
+      "uncontrolled type 2 diabetes",
+      "obesity",
+      "dyslipidemia",
+      "constipation",
+      "motivation",
+      "health literacy",
+      "sports",
+      "lifestyle barriers",
+      "medical nutrition therapy"
+    ]
+  },
+  "demographics": {
+    "occupation": "High school student",
+    "residence": "Suburban community",
+    "ethnicity": "White American",
+    "language": "English",
+    "marital_status": null,
+    "education_level": "12th grade (High School)",
+    "insurance": "Public insurance via parents",
+    "cultural_context": "Standard American dietary habits with some fast food influence; community values sports performance."
+  },
+  "clinical_profile": {
+    "primary_diagnosis": "Type 2 Diabetes Mellitus (Uncontrolled)",
+    "secondary_diagnoses": [
+      "Obesity Class I",
+      "Dyslipidemia",
+      "Constipation"
+    ],
+    "medical_history": [
+      "Diagnosis of Type 2 Diabetes at age 15",
+      "History of obesity",
+      "Family history of metabolic syndrome"
+    ],
+    "current_symptoms": [
+      "Frequent thirst and urination",
+      "Fatigue and low energy levels",
+      "Constipation and abdominal discomfort",
+      "Blurred vision"
+    ],
+    "allergies": [],
+    "clinical_findings": [
+      "BMI 32 kg/m2",
+      "Blood pressure 128/84 mmHg",
+      "Resting heart rate 78 bpm",
+      "Peripheral edema (mild)"
+    ],
+    "laboratory_data": [
+      "HbA1c: 8.9%",
+      "Total Cholesterol: 235 mg/dL",
+      "LDL: 145 mg/dL",
+      "HDL: 38 mg/dL",
+      "Triglycerides: 180 mg/dL",
+      "Fasting Glucose: 142 mg/dL"
+    ],
+    "vital_signs": [
+      "Heart Rate: 78 bpm",
+      "Blood Pressure: 128/84 mmHg",
+      "Respiratory Rate: 16/min",
+      "Temperature: 98.4 F",
+      "O2 Saturation: 99%"
+    ],
+    "anthropometrics": [
+      "Height: 5'10\"",
+      "Weight: 210 lbs",
+      "BMI: 32.1 kg/m2",
+      "Waist circumference: 38 inches"
+    ]
+  },
+  "medication_profile": {
+    "medications": [
+      {
+        "name": "Metformin",
+        "dose": "1000 mg",
+        "frequency": "Twice daily with meals",
+        "purpose": "To lower blood sugar levels",
+        "adherence": "Inconsistent; often forgets doses due to school schedule",
+        "patient_concerns": "Experiences nausea and stomach upset; skips doses to avoid discomfort"
+      },
+      {
+        "name": "Glipizide",
+        "dose": "5 mg",
+        "frequency": "Once daily with dinner",
+        "purpose": "To help regulate blood glucose",
+        "adherence": "Good adherence",
+        "patient_concerns": "None; takes it as directed"
+      }
+    ],
+    "supplements_and_otc": [
+      "Magnesium glycinate",
+      "Ibbotronix"
+    ]
+  },
+  "nutrition_profile": {
+    "dietary_pattern": "High in refined carbohydrates, saturated fats, and sugar; low in fiber and vegetables",
+    "food_preferences": ["Fast food", "Pizza", "Sodas", "Chips"],
+    "foods_or_behaviors_to_explore": [
+      "Preference for processed snacks during study sessions",
+      "Dislike of fruits and vegetables due to texture and taste",
+      "High consumption of sugary drinks during sports practice",
+      "Limited preparation of meals at home",
+      "Social eating habits with peers favoring quick, high-calorie foods"
+    ],
+    "meal_pattern": "Irregular; often skips breakfast, has small snacks, and has a large dinner",
+    "hydration": "Primarily sugary sodas; water intake is low",
+    "physical_activity": "Moderate; plays soccer twice a week, but sedentary during other hours",
+    "substance_use": "None",
+    "sleep": "7 hours average; inconsistent sleep schedule due to homework and screens"
+  },
+  "psychosocial_profile": {
+    "personality": "Shy, sensitive, and resistant to discussions about his health; feels self-conscious about his weight and diet",
+    "communication_style": "Concise, avoids eye contact, deflects sensitive topics, responds well to empathetic and non-judgmental interactions",
+    "goals": [
+      "Improve energy levels for soccer",
+      "Reduce constipation",
+      "Regain control over blood sugar",
+      "Improve appearance"
+    ],
+    "concerns": [
+      "Afraid of weight loss being seen as weakness",
+      "Worried about medication side effects",
+      "Concerned about the cost of healthy foods",
+      "Embarrazed to discuss bowel habits"
+    ],
+    "beliefs": [
+      "Healthy food is expensive and hard to prepare",
+      "Fruits and vegetables are boring and unappetizing",
+      "Sugar helps with energy during sports"
+    ],
+    "motivations": [
+      "Improve athletic performance",
+      "Gain more control over his health",
+      "Avoid future health complications"
+    ],
+    "fears": [
+      "Being judged by peers for his weight",
+      "Developing serious diabetes complications",
+      "Failing in school due to health issues"
+    ],
+    "barriers": [
+      "Lack of cooking skills and time",
+      "Peer pressure to consume fast food",
+      "Difficulty accessing healthy options",
+      "Emotional stress and limited stress management skills"
+    ],
+    "strengths": [
+      "Willingness to try new things if framed as improvement",
+      "Strong athletic motivation",
+      "Support from parents for healthy choices"
+    ],
+    "support_system": "Parents who encourage healthy eating, soccer team peers who value performance over fast food",
+    "readiness_to_change": "Ambivalent; motivated to improve but hesitant about making significant lifestyle changes"
+  },
+  "information_disclosure": {
+    "initial_information": [
+      "Mentions frequent thirst and fatigue",
+      "Discloses uncontrolled blood sugar levels",
+      "Mentions constipation only when prompted by the clinician",
+      "States he doesn't enjoy fruits and vegetables"
+    ],
+    "discoverable_information": [
+      "Details his diet consisting of fast food and sugary drinks",
+      "Shows inconsistency in taking medications",
+      "Reveals his motivation to improve soccer performance",
+      "Admits to skipping meals and relying on snacks",
+      "Provides information about social eating habits"
+    ],
+    "reluctant_information": [
+      "Feels self-conscious about his weight and may deflect comments",
+      "Is hesitant to discuss his bowel habits and may need reassurance to open up",
+      "May initially hide the fact that he doesn't take his full medication dose"
+    ],
+    "hidden_information": [
+      "Parent reports that Wyatt has had frequent school absences due to health issues",
+      "School nurse notes his declining energy and attention during classes",
+      "Medical records show previous non-adherence with insulin therapy",
+      "Peer interviews indicate that Wyatt feels pressured to consume sugary foods during group activities"
+    ]
+  },
+  "learning_opportunities": {
+    "opportunities": [
+      {
+        "learning_objective": "Apply the Nutrition Care Process and develop an appropriate PES statement.",
+        "expected_discoveries": [
+          "Poor adherence to current medications",
+          "Limited intake of fiber-rich foods",
+          "Irregular meal patterns and poor hydration",
+          "Social and environmental barriers to healthy eating"
+        ],
+        "possible_patient_reactions": [
+          "May become defensive when discussed in terms of diet and medication",
+          "Will respond positively to open-ended questions about his health goals",
+          "May deflect conversations about weight and constipation"
+        ]
+      },
+      {
+        "learning_objective": "Develop evidence-based nutrition interventions.",
+        "expected_discoveries": [
+          "Preference for processed foods and sugary beverages",
+          "Lack of meal preparation skills",
+          "Need for strategies to incorporate fiber without increasing bulking",
+          "Social dining pressure at sports events"
+        ],
+        "possible_patient_reactions": [
+          "Resists dietary advice that limits favorite foods",
+          "Will be open to modifications that are practical and budget-friendly",
+          "May express frustration if interventions don't consider his social activities"
+        ]
+      },
+      {
+        "learning_objective": "Integrate medication management with nutrition care.",
+        "expected_discoveries": [
+          "Side effects of medications causing non-adherence",
+          "Nutrition strategies to reduce gastrointestinal discomfort",
+          "Need for consistent medication timing with meals"
+        ],
+        "possible_patient_reactions": [
+          "May initially resist discussing medication adjustments",
+          "Will be receptive to explanations on how nutrition can minimize side effects",
+          "May show relief when offered solutions that address his concerns"
+        ]
+      },
+      {
+        "learning_objective": "Use motivational interviewing to address lifestyle and behavioral barriers.",
+        "expected_discoveries": [
+          "Internal conflict about health goals versus comfort behaviors",
+          "Self-efficacy barriers to change",
+          "Potential to use sports as motivation for dietary changes"
+        ],
+        "possible_patient_reactions": [
+          "May exhibit ambivalence and test the clinician's approach",
+          "Will respond well to affirmations and exploration of his own motivations",
+          "May disengage if he feels his opinions are not respected"
+        ]
+      },
+      {
+        "learning_objective": "Consider interprofessional and community resources.",
+        "expected_discoveries": [
+          "Need for coordination with sports medicine and school health services",
+          "Access to school nutrition programs and community health resources",
+          "Peer support networks that can reinforce healthy behaviors"
+        ],
+        "possible_patient_reactions": [
+          "May not know about available resources",
+          "Will be open to learning about supportive services",
+          "May feel empowered when given actionable community options"
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "assumptions": [
+      "Patient has limited cooking skills and access to healthy food resources",
+      "Peer dynamics significantly influence dietary choices",
+      "Parents support healthy eating but may face barriers to meal preparation",
+      "Patient is experiencing ambivalence regarding changes in lifestyle"
+    ],
+    "optional_details": [
+      "Attends school full-time",
+      "Lives with his parents",
+      "Participates in a varsity soccer team",
+      "Enjoys video games and gaming communities"
+    ]
+  }
+}
+{
+  "patient_overview": {
+    "name": "Vladko Bareche",
+    "age": 31,
+    "sex": "Male",
+    "description": "Vladko is a 31-year-old Asian Indian male, a college-educated TV producer who recently migrated from Mumbai to Brooklyn. He struggles with uncontrolled type 2 diabetes complicated by substance use issues. He appears quiet and introverted, often showing signs of stress from his demanding creative career. He has significant dietary habits influenced by his background, along with smoking, alcohol abuse, and occasional cocaine use. He lacks consistent healthcare follow-up due to immigration-related barriers and limited local support.",
+    "keywords": ["type 2 diabetes", "migrant", "substance use", "vegan", "smoking", "alcohol abuse", "motivational interviewing", "community resources"]
+  },
+  "demographics": {
+    "occupation": "TV Producer",
+    "residence": "Brooklyn",
+    "ethnicity": "Asian Indian",
+    "language": "English, Hindi",
+    "marital_status": "Single",
+    "education_level": "Bachelor's degree in Film Studies (Completed in India)",
+    "insurance": "Marketplace plan (Limited coverage due to recent immigration)",
+    "cultural_context": "Vladko grew up in a traditional Indian household where communal meals and cultural foods were central. After moving to the US, he retains a preference for vegetarian meals and spicy flavors. He values independence and is hesitant to accept help or share personal struggles due to cultural norms around privacy and dignity."
+  },
+  "clinical_profile": {
+    "primary_diagnosis": "Type 2 Diabetes Mellitus, Poorly Controlled",
+    "secondary_diagnoses": [
+      "Hypertension",
+      "Non-Human Sexually Transmitted Infection (STI, Unspecified)",
+      "Chronic Alcohol Use Disorder"
+    ],
+    "medical_history": [
+      "Long-standing history of Type 2 Diabetes (Diagnosed ~3 years ago)",
+      "History of Hypertension (Diagnosed ~4 years ago)",
+      "Recent stress related to immigration and job change"
+    ],
+    "current_symptoms": [
+      "Persistent fatigue and low energy",
+      "Frequent urination (10-15 times/day)",
+      "Excessive thirst",
+      "Occasional blurry vision"
+    ],
+    "allergies": ["Penicillin - rash"],
+    "clinical_findings": [
+      "Weight loss over the past 6 months (30 lbs)",
+      "Dry skin on lower extremities",
+      "Gestalt of substance use (fingernail nail changes/sores)",
+      "Evidence of non-adherence to medical advice"
+    ],
+    "laboratory_data": [
+      "HbA1c: 9.1% (Target < 7%) - High",
+      "Glucose: 230 mg/dL fasting - High",
+      "BMI: 22.0 (Underweight for current metabolic state)",
+      "Cholesterol Panel: High HDL",
+      "Liver Enzymes: Markedly elevated ALT - suggestive of alcohol use disorder"
+    ],
+    "vital_signs": [
+      "BP: 135/88 mmHg",
+      "HR: 110 bpm",
+      "Temp: 98.6 F",
+      "Respiratory rate: 16 breaths/min"
+    ],
+    "anthropometrics": [
+      "Height: 5'9\" (175 cm)",
+      "Weight: 148 lbs (67 kg)",
+      "BMI: 22.0 kg/m^2",
+      "Weight change: -30 lbs over 6 months",
+      "Waist circumference: 32 inches"
+    ]
+  },
+  "medication_profile": {
+    "medications": [
+      {
+        "name": "Metformin",
+        "dose": "500mg",
+        "frequency": "Twice daily with meals",
+        "purpose": "Type 2 Diabetes Management",
+        "adherence": "Poor. Reports sporadic use. Often forgets doses due to a chaotic work schedule.",
+        "patient_concerns": "Experiencing nausea and stomach cramps, causing nausea and abdominal pain."
+      },
+      {
+        "name": "Amlodipine",
+        "dose": "5mg",
+        "frequency": "Daily",
+        "purpose": "Hypertension Management",
+        "adherence": "Fair, reports taking them every day, but often misses morning doses. Reports mild dizziness sometimes.",
+        "patient_concerns": "Feels lightheaded in the mornings and occasionally forgets to take them."
+      }
+    ],
+    "supplements_and_otc": [
+      "Multivitamin (taken irregularly)",
+      "Acupressure wristbands"
+    ]
+  },
+  "nutrition_profile": {
+    "dietary_pattern": "Traditional vegetarian",
+    "food_preferences": [
+      "Vegetarian meals",
+      "Spicy Asian and Indian cuisine",
+      "Avoids red meat entirely"
+    ],
+    "foods_or_behaviors_to_explore": [
+      "Consumption of high-sugar sweets and drinks",
+      "Large portions of refined carbs (rice, bread)",
+      "Occasional alcohol consumption during social events"
+    ],
+    "meal_pattern": "Irregular meal times, frequently rushing between work, late dinners"
+  },
+  "psychosocial_profile": {
+    "personality": "Quiet, introverted, hardworking, highly creative",
+    "communication_style": "Brief, reserved, often deflecting personal questions with work-related stress",
+    "goals": [
+      "Maintain his demanding TV job",
+      "Improve energy levels for creative work",
+      "Travel to India in the future",
+      "Maintain a sense of control over his life"
+    ],
+    "concerns": [
+      "Will stop caring about this new 'diabetes' problem",
+      "Worried his diet changes will lead to depression",
+      "Concerned about the future of his creative career"
+    ],
+    "beliefs": [
+      "He is 'healthy' compared to his old age",
+      "Food and culture are more important than medical labs",
+      "Diabetes affects older people or 'unhealthy' people like his uncle"
+    ],
+    "motivations": [
+      "Desire to travel to India in the future",
+      "Fear of needing to rely on others",
+      "Wants to protect his health so he can keep creating"
+    ],
+    "fears": [
+      "Losing his independence",
+      "Being a 'failure' as a producer",
+      "Becoming a burden on his family in India",
+      "Physical decline or becoming reliant on others"
+    ],
+    "barriers": [
+      "Limited local support network",
+      "Chaos at work with frequent overtime",
+      "Lack of knowledge about nutrition in India",
+      "Difficulty affording healthier grocery options",
+      "Stress-induced eating"
+    ],
+    "strengths": [
+      "High creativity",
+      "Strong discipline for projects",
+      "Willing to try if shown clear benefit for career",
+      "Access to community resources if guided"
+    ],
+    "support_system": "Single, lives alone, no immediate family in US",
+    "readiness_to_change": "Ambivalent. Prefers to work out of desperation"
+  },
+  "information_disclosure": {
+    "initial_information": [
+      "Mention of fatigue and high blood sugar",
+      "Vague references to alcohol during social events",
+      "Concern about weight loss",
+      "Mentions he eats 'Indian food' mostly",
+      "Will voluntarily share he is a vegetarian",
+      "Smoking habits",
+      "Occasional cocaine use",
+      "Inconsistent condom use",
+      "Lack of local support network"
+    ],
+    "discoverable_information": [
+      "Detailed alcohol use (2-8 drinks, 2-6 nights/week)",
+      "Inconsistent condom use (1-2 times/month)",
+      "Inconsistent condom use",
+      "Lack of local support network"
+    ],
+    "reluctant_information": [
+      "Lack of local support network"
+    ],
+    "hidden_information": [
+      "Inconsistent condom use (1-2 times/month)",
+      "Lack of local support network"
+    ]
+  },
+  "learning_opportunities": {
+    "opportunities": [
+      {
+        "learning_objective": "Apply the Nutrition Care Process.",
+        "expected_discoveries": [
+          "Patient's current food intake (high sugar, refined carbs)",
+          "Dietary restrictions (vegetarian)",
+          "Medication interactions (Metformin side effects)",
+          "Substance use affecting diet",
+          "Social support or lack thereof"
+        ],
+        "possible_patient_reactions": [
+          "Deflects personal questions about substance use",
+          "Minimizes the impact of current diet",
+          "Expresses confusion about food labels",
+          "Expresses frustration about work schedule affecting meals"
+        ]
+      },
+      {
+        "learning_objective": "Develop an appropriate PES statement.",
+        "expected_discoveries": [
+          "Patient's goals and fears",
+          "Barriers to change",
+          "Strengths and resources",
+          "Readiness to change",
+          "Cultural and social context"
+        ],
+        "possible_patient_reactions": [
+          "Expresses anger or fear when discussing goals",
+          "Expresses frustration about past failures",
+          "Shows hesitation when asked about future plans"
+        ]
+      },
+      {
+        "learning_objective": "Develop evidence-based nutrition interventions.",
+        "expected_discoveries": [
+          "Nutrition education gaps",
+          "Practical cooking or meal planning skills",
+          "Access to healthy foods",
+          "Food budget constraints",
+          "Social support or barriers"
+        ],
+        "possible_patient_reactions": [
+          "Expresses skepticism about dietary changes",
+          "Expresses frustration about 'unhealthy' options",
+          "Shows interest in cultural recipes"
+        ]
+      },
+      {
+        "learning_objective": "Integrate medication management with nutrition care.",
+        "expected_discoveries": [
+          "Metformin side effects (nausea)",
+          "Alcohol use interacting with meds",
+          "Nutrition affecting glycemic control",
+          "Lack of consistency in medication use"
+        ],
+        "possible_patient_reactions": [
+          "Minimizes side effects",
+          "Expresses frustration with 'pills' causing issues",
+          "Shows interest in 'natural' fixes"
+        ]
+      },
+      {
+        "learning_objective": "Use motivational interviewing.",
+        "expected_discoveries": [
+          "Patient's motivations (career, travel)",
+          "Readiness to change (ambivalence)",
+          "Barriers to change",
+          "Strengths and resources",
+          "Values and beliefs"
+        ],
+        "possible_patient_reactions": [
+          "Expresses anger or fear when discussing goals",
+          "Expresses frustration about past failures",
+          "Shows hesitation when asked about future plans"
+        ]
+      },
+      {
+        "learning_objective": "Address lifestyle and behavioral barriers.",
+        "expected_discoveries": [
+          "Work schedule affecting meals",
+          "Substance use affecting diet",
+          "Lack of local support network",
+          "Food budget constraints"
+        ],
+        "possible_patient_reactions": [
+          "Expresses anger or fear when discussing goals",
+          "Expresses frustration about past failures",
+          "Shows hesitation when asked about future plans"
+        ]
+      },
+      {
+        "learning_objective": "Consider interprofessional and community resources.",
+        "expected_discoveries": [
+          "Substance use (alcohol, cocaine)",
+          "Mental health stress (immigration)",
+          "Sexual health concerns (STI risk)",
+          "Access to community support groups"
+        ],
+        "possible_patient_reactions": [
+          "Expresses anger or fear when discussing goals",
+          "Expresses frustration about past failures",
+          "Shows hesitation when asked about future plans"
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "assumptions": [
+      "Vladko is recently diagnosed with Type 2 Diabetes due to uncontrolled symptoms (fatigue, frequent urination).",
+      "Hypertension is a secondary condition to diabetes and may contribute to his symptoms.",
+      "Substance use is a major risk factor for his poor metabolic control.",
+      "Nutrition education will be crucial for long-term management.",
+      "Social support is limited in his new environment."
+    ],
+    "optional_details": [
+      "Vladko has a background in film and values creativity in work.",
+      "He eats mostly vegetarian, but also consumes occasional snacks."
+    ]
+  }
+}

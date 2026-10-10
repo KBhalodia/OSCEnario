@@ -1,0 +1,1316 @@
+{
+  "id": "b5814549-fd2b-42a2-af78-9b681ad6f268",
+  "status": "draft",
+  "version": 1,
+  "created_at": "2026-10-10T15:33:08.770034Z",
+  "persona": {
+    "name": "Omar Sinclair",
+    "age": 45,
+    "sex": "Male",
+    "description": "Omar is a 45-year-old African-American aircraft mechanic presenting with dyslipidemia. He is independent and pragmatic but skeptical of pharmaceutical interventions. Despite a BMI of 29 and waist circumference of 43 inches, he has low health literacy regarding cardiovascular risk. He struggles with medication adherence due to perceived side effects and requires evidence-based nutrition counseling to manage lipids and reduce future cardiovascular risk.",
+    "keywords": [
+      "dyslipidemia",
+      "skeptical patient",
+      "medication non-adherence",
+      "clinical nutrition therapy",
+      "cardiovascular risk",
+      "motivational interviewing",
+      "low health literacy",
+      "lifestyle modification",
+      "medication counseling",
+      "mechanic"
+    ],
+    "occupation": "Airplane mechanic",
+    "residence": "Suburban area",
+    "ethnicity": "African-American",
+    "language": "English",
+    "marital_status": "Married",
+    "education_level": "High school diploma",
+    "insurance": "Employment-based insurance",
+    "cultural_context": "Work-focused culture with long shifts and reliance on convenience foods; strong value placed on self-reliance and practical solutions.",
+    "personality": "Independent, skeptical, practical, resistant to authority",
+    "communication_style": "Direct, concise, pragmatic, resistant to lecturing",
+    "support_system": "Spouse who encourages healthy eating but has limited involvement",
+    "readiness_to_change": "Precontemplation on medication; contemplation on diet",
+    "portrait_path": "portraits/b5814549-fd2b-42a2-af78-9b681ad6f268.png"
+  },
+  "settings": {
+    "student_role": "Dietetics student",
+    "encounter_goal": "Nutrition assessment and counseling (Nutrition Care Process)",
+    "setting": "Outpatient clinic",
+    "rubric_id": "encounter_evaluation_rubric",
+    "opening_trust": 1
+  },
+  "faculty_brief": {
+    "background": "Small aircraft mechanic",
+    "notes": "Diagnosed with dyslipidemia (Total Chol 260, LDL 195, HDL 30), Omar expresses discomfort with taking medications. He has a BMI of 29 and WC of 43 inches. He needs support understanding cholesterol labs (LDL vs. HDL), the purpose of statins, and realistic dietary approaches for lipid control and cardiovascular risk reduction.",
+    "personality": "Skeptical, independent, practical",
+    "summary": "Dyslipidemia"
+  },
+  "primary_diagnosis": "Dyslipidemia",
+  "secondary_diagnoses": [
+    "Prediabetes",
+    "Essential Hypertension"
+  ],
+  "medications": [
+    {
+      "name": "Atorvastatin",
+      "dose": "40 mg",
+      "frequency": "Once daily",
+      "purpose": "Lower LDL cholesterol and reduce cardiovascular risk",
+      "adherence": "Inconsistent; misses doses occasionally",
+      "patient_concerns": "Feels dizzy after taking it and worries about"
+    },
+    {
+      "name": "Lisinopril",
+      "dose": "20 mg",
+      "frequency": "Once daily",
+      "purpose": "Control blood pressure",
+      "adherence": "Consistent",
+      "patient_concerns": "Experience a persistent dry cough."
+    }
+  ],
+  "allergies": [
+    "No known food or medication allergies"
+  ],
+  "facts": [
+    {
+      "id": "f001",
+      "category": "social",
+      "topic": "occupation",
+      "content": "Airplane mechanic",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.occupation"
+    },
+    {
+      "id": "f002",
+      "category": "social",
+      "topic": "living situation",
+      "content": "Suburban area",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.residence"
+    },
+    {
+      "id": "f003",
+      "category": "social",
+      "topic": "marital status",
+      "content": "Married",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.marital_status"
+    },
+    {
+      "id": "f004",
+      "category": "social",
+      "topic": "education",
+      "content": "High school diploma",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.education_level"
+    },
+    {
+      "id": "f005",
+      "category": "social",
+      "topic": "insurance",
+      "content": "Employment-based insurance",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.insurance"
+    },
+    {
+      "id": "f006",
+      "category": "social",
+      "topic": "language",
+      "content": "English",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.language"
+    },
+    {
+      "id": "f007",
+      "category": "social",
+      "topic": "support system",
+      "content": "Spouse who encourages healthy eating but has limited involvement",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.support_system"
+    },
+    {
+      "id": "f008",
+      "category": "diagnosis",
+      "topic": "main diagnosis / reason for visit",
+      "content": "Dyslipidemia",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.primary_diagnosis"
+    },
+    {
+      "id": "f009",
+      "category": "diagnosis",
+      "topic": "other condition: Prediabetes",
+      "content": "Prediabetes",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[0]"
+    },
+    {
+      "id": "f010",
+      "category": "diagnosis",
+      "topic": "other condition: Essential Hypertension",
+      "content": "Essential Hypertension",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[1]"
+    },
+    {
+      "id": "f011",
+      "category": "history",
+      "topic": "Family history of early coronary artery disease",
+      "content": "Family history of early coronary artery disease",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[0]"
+    },
+    {
+      "id": "f012",
+      "category": "history",
+      "topic": "Prior episodes of severe migraine",
+      "content": "Prior episodes of severe migraine",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[1]"
+    },
+    {
+      "id": "f013",
+      "category": "history",
+      "topic": "No prior cardiac events",
+      "content": "No prior cardiac events",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[2]"
+    },
+    {
+      "id": "f014",
+      "category": "symptom",
+      "topic": "symptom: No specific symptoms",
+      "content": "No specific symptoms",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[0]"
+    },
+    {
+      "id": "f015",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "No known food or medication allergies",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.allergies[0]"
+    },
+    {
+      "id": "f016",
+      "category": "medication",
+      "topic": "medication: Atorvastatin",
+      "content": "Takes Atorvastatin 40 mg Once daily for Lower LDL cholesterol and reduce cardiovascular risk",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0]"
+    },
+    {
+      "id": "f017",
+      "category": "medication",
+      "topic": "how they take Atorvastatin",
+      "content": "Atorvastatin adherence: Inconsistent; misses doses occasionally",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].adherence"
+    },
+    {
+      "id": "f018",
+      "category": "medication",
+      "topic": "concerns/side effects of Atorvastatin",
+      "content": "About Atorvastatin: Feels dizzy after taking it and worries about",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].patient_concerns"
+    },
+    {
+      "id": "f019",
+      "category": "medication",
+      "topic": "medication: Lisinopril",
+      "content": "Takes Lisinopril 20 mg Once daily for Control blood pressure",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1]"
+    },
+    {
+      "id": "f020",
+      "category": "medication",
+      "topic": "how they take Lisinopril",
+      "content": "Lisinopril adherence: Consistent",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].adherence"
+    },
+    {
+      "id": "f021",
+      "category": "medication",
+      "topic": "concerns/side effects of Lisinopril",
+      "content": "About Lisinopril: Experience a persistent dry cough.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].patient_concerns"
+    },
+    {
+      "id": "f022",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Fish oil",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[0]"
+    },
+    {
+      "id": "f023",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Vitamin D3",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[1]"
+    },
+    {
+      "id": "f024",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Multivitamin",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[2]"
+    },
+    {
+      "id": "f025",
+      "category": "nutrition",
+      "topic": "usual diet",
+      "content": "Western-style diet",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.dietary_pattern"
+    },
+    {
+      "id": "f026",
+      "category": "nutrition",
+      "topic": "meal timing / pattern",
+      "content": "Irregular; breakfast skipped, heavy dinner",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.meal_pattern"
+    },
+    {
+      "id": "f027",
+      "category": "nutrition",
+      "topic": "fluids / hydration",
+      "content": "Inadequate water intake; frequently drinks soda",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.hydration"
+    },
+    {
+      "id": "f028",
+      "category": "lifestyle",
+      "topic": "physical activity",
+      "content": "Sedentary; limited movement during long shifts",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.physical_activity"
+    },
+    {
+      "id": "f029",
+      "category": "lifestyle",
+      "topic": "alcohol / tobacco / drugs",
+      "content": "Non-smoker; moderate alcohol consumption",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.substance_use"
+    },
+    {
+      "id": "f030",
+      "category": "lifestyle",
+      "topic": "sleep",
+      "content": "Inconsistent sleep due to shift work",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.sleep"
+    },
+    {
+      "id": "f031",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "High-carb convenience foods",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[0]"
+    },
+    {
+      "id": "f032",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Burgers and pizza for quick meals",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[1]"
+    },
+    {
+      "id": "f033",
+      "category": "nutrition",
+      "topic": "High intake of saturated fats",
+      "content": "High intake of saturated fats",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[0]"
+    },
+    {
+      "id": "f034",
+      "category": "nutrition",
+      "topic": "Low fruit and vegetable consumption",
+      "content": "Low fruit and vegetable consumption",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[1]"
+    },
+    {
+      "id": "f035",
+      "category": "nutrition",
+      "topic": "Heavy consumption of processed meats",
+      "content": "Heavy consumption of processed meats",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[2]"
+    },
+    {
+      "id": "f036",
+      "category": "psychosocial",
+      "topic": "goal: Return to full work shifts without fatigue",
+      "content": "Return to full work shifts without fatigue",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[0]"
+    },
+    {
+      "id": "f037",
+      "category": "psychosocial",
+      "topic": "goal: Control cholesterol levels without side…",
+      "content": "Control cholesterol levels without side effects",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[1]"
+    },
+    {
+      "id": "f038",
+      "category": "psychosocial",
+      "topic": "goal: Reduce cardiovascular risk without…",
+      "content": "Reduce cardiovascular risk without lifestyle changes",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[2]"
+    },
+    {
+      "id": "f039",
+      "category": "psychosocial",
+      "topic": "motivation: Avoid heart attack",
+      "content": "Avoid heart attack",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[0]"
+    },
+    {
+      "id": "f040",
+      "category": "psychosocial",
+      "topic": "motivation: Play with grandkids",
+      "content": "Play with grandkids",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[1]"
+    },
+    {
+      "id": "f041",
+      "category": "psychosocial",
+      "topic": "motivation: Return to full work",
+      "content": "Return to full work",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[2]"
+    },
+    {
+      "id": "f042",
+      "category": "psychosocial",
+      "topic": "strength: Pragmatic mindset",
+      "content": "Pragmatic mindset",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[0]"
+    },
+    {
+      "id": "f043",
+      "category": "psychosocial",
+      "topic": "strength: Desire for family",
+      "content": "Desire for family",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[1]"
+    },
+    {
+      "id": "f044",
+      "category": "psychosocial",
+      "topic": "strength: Ability to understand practical advice",
+      "content": "Ability to understand practical advice",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[2]"
+    },
+    {
+      "id": "f045",
+      "category": "psychosocial",
+      "topic": "belief: Statins cause muscle pain",
+      "content": "Statins cause muscle pain",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[0]"
+    },
+    {
+      "id": "f046",
+      "category": "psychosocial",
+      "topic": "belief: Cholesterol is normal",
+      "content": "Cholesterol is normal",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[1]"
+    },
+    {
+      "id": "f047",
+      "category": "psychosocial",
+      "topic": "belief: Healthy eating is too expensive",
+      "content": "Healthy eating is too expensive",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[2]"
+    },
+    {
+      "id": "f048",
+      "category": "psychosocial",
+      "topic": "concern: Medication side effects",
+      "content": "Medication side effects",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[0]"
+    },
+    {
+      "id": "f049",
+      "category": "psychosocial",
+      "topic": "concern: Dietary changes are too restrictive",
+      "content": "Dietary changes are too restrictive",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[1]"
+    },
+    {
+      "id": "f050",
+      "category": "psychosocial",
+      "topic": "concern: Misunderstanding of cholesterol numbers",
+      "content": "Misunderstanding of cholesterol numbers",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[2]"
+    },
+    {
+      "id": "f051",
+      "category": "psychosocial",
+      "topic": "barrier: Medication side effects",
+      "content": "Medication side effects",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[0]"
+    },
+    {
+      "id": "f052",
+      "category": "psychosocial",
+      "topic": "barrier: Low health literacy",
+      "content": "Low health literacy",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[1]"
+    },
+    {
+      "id": "f053",
+      "category": "psychosocial",
+      "topic": "barrier: Busy schedule",
+      "content": "Busy schedule",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[2]"
+    },
+    {
+      "id": "f054",
+      "category": "psychosocial",
+      "topic": "barrier: Food accessibility",
+      "content": "Food accessibility",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[3]"
+    },
+    {
+      "id": "f055",
+      "category": "psychosocial",
+      "topic": "fear: Heart attack",
+      "content": "Heart attack",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[0]"
+    },
+    {
+      "id": "f056",
+      "category": "psychosocial",
+      "topic": "fear: Medication costs",
+      "content": "Medication costs",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[1]"
+    },
+    {
+      "id": "f057",
+      "category": "psychosocial",
+      "topic": "fear: Losing job",
+      "content": "Losing job",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[2]"
+    },
+    {
+      "id": "f058",
+      "category": "other",
+      "topic": "Name: Omar Sinclair",
+      "content": "Name: Omar Sinclair",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[0]"
+    },
+    {
+      "id": "f059",
+      "category": "other",
+      "topic": "Age: 45",
+      "content": "Age: 45",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[1]"
+    },
+    {
+      "id": "f060",
+      "category": "other",
+      "topic": "Occupation: Airplane mechanic",
+      "content": "Occupation: Airplane mechanic",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[2]"
+    },
+    {
+      "id": "f061",
+      "category": "other",
+      "topic": "Lives with spouse",
+      "content": "Lives with spouse",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[0]"
+    },
+    {
+      "id": "f062",
+      "category": "other",
+      "topic": "Lives with young children",
+      "content": "Lives with young children",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[1]"
+    },
+    {
+      "id": "f063",
+      "category": "other",
+      "topic": "Eats 3 meals a day",
+      "content": "Eats 3 meals a day",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[2]"
+    },
+    {
+      "id": "f064",
+      "category": "other",
+      "topic": "Medication side effects cause dizziness",
+      "content": "Medication side effects cause dizziness",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[0]"
+    },
+    {
+      "id": "f065",
+      "category": "other",
+      "topic": "Inconsistent medication adherence",
+      "content": "Inconsistent medication adherence",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[1]"
+    },
+    {
+      "id": "f066",
+      "category": "other",
+      "topic": "Fear of being told what to eat",
+      "content": "Fear of being told what to eat",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[2]"
+    },
+    {
+      "id": "f067",
+      "category": "other",
+      "topic": "Recent weight gain due to long shifts",
+      "content": "Recent weight gain due to long shifts",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[0]"
+    },
+    {
+      "id": "f068",
+      "category": "other",
+      "topic": "Low fruit and vegetable consumption",
+      "content": "Low fruit and vegetable consumption",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[1]"
+    },
+    {
+      "id": "f069",
+      "category": "other",
+      "topic": "Heavy alcohol consumption",
+      "content": "Heavy alcohol consumption",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[2]"
+    },
+    {
+      "id": "f070",
+      "category": "other",
+      "topic": "Irregular sleep due to shift work",
+      "content": "Irregular sleep due to shift work",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[3]"
+    },
+    {
+      "id": "f071",
+      "category": "other",
+      "topic": "Poor understanding of cholesterol",
+      "content": "Poor understanding of cholesterol",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[4]"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a001",
+      "type": "prior_note",
+      "title": "Referral summary",
+      "items": [
+        {
+          "label": "Primary diagnosis",
+          "value": "Dyslipidemia",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Prediabetes",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Essential Hypertension",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Atorvastatin 40 mg Once daily",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Lisinopril 20 mg Once daily",
+          "flag": null
+        },
+        {
+          "label": "Allergies",
+          "value": "No known food or medication allergies",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "at_start",
+        "request_keywords": [],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a002",
+      "type": "vitals",
+      "title": "Vital signs",
+      "items": [
+        {
+          "label": "Heart rate",
+          "value": "82 bpm",
+          "flag": null
+        },
+        {
+          "label": "Blood pressure",
+          "value": "148/92 mmHg",
+          "flag": null
+        },
+        {
+          "label": "Temperature",
+          "value": "98.4°F",
+          "flag": null
+        },
+        {
+          "label": "Respiratory rate",
+          "value": "16 breaths/min",
+          "flag": null
+        },
+        {
+          "label": "Oxygen saturation",
+          "value": "97%",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "vitals",
+          "blood pressure",
+          "heart rate",
+          "temperature"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a003",
+      "type": "anthropometrics",
+      "title": "Anthropometrics",
+      "items": [
+        {
+          "label": "Height",
+          "value": "5'10\"",
+          "flag": null
+        },
+        {
+          "label": "Weight",
+          "value": "228 lbs",
+          "flag": null
+        },
+        {
+          "label": "BMI",
+          "value": "29.2",
+          "flag": null
+        },
+        {
+          "label": "Waist circumference",
+          "value": "43 inches",
+          "flag": null
+        },
+        {
+          "label": "Body fat estimate",
+          "value": "28%",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "weight",
+          "height",
+          "BMI",
+          "measurements",
+          "waist"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a004",
+      "type": "lab_report",
+      "title": "Laboratory results",
+      "items": [
+        {
+          "label": "Total cholesterol",
+          "value": "260 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "LDL cholesterol",
+          "value": "195 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "HDL cholesterol",
+          "value": "30 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Triglycerides",
+          "value": "180 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "HbA",
+          "value": "1c 5.8%",
+          "flag": null
+        },
+        {
+          "label": "fasting glucose",
+          "value": "110 mg/dL",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "labs",
+          "bloodwork",
+          "blood test",
+          "A1c",
+          "cholesterol",
+          "glucose"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a005",
+      "type": "other",
+      "title": "Clinical findings",
+      "items": [
+        {
+          "label": "Waist circumference",
+          "value": "43 inches",
+          "flag": null
+        },
+        {
+          "label": "Blood pressure",
+          "value": "148/92 mmHg",
+          "flag": null
+        },
+        {
+          "label": "Elevated LDL cholesterol",
+          "value": "",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "exam",
+          "findings",
+          "physical exam"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Apply the Nutrition Care Process",
+      "expected_discoveries": [
+        {
+          "id": "o1.d1",
+          "text": "Identify nutritional deficiencies",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d2",
+          "text": "Assess medication interactions",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d3",
+          "text": "Evaluate lifestyle factors",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Resistant to the process initially",
+        "Copes well with structured approach"
+      ],
+      "points": null
+    },
+    {
+      "id": "o2",
+      "objective": "Develop an appropriate PES statement",
+      "expected_discoveries": [
+        {
+          "id": "o2.d1",
+          "text": "Identify the problem with LDL",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o2.d2",
+          "text": "Identify the cause of poor lipid profile",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o2.d3",
+          "text": "Identify effect on cardiovascular risk",
+          "linked_fact_ids": [
+            "f038",
+            "f016"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Misunderstand PES format",
+        "Respond well to practical explanation"
+      ],
+      "points": null
+    },
+    {
+      "id": "o3",
+      "objective": "Develop evidence-based nutrition interventions",
+      "expected_discoveries": [
+        {
+          "id": "o3.d1",
+          "text": "Identify dietary habits",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d2",
+          "text": "Identify dietary barriers",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d3",
+          "text": "Develop specific dietary changes",
+          "linked_fact_ids": [
+            "f049"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Resist dietary changes",
+        "Explore changes when explained"
+      ],
+      "points": null
+    },
+    {
+      "id": "o4",
+      "objective": "Integrate medication management with nutrition care",
+      "expected_discoveries": [
+        {
+          "id": "o4.d1",
+          "text": "Identify medication non-adherence",
+          "linked_fact_ids": [
+            "f065"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d2",
+          "text": "Identify medication side effects",
+          "linked_fact_ids": [
+            "f064",
+            "f051",
+            "f048"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d3",
+          "text": "Identify potential interactions",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Fear of side effects",
+        "Willing to adjust diet"
+      ],
+      "points": null
+    },
+    {
+      "id": "o5",
+      "objective": "Use motivational interviewing",
+      "expected_discoveries": [
+        {
+          "id": "o5.d1",
+          "text": "Identify values",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o5.d2",
+          "text": "Identify readiness",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o5.d3",
+          "text": "Identify barriers",
+          "linked_fact_ids": [
+            "f054",
+            "f053",
+            "f052"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Initial resistance",
+        "Open to non-confrontational approach"
+      ],
+      "points": null
+    },
+    {
+      "id": "o6",
+      "objective": "Address lifestyle and behavioral barriers",
+      "expected_discoveries": [
+        {
+          "id": "o6.d1",
+          "text": "Identify barriers",
+          "linked_fact_ids": [
+            "f054",
+            "f053",
+            "f052"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o6.d2",
+          "text": "Identify strengths",
+          "linked_fact_ids": [
+            "f044",
+            "f043",
+            "f042"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o6.d3",
+          "text": "Develop realistic solutions",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Feeling overwhelmed",
+        "Appreciate practical strategies"
+      ],
+      "points": null
+    },
+    {
+      "id": "o7",
+      "objective": "Consider interprofessional and community resources",
+      "expected_discoveries": [
+        {
+          "id": "o7.d1",
+          "text": "Identify need for PCP follow-up",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o7.d2",
+          "text": "Identify need for dietitian counseling",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Skepticism about referrals",
+        "Open to community resources"
+      ],
+      "points": null
+    }
+  ],
+  "knowledge_sources": [],
+  "assumptions": [
+    "Patient has employment-based insurance",
+    "Patient is married with children",
+    "Patient has no other underlying conditions"
+  ],
+  "optional_details": [
+    "Patient enjoys grilling on weekends",
+    "Patient watches football with neighbors",
+    "Patient takes vitamins"
+  ]
+}

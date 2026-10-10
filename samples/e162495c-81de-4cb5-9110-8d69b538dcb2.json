@@ -1,0 +1,1265 @@
+{
+  "id": "e162495c-81de-4cb5-9110-8d69b538dcb2",
+  "status": "draft",
+  "version": 1,
+  "created_at": "2026-10-10T15:33:08.759247Z",
+  "persona": {
+    "name": "Nisha Patel",
+    "age": 29,
+    "sex": "Female",
+    "description": "Nisha Patel is a 29-year-old Indian-American woman who recently experienced her first hospitalization due to uncontrolled type 2 diabetes with symptoms of fatigue, excessive thirst, and blurred vision. While the prompt mentioned newly diagnosed MS, it is clinically inconsistent with the topic of uncontrolled type 2 diabetes. As per the directive to avoid introducing unrelated diagnoses and maintain clinical coherence with the specified clinical topic, the profile focuses on uncontrolled type 2 diabetes and associated complications. Nisha is an IT professional, married, and highly intelligent but currently emotionally overwhelmed. She is anxious, wants to understand every detail, and may challenge providers with questions. She struggles with health literacy in a healthcare context despite her high cognitive ability, and her motivation to understand is driven by fear of worsening her health. She is in the precontemplation/contemplation stage of change regarding lifestyle modification.",
+    "keywords": [
+      "Type 2 Diabetes",
+      "Health Literacy",
+      "Anxiety",
+      "Motivational Interviewing",
+      "Lifestyle Modification",
+      "IT Professional",
+      "Indian-American",
+      "Healthcare Navigation",
+      "First Hospitalization",
+      "PES Statement"
+    ],
+    "occupation": "Senior Software Engineer",
+    "residence": "Suburban area near urban center",
+    "ethnicity": "Indian-American",
+    "language": "English (fluent), Gujarati (home language)",
+    "marital_status": "Married",
+    "education_level": "Master's degree in Computer Science",
+    "insurance": "Employer-sponsored health insurance",
+    "cultural_context": "Values her husband's health and family responsibilities; may view strict dietary restrictions through the lens of cultural food traditions and family obligations.",
+    "personality": "Intelligent, analytical, detail-oriented, but highly anxious and prone to overthinking. Seeks control and certainty, which makes uncertainty in health information particularly distressing.",
+    "communication_style": "Asks many detailed questions, challenges providers to justify recommendations, becomes overwhelmed easily, may interrupt with questions.",
+    "support_system": "Emotionally and financially supported by her husband, who also works long hours. Has a supportive mother-in-law who prepares traditional meals.",
+    "readiness_to_change": "Patient is in the contemplation stage: recognizes the need for change but is uncertain about how to implement it and fears the difficulty of adaptation.",
+    "portrait_path": "portraits/e162495c-81de-4cb5-9110-8d69b538dcb2.png"
+  },
+  "settings": {
+    "student_role": "Dietetics student",
+    "encounter_goal": "Nutrition assessment and counseling (Nutrition Care Process)",
+    "setting": "Outpatient clinic",
+    "rubric_id": "encounter_evaluation_rubric",
+    "opening_trust": 1
+  },
+  "faculty_brief": {
+    "background": "IT professional, married, first hospitalization",
+    "notes": "Challenges providers with questions; emotionally overwhelmed.",
+    "personality": "Intelligent, anxious, wants to understand every detail",
+    "summary": "Young adult with newly diagnosed MS"
+  },
+  "primary_diagnosis": "Type 2 Diabetes Mellitus",
+  "secondary_diagnoses": [
+    "Metabolic Syndrome",
+    "Anxiety Disorder"
+  ],
+  "medications": [
+    {
+      "name": "Metformin 500 mg",
+      "dose": "500 mg",
+      "frequency": "Twice daily with meals",
+      "purpose": "To improve insulin sensitivity and lower blood glucose levels",
+      "adherence": "Patient reports taking it but frequently forgets due to long work hours",
+      "patient_concerns": "Concerns about gastrointestinal side effects like nausea"
+    },
+    {
+      "name": "Insulin Glargine 10 units",
+      "dose": "10 units",
+      "frequency": "Once daily at bedtime",
+      "purpose": "To control blood sugar levels at night and reduce HbA1c",
+      "adherence": "Inconsistent adherence; reports feeling overwhelmed by the injection process and fear of hypoglycemia",
+      "patient_concerns": "Fear of hypoglycemia, concerns about the cost and complexity of daily insulin injections"
+    }
+  ],
+  "allergies": [
+    "Penicillin: No reaction",
+    "Food allergies: None"
+  ],
+  "facts": [
+    {
+      "id": "f001",
+      "category": "social",
+      "topic": "occupation",
+      "content": "Senior Software Engineer",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.occupation"
+    },
+    {
+      "id": "f002",
+      "category": "social",
+      "topic": "living situation",
+      "content": "Suburban area near urban center",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.residence"
+    },
+    {
+      "id": "f003",
+      "category": "social",
+      "topic": "marital status",
+      "content": "Married",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.marital_status"
+    },
+    {
+      "id": "f004",
+      "category": "social",
+      "topic": "education",
+      "content": "Master's degree in Computer Science",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.education_level"
+    },
+    {
+      "id": "f005",
+      "category": "social",
+      "topic": "insurance",
+      "content": "Employer-sponsored health insurance",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.insurance"
+    },
+    {
+      "id": "f006",
+      "category": "social",
+      "topic": "language",
+      "content": "English (fluent), Gujarati (home language)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.language"
+    },
+    {
+      "id": "f007",
+      "category": "social",
+      "topic": "support system",
+      "content": "Emotionally and financially supported by her husband, who also works long hours. Has a supportive mother-in-law who prepares traditional meals.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.support_system"
+    },
+    {
+      "id": "f008",
+      "category": "diagnosis",
+      "topic": "main diagnosis / reason for visit",
+      "content": "Type 2 Diabetes Mellitus",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.primary_diagnosis"
+    },
+    {
+      "id": "f009",
+      "category": "diagnosis",
+      "topic": "other condition: Metabolic Syndrome",
+      "content": "Metabolic Syndrome",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[0]"
+    },
+    {
+      "id": "f010",
+      "category": "diagnosis",
+      "topic": "other condition: Anxiety Disorder",
+      "content": "Anxiety Disorder",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[1]"
+    },
+    {
+      "id": "f011",
+      "category": "history",
+      "topic": "Recent first hospitalization for hyperglycemic state and…",
+      "content": "Recent first hospitalization for hyperglycemic state and symptomatic hyperglycemia",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[0]"
+    },
+    {
+      "id": "f012",
+      "category": "history",
+      "topic": "Family history of type 2 diabetes in mother and maternal…",
+      "content": "Family history of type 2 diabetes in mother and maternal grandmother",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[1]"
+    },
+    {
+      "id": "f013",
+      "category": "symptom",
+      "topic": "symptom: Excessive thirst and frequent urination…",
+      "content": "Excessive thirst and frequent urination over 2 months",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[0]"
+    },
+    {
+      "id": "f014",
+      "category": "symptom",
+      "topic": "symptom: Persistent fatigue and difficulty…",
+      "content": "Persistent fatigue and difficulty concentrating at work",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[1]"
+    },
+    {
+      "id": "f015",
+      "category": "symptom",
+      "topic": "symptom: Weight loss of 8 pounds over 3 months",
+      "content": "Weight loss of 8 pounds over 3 months",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[2]"
+    },
+    {
+      "id": "f016",
+      "category": "symptom",
+      "topic": "symptom: Blurred vision",
+      "content": "Blurred vision",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[3]"
+    },
+    {
+      "id": "f017",
+      "category": "symptom",
+      "topic": "symptom: Slowly healing cuticles",
+      "content": "Slowly healing cuticles",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[4]"
+    },
+    {
+      "id": "f018",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "Penicillin: No reaction",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.allergies[0]"
+    },
+    {
+      "id": "f019",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "Food allergies: None",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.allergies[1]"
+    },
+    {
+      "id": "f020",
+      "category": "medication",
+      "topic": "medication: Metformin 500 mg",
+      "content": "Takes Metformin 500 mg 500 mg Twice daily with meals for To improve insulin sensitivity and lower blood glucose levels",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0]"
+    },
+    {
+      "id": "f021",
+      "category": "medication",
+      "topic": "how they take Metformin 500 mg",
+      "content": "Metformin 500 mg adherence: Patient reports taking it but frequently forgets due to long work hours",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].adherence"
+    },
+    {
+      "id": "f022",
+      "category": "medication",
+      "topic": "concerns/side effects of Metformin 500 mg",
+      "content": "About Metformin 500 mg: Concerns about gastrointestinal side effects like nausea",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].patient_concerns"
+    },
+    {
+      "id": "f023",
+      "category": "medication",
+      "topic": "medication: Insulin Glargine 10 units",
+      "content": "Takes Insulin Glargine 10 units 10 units Once daily at bedtime for To control blood sugar levels at night and reduce HbA1c",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1]"
+    },
+    {
+      "id": "f024",
+      "category": "medication",
+      "topic": "how they take Insulin Glargine 10 units",
+      "content": "Insulin Glargine 10 units adherence: Inconsistent adherence; reports feeling overwhelmed by the injection process and fear of hypoglycemia",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].adherence"
+    },
+    {
+      "id": "f025",
+      "category": "medication",
+      "topic": "concerns/side effects of Insulin Glargine 10 units",
+      "content": "About Insulin Glargine 10 units: Fear of hypoglycemia, concerns about the cost and complexity of daily insulin injections",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].patient_concerns"
+    },
+    {
+      "id": "f026",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Multivitamin (once daily)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[0]"
+    },
+    {
+      "id": "f027",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Magnesium gummies",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[1]"
+    },
+    {
+      "id": "f028",
+      "category": "nutrition",
+      "topic": "usual diet",
+      "content": "Traditional Indian diet with high carbohydrate intake (white rice, chapati, sugar-heavy beverages)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.dietary_pattern"
+    },
+    {
+      "id": "f029",
+      "category": "nutrition",
+      "topic": "meal timing / pattern",
+      "content": "Irregular: Skips breakfast, large lunch, often eats dinner late after work",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.meal_pattern"
+    },
+    {
+      "id": "f030",
+      "category": "nutrition",
+      "topic": "fluids / hydration",
+      "content": "Drinks sugary beverages and coffee throughout the day",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.hydration"
+    },
+    {
+      "id": "f031",
+      "category": "lifestyle",
+      "topic": "physical activity",
+      "content": "Sedentary job; reports wanting to exercise but lacks time and motivation",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.physical_activity"
+    },
+    {
+      "id": "f032",
+      "category": "lifestyle",
+      "topic": "alcohol / tobacco / drugs",
+      "content": "Drinks coffee with sugar daily",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.substance_use"
+    },
+    {
+      "id": "f033",
+      "category": "lifestyle",
+      "topic": "sleep",
+      "content": "Poor sleep quality due to anxiety and evening snacks",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.sleep"
+    },
+    {
+      "id": "f034",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Sweets during festivals",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[0]"
+    },
+    {
+      "id": "f035",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Coffee with sugar",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[1]"
+    },
+    {
+      "id": "f036",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Spicy flavors",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[2]"
+    },
+    {
+      "id": "f037",
+      "category": "nutrition",
+      "topic": "High intake of refined carbohydrates",
+      "content": "High intake of refined carbohydrates",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[0]"
+    },
+    {
+      "id": "f038",
+      "category": "nutrition",
+      "topic": "Irregular meal timing due to work schedule",
+      "content": "Irregular meal timing due to work schedule",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[1]"
+    },
+    {
+      "id": "f039",
+      "category": "nutrition",
+      "topic": "Snacking on sugary snacks in the evening",
+      "content": "Snacking on sugary snacks in the evening",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[2]"
+    },
+    {
+      "id": "f040",
+      "category": "psychosocial",
+      "topic": "goal: Want to control diabetes and avoid future…",
+      "content": "Want to control diabetes and avoid future hospitalizations",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[0]"
+    },
+    {
+      "id": "f041",
+      "category": "psychosocial",
+      "topic": "goal: Understand the pathophysiology of diabetes",
+      "content": "Understand the pathophysiology of diabetes",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[1]"
+    },
+    {
+      "id": "f042",
+      "category": "psychosocial",
+      "topic": "goal: Maintain her successful career while…",
+      "content": "Maintain her successful career while managing health",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[2]"
+    },
+    {
+      "id": "f043",
+      "category": "psychosocial",
+      "topic": "motivation: Desires to be an active, independent person",
+      "content": "Desires to be an active, independent person",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[0]"
+    },
+    {
+      "id": "f044",
+      "category": "psychosocial",
+      "topic": "motivation: Wants to protect her husband and provide…",
+      "content": "Wants to protect her husband and provide for the family",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[1]"
+    },
+    {
+      "id": "f045",
+      "category": "psychosocial",
+      "topic": "strength: High motivation to understand her condition",
+      "content": "High motivation to understand her condition",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[0]"
+    },
+    {
+      "id": "f046",
+      "category": "psychosocial",
+      "topic": "strength: Strong support from husband",
+      "content": "Strong support from husband",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[1]"
+    },
+    {
+      "id": "f047",
+      "category": "psychosocial",
+      "topic": "strength: Excellent problem-solving skills",
+      "content": "Excellent problem-solving skills",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[2]"
+    },
+    {
+      "id": "f048",
+      "category": "psychosocial",
+      "topic": "belief: Believes diabetes is primarily a failure of…",
+      "content": "Believes diabetes is primarily a failure of willpower",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[0]"
+    },
+    {
+      "id": "f049",
+      "category": "psychosocial",
+      "topic": "belief: Thinks that strict elimination diets are…",
+      "content": "Thinks that strict elimination diets are necessary for success",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[1]"
+    },
+    {
+      "id": "f050",
+      "category": "psychosocial",
+      "topic": "belief: Believes that her high intelligence will…",
+      "content": "Believes that her high intelligence will allow her to manage diabetes easily",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[2]"
+    },
+    {
+      "id": "f051",
+      "category": "psychosocial",
+      "topic": "concern: Fear of developing severe complications…",
+      "content": "Fear of developing severe complications like blindness or kidney failure",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[0]"
+    },
+    {
+      "id": "f052",
+      "category": "psychosocial",
+      "topic": "concern: Worry about burdening her husband",
+      "content": "Worry about burdening her husband",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[1]"
+    },
+    {
+      "id": "f053",
+      "category": "psychosocial",
+      "topic": "concern: Anxiety about medication side effects",
+      "content": "Anxiety about medication side effects",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[2]"
+    },
+    {
+      "id": "f054",
+      "category": "psychosocial",
+      "topic": "barrier: Time constraints due to high-demand job",
+      "content": "Time constraints due to high-demand job",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[0]"
+    },
+    {
+      "id": "f055",
+      "category": "psychosocial",
+      "topic": "barrier: Feeling overwhelmed by complex lifestyle…",
+      "content": "Feeling overwhelmed by complex lifestyle changes",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[1]"
+    },
+    {
+      "id": "f056",
+      "category": "psychosocial",
+      "topic": "barrier: Health literacy challenges when facing…",
+      "content": "Health literacy challenges when facing medical explanations",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[2]"
+    },
+    {
+      "id": "f057",
+      "category": "psychosocial",
+      "topic": "barrier: Social pressure to eat traditional foods…",
+      "content": "Social pressure to eat traditional foods during celebrations",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[3]"
+    },
+    {
+      "id": "f058",
+      "category": "psychosocial",
+      "topic": "fear: Fear of losing cognitive function or mental…",
+      "content": "Fear of losing cognitive function or mental sharpness",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[0]"
+    },
+    {
+      "id": "f059",
+      "category": "psychosocial",
+      "topic": "fear: Fear of becoming a burden on her husband",
+      "content": "Fear of becoming a burden on her husband",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[1]"
+    },
+    {
+      "id": "f060",
+      "category": "psychosocial",
+      "topic": "fear: Fear of losing her job due to health…",
+      "content": "Fear of losing her job due to health complications",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[2]"
+    },
+    {
+      "id": "f061",
+      "category": "other",
+      "topic": "I've been diagnosed with type 2 diabetes and was recently…",
+      "content": "I've been diagnosed with type 2 diabetes and was recently hospitalized for my first time.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[0]"
+    },
+    {
+      "id": "f062",
+      "category": "other",
+      "topic": "I keep forgetting to take my metformin because I work long…",
+      "content": "I keep forgetting to take my metformin because I work long hours and it's confusing.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[1]"
+    },
+    {
+      "id": "f063",
+      "category": "other",
+      "topic": "I take insulin sometimes, but I'm really scared of getting…",
+      "content": "I take insulin sometimes, but I'm really scared of getting hypoglycemia and passing out.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[2]"
+    },
+    {
+      "id": "f064",
+      "category": "other",
+      "topic": "I'm so tired and my blood sugar keeps spiking. I just…",
+      "content": "I'm so tired and my blood sugar keeps spiking. I just don't understand why.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[3]"
+    },
+    {
+      "id": "f065",
+      "category": "other",
+      "topic": "Skips breakfast and eats large, late dinners due to work…",
+      "content": "Skips breakfast and eats large, late dinners due to work schedule.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[0]"
+    },
+    {
+      "id": "f066",
+      "category": "other",
+      "topic": "Has a high intake of refined carbohydrates and sugar.",
+      "content": "Has a high intake of refined carbohydrates and sugar.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[1]"
+    },
+    {
+      "id": "f067",
+      "category": "other",
+      "topic": "Uses sugar-laden beverages frequently.",
+      "content": "Uses sugar-laden beverages frequently.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[2]"
+    },
+    {
+      "id": "f068",
+      "category": "other",
+      "topic": "Has a history of anxiety and feelings of being overwhelmed.",
+      "content": "Has a history of anxiety and feelings of being overwhelmed.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[3]"
+    },
+    {
+      "id": "f069",
+      "category": "other",
+      "topic": "Feels embarrassed about eating sugar and sweets due to…",
+      "content": "Feels embarrassed about eating sugar and sweets due to guilt.",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[0]"
+    },
+    {
+      "id": "f070",
+      "category": "other",
+      "topic": "Admits feeling embarrassed to ask questions in a clinical…",
+      "content": "Admits feeling embarrassed to ask questions in a clinical setting.",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[1]"
+    },
+    {
+      "id": "f071",
+      "category": "other",
+      "topic": "Has been experiencing anxiety symptoms like racing heart…",
+      "content": "Has been experiencing anxiety symptoms like racing heart and sleep disturbances due to health worries.",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[2]"
+    },
+    {
+      "id": "f072",
+      "category": "other",
+      "topic": "has been trying to count her carbohydrates but finds it…",
+      "content": "She has been trying to count her carbohydrates but finds it mentally exhausting.",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[0]"
+    },
+    {
+      "id": "f073",
+      "category": "other",
+      "topic": "fears that her doctor will impose overly restrictive diets…",
+      "content": "She fears that her doctor will impose overly restrictive diets or become dismissive of her concerns.",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[1]"
+    },
+    {
+      "id": "f074",
+      "category": "other",
+      "topic": "has been secretly researching alternative supplements and…",
+      "content": "She has been secretly researching alternative supplements and treatments online to supplement her prescribed regimen.",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[2]"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a001",
+      "type": "prior_note",
+      "title": "Referral summary",
+      "items": [
+        {
+          "label": "Primary diagnosis",
+          "value": "Type 2 Diabetes Mellitus",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Metabolic Syndrome",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Anxiety Disorder",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Metformin 500 mg 500 mg Twice daily with meals",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Insulin Glargine 10 units 10 units Once daily at bedtime",
+          "flag": null
+        },
+        {
+          "label": "Allergies",
+          "value": "Penicillin: No reaction, Food allergies: None",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "at_start",
+        "request_keywords": [],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a002",
+      "type": "vitals",
+      "title": "Vital signs",
+      "items": [
+        {
+          "label": "BP",
+          "value": "120/85 mmHg",
+          "flag": null
+        },
+        {
+          "label": "HR",
+          "value": "76 bpm",
+          "flag": null
+        },
+        {
+          "label": "RR",
+          "value": "12 breaths/min",
+          "flag": null
+        },
+        {
+          "label": "Temp",
+          "value": "98.6 F",
+          "flag": null
+        },
+        {
+          "label": "SpO2",
+          "value": "99% on room air",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "vitals",
+          "blood pressure",
+          "heart rate",
+          "temperature"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a003",
+      "type": "anthropometrics",
+      "title": "Anthropometrics",
+      "items": [
+        {
+          "label": "Height",
+          "value": "5'2\" (157 cm)",
+          "flag": null
+        },
+        {
+          "label": "Weight",
+          "value": "145 lbs (65.8 kg)",
+          "flag": null
+        },
+        {
+          "label": "BMI",
+          "value": "26.1 kg/m2",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "weight",
+          "height",
+          "BMI",
+          "measurements",
+          "waist"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a004",
+      "type": "lab_report",
+      "title": "Laboratory results",
+      "items": [
+        {
+          "label": "HbA1c",
+          "value": "8.8% (Target: <7.0%)",
+          "flag": null
+        },
+        {
+          "label": "Fasting blood glucose",
+          "value": "185 mg/dL (Target: <126 mg/dL)",
+          "flag": null
+        },
+        {
+          "label": "Total cholesterol",
+          "value": "210 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "HDL cholesterol",
+          "value": "38 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Triglycerides",
+          "value": "190 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Urea nitrogen",
+          "value": "17 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Creatinine",
+          "value": "0.9 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Total bilirubin",
+          "value": "1.2 mg/dL",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "labs",
+          "bloodwork",
+          "blood test",
+          "A1c",
+          "cholesterol",
+          "glucose"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a005",
+      "type": "other",
+      "title": "Clinical findings",
+      "items": [
+        {
+          "label": "Blood pressure",
+          "value": "120/85 mmHg",
+          "flag": null
+        },
+        {
+          "label": "Heart rate",
+          "value": "76 bpm",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "exam",
+          "findings",
+          "physical exam"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Develop an appropriate PES statement.",
+      "expected_discoveries": [
+        {
+          "id": "o1.d1",
+          "text": "Patient's history of non-adherence to medication.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d2",
+          "text": "Patient's high intake of refined carbohydrates due to work stress and irregular meal timing.",
+          "linked_fact_ids": [
+            "f066",
+            "f038",
+            "f037"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o1.d3",
+          "text": "Patient's fear of hypoglycemia and guilt regarding sugar consumption.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "If the student simply lists her symptoms, she may feel dismissed and ask for the underlying physiological reasons.",
+        "She may challenge the relevance of her lifestyle factors if not linked to her symptoms.",
+        "She may admit her struggle with time and mental overwhelm when asked about barriers."
+      ],
+      "points": null
+    },
+    {
+      "id": "o2",
+      "objective": "Use motivational interviewing.",
+      "expected_discoveries": [
+        {
+          "id": "o2.d1",
+          "text": "Patient's internal conflict regarding the need for change vs. the difficulty of adapting.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o2.d2",
+          "text": "Patient's high motivation rooted in her desire for independence.",
+          "linked_fact_ids": [
+            "f045"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o2.d3",
+          "text": "Patient's fear of hypoglycemia and guilt regarding sugar.",
+          "linked_fact_ids": [
+            "f069",
+            "f025",
+            "f024"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "She may respond positively to open-ended questions.",
+        "She may become defensive if advice is given directly.",
+        "She may express frustration and feel overwhelmed if the student focuses solely on her problems rather than her strengths.",
+        "She may engage in collaborative problem-solving if offered support and validation."
+      ],
+      "points": null
+    },
+    {
+      "id": "o3",
+      "objective": "Address lifestyle and behavioral barriers.",
+      "expected_discoveries": [
+        {
+          "id": "o3.d1",
+          "text": "Patient's irregular meal timing due to work schedule.",
+          "linked_fact_ids": [
+            "f038",
+            "f029",
+            "f065"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o3.d2",
+          "text": "Patient's lack of time and energy for grocery shopping or meal preparation.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d3",
+          "text": "Patient's desire to control her health but feeling confused and overwhelmed.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "If the student asks about her schedule, she may explain the reality of her life and admit her feelings of being overwhelmed.",
+        "She may become frustrated if recommended a regimen she cannot realistically implement.",
+        "She may respond positively to small, actionable steps."
+      ],
+      "points": null
+    },
+    {
+      "id": "o4",
+      "objective": "Integrate medication management with nutrition care.",
+      "expected_discoveries": [
+        {
+          "id": "o4.d1",
+          "text": "Patient's irregular adherence to metformin and insulin due to complexity and fear.",
+          "linked_fact_ids": [
+            "f025",
+            "f024"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d2",
+          "text": "Patient's fear of hypoglycemia and its impact on her ability to take her medication.",
+          "linked_fact_ids": [
+            "f024"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d3",
+          "text": "Patient's confusion about how to manage her blood sugar with food and medication.",
+          "linked_fact_ids": [
+            "f023"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "She may explain her difficulties with her daily routine regarding her medication.",
+        "She may feel a sense of relief if the student helps her understand the connection between her meal timing, medication, and blood sugar.",
+        "She may admit to fearing that she will fail if she makes mistakes."
+      ],
+      "points": null
+    }
+  ],
+  "knowledge_sources": [],
+  "assumptions": [
+    "The patient's anxiety is linked to her first hospitalization and the new diagnosis.",
+    "The patient's husband supports her emotionally and financially.",
+    "The patient's high intelligence does not directly translate to better health literacy due to stress and anxiety."
+  ],
+  "optional_details": [
+    "She is a tech enthusiast who often researches health topics online."
+  ]
+}

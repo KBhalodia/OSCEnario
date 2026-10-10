@@ -1,0 +1,1498 @@
+{
+  "id": "5f0f9e8d-b389-4694-8e87-7c78634c7212",
+  "status": "draft",
+  "version": 1,
+  "created_at": "2026-10-10T15:33:08.856398Z",
+  "persona": {
+    "name": "Vladko Bareche",
+    "age": 31,
+    "sex": "Male",
+    "description": "Vladko is a 31-year-old Asian Indian male, a college-educated TV producer who recently migrated from Mumbai to Brooklyn. He struggles with uncontrolled type 2 diabetes complicated by substance use issues. He appears quiet and introverted, often showing signs of stress from his demanding creative career. He has significant dietary habits influenced by his background, along with smoking, alcohol abuse, and occasional cocaine use. He lacks consistent healthcare follow-up due to immigration-related barriers and limited local support.",
+    "keywords": [
+      "type 2 diabetes",
+      "migrant",
+      "substance use",
+      "vegan",
+      "smoking",
+      "alcohol abuse",
+      "motivational interviewing",
+      "community resources"
+    ],
+    "occupation": "TV Producer",
+    "residence": "Brooklyn",
+    "ethnicity": "Asian Indian",
+    "language": "English, Hindi",
+    "marital_status": "Single",
+    "education_level": "Bachelor's degree in Film Studies (Completed in India)",
+    "insurance": "Marketplace plan (Limited coverage due to recent immigration)",
+    "cultural_context": "Vladko grew up in a traditional Indian household where communal meals and cultural foods were central. After moving to the US, he retains a preference for vegetarian meals and spicy flavors. He values independence and is hesitant to accept help or share personal struggles due to cultural norms around privacy and dignity.",
+    "personality": "Quiet, introverted, hardworking, highly creative",
+    "communication_style": "Brief, reserved, often deflecting personal questions with work-related stress",
+    "support_system": "Single, lives alone, no immediate family in US",
+    "readiness_to_change": "Ambivalent. Prefers to work out of desperation",
+    "portrait_path": "portraits/5f0f9e8d-b389-4694-8e87-7c78634c7212.png"
+  },
+  "settings": {
+    "student_role": "Dietetics student",
+    "encounter_goal": "Nutrition assessment and counseling (Nutrition Care Process)",
+    "setting": "Outpatient clinic",
+    "rubric_id": "encounter_evaluation_rubric",
+    "opening_trust": 1
+  },
+  "faculty_brief": {
+    "background": "College in India.  TV producer. Moved to Brooklyn from Mumbai 8 months ago.  He lives alone, walks everywhere, and plays cricket monthly.",
+    "notes": "Smokes one pack of cigarettes per day; cosumes 2-8 hard drinks on 2-6 nights per week and uses intranasal cocaine 1-2 times per month. Sexually active primarily with men, with inconsistent condom use. Recent immigrant managing a demanding creative career while dealing with limited local support.",
+    "personality": "quiet, introverted, hard worker",
+    "summary": "Vegetarian, smoker, alcohol abuse, and occasional cocaine user"
+  },
+  "primary_diagnosis": "Type 2 Diabetes Mellitus, Poorly Controlled",
+  "secondary_diagnoses": [
+    "Hypertension",
+    "Non-Human Sexually Transmitted Infection (STI, Unspecified)",
+    "Chronic Alcohol Use Disorder"
+  ],
+  "medications": [
+    {
+      "name": "Metformin",
+      "dose": "500mg",
+      "frequency": "Twice daily with meals",
+      "purpose": "Type 2 Diabetes Management",
+      "adherence": "Poor. Reports sporadic use. Often forgets doses due to a chaotic work schedule.",
+      "patient_concerns": "Experiencing nausea and stomach cramps, causing nausea and abdominal pain."
+    },
+    {
+      "name": "Amlodipine",
+      "dose": "5mg",
+      "frequency": "Daily",
+      "purpose": "Hypertension Management",
+      "adherence": "Fair, reports taking them every day, but often misses morning doses. Reports mild dizziness sometimes.",
+      "patient_concerns": "Feels lightheaded in the mornings and occasionally forgets to take them."
+    }
+  ],
+  "allergies": [
+    "Penicillin - rash"
+  ],
+  "facts": [
+    {
+      "id": "f001",
+      "category": "social",
+      "topic": "occupation",
+      "content": "TV Producer",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.occupation"
+    },
+    {
+      "id": "f002",
+      "category": "social",
+      "topic": "living situation",
+      "content": "Brooklyn",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.residence"
+    },
+    {
+      "id": "f003",
+      "category": "social",
+      "topic": "marital status",
+      "content": "Single",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.marital_status"
+    },
+    {
+      "id": "f004",
+      "category": "social",
+      "topic": "education",
+      "content": "Bachelor's degree in Film Studies (Completed in India)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.education_level"
+    },
+    {
+      "id": "f005",
+      "category": "social",
+      "topic": "insurance",
+      "content": "Marketplace plan (Limited coverage due to recent immigration)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.insurance"
+    },
+    {
+      "id": "f006",
+      "category": "social",
+      "topic": "language",
+      "content": "English, Hindi",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.language"
+    },
+    {
+      "id": "f007",
+      "category": "social",
+      "topic": "support system",
+      "content": "Single, lives alone, no immediate family in US",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.support_system"
+    },
+    {
+      "id": "f008",
+      "category": "diagnosis",
+      "topic": "main diagnosis / reason for visit",
+      "content": "Type 2 Diabetes Mellitus, Poorly Controlled",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.primary_diagnosis"
+    },
+    {
+      "id": "f009",
+      "category": "diagnosis",
+      "topic": "other condition: Hypertension",
+      "content": "Hypertension",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[0]"
+    },
+    {
+      "id": "f010",
+      "category": "diagnosis",
+      "topic": "other condition: Non-Human Sexually Transmitted…",
+      "content": "Non-Human Sexually Transmitted Infection (STI, Unspecified)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[1]"
+    },
+    {
+      "id": "f011",
+      "category": "diagnosis",
+      "topic": "other condition: Chronic Alcohol Use Disorder",
+      "content": "Chronic Alcohol Use Disorder",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[2]"
+    },
+    {
+      "id": "f012",
+      "category": "history",
+      "topic": "Long-standing history of Type 2 Diabetes (Diagnosed ~3…",
+      "content": "Long-standing history of Type 2 Diabetes (Diagnosed ~3 years ago)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[0]"
+    },
+    {
+      "id": "f013",
+      "category": "history",
+      "topic": "History of Hypertension (Diagnosed ~4 years ago)",
+      "content": "History of Hypertension (Diagnosed ~4 years ago)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[1]"
+    },
+    {
+      "id": "f014",
+      "category": "history",
+      "topic": "Recent stress related to immigration and job change",
+      "content": "Recent stress related to immigration and job change",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[2]"
+    },
+    {
+      "id": "f015",
+      "category": "symptom",
+      "topic": "symptom: Persistent fatigue and low energy",
+      "content": "Persistent fatigue and low energy",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[0]"
+    },
+    {
+      "id": "f016",
+      "category": "symptom",
+      "topic": "symptom: Frequent urination (10-15 times/day)",
+      "content": "Frequent urination (10-15 times/day)",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[1]"
+    },
+    {
+      "id": "f017",
+      "category": "symptom",
+      "topic": "symptom: Excessive thirst",
+      "content": "Excessive thirst",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[2]"
+    },
+    {
+      "id": "f018",
+      "category": "symptom",
+      "topic": "symptom: Occasional blurry vision",
+      "content": "Occasional blurry vision",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[3]"
+    },
+    {
+      "id": "f019",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "Penicillin - rash",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.allergies[0]"
+    },
+    {
+      "id": "f020",
+      "category": "medication",
+      "topic": "medication: Metformin",
+      "content": "Takes Metformin 500mg Twice daily with meals for Type 2 Diabetes Management",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0]"
+    },
+    {
+      "id": "f021",
+      "category": "medication",
+      "topic": "how they take Metformin",
+      "content": "Metformin adherence: Poor. Reports sporadic use. Often forgets doses due to a chaotic work schedule.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].adherence"
+    },
+    {
+      "id": "f022",
+      "category": "medication",
+      "topic": "concerns/side effects of Metformin",
+      "content": "About Metformin: Experiencing nausea and stomach cramps, causing nausea and abdominal pain.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].patient_concerns"
+    },
+    {
+      "id": "f023",
+      "category": "medication",
+      "topic": "medication: Amlodipine",
+      "content": "Takes Amlodipine 5mg Daily for Hypertension Management",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1]"
+    },
+    {
+      "id": "f024",
+      "category": "medication",
+      "topic": "how they take Amlodipine",
+      "content": "Amlodipine adherence: Fair, reports taking them every day, but often misses morning doses. Reports mild dizziness sometimes.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].adherence"
+    },
+    {
+      "id": "f025",
+      "category": "medication",
+      "topic": "concerns/side effects of Amlodipine",
+      "content": "About Amlodipine: Feels lightheaded in the mornings and occasionally forgets to take them.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].patient_concerns"
+    },
+    {
+      "id": "f026",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Multivitamin (taken irregularly)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[0]"
+    },
+    {
+      "id": "f027",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Acupressure wristbands",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[1]"
+    },
+    {
+      "id": "f028",
+      "category": "nutrition",
+      "topic": "usual diet",
+      "content": "Traditional vegetarian",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.dietary_pattern"
+    },
+    {
+      "id": "f029",
+      "category": "nutrition",
+      "topic": "meal timing / pattern",
+      "content": "Irregular meal times, frequently rushing between work, late dinners",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.meal_pattern"
+    },
+    {
+      "id": "f030",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Vegetarian meals",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[0]"
+    },
+    {
+      "id": "f031",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Spicy Asian and Indian cuisine",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[1]"
+    },
+    {
+      "id": "f032",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Avoids red meat entirely",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[2]"
+    },
+    {
+      "id": "f033",
+      "category": "nutrition",
+      "topic": "Consumption of high-sugar sweets and drinks",
+      "content": "Consumption of high-sugar sweets and drinks",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[0]"
+    },
+    {
+      "id": "f034",
+      "category": "nutrition",
+      "topic": "Large portions of refined carbs (rice, bread)",
+      "content": "Large portions of refined carbs (rice, bread)",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[1]"
+    },
+    {
+      "id": "f035",
+      "category": "nutrition",
+      "topic": "Occasional alcohol consumption during social events",
+      "content": "Occasional alcohol consumption during social events",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[2]"
+    },
+    {
+      "id": "f036",
+      "category": "psychosocial",
+      "topic": "goal: Maintain his demanding TV job",
+      "content": "Maintain his demanding TV job",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[0]"
+    },
+    {
+      "id": "f037",
+      "category": "psychosocial",
+      "topic": "goal: Improve energy levels for creative work",
+      "content": "Improve energy levels for creative work",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[1]"
+    },
+    {
+      "id": "f038",
+      "category": "psychosocial",
+      "topic": "goal: Travel to India in the future",
+      "content": "Travel to India in the future",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[2]"
+    },
+    {
+      "id": "f039",
+      "category": "psychosocial",
+      "topic": "goal: Maintain a sense of control over his life",
+      "content": "Maintain a sense of control over his life",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[3]"
+    },
+    {
+      "id": "f040",
+      "category": "psychosocial",
+      "topic": "motivation: Desire to travel to India in the future",
+      "content": "Desire to travel to India in the future",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[0]"
+    },
+    {
+      "id": "f041",
+      "category": "psychosocial",
+      "topic": "motivation: Fear of needing to rely on others",
+      "content": "Fear of needing to rely on others",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[1]"
+    },
+    {
+      "id": "f042",
+      "category": "psychosocial",
+      "topic": "motivation: Wants to protect his health so he can keep…",
+      "content": "Wants to protect his health so he can keep creating",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[2]"
+    },
+    {
+      "id": "f043",
+      "category": "psychosocial",
+      "topic": "strength: High creativity",
+      "content": "High creativity",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[0]"
+    },
+    {
+      "id": "f044",
+      "category": "psychosocial",
+      "topic": "strength: Strong discipline for projects",
+      "content": "Strong discipline for projects",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[1]"
+    },
+    {
+      "id": "f045",
+      "category": "psychosocial",
+      "topic": "strength: Willing to try if shown clear benefit for…",
+      "content": "Willing to try if shown clear benefit for career",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[2]"
+    },
+    {
+      "id": "f046",
+      "category": "psychosocial",
+      "topic": "strength: Access to community resources if guided",
+      "content": "Access to community resources if guided",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[3]"
+    },
+    {
+      "id": "f047",
+      "category": "psychosocial",
+      "topic": "belief: is 'healthy' compared to his old age",
+      "content": "He is 'healthy' compared to his old age",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[0]"
+    },
+    {
+      "id": "f048",
+      "category": "psychosocial",
+      "topic": "belief: Food and culture are more important than…",
+      "content": "Food and culture are more important than medical labs",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[1]"
+    },
+    {
+      "id": "f049",
+      "category": "psychosocial",
+      "topic": "belief: Diabetes affects older people or…",
+      "content": "Diabetes affects older people or 'unhealthy' people like his uncle",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[2]"
+    },
+    {
+      "id": "f050",
+      "category": "psychosocial",
+      "topic": "concern: Will stop caring about this new 'diabetes'…",
+      "content": "Will stop caring about this new 'diabetes' problem",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[0]"
+    },
+    {
+      "id": "f051",
+      "category": "psychosocial",
+      "topic": "concern: Worried his diet changes will lead to…",
+      "content": "Worried his diet changes will lead to depression",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[1]"
+    },
+    {
+      "id": "f052",
+      "category": "psychosocial",
+      "topic": "concern: Concerned about the future of his creative…",
+      "content": "Concerned about the future of his creative career",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[2]"
+    },
+    {
+      "id": "f053",
+      "category": "psychosocial",
+      "topic": "barrier: Limited local support network",
+      "content": "Limited local support network",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[0]"
+    },
+    {
+      "id": "f054",
+      "category": "psychosocial",
+      "topic": "barrier: Chaos at work with frequent overtime",
+      "content": "Chaos at work with frequent overtime",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[1]"
+    },
+    {
+      "id": "f055",
+      "category": "psychosocial",
+      "topic": "barrier: Lack of knowledge about nutrition in India",
+      "content": "Lack of knowledge about nutrition in India",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[2]"
+    },
+    {
+      "id": "f056",
+      "category": "psychosocial",
+      "topic": "barrier: Difficulty affording healthier grocery…",
+      "content": "Difficulty affording healthier grocery options",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[3]"
+    },
+    {
+      "id": "f057",
+      "category": "psychosocial",
+      "topic": "barrier: Stress-induced eating",
+      "content": "Stress-induced eating",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[4]"
+    },
+    {
+      "id": "f058",
+      "category": "psychosocial",
+      "topic": "fear: Losing his independence",
+      "content": "Losing his independence",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[0]"
+    },
+    {
+      "id": "f059",
+      "category": "psychosocial",
+      "topic": "fear: Being a 'failure' as a producer",
+      "content": "Being a 'failure' as a producer",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[1]"
+    },
+    {
+      "id": "f060",
+      "category": "psychosocial",
+      "topic": "fear: Becoming a burden on his family in India",
+      "content": "Becoming a burden on his family in India",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[2]"
+    },
+    {
+      "id": "f061",
+      "category": "psychosocial",
+      "topic": "fear: Physical decline or becoming reliant on…",
+      "content": "Physical decline or becoming reliant on others",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[3]"
+    },
+    {
+      "id": "f062",
+      "category": "other",
+      "topic": "Mention of fatigue and high blood sugar",
+      "content": "Mention of fatigue and high blood sugar",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[0]"
+    },
+    {
+      "id": "f063",
+      "category": "other",
+      "topic": "Vague references to alcohol during social events",
+      "content": "Vague references to alcohol during social events",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[1]"
+    },
+    {
+      "id": "f064",
+      "category": "other",
+      "topic": "Concern about weight loss",
+      "content": "Concern about weight loss",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[2]"
+    },
+    {
+      "id": "f065",
+      "category": "other",
+      "topic": "Mentions he eats 'Indian food' mostly",
+      "content": "Mentions he eats 'Indian food' mostly",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[3]"
+    },
+    {
+      "id": "f066",
+      "category": "other",
+      "topic": "Will voluntarily share he is a vegetarian",
+      "content": "Will voluntarily share he is a vegetarian",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[4]"
+    },
+    {
+      "id": "f067",
+      "category": "other",
+      "topic": "Smoking habits",
+      "content": "Smoking habits",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[5]"
+    },
+    {
+      "id": "f068",
+      "category": "other",
+      "topic": "Occasional cocaine use",
+      "content": "Occasional cocaine use",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[6]"
+    },
+    {
+      "id": "f069",
+      "category": "other",
+      "topic": "Inconsistent condom use",
+      "content": "Inconsistent condom use",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[7]"
+    },
+    {
+      "id": "f070",
+      "category": "other",
+      "topic": "Lack of local support network",
+      "content": "Lack of local support network",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[8]"
+    },
+    {
+      "id": "f071",
+      "category": "other",
+      "topic": "Detailed alcohol use (2-8 drinks, 2-6 nights/week)",
+      "content": "Detailed alcohol use (2-8 drinks, 2-6 nights/week)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[0]"
+    },
+    {
+      "id": "f072",
+      "category": "other",
+      "topic": "Inconsistent condom use (1-2 times/month)",
+      "content": "Inconsistent condom use (1-2 times/month)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[1]"
+    },
+    {
+      "id": "f073",
+      "category": "other",
+      "topic": "Inconsistent condom use",
+      "content": "Inconsistent condom use",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[2]"
+    },
+    {
+      "id": "f074",
+      "category": "other",
+      "topic": "Lack of local support network",
+      "content": "Lack of local support network",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[3]"
+    },
+    {
+      "id": "f075",
+      "category": "other",
+      "topic": "Lack of local support network",
+      "content": "Lack of local support network",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[0]"
+    },
+    {
+      "id": "f076",
+      "category": "other",
+      "topic": "Inconsistent condom use (1-2 times/month)",
+      "content": "Inconsistent condom use (1-2 times/month)",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[0]"
+    },
+    {
+      "id": "f077",
+      "category": "other",
+      "topic": "Lack of local support network",
+      "content": "Lack of local support network",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[1]"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a001",
+      "type": "prior_note",
+      "title": "Referral summary",
+      "items": [
+        {
+          "label": "Primary diagnosis",
+          "value": "Type 2 Diabetes Mellitus, Poorly Controlled",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Hypertension",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Non-Human Sexually Transmitted Infection (STI, Unspecified)",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Chronic Alcohol Use Disorder",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Metformin 500mg Twice daily with meals",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Amlodipine 5mg Daily",
+          "flag": null
+        },
+        {
+          "label": "Allergies",
+          "value": "Penicillin - rash",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "at_start",
+        "request_keywords": [],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a002",
+      "type": "vitals",
+      "title": "Vital signs",
+      "items": [
+        {
+          "label": "BP",
+          "value": "135/88 mmHg",
+          "flag": null
+        },
+        {
+          "label": "HR",
+          "value": "110 bpm",
+          "flag": null
+        },
+        {
+          "label": "Temp",
+          "value": "98.6 F",
+          "flag": null
+        },
+        {
+          "label": "Respiratory rate",
+          "value": "16 breaths/min",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "vitals",
+          "blood pressure",
+          "heart rate",
+          "temperature"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a003",
+      "type": "anthropometrics",
+      "title": "Anthropometrics",
+      "items": [
+        {
+          "label": "Height",
+          "value": "5'9\" (175 cm)",
+          "flag": null
+        },
+        {
+          "label": "Weight",
+          "value": "148 lbs (67 kg)",
+          "flag": null
+        },
+        {
+          "label": "BMI",
+          "value": "22.0 kg/m^2",
+          "flag": null
+        },
+        {
+          "label": "Weight change",
+          "value": "-30 lbs over 6 months",
+          "flag": null
+        },
+        {
+          "label": "Waist circumference",
+          "value": "32 inches",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "weight",
+          "height",
+          "BMI",
+          "measurements",
+          "waist"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a004",
+      "type": "lab_report",
+      "title": "Laboratory results",
+      "items": [
+        {
+          "label": "HbA1c",
+          "value": "9.1% (Target < 7%) - High",
+          "flag": "H"
+        },
+        {
+          "label": "Glucose",
+          "value": "230 mg/dL fasting - High",
+          "flag": "H"
+        },
+        {
+          "label": "BMI",
+          "value": "22.0 (Underweight for current metabolic state)",
+          "flag": null
+        },
+        {
+          "label": "Cholesterol Panel",
+          "value": "High HDL",
+          "flag": "H"
+        },
+        {
+          "label": "Liver Enzymes",
+          "value": "Markedly elevated ALT - suggestive of alcohol use disorder",
+          "flag": "H"
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "labs",
+          "bloodwork",
+          "blood test",
+          "A1c",
+          "cholesterol",
+          "glucose"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a005",
+      "type": "other",
+      "title": "Clinical findings",
+      "items": [
+        {
+          "label": "Weight loss over the past",
+          "value": "6 months (30 lbs)",
+          "flag": null
+        },
+        {
+          "label": "Dry skin on lower extremities",
+          "value": "",
+          "flag": null
+        },
+        {
+          "label": "Gestalt of substance use (fingernail nail changes/sores)",
+          "value": "",
+          "flag": null
+        },
+        {
+          "label": "Evidence of non-adherence to medical advice",
+          "value": "",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "exam",
+          "findings",
+          "physical exam"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Apply the Nutrition Care Process.",
+      "expected_discoveries": [
+        {
+          "id": "o1.d1",
+          "text": "Patient's current food intake (high sugar, refined carbs)",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d2",
+          "text": "Dietary restrictions (vegetarian)",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d3",
+          "text": "Medication interactions (Metformin side effects)",
+          "linked_fact_ids": [
+            "f022",
+            "f025",
+            "f020"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o1.d4",
+          "text": "Substance use affecting diet",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d5",
+          "text": "Social support or lack thereof",
+          "linked_fact_ids": [
+            "f077",
+            "f075",
+            "f074"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Deflects personal questions about substance use",
+        "Minimizes the impact of current diet",
+        "Expresses confusion about food labels",
+        "Expresses frustration about work schedule affecting meals"
+      ],
+      "points": null
+    },
+    {
+      "id": "o2",
+      "objective": "Develop an appropriate PES statement.",
+      "expected_discoveries": [
+        {
+          "id": "o2.d1",
+          "text": "Patient's goals and fears",
+          "linked_fact_ids": [
+            "f061",
+            "f060",
+            "f059"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o2.d2",
+          "text": "Barriers to change",
+          "linked_fact_ids": [
+            "f057",
+            "f056",
+            "f055"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o2.d3",
+          "text": "Strengths and resources",
+          "linked_fact_ids": [
+            "f046",
+            "f045",
+            "f044"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o2.d4",
+          "text": "Readiness to change",
+          "linked_fact_ids": [
+            "f014"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o2.d5",
+          "text": "Cultural and social context",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Expresses anger or fear when discussing goals",
+        "Expresses frustration about past failures",
+        "Shows hesitation when asked about future plans"
+      ],
+      "points": null
+    },
+    {
+      "id": "o3",
+      "objective": "Develop evidence-based nutrition interventions.",
+      "expected_discoveries": [
+        {
+          "id": "o3.d1",
+          "text": "Nutrition education gaps",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d2",
+          "text": "Practical cooking or meal planning skills",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d3",
+          "text": "Access to healthy foods",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d4",
+          "text": "Food budget constraints",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d5",
+          "text": "Social support or barriers",
+          "linked_fact_ids": [
+            "f053"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Expresses skepticism about dietary changes",
+        "Expresses frustration about 'unhealthy' options",
+        "Shows interest in cultural recipes"
+      ],
+      "points": null
+    },
+    {
+      "id": "o4",
+      "objective": "Integrate medication management with nutrition care.",
+      "expected_discoveries": [
+        {
+          "id": "o4.d1",
+          "text": "Metformin side effects (nausea)",
+          "linked_fact_ids": [
+            "f022",
+            "f025"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d2",
+          "text": "Alcohol use interacting with meds",
+          "linked_fact_ids": [
+            "f071",
+            "f011"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d3",
+          "text": "Nutrition affecting glycemic control",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o4.d4",
+          "text": "Lack of consistency in medication use",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Minimizes side effects",
+        "Expresses frustration with 'pills' causing issues",
+        "Shows interest in 'natural' fixes"
+      ],
+      "points": null
+    },
+    {
+      "id": "o5",
+      "objective": "Use motivational interviewing.",
+      "expected_discoveries": [
+        {
+          "id": "o5.d1",
+          "text": "Patient's motivations (career, travel)",
+          "linked_fact_ids": [
+            "f040"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o5.d2",
+          "text": "Readiness to change (ambivalence)",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o5.d3",
+          "text": "Barriers to change",
+          "linked_fact_ids": [
+            "f057",
+            "f056",
+            "f055"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o5.d4",
+          "text": "Strengths and resources",
+          "linked_fact_ids": [
+            "f046",
+            "f045",
+            "f044"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o5.d5",
+          "text": "Values and beliefs",
+          "linked_fact_ids": [
+            "f049",
+            "f048",
+            "f047"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Expresses anger or fear when discussing goals",
+        "Expresses frustration about past failures",
+        "Shows hesitation when asked about future plans"
+      ],
+      "points": null
+    },
+    {
+      "id": "o6",
+      "objective": "Address lifestyle and behavioral barriers.",
+      "expected_discoveries": [
+        {
+          "id": "o6.d1",
+          "text": "Work schedule affecting meals",
+          "linked_fact_ids": [
+            "f029",
+            "f021"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o6.d2",
+          "text": "Substance use affecting diet",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o6.d3",
+          "text": "Lack of local support network",
+          "linked_fact_ids": [
+            "f077",
+            "f075",
+            "f074"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o6.d4",
+          "text": "Food budget constraints",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Expresses anger or fear when discussing goals",
+        "Expresses frustration about past failures",
+        "Shows hesitation when asked about future plans"
+      ],
+      "points": null
+    },
+    {
+      "id": "o7",
+      "objective": "Consider interprofessional and community resources.",
+      "expected_discoveries": [
+        {
+          "id": "o7.d1",
+          "text": "Substance use (alcohol, cocaine)",
+          "linked_fact_ids": [
+            "f071",
+            "f068",
+            "f011"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o7.d2",
+          "text": "Mental health stress (immigration)",
+          "linked_fact_ids": [
+            "f014"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o7.d3",
+          "text": "Sexual health concerns (STI risk)",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o7.d4",
+          "text": "Access to community support groups",
+          "linked_fact_ids": [
+            "f046"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Expresses anger or fear when discussing goals",
+        "Expresses frustration about past failures",
+        "Shows hesitation when asked about future plans"
+      ],
+      "points": null
+    }
+  ],
+  "knowledge_sources": [],
+  "assumptions": [
+    "Vladko is recently diagnosed with Type 2 Diabetes due to uncontrolled symptoms (fatigue, frequent urination).",
+    "Hypertension is a secondary condition to diabetes and may contribute to his symptoms.",
+    "Substance use is a major risk factor for his poor metabolic control.",
+    "Nutrition education will be crucial for long-term management.",
+    "Social support is limited in his new environment."
+  ],
+  "optional_details": [
+    "Vladko has a background in film and values creativity in work.",
+    "He eats mostly vegetarian, but also consumes occasional snacks."
+  ]
+}

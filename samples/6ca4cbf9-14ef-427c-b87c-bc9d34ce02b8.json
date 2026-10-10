@@ -1,0 +1,1647 @@
+{
+  "id": "6ca4cbf9-14ef-427c-b87c-bc9d34ce02b8",
+  "status": "draft",
+  "version": 1,
+  "created_at": "2026-10-10T15:33:08.748094Z",
+  "persona": {
+    "name": "Yvette Armstrong",
+    "age": 64,
+    "sex": "Female",
+    "description": "A 64-year-old Eastern European American woman recently diagnosed with Stage II hypertension and uncontrolled type 2 diabetes. Works full-time as a state employee with an associate's degree in political science. Curious and earnest but feels overwhelmed by complex medical information. Reports confusion about the difference between sodium and salt, struggles to understand the pathophysiology of her conditions, and expresses frustration about the difficulty of making dietary changes. BMI is 34 with a history of hypertension and type 2 diabetes. She is motivated to improve her health but faces barriers related to health literacy, financial constraints, limited time for cooking, and emotional stress from balancing full-time work with growing family responsibilities.",
+    "keywords": [
+      "hypertension",
+      "type_2_diabetes",
+      "health_literacy",
+      "medication_management",
+      "motivational_interviewing",
+      "sodium_restriction",
+      "weight_loss",
+      "dietary_education",
+      "patient_interview",
+      "psychosocial_barriers"
+    ],
+    "occupation": "State employee (full-time)",
+    "residence": "Urban suburban area with limited green space",
+    "ethnicity": "Eastern European American",
+    "language": "English",
+    "marital_status": "Married",
+    "education_level": "Associate's degree in political science",
+    "insurance": "Medicaid (due to chronic conditions)",
+    "cultural_context": "Grew up in a household where food was central to gatherings and celebrations. Traditional Eastern European dishes are often high in processed meats, cheese, and salt for preservation and flavor. She feels that cutting out traditional foods would mean losing a connection to her heritage and family bonds.",
+    "personality": "Curious, earnest, and eager to learn but easily overwhelmed by technical jargon and lengthy explanations. Values honesty and direct communication. Tries hard to comply but becomes frustrated when changes feel too difficult or unsustainable.",
+    "communication_style": "Asks clarifying questions when confused. May hesitate to ask if she feels she is burdening the provider. Responds well to patient, respectful, and non-judgmental communication. Uses lay terms and needs concepts explained simply with examples.",
+    "support_system": "Married with supportive husband who lives with her. Two adult children who live locally and visit regularly. One grandchild. Husband drives her to appointments. Family often pressures her to eat traditional foods at gatherings.",
+    "readiness_to_change": "Moderately motivated (Stage of Change: Preparation) but feels overwhelmed by the scale of changes required. Responds well to small, manageable steps and clear, simple explanations. Needs validation and step-by-step guidance.",
+    "portrait_path": "portraits/6ca4cbf9-14ef-427c-b87c-bc9d34ce02b8.png"
+  },
+  "settings": {
+    "student_role": "Dietetics student",
+    "encounter_goal": "Nutrition assessment and counseling (Nutrition Care Process)",
+    "setting": "Outpatient clinic",
+    "rubric_id": "encounter_evaluation_rubric",
+    "opening_trust": 1
+  },
+  "faculty_brief": {
+    "background": "Full-time state employee with an associate’s degree in political science",
+    "notes": "Recently diagnosed with Stage II hypertension (BP 155/110 mmHg), Yvette struggles to understand medical explanations and is confused about sodium and salt. BMI is 34. \"My doctor told me, but I just didn’t understand what she said. She needs clear education on what hypertension is, the role of sodium in blood pressure control, sodium limits, and the benefits of modest weight loss.",
+    "personality": "Curious, earnest, overwhelmed",
+    "summary": "Hypertension"
+  },
+  "primary_diagnosis": "Hypertension (Stage II)",
+  "secondary_diagnoses": [
+    "Uncontrolled Type 2 Diabetes",
+    "Obesity"
+  ],
+  "medications": [
+    {
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "frequency": "once daily",
+      "purpose": "Hypertension",
+      "adherence": "Take most days but occasionally forget",
+      "patient_concerns": "Worries about side effects like swelling in legs, sometimes skips to avoid discomfort."
+    },
+    {
+      "name": "Metformin",
+      "dose": "500 mg",
+      "frequency": "twice daily with meals",
+      "purpose": "Type 2 Diabetes",
+      "adherence": "Takes mostly but has had GI upset before, so reduced dose on her own without asking",
+      "patient_concerns": "Has upset in her stomach after taking it, doesn't want to feel sick, worries about long-term effects."
+    }
+  ],
+  "allergies": [
+    "Penicillin (rash)"
+  ],
+  "facts": [
+    {
+      "id": "f001",
+      "category": "social",
+      "topic": "occupation",
+      "content": "State employee (full-time)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.occupation"
+    },
+    {
+      "id": "f002",
+      "category": "social",
+      "topic": "living situation",
+      "content": "Urban suburban area with limited green space",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.residence"
+    },
+    {
+      "id": "f003",
+      "category": "social",
+      "topic": "marital status",
+      "content": "Married",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.marital_status"
+    },
+    {
+      "id": "f004",
+      "category": "social",
+      "topic": "education",
+      "content": "Associate's degree in political science",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.education_level"
+    },
+    {
+      "id": "f005",
+      "category": "social",
+      "topic": "insurance",
+      "content": "Medicaid (due to chronic conditions)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.insurance"
+    },
+    {
+      "id": "f006",
+      "category": "social",
+      "topic": "language",
+      "content": "English",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.language"
+    },
+    {
+      "id": "f007",
+      "category": "social",
+      "topic": "support system",
+      "content": "Married with supportive husband who lives with her. Two adult children who live locally and visit regularly. One grandchild. Husband drives her to appointments. Family often pressures her to eat traditional foods at gatherings.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.support_system"
+    },
+    {
+      "id": "f008",
+      "category": "diagnosis",
+      "topic": "main diagnosis / reason for visit",
+      "content": "Hypertension (Stage II)",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.primary_diagnosis"
+    },
+    {
+      "id": "f009",
+      "category": "diagnosis",
+      "topic": "other condition: Uncontrolled Type 2 Diabetes",
+      "content": "Uncontrolled Type 2 Diabetes",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[0]"
+    },
+    {
+      "id": "f010",
+      "category": "diagnosis",
+      "topic": "other condition: Obesity",
+      "content": "Obesity",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[1]"
+    },
+    {
+      "id": "f011",
+      "category": "history",
+      "topic": "Hypertension (recently diagnosed)",
+      "content": "Hypertension (recently diagnosed)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[0]"
+    },
+    {
+      "id": "f012",
+      "category": "history",
+      "topic": "Type 2 Diabetes (diagnosed 2 years ago, poorly controlled)",
+      "content": "Type 2 Diabetes (diagnosed 2 years ago, poorly controlled)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[1]"
+    },
+    {
+      "id": "f013",
+      "category": "history",
+      "topic": "Occasional headaches",
+      "content": "Occasional headaches",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[2]"
+    },
+    {
+      "id": "f014",
+      "category": "history",
+      "topic": "Frequent low back pain",
+      "content": "Frequent low back pain",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[3]"
+    },
+    {
+      "id": "f015",
+      "category": "symptom",
+      "topic": "symptom: Persistent mild headaches",
+      "content": "Persistent mild headaches",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[0]"
+    },
+    {
+      "id": "f016",
+      "category": "symptom",
+      "topic": "symptom: Fatigue",
+      "content": "Fatigue",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[1]"
+    },
+    {
+      "id": "f017",
+      "category": "symptom",
+      "topic": "symptom: Frequent urination",
+      "content": "Frequent urination",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[2]"
+    },
+    {
+      "id": "f018",
+      "category": "symptom",
+      "topic": "symptom: Increased thirst",
+      "content": "Increased thirst",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[3]"
+    },
+    {
+      "id": "f019",
+      "category": "symptom",
+      "topic": "symptom: Swelling in ankles and feet",
+      "content": "Swelling in ankles and feet",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[4]"
+    },
+    {
+      "id": "f020",
+      "category": "symptom",
+      "topic": "symptom: Blurred vision occasionally",
+      "content": "Blurred vision occasionally",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[5]"
+    },
+    {
+      "id": "f021",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "Penicillin (rash)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.allergies[0]"
+    },
+    {
+      "id": "f022",
+      "category": "medication",
+      "topic": "medication: Amlodipine",
+      "content": "Takes Amlodipine 5 mg once daily for Hypertension",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0]"
+    },
+    {
+      "id": "f023",
+      "category": "medication",
+      "topic": "how they take Amlodipine",
+      "content": "Amlodipine adherence: Take most days but occasionally forget",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].adherence"
+    },
+    {
+      "id": "f024",
+      "category": "medication",
+      "topic": "concerns/side effects of Amlodipine",
+      "content": "About Amlodipine: Worries about side effects like swelling in legs, sometimes skips to avoid discomfort.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].patient_concerns"
+    },
+    {
+      "id": "f025",
+      "category": "medication",
+      "topic": "medication: Metformin",
+      "content": "Takes Metformin 500 mg twice daily with meals for Type 2 Diabetes",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1]"
+    },
+    {
+      "id": "f026",
+      "category": "medication",
+      "topic": "how they take Metformin",
+      "content": "Metformin adherence: Takes mostly but has had GI upset before, so reduced dose on her own without asking",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].adherence"
+    },
+    {
+      "id": "f027",
+      "category": "medication",
+      "topic": "concerns/side effects of Metformin",
+      "content": "About Metformin: Has upset in her stomach after taking it, doesn't want to feel sick, worries about long-term effects.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].patient_concerns"
+    },
+    {
+      "id": "f028",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Multivitamin",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[0]"
+    },
+    {
+      "id": "f029",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Tylenol for headaches (as needed)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[1]"
+    },
+    {
+      "id": "f030",
+      "category": "nutrition",
+      "topic": "usual diet",
+      "content": "Standard American diet with traditional Eastern European influences",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.dietary_pattern"
+    },
+    {
+      "id": "f031",
+      "category": "nutrition",
+      "topic": "meal timing / pattern",
+      "content": "Breakfast: often skipped or just coffee. Lunch: packed or grabbed on the way to work. Dinner: family meal, usually the largest meal.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.meal_pattern"
+    },
+    {
+      "id": "f032",
+      "category": "nutrition",
+      "topic": "fluids / hydration",
+      "content": "Drinks mostly tap water and occasional tea. Avoids sugary drinks. Feels thirsty but sometimes avoids drinking because she thinks it will cause more bathroom trips at work.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.hydration"
+    },
+    {
+      "id": "f033",
+      "category": "lifestyle",
+      "topic": "physical activity",
+      "content": "Sits at desk all day. Walks to car or bus. No dedicated exercise routine. Struggles to find time for activity.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.physical_activity"
+    },
+    {
+      "id": "f034",
+      "category": "lifestyle",
+      "topic": "alcohol / tobacco / drugs",
+      "content": "Does not smoke. Occasional 1-2 glasses of wine on weekends. Does not use recreational drugs.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.substance_use"
+    },
+    {
+      "id": "f035",
+      "category": "lifestyle",
+      "topic": "sleep",
+      "content": "Sleeps 6-7 hours per night but wakes up due to frequent urination from diabetes.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.sleep"
+    },
+    {
+      "id": "f036",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Likes hearty comfort foods",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[0]"
+    },
+    {
+      "id": "f037",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Enjoys pickled vegetables",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[1]"
+    },
+    {
+      "id": "f038",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Prefers breaded dishes",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[2]"
+    },
+    {
+      "id": "f039",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Eats family-style meals",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[3]"
+    },
+    {
+      "id": "f040",
+      "category": "nutrition",
+      "topic": "High sodium intake from processed foods and canned soups",
+      "content": "High sodium intake from processed foods and canned soups",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[0]"
+    },
+    {
+      "id": "f041",
+      "category": "nutrition",
+      "topic": "Frequent snacking on salty snacks",
+      "content": "Frequent snacking on salty snacks",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[1]"
+    },
+    {
+      "id": "f042",
+      "category": "nutrition",
+      "topic": "Limit water consumption due to kidney concerns",
+      "content": "Limit water consumption due to kidney concerns",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[2]"
+    },
+    {
+      "id": "f043",
+      "category": "nutrition",
+      "topic": "Relies on convenience foods due to time constraints",
+      "content": "Relies on convenience foods due to time constraints",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[3]"
+    },
+    {
+      "id": "f044",
+      "category": "psychosocial",
+      "topic": "goal: Wants to have normal energy levels",
+      "content": "Wants to have normal energy levels",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[0]"
+    },
+    {
+      "id": "f045",
+      "category": "psychosocial",
+      "topic": "goal: Aims to lose weight to feel more comfortable",
+      "content": "Aims to lose weight to feel more comfortable",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[1]"
+    },
+    {
+      "id": "f046",
+      "category": "psychosocial",
+      "topic": "goal: Hopes to control her blood pressure and sugar",
+      "content": "Hopes to control her blood pressure and sugar",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[2]"
+    },
+    {
+      "id": "f047",
+      "category": "psychosocial",
+      "topic": "goal: Wants to eat delicious food without…",
+      "content": "Wants to eat delicious food without breaking her budget or health goals",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[3]"
+    },
+    {
+      "id": "f048",
+      "category": "psychosocial",
+      "topic": "motivation: Desire to be present for her grandchild's…",
+      "content": "Desire to be present for her grandchild's future",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[0]"
+    },
+    {
+      "id": "f049",
+      "category": "psychosocial",
+      "topic": "motivation: Wanting to stop being tired all the time",
+      "content": "Wanting to stop being tired all the time",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[1]"
+    },
+    {
+      "id": "f050",
+      "category": "psychosocial",
+      "topic": "motivation: Hope to reduce stress about her health",
+      "content": "Hope to reduce stress about her health",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[2]"
+    },
+    {
+      "id": "f051",
+      "category": "psychosocial",
+      "topic": "motivation: Positive reinforcement from a friend who…",
+      "content": "Positive reinforcement from a friend who lost weight",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[3]"
+    },
+    {
+      "id": "f052",
+      "category": "psychosocial",
+      "topic": "strength: High motivation to improve her health",
+      "content": "High motivation to improve her health",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[0]"
+    },
+    {
+      "id": "f053",
+      "category": "psychosocial",
+      "topic": "strength: Willing to listen and learn",
+      "content": "Willing to listen and learn",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[1]"
+    },
+    {
+      "id": "f054",
+      "category": "psychosocial",
+      "topic": "strength: Has a supportive husband who helps with…",
+      "content": "Has a supportive husband who helps with finances and home chores",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[2]"
+    },
+    {
+      "id": "f055",
+      "category": "psychosocial",
+      "topic": "strength: Good at organizing and planning…",
+      "content": "Good at organizing and planning (transferring from her political science background)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[3]"
+    },
+    {
+      "id": "f056",
+      "category": "psychosocial",
+      "topic": "strength: Strong sense of duty and reliability",
+      "content": "Strong sense of duty and reliability",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[4]"
+    },
+    {
+      "id": "f057",
+      "category": "psychosocial",
+      "topic": "strength: Open to trying new things when explained…",
+      "content": "Open to trying new things when explained properly",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[5]"
+    },
+    {
+      "id": "f058",
+      "category": "psychosocial",
+      "topic": "belief: Sodium and salt are different things",
+      "content": "Sodium and salt are different things",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[0]"
+    },
+    {
+      "id": "f059",
+      "category": "psychosocial",
+      "topic": "belief: Healthy food is expensive",
+      "content": "Healthy food is expensive",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[1]"
+    },
+    {
+      "id": "f060",
+      "category": "psychosocial",
+      "topic": "belief: Traditional family recipes are the only way…",
+      "content": "Traditional family recipes are the only way to eat well",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[2]"
+    },
+    {
+      "id": "f061",
+      "category": "psychosocial",
+      "topic": "belief: Doctors only care about numbers, not how…",
+      "content": "Doctors only care about numbers, not how she feels",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[3]"
+    },
+    {
+      "id": "f062",
+      "category": "psychosocial",
+      "topic": "belief: Weight loss is about just starving yourself",
+      "content": "Weight loss is about just starving yourself",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[4]"
+    },
+    {
+      "id": "f063",
+      "category": "psychosocial",
+      "topic": "concern: Fear of complications from diabetes and…",
+      "content": "Fear of complications from diabetes and hypertension",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[0]"
+    },
+    {
+      "id": "f064",
+      "category": "psychosocial",
+      "topic": "concern: Worry about medication side effects",
+      "content": "Worry about medication side effects",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[1]"
+    },
+    {
+      "id": "f065",
+      "category": "psychosocial",
+      "topic": "concern: Frustration with not understanding what…",
+      "content": "Frustration with not understanding what sodium and salt mean",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[2]"
+    },
+    {
+      "id": "f066",
+      "category": "psychosocial",
+      "topic": "concern: Concern about cost of healthy food",
+      "content": "Concern about cost of healthy food",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[3]"
+    },
+    {
+      "id": "f067",
+      "category": "psychosocial",
+      "topic": "concern: Anxiety about disappointing her family",
+      "content": "Anxiety about disappointing her family",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[4]"
+    },
+    {
+      "id": "f068",
+      "category": "psychosocial",
+      "topic": "barrier: Limited health literacy and medical confusion",
+      "content": "Limited health literacy and medical confusion",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[0]"
+    },
+    {
+      "id": "f069",
+      "category": "psychosocial",
+      "topic": "barrier: Financial constraints and food insecurity…",
+      "content": "Financial constraints and food insecurity concerns",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[1]"
+    },
+    {
+      "id": "f070",
+      "category": "psychosocial",
+      "topic": "barrier: Time poverty due to full-time work and…",
+      "content": "Time poverty due to full-time work and family duties",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[2]"
+    },
+    {
+      "id": "f071",
+      "category": "psychosocial",
+      "topic": "barrier: Cultural attachment to traditional…",
+      "content": "Cultural attachment to traditional high-sodium foods",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[3]"
+    },
+    {
+      "id": "f072",
+      "category": "psychosocial",
+      "topic": "barrier: Physical barriers like joint pain limiting…",
+      "content": "Physical barriers like joint pain limiting cooking and activity",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[4]"
+    },
+    {
+      "id": "f073",
+      "category": "psychosocial",
+      "topic": "barrier: Medication non-adherence due to side…",
+      "content": "Medication non-adherence due to side effects and misunderstanding",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[5]"
+    },
+    {
+      "id": "f074",
+      "category": "psychosocial",
+      "topic": "fear: Fear of stroke or heart attack",
+      "content": "Fear of stroke or heart attack",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[0]"
+    },
+    {
+      "id": "f075",
+      "category": "psychosocial",
+      "topic": "fear: Fear of losing independence if she gets sick",
+      "content": "Fear of losing independence if she gets sick",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[1]"
+    },
+    {
+      "id": "f076",
+      "category": "psychosocial",
+      "topic": "fear: Fear of losing her job due to health issues",
+      "content": "Fear of losing her job due to health issues",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[2]"
+    },
+    {
+      "id": "f077",
+      "category": "psychosocial",
+      "topic": "fear: Fear of not being able to afford food or…",
+      "content": "Fear of not being able to afford food or medical bills",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[3]"
+    },
+    {
+      "id": "f078",
+      "category": "other",
+      "topic": "Reports fatigue, frequent urination, and mild headaches.",
+      "content": "Reports fatigue, frequent urination, and mild headaches.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[0]"
+    },
+    {
+      "id": "f079",
+      "category": "other",
+      "topic": "Mentions her doctor told her she has",
+      "content": "Mentions her doctor told her she has",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[1]"
+    },
+    {
+      "id": "f080",
+      "category": "other",
+      "topic": "says she doesn't know what sodium limits mean and is…",
+      "content": "She says she doesn't know what sodium limits mean and is confused about salt vs. sodium.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[2]"
+    },
+    {
+      "id": "f081",
+      "category": "other",
+      "topic": "States she works full-time and struggles to find time for…",
+      "content": "States she works full-time and struggles to find time for cooking.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[3]"
+    },
+    {
+      "id": "f082",
+      "category": "other",
+      "topic": "Wants to understand why she needs to change her diet and…",
+      "content": "Wants to understand why she needs to change her diet and meds.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[4]"
+    },
+    {
+      "id": "f083",
+      "category": "other",
+      "topic": "Mentions her diet is a mix of traditional recipes and…",
+      "content": "Mentions her diet is a mix of traditional recipes and convenience foods.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[5]"
+    },
+    {
+      "id": "f084",
+      "category": "other",
+      "topic": "Adherence issues with meds",
+      "content": "Adherence issues with meds",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[0]"
+    },
+    {
+      "id": "f085",
+      "category": "other",
+      "topic": "Specific details about her daily diet and meals",
+      "content": "Specific details about her daily diet and meals",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[1]"
+    },
+    {
+      "id": "f086",
+      "category": "other",
+      "topic": "Concerns about the cost of healthy food",
+      "content": "Concerns about the cost of healthy food",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[2]"
+    },
+    {
+      "id": "f087",
+      "category": "other",
+      "topic": "Her husband's role in her care and home life",
+      "content": "Her husband's role in her care and home life",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[3]"
+    },
+    {
+      "id": "f088",
+      "category": "other",
+      "topic": "Her emotional state and stress level from balancing work…",
+      "content": "Her emotional state and stress level from balancing work and health",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[4]"
+    },
+    {
+      "id": "f089",
+      "category": "other",
+      "topic": "feels embarrassed about her weight and lifestyle choices",
+      "content": "She feels embarrassed about her weight and lifestyle choices",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[0]"
+    },
+    {
+      "id": "f090",
+      "category": "other",
+      "topic": "worries about being judged for eating traditional foods",
+      "content": "She worries about being judged for eating traditional foods",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[1]"
+    },
+    {
+      "id": "f091",
+      "category": "other",
+      "topic": "hides that she skips meds or buys cheap, high-sodium foods…",
+      "content": "She hides that she skips meds or buys cheap, high-sodium foods due to budget",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[2]"
+    },
+    {
+      "id": "f092",
+      "category": "other",
+      "topic": "hides the fact that she sometimes lies down to rest mid-day",
+      "content": "She hides the fact that she sometimes lies down to rest mid-day",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[3]"
+    },
+    {
+      "id": "f093",
+      "category": "other",
+      "topic": "hides the fact that she doesn't want to eat traditional…",
+      "content": "She hides the fact that she doesn't want to eat traditional foods because she feels guilty about changing her culture",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[4]"
+    },
+    {
+      "id": "f094",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Her medical history indicates poor dietary intake from limited grocery options",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[0]"
+    },
+    {
+      "id": "f095",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Her medication history shows she self-adjusted dose",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[1]"
+    },
+    {
+      "id": "f096",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Her social context shows limited access to healthy food and safe walking areas",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[2]"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a001",
+      "type": "prior_note",
+      "title": "Referral summary",
+      "items": [
+        {
+          "label": "Primary diagnosis",
+          "value": "Hypertension (Stage II)",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Uncontrolled Type 2 Diabetes",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Obesity",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Amlodipine 5 mg once daily",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Metformin 500 mg twice daily with meals",
+          "flag": null
+        },
+        {
+          "label": "Allergies",
+          "value": "Penicillin (rash)",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "at_start",
+        "request_keywords": [],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a002",
+      "type": "vitals",
+      "title": "Vital signs",
+      "items": [
+        {
+          "label": "Temperature",
+          "value": "98.6°F",
+          "flag": null
+        },
+        {
+          "label": "Heart Rate",
+          "value": "78 bpm",
+          "flag": null
+        },
+        {
+          "label": "Respiratory Rate",
+          "value": "18 breaths/min",
+          "flag": null
+        },
+        {
+          "label": "Pulse Ox",
+          "value": "99%",
+          "flag": null
+        },
+        {
+          "label": "BP",
+          "value": "155/110 mmHg",
+          "flag": null
+        },
+        {
+          "label": "Respiratory Status",
+          "value": "Unlabored",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "vitals",
+          "blood pressure",
+          "heart rate",
+          "temperature"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a003",
+      "type": "anthropometrics",
+      "title": "Anthropometrics",
+      "items": [
+        {
+          "label": "Height",
+          "value": "5'2\" (157.5 cm)",
+          "flag": null
+        },
+        {
+          "label": "Weight",
+          "value": "178 lbs (80.7 kg)",
+          "flag": null
+        },
+        {
+          "label": "BMI",
+          "value": "34.0 kg/m2",
+          "flag": null
+        },
+        {
+          "label": "Recent weight change",
+          "value": "+8 lbs over past 6 months",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "weight",
+          "height",
+          "BMI",
+          "measurements",
+          "waist"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a004",
+      "type": "lab_report",
+      "title": "Laboratory results",
+      "items": [
+        {
+          "label": "HbA1c",
+          "value": "8.5%",
+          "flag": null
+        },
+        {
+          "label": "Fasting Glucose",
+          "value": "145 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Total Cholesterol",
+          "value": "230 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "LDL",
+          "value": "115 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Triglycerides",
+          "value": "190 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Sodium",
+          "value": "138 mEq/L",
+          "flag": null
+        },
+        {
+          "label": "Potassium",
+          "value": "4.5 mEq/L",
+          "flag": null
+        },
+        {
+          "label": "BUN",
+          "value": "16 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Creatinine",
+          "value": "1.1 mg/dL",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "labs",
+          "bloodwork",
+          "blood test",
+          "A1c",
+          "cholesterol",
+          "glucose"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a005",
+      "type": "other",
+      "title": "Clinical findings",
+      "items": [
+        {
+          "label": "BP",
+          "value": "155/110 mmHg on two readings",
+          "flag": null
+        },
+        {
+          "label": "Biomass Index",
+          "value": "34 kg/m2",
+          "flag": null
+        },
+        {
+          "label": "Bilateral pitting edema in ankles",
+          "value": "",
+          "flag": null
+        },
+        {
+          "label": "Visible venous distension",
+          "value": "",
+          "flag": null
+        },
+        {
+          "label": "Skin tags on neck and elbows",
+          "value": "",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "exam",
+          "findings",
+          "physical exam"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a006",
+      "type": "prior_note",
+      "title": "Prior records & collateral",
+      "items": [],
+      "text": "- Her medical history indicates poor dietary intake from limited grocery options\n- Her medication history shows she self-adjusted dose\n- Her social context shows limited access to healthy food and safe walking areas",
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "records",
+          "prior notes",
+          "chart",
+          "history",
+          "previous visits"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Gather health history and assess patient understanding of medical terms like sodium and salt.",
+      "expected_discoveries": [
+        {
+          "id": "o1.d1",
+          "text": "Patient's confusion about medical jargon",
+          "linked_fact_ids": [
+            "f068"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o1.d2",
+          "text": "Specific dietary habits and meal patterns",
+          "linked_fact_ids": [
+            "f085",
+            "f031"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o1.d3",
+          "text": "Patient's baseline understanding of hypertension and diabetes",
+          "linked_fact_ids": [
+            "f063"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Asking for clarification when terms are used",
+        "Feeling defensive if corrected harshly",
+        "Providing detailed history if felt supported and non-judgmental",
+        "Withdrawing if overwhelmed by rapid questioning"
+      ],
+      "points": null
+    },
+    {
+      "id": "o2",
+      "objective": "Develop an appropriate PES statement for nutrition intervention.",
+      "expected_discoveries": [
+        {
+          "id": "o2.d1",
+          "text": "Patient's specific dietary behaviors related to sodium and weight",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o2.d2",
+          "text": "Patient's ability and willingness to change behaviors",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o2.d3",
+          "text": "Identifiable barriers to lifestyle change",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Relating to the problem statement",
+        "Agreeing with identified problems and goals",
+        "Resisting if changes feel too drastic or unrealistic",
+        "Feeling empowered if solutions are practical and realistic"
+      ],
+      "points": null
+    },
+    {
+      "id": "o3",
+      "objective": "Develop evidence-based nutrition interventions tailored to the patient's needs.",
+      "expected_discoveries": [
+        {
+          "id": "o3.d1",
+          "text": "Patient's specific food preferences and cultural context",
+          "linked_fact_ids": [
+            "f096",
+            "f071",
+            "f039"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o3.d2",
+          "text": "Patient's barriers to implementation",
+          "linked_fact_ids": [
+            "f073",
+            "f072",
+            "f071"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o3.d3",
+          "text": "Opportunities for gradual, sustainable changes",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Engaging with concrete meal examples",
+        "Asking questions about feasibility",
+        "Showing enthusiasm if interventions align with goals",
+        "Feeling discouraged if interventions ignore cultural or financial realities"
+      ],
+      "points": null
+    },
+    {
+      "id": "o4",
+      "objective": "Integrate medication management with nutrition care.",
+      "expected_discoveries": [
+        {
+          "id": "o4.d1",
+          "text": "Patient's current medication use and adherence",
+          "linked_fact_ids": [
+            "f073"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d2",
+          "text": "Patient's misconceptions about medication and diet synergy",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o4.d3",
+          "text": "Opportunities for education on nutrition and medication side effects",
+          "linked_fact_ids": [
+            "f073",
+            "f064"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Sharing experiences with medication side effects",
+        "Asking about how diet affects her blood sugar and blood pressure",
+        "Expressing relief when explained how diet and meds work together",
+        "Feeling anxious if told to make drastic changes that might worsen meds"
+      ],
+      "points": null
+    },
+    {
+      "id": "o5",
+      "objective": "Use motivational interviewing to explore readiness and ambivalence.",
+      "expected_discoveries": [
+        {
+          "id": "o5.d1",
+          "text": "Patient's personal motivations and fears",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o5.d2",
+          "text": "Patient's ambivalence about changing habits",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o5.d3",
+          "text": "Specific goals and values that align with behavior change",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Discussing personal health goals",
+        "Revealing barriers to change when asked open questions",
+        "Expressing relief when heard without judgment",
+        "Showing increased confidence when exploring personal reasons for change"
+      ],
+      "points": null
+    },
+    {
+      "id": "o6",
+      "objective": "Address lifestyle and behavioral barriers and problem solve.",
+      "expected_discoveries": [
+        {
+          "id": "o6.d1",
+          "text": "Financial, time, and emotional barriers",
+          "linked_fact_ids": [
+            "f070",
+            "f069"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o6.d2",
+          "text": "Strategies for problem-solving",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Relating to practical solutions",
+        "Providing input on what might work for her",
+        "Feeling more confident and less overwhelmed when barriers are tackled collaboratively",
+        "Feeling frustrated if solutions are unrealistic or dismissive of her constraints"
+      ],
+      "points": null
+    },
+    {
+      "id": "o7",
+      "objective": "Consider interprofessional and community resources.",
+      "expected_discoveries": [
+        {
+          "id": "o7.d1",
+          "text": "Patient's access to resources, support systems, and barriers to accessing them",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o7.d2",
+          "text": "Opportunities for referrals to dietitians, educators, or social services",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Revealing lack of knowledge about available resources",
+        "Expressing interest in learning more about resources",
+        "Accepting resources that are convenient, accessible, and culturally appropriate",
+        "Showing relief when given information on free or low-cost resources"
+      ],
+      "points": null
+    }
+  ],
+  "knowledge_sources": [],
+  "assumptions": [
+    "Medication history inferred based on standard treatments for hypertension and type 2 diabetes in this demographic.",
+    "Dietary patterns inferred based on cultural background and economic constraints.",
+    "Readiness to change inferred based on stated concerns and motivations.",
+    "Assumption that patient can communicate effectively in English without interpreter.",
+    "Assumption that patient has basic access to groceries and water. No assumption of food insecurity unless prompted."
+  ],
+  "optional_details": [
+    "Patient has a small garden she enjoys tending to.",
+    "She has a routine of drinking tea in the evening.",
+    "She has a pet dog she cares for.",
+    "She has a background of community involvement through local political groups."
+  ]
+}

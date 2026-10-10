@@ -1,0 +1,1414 @@
+{
+  "id": "4d619156-3250-4212-8399-129f3280fab1",
+  "status": "draft",
+  "version": 1,
+  "created_at": "2026-10-10T15:33:08.832984Z",
+  "persona": {
+    "name": "Wyatt Nelson",
+    "age": 18,
+    "sex": "Male",
+    "description": "Wyatt Nelson is an 18-year-old high school senior struggling with uncontrolled Type 2 Diabetes, obesity, and dyslipidemia. He is shy, resistant, and sensitive about discussing his bowel health and diet. Despite being diagnosed with diabetes, he exhibits limited health literacy and is motivated by sports performance but hindered by constipation and poor dietary choices. He avoids fruits and vegetables and requires developmentally appropriate counseling to address fiber, fat intake, and cardiovascular risk factors while navigating adolescence-specific lifestyle barriers.",
+    "keywords": [
+      "adolescent",
+      "uncontrolled type 2 diabetes",
+      "obesity",
+      "dyslipidemia",
+      "constipation",
+      "motivation",
+      "health literacy",
+      "sports",
+      "lifestyle barriers",
+      "medical nutrition therapy"
+    ],
+    "occupation": "High school student",
+    "residence": "Suburban community",
+    "ethnicity": "White American",
+    "language": "English",
+    "marital_status": null,
+    "education_level": "12th grade (High School)",
+    "insurance": "Public insurance via parents",
+    "cultural_context": "Standard American dietary habits with some fast food influence; community values sports performance.",
+    "personality": "Shy, sensitive, and resistant to discussions about his health; feels self-conscious about his weight and diet",
+    "communication_style": "Concise, avoids eye contact, deflects sensitive topics, responds well to empathetic and non-judgmental interactions",
+    "support_system": "Parents who encourage healthy eating, soccer team peers who value performance over fast food",
+    "readiness_to_change": "Ambivalent; motivated to improve but hesitant about making significant lifestyle changes",
+    "portrait_path": "portraits/4d619156-3250-4212-8399-129f3280fab1.png"
+  },
+  "settings": {
+    "student_role": "Dietetics student",
+    "encounter_goal": "Nutrition assessment and counseling (Nutrition Care Process)",
+    "setting": "Outpatient clinic",
+    "rubric_id": "encounter_evaluation_rubric",
+    "opening_trust": 1
+  },
+  "faculty_brief": {
+    "background": "High school student",
+    "notes": "Wyatt has a BMI of 32 and dyslipidemia (Total Chol 235, LDL 145). He struggles with constipation but avoids talking about it.  He dislikes fruits and vegetables and needs developmentally appropriate counseling around fiber, fat intake, bowel health, and cardiovascular risk.",
+    "personality": "Shy, resistant, sensitive",
+    "summary": "Obesity, Dyslipidemia, Constipation"
+  },
+  "primary_diagnosis": "Type 2 Diabetes Mellitus (Uncontrolled)",
+  "secondary_diagnoses": [
+    "Obesity Class I",
+    "Dyslipidemia",
+    "Constipation"
+  ],
+  "medications": [
+    {
+      "name": "Metformin",
+      "dose": "1000 mg",
+      "frequency": "Twice daily with meals",
+      "purpose": "To lower blood sugar levels",
+      "adherence": "Inconsistent; often forgets doses due to school schedule",
+      "patient_concerns": "Experiences nausea and stomach upset; skips doses to avoid discomfort"
+    },
+    {
+      "name": "Glipizide",
+      "dose": "5 mg",
+      "frequency": "Once daily with dinner",
+      "purpose": "To help regulate blood glucose",
+      "adherence": "Good adherence",
+      "patient_concerns": "None; takes it as directed"
+    }
+  ],
+  "allergies": [],
+  "facts": [
+    {
+      "id": "f001",
+      "category": "social",
+      "topic": "occupation",
+      "content": "High school student",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.occupation"
+    },
+    {
+      "id": "f002",
+      "category": "social",
+      "topic": "living situation",
+      "content": "Suburban community",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.residence"
+    },
+    {
+      "id": "f003",
+      "category": "social",
+      "topic": "education",
+      "content": "12th grade (High School)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.education_level"
+    },
+    {
+      "id": "f004",
+      "category": "social",
+      "topic": "insurance",
+      "content": "Public insurance via parents",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.insurance"
+    },
+    {
+      "id": "f005",
+      "category": "social",
+      "topic": "language",
+      "content": "English",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.language"
+    },
+    {
+      "id": "f006",
+      "category": "social",
+      "topic": "support system",
+      "content": "Parents who encourage healthy eating, soccer team peers who value performance over fast food",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.support_system"
+    },
+    {
+      "id": "f007",
+      "category": "diagnosis",
+      "topic": "main diagnosis / reason for visit",
+      "content": "Type 2 Diabetes Mellitus (Uncontrolled)",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.primary_diagnosis"
+    },
+    {
+      "id": "f008",
+      "category": "diagnosis",
+      "topic": "other condition: Obesity Class I",
+      "content": "Obesity Class I",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[0]"
+    },
+    {
+      "id": "f009",
+      "category": "diagnosis",
+      "topic": "other condition: Dyslipidemia",
+      "content": "Dyslipidemia",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[1]"
+    },
+    {
+      "id": "f010",
+      "category": "diagnosis",
+      "topic": "other condition: Constipation",
+      "content": "Constipation",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[2]"
+    },
+    {
+      "id": "f011",
+      "category": "history",
+      "topic": "Diagnosis of Type 2 Diabetes at age 15",
+      "content": "Diagnosis of Type 2 Diabetes at age 15",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[0]"
+    },
+    {
+      "id": "f012",
+      "category": "history",
+      "topic": "History of obesity",
+      "content": "History of obesity",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[1]"
+    },
+    {
+      "id": "f013",
+      "category": "history",
+      "topic": "Family history of metabolic syndrome",
+      "content": "Family history of metabolic syndrome",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[2]"
+    },
+    {
+      "id": "f014",
+      "category": "symptom",
+      "topic": "symptom: Frequent thirst and urination",
+      "content": "Frequent thirst and urination",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[0]"
+    },
+    {
+      "id": "f015",
+      "category": "symptom",
+      "topic": "symptom: Fatigue and low energy levels",
+      "content": "Fatigue and low energy levels",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[1]"
+    },
+    {
+      "id": "f016",
+      "category": "symptom",
+      "topic": "symptom: Constipation and abdominal discomfort",
+      "content": "Constipation and abdominal discomfort",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[2]"
+    },
+    {
+      "id": "f017",
+      "category": "symptom",
+      "topic": "symptom: Blurred vision",
+      "content": "Blurred vision",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[3]"
+    },
+    {
+      "id": "f018",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "No known allergies",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.allergies"
+    },
+    {
+      "id": "f019",
+      "category": "medication",
+      "topic": "medication: Metformin",
+      "content": "Takes Metformin 1000 mg Twice daily with meals for To lower blood sugar levels",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0]"
+    },
+    {
+      "id": "f020",
+      "category": "medication",
+      "topic": "how they take Metformin",
+      "content": "Metformin adherence: Inconsistent; often forgets doses due to school schedule",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].adherence"
+    },
+    {
+      "id": "f021",
+      "category": "medication",
+      "topic": "concerns/side effects of Metformin",
+      "content": "About Metformin: Experiences nausea and stomach upset; skips doses to avoid discomfort",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].patient_concerns"
+    },
+    {
+      "id": "f022",
+      "category": "medication",
+      "topic": "medication: Glipizide",
+      "content": "Takes Glipizide 5 mg Once daily with dinner for To help regulate blood glucose",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1]"
+    },
+    {
+      "id": "f023",
+      "category": "medication",
+      "topic": "how they take Glipizide",
+      "content": "Glipizide adherence: Good adherence",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].adherence"
+    },
+    {
+      "id": "f024",
+      "category": "medication",
+      "topic": "concerns/side effects of Glipizide",
+      "content": "About Glipizide: None; takes it as directed",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].patient_concerns"
+    },
+    {
+      "id": "f025",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Magnesium glycinate",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[0]"
+    },
+    {
+      "id": "f026",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Ibbotronix",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[1]"
+    },
+    {
+      "id": "f027",
+      "category": "nutrition",
+      "topic": "usual diet",
+      "content": "High in refined carbohydrates, saturated fats, and sugar; low in fiber and vegetables",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.dietary_pattern"
+    },
+    {
+      "id": "f028",
+      "category": "nutrition",
+      "topic": "meal timing / pattern",
+      "content": "Irregular; often skips breakfast, has small snacks, and has a large dinner",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.meal_pattern"
+    },
+    {
+      "id": "f029",
+      "category": "nutrition",
+      "topic": "fluids / hydration",
+      "content": "Primarily sugary sodas; water intake is low",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.hydration"
+    },
+    {
+      "id": "f030",
+      "category": "lifestyle",
+      "topic": "physical activity",
+      "content": "Moderate; plays soccer twice a week, but sedentary during other hours",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.physical_activity"
+    },
+    {
+      "id": "f031",
+      "category": "lifestyle",
+      "topic": "alcohol / tobacco / drugs",
+      "content": "None",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.substance_use"
+    },
+    {
+      "id": "f032",
+      "category": "lifestyle",
+      "topic": "sleep",
+      "content": "7 hours average; inconsistent sleep schedule due to homework and screens",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.sleep"
+    },
+    {
+      "id": "f033",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Fast food",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[0]"
+    },
+    {
+      "id": "f034",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Pizza",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[1]"
+    },
+    {
+      "id": "f035",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Sodas",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[2]"
+    },
+    {
+      "id": "f036",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Chips",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[3]"
+    },
+    {
+      "id": "f037",
+      "category": "nutrition",
+      "topic": "Preference for processed snacks during study sessions",
+      "content": "Preference for processed snacks during study sessions",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[0]"
+    },
+    {
+      "id": "f038",
+      "category": "nutrition",
+      "topic": "Dislike of fruits and vegetables due to texture and taste",
+      "content": "Dislike of fruits and vegetables due to texture and taste",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[1]"
+    },
+    {
+      "id": "f039",
+      "category": "nutrition",
+      "topic": "High consumption of sugary drinks during sports practice",
+      "content": "High consumption of sugary drinks during sports practice",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[2]"
+    },
+    {
+      "id": "f040",
+      "category": "nutrition",
+      "topic": "Limited preparation of meals at home",
+      "content": "Limited preparation of meals at home",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[3]"
+    },
+    {
+      "id": "f041",
+      "category": "nutrition",
+      "topic": "Social eating habits with peers favoring quick,…",
+      "content": "Social eating habits with peers favoring quick, high-calorie foods",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[4]"
+    },
+    {
+      "id": "f042",
+      "category": "psychosocial",
+      "topic": "goal: Improve energy levels for soccer",
+      "content": "Improve energy levels for soccer",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[0]"
+    },
+    {
+      "id": "f043",
+      "category": "psychosocial",
+      "topic": "goal: Reduce constipation",
+      "content": "Reduce constipation",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[1]"
+    },
+    {
+      "id": "f044",
+      "category": "psychosocial",
+      "topic": "goal: Regain control over blood sugar",
+      "content": "Regain control over blood sugar",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[2]"
+    },
+    {
+      "id": "f045",
+      "category": "psychosocial",
+      "topic": "goal: Improve appearance",
+      "content": "Improve appearance",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[3]"
+    },
+    {
+      "id": "f046",
+      "category": "psychosocial",
+      "topic": "motivation: Improve athletic performance",
+      "content": "Improve athletic performance",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[0]"
+    },
+    {
+      "id": "f047",
+      "category": "psychosocial",
+      "topic": "motivation: Gain more control over his health",
+      "content": "Gain more control over his health",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[1]"
+    },
+    {
+      "id": "f048",
+      "category": "psychosocial",
+      "topic": "motivation: Avoid future health complications",
+      "content": "Avoid future health complications",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[2]"
+    },
+    {
+      "id": "f049",
+      "category": "psychosocial",
+      "topic": "strength: Willingness to try new things if framed as…",
+      "content": "Willingness to try new things if framed as improvement",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[0]"
+    },
+    {
+      "id": "f050",
+      "category": "psychosocial",
+      "topic": "strength: Strong athletic motivation",
+      "content": "Strong athletic motivation",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[1]"
+    },
+    {
+      "id": "f051",
+      "category": "psychosocial",
+      "topic": "strength: Support from parents for healthy choices",
+      "content": "Support from parents for healthy choices",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[2]"
+    },
+    {
+      "id": "f052",
+      "category": "psychosocial",
+      "topic": "belief: Healthy food is expensive and hard to prepare",
+      "content": "Healthy food is expensive and hard to prepare",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[0]"
+    },
+    {
+      "id": "f053",
+      "category": "psychosocial",
+      "topic": "belief: Fruits and vegetables are boring and…",
+      "content": "Fruits and vegetables are boring and unappetizing",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[1]"
+    },
+    {
+      "id": "f054",
+      "category": "psychosocial",
+      "topic": "belief: Sugar helps with energy during sports",
+      "content": "Sugar helps with energy during sports",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[2]"
+    },
+    {
+      "id": "f055",
+      "category": "psychosocial",
+      "topic": "concern: Afraid of weight loss being seen as weakness",
+      "content": "Afraid of weight loss being seen as weakness",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[0]"
+    },
+    {
+      "id": "f056",
+      "category": "psychosocial",
+      "topic": "concern: Worried about medication side effects",
+      "content": "Worried about medication side effects",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[1]"
+    },
+    {
+      "id": "f057",
+      "category": "psychosocial",
+      "topic": "concern: Concerned about the cost of healthy foods",
+      "content": "Concerned about the cost of healthy foods",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[2]"
+    },
+    {
+      "id": "f058",
+      "category": "psychosocial",
+      "topic": "concern: Embarrazed to discuss bowel habits",
+      "content": "Embarrazed to discuss bowel habits",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[3]"
+    },
+    {
+      "id": "f059",
+      "category": "psychosocial",
+      "topic": "barrier: Lack of cooking skills and time",
+      "content": "Lack of cooking skills and time",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[0]"
+    },
+    {
+      "id": "f060",
+      "category": "psychosocial",
+      "topic": "barrier: Peer pressure to consume fast food",
+      "content": "Peer pressure to consume fast food",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[1]"
+    },
+    {
+      "id": "f061",
+      "category": "psychosocial",
+      "topic": "barrier: Difficulty accessing healthy options",
+      "content": "Difficulty accessing healthy options",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[2]"
+    },
+    {
+      "id": "f062",
+      "category": "psychosocial",
+      "topic": "barrier: Emotional stress and limited stress…",
+      "content": "Emotional stress and limited stress management skills",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[3]"
+    },
+    {
+      "id": "f063",
+      "category": "psychosocial",
+      "topic": "fear: Being judged by peers for his weight",
+      "content": "Being judged by peers for his weight",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[0]"
+    },
+    {
+      "id": "f064",
+      "category": "psychosocial",
+      "topic": "fear: Developing serious diabetes complications",
+      "content": "Developing serious diabetes complications",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[1]"
+    },
+    {
+      "id": "f065",
+      "category": "psychosocial",
+      "topic": "fear: Failing in school due to health issues",
+      "content": "Failing in school due to health issues",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[2]"
+    },
+    {
+      "id": "f066",
+      "category": "other",
+      "topic": "Mentions frequent thirst and fatigue",
+      "content": "Mentions frequent thirst and fatigue",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[0]"
+    },
+    {
+      "id": "f067",
+      "category": "other",
+      "topic": "Discloses uncontrolled blood sugar levels",
+      "content": "Discloses uncontrolled blood sugar levels",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[1]"
+    },
+    {
+      "id": "f068",
+      "category": "other",
+      "topic": "Mentions constipation only when prompted by the clinician",
+      "content": "Mentions constipation only when prompted by the clinician",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[2]"
+    },
+    {
+      "id": "f069",
+      "category": "other",
+      "topic": "States he doesn't enjoy fruits and vegetables",
+      "content": "States he doesn't enjoy fruits and vegetables",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[3]"
+    },
+    {
+      "id": "f070",
+      "category": "other",
+      "topic": "Details his diet consisting of fast food and sugary drinks",
+      "content": "Details his diet consisting of fast food and sugary drinks",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[0]"
+    },
+    {
+      "id": "f071",
+      "category": "other",
+      "topic": "Shows inconsistency in taking medications",
+      "content": "Shows inconsistency in taking medications",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[1]"
+    },
+    {
+      "id": "f072",
+      "category": "other",
+      "topic": "Reveals his motivation to improve soccer performance",
+      "content": "Reveals his motivation to improve soccer performance",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[2]"
+    },
+    {
+      "id": "f073",
+      "category": "other",
+      "topic": "Admits to skipping meals and relying on snacks",
+      "content": "Admits to skipping meals and relying on snacks",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[3]"
+    },
+    {
+      "id": "f074",
+      "category": "other",
+      "topic": "Provides information about social eating habits",
+      "content": "Provides information about social eating habits",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[4]"
+    },
+    {
+      "id": "f075",
+      "category": "other",
+      "topic": "Feels self-conscious about his weight and may deflect…",
+      "content": "Feels self-conscious about his weight and may deflect comments",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[0]"
+    },
+    {
+      "id": "f076",
+      "category": "other",
+      "topic": "Is hesitant to discuss his bowel habits and may need…",
+      "content": "Is hesitant to discuss his bowel habits and may need reassurance to open up",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[1]"
+    },
+    {
+      "id": "f077",
+      "category": "other",
+      "topic": "May initially hide the fact that he doesn't take his full…",
+      "content": "May initially hide the fact that he doesn't take his full medication dose",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[2]"
+    },
+    {
+      "id": "f078",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Parent reports that Wyatt has had frequent school absences due to health issues",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[0]"
+    },
+    {
+      "id": "f079",
+      "category": "history",
+      "topic": "prior record",
+      "content": "School nurse notes his declining energy and attention during classes",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[1]"
+    },
+    {
+      "id": "f080",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Medical records show previous non-adherence with insulin therapy",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[2]"
+    },
+    {
+      "id": "f081",
+      "category": "history",
+      "topic": "prior record",
+      "content": "Peer interviews indicate that Wyatt feels pressured to consume sugary foods during group activities",
+      "disclosure": "chart",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[3]"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a001",
+      "type": "prior_note",
+      "title": "Referral summary",
+      "items": [
+        {
+          "label": "Primary diagnosis",
+          "value": "Type 2 Diabetes Mellitus (Uncontrolled)",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Obesity Class I",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Dyslipidemia",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Constipation",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Metformin 1000 mg Twice daily with meals",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Glipizide 5 mg Once daily with dinner",
+          "flag": null
+        },
+        {
+          "label": "Allergies",
+          "value": "NKA",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "at_start",
+        "request_keywords": [],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a002",
+      "type": "vitals",
+      "title": "Vital signs",
+      "items": [
+        {
+          "label": "Heart Rate",
+          "value": "78 bpm",
+          "flag": null
+        },
+        {
+          "label": "Blood Pressure",
+          "value": "128/84 mmHg",
+          "flag": null
+        },
+        {
+          "label": "Respiratory Rate",
+          "value": "16/min",
+          "flag": null
+        },
+        {
+          "label": "Temperature",
+          "value": "98.4 F",
+          "flag": null
+        },
+        {
+          "label": "O2 Saturation",
+          "value": "99%",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "vitals",
+          "blood pressure",
+          "heart rate",
+          "temperature"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a003",
+      "type": "anthropometrics",
+      "title": "Anthropometrics",
+      "items": [
+        {
+          "label": "Height",
+          "value": "5'10\"",
+          "flag": null
+        },
+        {
+          "label": "Weight",
+          "value": "210 lbs",
+          "flag": null
+        },
+        {
+          "label": "BMI",
+          "value": "32.1 kg/m2",
+          "flag": null
+        },
+        {
+          "label": "Waist circumference",
+          "value": "38 inches",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "weight",
+          "height",
+          "BMI",
+          "measurements",
+          "waist"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a004",
+      "type": "lab_report",
+      "title": "Laboratory results",
+      "items": [
+        {
+          "label": "HbA1c",
+          "value": "8.9%",
+          "flag": null
+        },
+        {
+          "label": "Total Cholesterol",
+          "value": "235 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "LDL",
+          "value": "145 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "HDL",
+          "value": "38 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Triglycerides",
+          "value": "180 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Fasting Glucose",
+          "value": "142 mg/dL",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "labs",
+          "bloodwork",
+          "blood test",
+          "A1c",
+          "cholesterol",
+          "glucose"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a005",
+      "type": "other",
+      "title": "Clinical findings",
+      "items": [
+        {
+          "label": "BMI",
+          "value": "32 kg/m2",
+          "flag": null
+        },
+        {
+          "label": "Blood pressure",
+          "value": "128/84 mmHg",
+          "flag": null
+        },
+        {
+          "label": "Resting heart rate",
+          "value": "78 bpm",
+          "flag": null
+        },
+        {
+          "label": "Peripheral edema (mild)",
+          "value": "",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "exam",
+          "findings",
+          "physical exam"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a006",
+      "type": "prior_note",
+      "title": "Prior records & collateral",
+      "items": [],
+      "text": "- Parent reports that Wyatt has had frequent school absences due to health issues\n- School nurse notes his declining energy and attention during classes\n- Medical records show previous non-adherence with insulin therapy\n- Peer interviews indicate that Wyatt feels pressured to consume sugary foods during group activities",
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "records",
+          "prior notes",
+          "chart",
+          "history",
+          "previous visits"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Apply the Nutrition Care Process and develop an appropriate PES statement.",
+      "expected_discoveries": [
+        {
+          "id": "o1.d1",
+          "text": "Poor adherence to current medications",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d2",
+          "text": "Limited intake of fiber-rich foods",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d3",
+          "text": "Irregular meal patterns and poor hydration",
+          "linked_fact_ids": [
+            "f028"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o1.d4",
+          "text": "Social and environmental barriers to healthy eating",
+          "linked_fact_ids": [
+            "f074",
+            "f061",
+            "f041"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May become defensive when discussed in terms of diet and medication",
+        "Will respond positively to open-ended questions about his health goals",
+        "May deflect conversations about weight and constipation"
+      ],
+      "points": null
+    },
+    {
+      "id": "o2",
+      "objective": "Develop evidence-based nutrition interventions.",
+      "expected_discoveries": [
+        {
+          "id": "o2.d1",
+          "text": "Preference for processed foods and sugary beverages",
+          "linked_fact_ids": [
+            "f081",
+            "f070",
+            "f037"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o2.d2",
+          "text": "Lack of meal preparation skills",
+          "linked_fact_ids": [
+            "f059",
+            "f040"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o2.d3",
+          "text": "Need for strategies to incorporate fiber without increasing bulking",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o2.d4",
+          "text": "Social dining pressure at sports events",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Resists dietary advice that limits favorite foods",
+        "Will be open to modifications that are practical and budget-friendly",
+        "May express frustration if interventions don't consider his social activities"
+      ],
+      "points": null
+    },
+    {
+      "id": "o3",
+      "objective": "Integrate medication management with nutrition care.",
+      "expected_discoveries": [
+        {
+          "id": "o3.d1",
+          "text": "Side effects of medications causing non-adherence",
+          "linked_fact_ids": [
+            "f056"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o3.d2",
+          "text": "Nutrition strategies to reduce gastrointestinal discomfort",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d3",
+          "text": "Need for consistent medication timing with meals",
+          "linked_fact_ids": [
+            "f028",
+            "f019"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May initially resist discussing medication adjustments",
+        "Will be receptive to explanations on how nutrition can minimize side effects",
+        "May show relief when offered solutions that address his concerns"
+      ],
+      "points": null
+    },
+    {
+      "id": "o4",
+      "objective": "Use motivational interviewing to address lifestyle and behavioral barriers.",
+      "expected_discoveries": [
+        {
+          "id": "o4.d1",
+          "text": "Internal conflict about health goals versus comfort behaviors",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o4.d2",
+          "text": "Self-efficacy barriers to change",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o4.d3",
+          "text": "Potential to use sports as motivation for dietary changes",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May exhibit ambivalence and test the clinician's approach",
+        "Will respond well to affirmations and exploration of his own motivations",
+        "May disengage if he feels his opinions are not respected"
+      ],
+      "points": null
+    },
+    {
+      "id": "o5",
+      "objective": "Consider interprofessional and community resources.",
+      "expected_discoveries": [
+        {
+          "id": "o5.d1",
+          "text": "Need for coordination with sports medicine and school health services",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o5.d2",
+          "text": "Access to school nutrition programs and community health resources",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o5.d3",
+          "text": "Peer support networks that can reinforce healthy behaviors",
+          "linked_fact_ids": [
+            "f006"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "May not know about available resources",
+        "Will be open to learning about supportive services",
+        "May feel empowered when given actionable community options"
+      ],
+      "points": null
+    }
+  ],
+  "knowledge_sources": [],
+  "assumptions": [
+    "Patient has limited cooking skills and access to healthy food resources",
+    "Peer dynamics significantly influence dietary choices",
+    "Parents support healthy eating but may face barriers to meal preparation",
+    "Patient is experiencing ambivalence regarding changes in lifestyle"
+  ],
+  "optional_details": [
+    "Attends school full-time",
+    "Lives with his parents",
+    "Participates in a varsity soccer team",
+    "Enjoys video games and gaming communities"
+  ]
+}

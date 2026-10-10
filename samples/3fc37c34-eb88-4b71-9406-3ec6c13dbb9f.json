@@ -1,0 +1,1655 @@
+{
+  "id": "3fc37c34-eb88-4b71-9406-3ec6c13dbb9f",
+  "status": "draft",
+  "version": 1,
+  "created_at": "2026-10-10T15:33:08.819394Z",
+  "persona": {
+    "name": "Walter Greene",
+    "age": 72,
+    "sex": "Male",
+    "description": "A 72-year-old African-American retired janitor with uncontrolled Type 2 Diabetes and congestive heart failure. Walter presents as a 'frequent flier' with non-adherent to dietary recommendations. He is grumpy and sarcastic toward students but can engage humorously when he feels understood or when he has a strong desire to be part of the care process. He tends to dominate conversations with 'shop talk' but reveals deeper fears about hospitalization and loss of independence if pressed empathetically.",
+    "keywords": [
+      "uncontrolled diabetes",
+      "heart failure",
+      "dietary nonadherence",
+      "motivational interviewing",
+      "medical nutrition therapy",
+      "aging",
+      "social isolation",
+      "health literacy",
+      "patient empowerment",
+      "interprofessional communication"
+    ],
+    "occupation": "Retired janitor",
+    "residence": "Suburban area, lives alone in a two-bedroom apartment",
+    "ethnicity": "African-American",
+    "language": "English",
+    "marital_status": "Widowed",
+    "education_level": "High school diploma",
+    "insurance": "Medicare (Primary) and Medicaid (Secondary)",
+    "cultural_context": "Values self-sufficiency and doesn't like being treated like he is 'too old' for care plans he doesn't like. May be skeptical of modern dietary guidelines that conflict with his lifelong diet.",
+    "personality": "Cynical and sarcastic. He masks his anxiety and fear with humor and grumpiness. He doesn't like people who pity him or make him feel like a child. He can become very engaged when discussing his",
+    "communication_style": "Direct and dismissive. He is often short and snappy at the beginning of the interaction, especially if he perceives the student is a student (often says, 'You look like a kid'). However, if the student acknowledges his experience and listens attentively, he opens up. He has a lot of energy and talks a lot.",
+    "support_system": "Sister lives across the country. Has a few neighbors, but he doesn't interact with them. Has a group of retired friends he talks to online (facebook or email), but no in-person support.",
+    "readiness_to_change": "Prefears, is in the Precontemplation or Early Contemplation stage. He says things like 'I know I should eat better, but who cares?' but he also says 'I don't want to die on the couch'.",
+    "portrait_path": "portraits/3fc37c34-eb88-4b71-9406-3ec6c13dbb9f.png"
+  },
+  "settings": {
+    "student_role": "Dietetics student",
+    "encounter_goal": "Nutrition assessment and counseling (Nutrition Care Process)",
+    "setting": "Outpatient clinic",
+    "rubric_id": "encounter_evaluation_rubric",
+    "opening_trust": 1
+  },
+  "faculty_brief": {
+    "background": "Retired janitor, lives alone",
+    "notes": "Noncompliant with diet but loves \"talking shop\" with PT and nurses.",
+    "personality": "Grumpy but humorous, dislikes students",
+    "summary": "Heart Failure, frequent flier"
+  },
+  "primary_diagnosis": "Uncontrolled Type 2 Diabetes Mellitus",
+  "secondary_diagnoses": [
+    "Congestive Heart Failure (HFREF, EF 40%)",
+    "Hypertension",
+    "Chronic Kidney Disease Stage 3",
+    "Coronary Artery Disease"
+  ],
+  "medications": [
+    {
+      "name": "Metformin",
+      "dose": "500 mg",
+      "frequency": "Twice daily with meals",
+      "purpose": "Type 2 Diabetes Control",
+      "adherence": "Inconsistent; skips sometimes due to nausea",
+      "patient_concerns": "He complains it makes him vomit or have an upset stomach."
+    },
+    {
+      "name": "Lisinopril",
+      "dose": "20 mg",
+      "frequency": "Once daily in the morning",
+      "purpose": "Hypertension and Heart Failure",
+      "adherence": "Takes daily",
+      "patient_concerns": "Believes it's only for his blood pressure, not his diabetes."
+    },
+    {
+      "name": "Epirocil (Eplerenone)",
+      "dose": "25 mg",
+      "frequency": "Once daily",
+      "purpose": "Diuretic for Heart Failure",
+      "adherence": "Sometimes forgets to take it",
+      "patient_concerns": "Worries about low blood pressure and fainting."
+    }
+  ],
+  "allergies": [
+    "Penicillin (hives)",
+    "Shellfish (anaphylaxis)",
+    "Sulfa"
+  ],
+  "facts": [
+    {
+      "id": "f001",
+      "category": "social",
+      "topic": "occupation",
+      "content": "Retired janitor",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.occupation"
+    },
+    {
+      "id": "f002",
+      "category": "social",
+      "topic": "living situation",
+      "content": "Suburban area, lives alone in a two-bedroom apartment",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.residence"
+    },
+    {
+      "id": "f003",
+      "category": "social",
+      "topic": "marital status",
+      "content": "Widowed",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.marital_status"
+    },
+    {
+      "id": "f004",
+      "category": "social",
+      "topic": "education",
+      "content": "High school diploma",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.education_level"
+    },
+    {
+      "id": "f005",
+      "category": "social",
+      "topic": "insurance",
+      "content": "Medicare (Primary) and Medicaid (Secondary)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.insurance"
+    },
+    {
+      "id": "f006",
+      "category": "social",
+      "topic": "language",
+      "content": "English",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "demographics.language"
+    },
+    {
+      "id": "f007",
+      "category": "social",
+      "topic": "support system",
+      "content": "Sister lives across the country. Has a few neighbors, but he doesn't interact with them. Has a group of retired friends he talks to online (facebook or email), but no in-person support.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.support_system"
+    },
+    {
+      "id": "f008",
+      "category": "diagnosis",
+      "topic": "main diagnosis / reason for visit",
+      "content": "Uncontrolled Type 2 Diabetes Mellitus",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.primary_diagnosis"
+    },
+    {
+      "id": "f009",
+      "category": "diagnosis",
+      "topic": "other condition: Congestive Heart Failure (HFREF, EF 40%)",
+      "content": "Congestive Heart Failure (HFREF, EF 40%)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[0]"
+    },
+    {
+      "id": "f010",
+      "category": "diagnosis",
+      "topic": "other condition: Hypertension",
+      "content": "Hypertension",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[1]"
+    },
+    {
+      "id": "f011",
+      "category": "diagnosis",
+      "topic": "other condition: Chronic Kidney Disease Stage 3",
+      "content": "Chronic Kidney Disease Stage 3",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[2]"
+    },
+    {
+      "id": "f012",
+      "category": "diagnosis",
+      "topic": "other condition: Coronary Artery Disease",
+      "content": "Coronary Artery Disease",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.secondary_diagnoses[3]"
+    },
+    {
+      "id": "f013",
+      "category": "history",
+      "topic": "Type 2 Diabetes for 15 years",
+      "content": "Type 2 Diabetes for 15 years",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[0]"
+    },
+    {
+      "id": "f014",
+      "category": "history",
+      "topic": "Cardiac surgery (CABG) 5 years ago",
+      "content": "Cardiac surgery (CABG) 5 years ago",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[1]"
+    },
+    {
+      "id": "f015",
+      "category": "history",
+      "topic": "Recurrent heart failure decompensations requiring…",
+      "content": "Recurrent heart failure decompensations requiring hospitalization",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[2]"
+    },
+    {
+      "id": "f016",
+      "category": "history",
+      "topic": "Previous non-compliance with diet and medication",
+      "content": "Previous non-compliance with diet and medication",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.medical_history[3]"
+    },
+    {
+      "id": "f017",
+      "category": "symptom",
+      "topic": "symptom: Chronic fatigue",
+      "content": "Chronic fatigue",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[0]"
+    },
+    {
+      "id": "f018",
+      "category": "symptom",
+      "topic": "symptom: Shortness of breath with minimal exertion",
+      "content": "Shortness of breath with minimal exertion",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[1]"
+    },
+    {
+      "id": "f019",
+      "category": "symptom",
+      "topic": "symptom: Pedal edema (2+ bilateral)",
+      "content": "Pedal edema (2+ bilateral)",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[2]"
+    },
+    {
+      "id": "f020",
+      "category": "symptom",
+      "topic": "symptom: Polyuria and polydipsia",
+      "content": "Polyuria and polydipsia",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[3]"
+    },
+    {
+      "id": "f021",
+      "category": "symptom",
+      "topic": "symptom: Poor weight loss despite attempts to eat…",
+      "content": "Poor weight loss despite attempts to eat 'less'",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[4]"
+    },
+    {
+      "id": "f022",
+      "category": "symptom",
+      "topic": "symptom: Soreness and stiffness in joints",
+      "content": "Soreness and stiffness in joints",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.current_symptoms[5]"
+    },
+    {
+      "id": "f023",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "Penicillin (hives)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.allergies[0]"
+    },
+    {
+      "id": "f024",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "Shellfish (anaphylaxis)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.allergies[1]"
+    },
+    {
+      "id": "f025",
+      "category": "allergy",
+      "topic": "allergies",
+      "content": "Sulfa",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "clinical_profile.allergies[2]"
+    },
+    {
+      "id": "f026",
+      "category": "medication",
+      "topic": "medication: Metformin",
+      "content": "Takes Metformin 500 mg Twice daily with meals for Type 2 Diabetes Control",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0]"
+    },
+    {
+      "id": "f027",
+      "category": "medication",
+      "topic": "how they take Metformin",
+      "content": "Metformin adherence: Inconsistent; skips sometimes due to nausea",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].adherence"
+    },
+    {
+      "id": "f028",
+      "category": "medication",
+      "topic": "concerns/side effects of Metformin",
+      "content": "About Metformin: He complains it makes him vomit or have an upset stomach.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[0].patient_concerns"
+    },
+    {
+      "id": "f029",
+      "category": "medication",
+      "topic": "medication: Lisinopril",
+      "content": "Takes Lisinopril 20 mg Once daily in the morning for Hypertension and Heart Failure",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1]"
+    },
+    {
+      "id": "f030",
+      "category": "medication",
+      "topic": "how they take Lisinopril",
+      "content": "Lisinopril adherence: Takes daily",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].adherence"
+    },
+    {
+      "id": "f031",
+      "category": "medication",
+      "topic": "concerns/side effects of Lisinopril",
+      "content": "About Lisinopril: Believes it's only for his blood pressure, not his diabetes.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[1].patient_concerns"
+    },
+    {
+      "id": "f032",
+      "category": "medication",
+      "topic": "medication: Epirocil (Eplerenone)",
+      "content": "Takes Epirocil (Eplerenone) 25 mg Once daily for Diuretic for Heart Failure",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[2]"
+    },
+    {
+      "id": "f033",
+      "category": "medication",
+      "topic": "how they take Epirocil (Eplerenone)",
+      "content": "Epirocil (Eplerenone) adherence: Sometimes forgets to take it",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[2].adherence"
+    },
+    {
+      "id": "f034",
+      "category": "medication",
+      "topic": "concerns/side effects of Epirocil (Eplerenone)",
+      "content": "About Epirocil (Eplerenone): Worries about low blood pressure and fainting.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.medications[2].patient_concerns"
+    },
+    {
+      "id": "f035",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Melatonin 5 mg at night",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[0]"
+    },
+    {
+      "id": "f036",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Advil (Ibuprofen) 400 mg PRN for back pain (takes 2-3 times a week)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[1]"
+    },
+    {
+      "id": "f037",
+      "category": "medication",
+      "topic": "supplements / OTC",
+      "content": "Takes Gum (sugar-free)",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "medication_profile.supplements_and_otc[2]"
+    },
+    {
+      "id": "f038",
+      "category": "nutrition",
+      "topic": "usual diet",
+      "content": "American Heart Association 'diet', but modified by family recipes and personal taste. High in processed convenience foods, high-fat meats, and refined carbohydrates. Low in fiber and fruits/vegetables.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.dietary_pattern"
+    },
+    {
+      "id": "f039",
+      "category": "nutrition",
+      "topic": "meal timing / pattern",
+      "content": "Irregular eating. Usually skips breakfast, eats a large lunch around noon, and snacks in the evening. Dinner varies; sometimes has it with the dinner club, sometimes just eats leftovers.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.meal_pattern"
+    },
+    {
+      "id": "f040",
+      "category": "nutrition",
+      "topic": "fluids / hydration",
+      "content": "Dehydrates easily but avoids drinking water consistently due to excessive thirst. Prefers sugary sodas and fruit punch. Takes fluids mostly during lunch.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.hydration"
+    },
+    {
+      "id": "f041",
+      "category": "lifestyle",
+      "topic": "physical activity",
+      "content": "Sits at his computer at the computer, mostly stationary. Limited physical ability due to shortness of breath and fatigue. Walks around the house only. Has a history of being very active, and feels frustrated that he can't do so much anymore.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.physical_activity"
+    },
+    {
+      "id": "f042",
+      "category": "lifestyle",
+      "topic": "alcohol / tobacco / drugs",
+      "content": "Drinks 1-2 small cups of beer during TV at night. No smoking history (never smoked).",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.substance_use"
+    },
+    {
+      "id": "f043",
+      "category": "lifestyle",
+      "topic": "sleep",
+      "content": "Experiences insomnia due to excessive night urination (nocturia). Wakes up multiple times at night to urinate, which disrupts his sleep cycle.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.sleep"
+    },
+    {
+      "id": "f044",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Prefers fried foods and heavy sauces",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[0]"
+    },
+    {
+      "id": "f045",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Loves macaroni and cheese and fried chicken",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[1]"
+    },
+    {
+      "id": "f046",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Enjoys sweet tea and soda",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[2]"
+    },
+    {
+      "id": "f047",
+      "category": "nutrition",
+      "topic": "food likes / preferences",
+      "content": "Dislikes bitter vegetables",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.food_preferences[3]"
+    },
+    {
+      "id": "f048",
+      "category": "nutrition",
+      "topic": "Eats out with a local group twice a week",
+      "content": "Eats out with a local group twice a week",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[0]"
+    },
+    {
+      "id": "f049",
+      "category": "nutrition",
+      "topic": "Order 'special' versions of standard menu items that are…",
+      "content": "Order 'special' versions of standard menu items that are higher in sodium",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[1]"
+    },
+    {
+      "id": "f050",
+      "category": "nutrition",
+      "topic": "Uses high-sodium canned soups for comfort food",
+      "content": "Uses high-sodium canned soups for comfort food",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[2]"
+    },
+    {
+      "id": "f051",
+      "category": "nutrition",
+      "topic": "Eats breakfast with toast and syrup if he has it",
+      "content": "Eats breakfast with toast and syrup if he has it",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[3]"
+    },
+    {
+      "id": "f052",
+      "category": "nutrition",
+      "topic": "Drinks soda instead of water to make meals taste better",
+      "content": "Drinks soda instead of water to make meals taste better",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "nutrition_profile.foods_or_behaviors_to_explore[4]"
+    },
+    {
+      "id": "f053",
+      "category": "psychosocial",
+      "topic": "goal: Avoid going back to the hospital",
+      "content": "Avoid going back to the hospital",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[0]"
+    },
+    {
+      "id": "f054",
+      "category": "psychosocial",
+      "topic": "goal: Be able to eat his favorite foods without…",
+      "content": "Be able to eat his favorite foods without getting sick",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[1]"
+    },
+    {
+      "id": "f055",
+      "category": "psychosocial",
+      "topic": "goal: Manage his medications without feeling dazed",
+      "content": "Manage his medications without feeling dazed",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[2]"
+    },
+    {
+      "id": "f056",
+      "category": "psychosocial",
+      "topic": "goal: Keep his independence",
+      "content": "Keep his independence",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[3]"
+    },
+    {
+      "id": "f057",
+      "category": "psychosocial",
+      "topic": "goal: Understand exactly how his diabetes and…",
+      "content": "Understand exactly how his diabetes and heart failure are connected",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.goals[4]"
+    },
+    {
+      "id": "f058",
+      "category": "psychosocial",
+      "topic": "motivation: Wants to see his family more often",
+      "content": "Wants to see his family more often",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[0]"
+    },
+    {
+      "id": "f059",
+      "category": "psychosocial",
+      "topic": "motivation: Does not want to lose his independence",
+      "content": "Does not want to lose his independence",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[1]"
+    },
+    {
+      "id": "f060",
+      "category": "psychosocial",
+      "topic": "motivation: Wants to reduce his fatigue and not need to…",
+      "content": "Wants to reduce his fatigue and not need to sit so much",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[2]"
+    },
+    {
+      "id": "f061",
+      "category": "psychosocial",
+      "topic": "motivation: Likes to feel in control",
+      "content": "Likes to feel in control",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.motivations[3]"
+    },
+    {
+      "id": "f062",
+      "category": "psychosocial",
+      "topic": "strength: is highly intelligent and quick to learn",
+      "content": "He is highly intelligent and quick to learn",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[0]"
+    },
+    {
+      "id": "f063",
+      "category": "psychosocial",
+      "topic": "strength: is loyal and reliable",
+      "content": "He is loyal and reliable",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[1]"
+    },
+    {
+      "id": "f064",
+      "category": "psychosocial",
+      "topic": "strength: has a sense of humor that can be used to…",
+      "content": "He has a sense of humor that can be used to build rapport",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.strengths[2]"
+    },
+    {
+      "id": "f065",
+      "category": "psychosocial",
+      "topic": "belief: believes that 'healthy eating' is just for…",
+      "content": "He believes that 'healthy eating' is just for the young, healthy, and rich. He thinks food is about comfort and joy, not calories.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[0]"
+    },
+    {
+      "id": "f066",
+      "category": "psychosocial",
+      "topic": "belief: thinks his heart failure and diabetes are…",
+      "content": "He thinks his heart failure and diabetes are just the same thing. His 'sick thing'",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[1]"
+    },
+    {
+      "id": "f067",
+      "category": "psychosocial",
+      "topic": "belief: thinks doctors just want to keep him in the…",
+      "content": "He thinks doctors just want to keep him in the hospital to make money.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[2]"
+    },
+    {
+      "id": "f068",
+      "category": "psychosocial",
+      "topic": "belief: is skeptical about the low-sodium diet…",
+      "content": "He is skeptical about the low-sodium diet because he loves salty food.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.beliefs[3]"
+    },
+    {
+      "id": "f069",
+      "category": "psychosocial",
+      "topic": "concern: Loses his home in the hospital because his…",
+      "content": "Loses his home in the hospital because his heart condition makes him feel so much fatigue.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[0]"
+    },
+    {
+      "id": "f070",
+      "category": "psychosocial",
+      "topic": "concern: knows he is losing weight and he's scared…",
+      "content": "He knows he is losing weight and he's scared of losing his muscle mass",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[1]"
+    },
+    {
+      "id": "f071",
+      "category": "psychosocial",
+      "topic": "concern: is scared of the future and being a burden…",
+      "content": "He is scared of the future and being a burden on his sister who lives across the country",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[2]"
+    },
+    {
+      "id": "f072",
+      "category": "psychosocial",
+      "topic": "concern: Medication side effects like stomach upset…",
+      "content": "Medication side effects like stomach upset or dizziness",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.concerns[3]"
+    },
+    {
+      "id": "f073",
+      "category": "psychosocial",
+      "topic": "barrier: Health literacy: He doesn't understand the…",
+      "content": "Health literacy: He doesn't understand the medical jargon around heart failure vs. diabetes",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[0]"
+    },
+    {
+      "id": "f074",
+      "category": "psychosocial",
+      "topic": "barrier: Financial: His fixed income makes fresh…",
+      "content": "Financial: His fixed income makes fresh food and medications expensive",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[1]"
+    },
+    {
+      "id": "f075",
+      "category": "psychosocial",
+      "topic": "barrier: Social: His dinner club eats out twice a…",
+      "content": "Social: His dinner club eats out twice a week, and the food is heavy on fried and salty foods.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[2]"
+    },
+    {
+      "id": "f076",
+      "category": "psychosocial",
+      "topic": "barrier: Physiological: He is thirsty and tired, so…",
+      "content": "Physiological: He is thirsty and tired, so he lacks the energy or motivation to prepare meals or exercise.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[3]"
+    },
+    {
+      "id": "f077",
+      "category": "psychosocial",
+      "topic": "barrier: Medical: His medications cause stomach…",
+      "content": "Medical: His medications cause stomach upset and dizziness, making him feel sick.",
+      "disclosure": "discoverable",
+      "min_trust": 1,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.barriers[4]"
+    },
+    {
+      "id": "f078",
+      "category": "psychosocial",
+      "topic": "fear: Dying",
+      "content": "Dying",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[0]"
+    },
+    {
+      "id": "f079",
+      "category": "psychosocial",
+      "topic": "fear: Being a burden on his sister or friends",
+      "content": "Being a burden on his sister or friends",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[1]"
+    },
+    {
+      "id": "f080",
+      "category": "psychosocial",
+      "topic": "fear: Losing his ability to go out for dinner…",
+      "content": "Losing his ability to go out for dinner with his friends",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[2]"
+    },
+    {
+      "id": "f081",
+      "category": "psychosocial",
+      "topic": "fear: Losing weight",
+      "content": "Losing weight",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "psychosocial_profile.fears[3]"
+    },
+    {
+      "id": "f082",
+      "category": "other",
+      "topic": "introduces himself as Walter Greene.",
+      "content": "He introduces himself as Walter Greene.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[0]"
+    },
+    {
+      "id": "f083",
+      "category": "other",
+      "topic": "complains immediately about his medications: 'I take all…",
+      "content": "He complains immediately about his medications: 'I take all these pills, they make me feel dumb and nauseous.'",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[1]"
+    },
+    {
+      "id": "f084",
+      "category": "other",
+      "topic": "mentions he's here because his doctor sent him. He doesn't…",
+      "content": "He mentions he's here because his doctor sent him. He doesn't like being sent to the clinic for diet stuff.",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[2]"
+    },
+    {
+      "id": "f085",
+      "category": "other",
+      "topic": "makes jokes about the student being young or not taking…",
+      "content": "He makes jokes about the student being young or not taking the session seriously. 'Do I need to fill out a form for this diet thing?'",
+      "disclosure": "initial",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.initial_information[3]"
+    },
+    {
+      "id": "f086",
+      "category": "other",
+      "topic": "eats out twice a week with his dinner club friends. The…",
+      "content": "He eats out twice a week with his dinner club friends. The restaurant is a local chain with high sodium and fried foods.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[0]"
+    },
+    {
+      "id": "f087",
+      "category": "other",
+      "topic": "takes Ibuprofen for back pain 2-3 times a week. He doesn't…",
+      "content": "He takes Ibuprofen for back pain 2-3 times a week. He doesn't know it might be bad for his heart and kidneys.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[1]"
+    },
+    {
+      "id": "f088",
+      "category": "other",
+      "topic": "doesn't understand the connection between his heart…",
+      "content": "He doesn't understand the connection between his heart failure and his diabetes. He thinks they are separate things.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[2]"
+    },
+    {
+      "id": "f089",
+      "category": "other",
+      "topic": "drinks soda with every meal and avoids water.",
+      "content": "He drinks soda with every meal and avoids water.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[3]"
+    },
+    {
+      "id": "f090",
+      "category": "other",
+      "topic": "skips breakfast and eats his biggest meal at lunch.",
+      "content": "He skips breakfast and eats his biggest meal at lunch.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[4]"
+    },
+    {
+      "id": "f091",
+      "category": "other",
+      "topic": "has no one to cook for him and relies on canned soups,…",
+      "content": "He has no one to cook for him and relies on canned soups, instant mac and cheese, and leftovers.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[5]"
+    },
+    {
+      "id": "f092",
+      "category": "other",
+      "topic": "has trouble getting up in the morning and getting to the…",
+      "content": "He has trouble getting up in the morning and getting to the grocery store.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[6]"
+    },
+    {
+      "id": "f093",
+      "category": "other",
+      "topic": "feels guilty about his sister across the country because…",
+      "content": "He feels guilty about his sister across the country because he is not taking care of himself.",
+      "disclosure": "discoverable",
+      "min_trust": 0,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.discoverable_information[7]"
+    },
+    {
+      "id": "f094",
+      "category": "other",
+      "topic": "feels like he's failed his kids and his wife. He feels…",
+      "content": "He feels like he's failed his kids and his wife. He feels he's been a 'bad husband' and is afraid of being a 'bad' person because he doesn't follow the diet.",
+      "disclosure": "reluctant",
+      "min_trust": 2,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.reluctant_information[0]"
+    },
+    {
+      "id": "f095",
+      "category": "other",
+      "topic": "was a janitor and is scared about his future and his health.",
+      "content": "He was a janitor and is scared about his future and his health.",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[0]"
+    },
+    {
+      "id": "f096",
+      "category": "other",
+      "topic": "has a lot of money in his checking account that he's not…",
+      "content": "He has a lot of money in his checking account that he's not using it, but he's afraid of wasting it.",
+      "disclosure": "hidden",
+      "min_trust": 3,
+      "show_in_chart": true,
+      "origin": "dataset",
+      "source_path": "information_disclosure.hidden_information[1]"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a001",
+      "type": "prior_note",
+      "title": "Referral summary",
+      "items": [
+        {
+          "label": "Primary diagnosis",
+          "value": "Uncontrolled Type 2 Diabetes Mellitus",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Congestive Heart Failure (HFREF, EF 40%)",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Hypertension",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Chronic Kidney Disease Stage 3",
+          "flag": null
+        },
+        {
+          "label": "Secondary diagnosis",
+          "value": "Coronary Artery Disease",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Metformin 500 mg Twice daily with meals",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Lisinopril 20 mg Once daily in the morning",
+          "flag": null
+        },
+        {
+          "label": "Medication",
+          "value": "Epirocil (Eplerenone) 25 mg Once daily",
+          "flag": null
+        },
+        {
+          "label": "Allergies",
+          "value": "Penicillin (hives), Shellfish (anaphylaxis), Sulfa",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "at_start",
+        "request_keywords": [],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a002",
+      "type": "vitals",
+      "title": "Vital signs",
+      "items": [
+        {
+          "label": "BP",
+          "value": "158/92 mmHg",
+          "flag": null
+        },
+        {
+          "label": "HR",
+          "value": "78 bpm",
+          "flag": null
+        },
+        {
+          "label": "RR",
+          "value": "18 breaths/min",
+          "flag": null
+        },
+        {
+          "label": "Temp",
+          "value": "98.6°F (37.0°C)",
+          "flag": null
+        },
+        {
+          "label": "SpO2",
+          "value": "96% on room air",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "vitals",
+          "blood pressure",
+          "heart rate",
+          "temperature"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a003",
+      "type": "anthropometrics",
+      "title": "Anthropometrics",
+      "items": [
+        {
+          "label": "Height",
+          "value": "5'8\"",
+          "flag": null
+        },
+        {
+          "label": "Weight",
+          "value": "198 lbs",
+          "flag": null
+        },
+        {
+          "label": "BMI",
+          "value": "31.2 kg/m²",
+          "flag": null
+        },
+        {
+          "label": "Recent weight change",
+          "value": "Lost 10 lbs unintentionally in the last month",
+          "flag": null
+        },
+        {
+          "label": "Waist circumference",
+          "value": "43 inches",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "weight",
+          "height",
+          "BMI",
+          "measurements",
+          "waist"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a004",
+      "type": "lab_report",
+      "title": "Laboratory results",
+      "items": [
+        {
+          "label": "HbA1c",
+          "value": "8.7% (High; <7% is target)",
+          "flag": "H"
+        },
+        {
+          "label": "Fasting Glucose",
+          "value": "165 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "BUN",
+          "value": "28 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Creatinine",
+          "value": "1.6 mg/dL",
+          "flag": null
+        },
+        {
+          "label": "Sodium",
+          "value": "136 mEq/L",
+          "flag": null
+        },
+        {
+          "label": "Potassium",
+          "value": "4.1 mEq/L",
+          "flag": null
+        },
+        {
+          "label": "LDL",
+          "value": "125 mg/dL",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "labs",
+          "bloodwork",
+          "blood test",
+          "A1c",
+          "cholesterol",
+          "glucose"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    },
+    {
+      "id": "a005",
+      "type": "other",
+      "title": "Clinical findings",
+      "items": [
+        {
+          "label": "Heart murmur at apex",
+          "value": "",
+          "flag": null
+        },
+        {
+          "label": "Bilateral lung crackles",
+          "value": "",
+          "flag": null
+        },
+        {
+          "label": "Peripheral pulse",
+          "value": "3+ in lower extremities",
+          "flag": null
+        },
+        {
+          "label": "Skin warm, dry, with poor venous filling time",
+          "value": "",
+          "flag": null
+        },
+        {
+          "label": "Gum disease (mild)",
+          "value": "",
+          "flag": null
+        }
+      ],
+      "text": null,
+      "file_path": null,
+      "release": {
+        "trigger": "on_request",
+        "request_keywords": [
+          "exam",
+          "findings",
+          "physical exam"
+        ],
+        "after_fact_id": null
+      },
+      "origin": "dataset"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "o1",
+      "objective": "Apply the Nutrition Care Process.",
+      "expected_discoveries": [
+        {
+          "id": "o1.d1",
+          "text": "Student must assess patient's needs, identify the problem (PES statement), and then develop an individualized care plan.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d2",
+          "text": "Student will discover patient's knowledge, beliefs, and barriers to care.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o1.d3",
+          "text": "Student will discover his health literacy level.",
+          "linked_fact_ids": [
+            "f073"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o1.d4",
+          "text": "Student will identify his social and behavioral barriers.",
+          "linked_fact_ids": [
+            "f075"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Patient will say 'I don't need a care plan, I just need to eat less.'"
+      ],
+      "points": null
+    },
+    {
+      "id": "o2",
+      "objective": "Develop an appropriate PES statement.",
+      "expected_discoveries": [
+        {
+          "id": "o2.d1",
+          "text": "Nutritional Status: Uncontrolled T2DM and HF, increased Na intake, low fiber intake, social barriers.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o2.d2",
+          "text": "Evidence: HbA1c 8.7%, Creatinine 1.6, labs show high Na and low K. Lab values indicate diet and lifestyle are affecting his health.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Patient may say 'I don't understand what a PES statement is. Is that a form?'"
+      ],
+      "points": null
+    },
+    {
+      "id": "o3",
+      "objective": "Develop evidence-based nutrition interventions.",
+      "expected_discoveries": [
+        {
+          "id": "o3.d1",
+          "text": "Student needs to develop interventions that address patient's diet (high sodium, high fat, low fiber), hydration (soda vs water), and medication adherence.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d2",
+          "text": "Student will discuss how to make 'less sodium' food taste good without compromising his health.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o3.d3",
+          "text": "Student must discuss how to address his fear of losing weight and his desire for comfort food.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Patient will say 'I don't eat like that! I eat like a person. You kids always want us to eat like we're in jail.'"
+      ],
+      "points": null
+    },
+    {
+      "id": "o4",
+      "objective": "Integrate medication management with nutrition care.",
+      "expected_discoveries": [
+        {
+          "id": "o4.d1",
+          "text": "Student will discover he takes Metformin (nausea), Lisinopril, Epirocil, and Ibuprofen.",
+          "linked_fact_ids": [
+            "f027"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d2",
+          "text": "Student will discover he takes Ibuprofen frequently for back pain, which can raise BP and strain kidneys.",
+          "linked_fact_ids": [
+            "f087",
+            "f036"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o4.d3",
+          "text": "Student will discuss how diet affects BP and heart failure (sodium), and how to manage medication side effects through diet.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Patient will say 'Iblets make me feel sick. Why can't I just take a pill and forget it?'",
+        "Patient will say 'I take Advil for my back. Why does that matter?'"
+      ],
+      "points": null
+    },
+    {
+      "id": "o5",
+      "objective": "Use motivational interviewing.",
+      "expected_discoveries": [
+        {
+          "id": "o5.d1",
+          "text": "Student must use open-ended questions, reflective listening, and summarizing to explore patient's readiness to change.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o5.d2",
+          "text": "Patient is in Precontemplation stage. Student must use MI techniques to help patient understand that patient is ready to change.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o5.d3",
+          "text": "Student will discover he values independence and wants to avoid hospitalization.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Student uses 'What makes you think that?' or 'You mentioned you didn't want to die. Is that why you're here today?'",
+        "Patient may react with defensiveness, say 'I'm here because my doctor ordered me.'",
+        "If student is empathetic, patient may open up: 'I'm scared. I don't want to be a burden to my kids or my sister.'",
+        "Student should ask 'On a scale of 1 to 10, how ready are you to try a different way of eating?'",
+        "Student should ask 'What do you feel like about trying something different?'",
+        "Student should ask 'How important is it that you are eating healthy?'"
+      ],
+      "points": null
+    },
+    {
+      "id": "o6",
+      "objective": "Address lifestyle and behavioral barriers.",
+      "expected_discoveries": [
+        {
+          "id": "o6.d1",
+          "text": "Student will discover barriers like health literacy, financial constraints, taste preferences, social isolation, and health literacy.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o6.d2",
+          "text": "Student will discover he eats out twice a week with his dinner club friends.",
+          "linked_fact_ids": [
+            "f086",
+            "f075",
+            "f048"
+          ],
+          "link_method": "lexical"
+        },
+        {
+          "id": "o6.d3",
+          "text": "Student will discuss how to incorporate his favorite foods in a way that is lower in sodium and higher in fiber.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o6.d4",
+          "text": "Student will discuss how to manage his thirst without sugar, soda.",
+          "linked_fact_ids": [
+            "f040"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Patient will say 'I know what I should do. I just don't have the time or the energy to cook.'",
+        "Patient will say 'Everyone I know eats out at my dinner club. How am I supposed to eat out on a low-sodium diet?'"
+      ],
+      "points": null
+    },
+    {
+      "id": "o7",
+      "objective": "Consider interprofessional and community resources.",
+      "expected_discoveries": [
+        {
+          "id": "o7.d1",
+          "text": "Student will discover he is a frequent flier and needs care coordination.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o7.d2",
+          "text": "Student will discuss referring him to a diabetes educator, a dietitian, a social worker for food resources, a cardiologist, a nephrologist for his kidneys.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o7.d3",
+          "text": "Student will discuss referring to a PT for his back pain and limited activity.",
+          "linked_fact_ids": [],
+          "link_method": "none"
+        },
+        {
+          "id": "o7.d4",
+          "text": "Student will discuss his support system and how to engage him.",
+          "linked_fact_ids": [
+            "f007"
+          ],
+          "link_method": "lexical"
+        }
+      ],
+      "possible_patient_reactions": [
+        "Student: 'I will be happy to talk with my team about your back pain and your kidney and heart doctor.'"
+      ],
+      "points": null
+    }
+  ],
+  "knowledge_sources": [],
+  "assumptions": [
+    "Patient's sister lives across the country but is a major support system.",
+    "Patient has a fixed income and limited social security.",
+    "Patient does not have a caregiver, but has a group of friends online.",
+    "Patient's doctor sent him to the nutrition clinic, and he is skeptical of it.",
+    "Patient's blood pressure is high, which aligns with his high sodium intake and limited exercise.",
+    "Patient's blood glucose is high, which aligns with his high carbohydrate intake and diabetes.",
+    "Patient's fatigue is due to his heart failure and diabetes, which limits his physical activity.",
+    "Patient's weight loss is unintentional, which is common in older adults with heart failure and diabetes."
+  ],
+  "optional_details": [
+    "Patient is a retired janitor and is in the 60s.",
+    "Patient has a group of friends he talks to online, but he doesn't have an in-person social circle.",
+    "Patient's sister lives across the country and is a major support system, but he doesn't want to bother her.",
+    "Patient's blood pressure is high, which aligns with his high sodium intake and limited exercise.",
+    "Patient's blood glucose is high, which aligns with his high carbohydrate intake and diabetes.",
+    "Patient's fatigue is due to his heart failure and diabetes, which limits his physical activity.",
+    "Patient's weight loss is unintentional, which is common in older adults with heart failure and diabetes.",
+    "Patient is a frequent flier, which means he goes to the hospital often for heart failure and diabetes."
+  ]
+}
