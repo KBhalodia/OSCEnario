@@ -14,4 +14,4 @@ export default function StudioPage() {
   if (!ready) return <div>Loading Patient Studio...</div>;
 
   return <PatientStudio />;
-}
+}git checkout -b feature/voice-avatar origin/feature/voice-avatar
