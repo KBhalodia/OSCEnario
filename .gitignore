@@ -1,0 +1,19 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# local encounter dumps from scripts/try_encounter.py
+encounter-*.json
+
+# frontend
+node_modules/
+frontend/dist/
+.DS_Store
