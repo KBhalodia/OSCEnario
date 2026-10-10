@@ -75,3 +75,47 @@ Off-script turns (jailbreak attempts) release nothing and don't change trust.
 
 API wiring: `POST /encounters` -> `start_encounter`; `POST /encounters/{id}/message` ->
 `take_turn` then return `TurnResult` + `chart_view`; save `EncounterState` JSON after each turn.
+
+## Voice + avatar (text-to-speech only)
+
+```
+student speech --(browser Web Speech API)--> text --> take_turn() (unchanged) --> reply text
+reply text --> POST /tts --> ElevenLabs TTS  --(fails/no credits)--> Amazon Polly --(fails)--> browser speechSynthesis
+```
+
+**We use ElevenLabs for text-to-speech only** (`POST /v1/text-to-speech/{voice_id}/stream`).
+Never their conversational agents: those would generate the patient's words and bypass the
+engine that stops the patient from inventing facts. Nothing in `engine.py` / `prompts.py` changed.
+
+```
+app/voice/catalog.py    voice list (ElevenLabs GET /v2/voices, cached in voice_catalog.json; premade fallback)
+app/voice/profiles.py   8 hand-picked presets + assign_voice(persona) / ensure_voice(profile)
+app/voice/tts.py        ElevenLabs streaming -> Polly -> TTSUnavailable; credit guard; in-memory LRU cache
+app/voice/api.py        POST /tts, POST /tts/preview, GET /voices, GET /voices/status, POST /voices/assign
+app/dev_server.py       DEV ONLY: samples + real engine + voice routes, to try it end to end
+scripts/assign_voices.py  --check | --refresh | --samples samples | --say "text"
+frontend/               Vite + React: PatientAvatar, usePushToTalk, useVoicePlayer, VoiceControls, demo page
+```
+
+- **Every patient gets a voice automatically.** `Persona.voice` (optional `VoiceProfile`) is filled by
+  `ensure_voice()` on import and must be called on Studio create/load too:
+  `from app.voice.profiles import ensure_voice; ensure_voice(profile)`.
+  It maps sex, age band and personality/communication-style keywords to the closest preset and
+  the best-matching catalog voice. Deterministic; no accent is ever chosen from ethnicity.
+  Faculty changes set `origin="faculty"` and are never overwritten.
+- **Mount in the main API:** `voice_api.set_profile_loader(get_profile)` then
+  `app.include_router(voice_api.router)`. `/tts` returns `audio/mpeg` (header `X-TTS-Provider`)
+  or `503 {"fallback": "browser"}`.
+- **Privacy:** no audio is recorded, uploaded or stored. Speech-to-text happens in the browser;
+  only the transcript is saved. TTS audio lives in process memory only.
+- **Secrets:** `ELEVENLABS_API_KEY` goes in `.env` (gitignored), read only by the backend.
+  Polly uses the same AWS credentials as Bedrock.
+
+Run it:
+```
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+echo 'export ELEVENLABS_API_KEY=...' >> .env          # optional; Polly/browser voice otherwise
+.venv/bin/python -m scripts.assign_voices --refresh --samples samples   # once the key works
+.venv/bin/uvicorn app.dev_server:app --port 8000
+cd frontend && npm install && npm run dev               # http://localhost:5173 (Chrome for voice input)
+```
