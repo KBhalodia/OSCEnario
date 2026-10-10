@@ -161,13 +161,12 @@ const AI_ENDPOINT = "http://127.0.0.1:8000/extract";
 
 /* =====================================================================
    DATA MODEL
-   One patient = one object. Facts carry their own "release words" and the
-   line the patient says. The Encounter screen only reads this data.
+   One patient = one object. Facts carry auto-derived "release words" (see
+   deriveTriggers) and the line the patient says. The Encounter screen only
+   reads this data.
    ===================================================================== */
-const TABS = [["summary", "Summary"], ["history", "History"], ["meds", "Meds & allergies"], ["labs", "Labs"]];
 const ARTIFACT_TYPES = ["Lab report", "ECG", "X-ray", "CT scan", "Prior note", "Other"];
 const uid = () => Math.random().toString(36).slice(2, 8);
-const splitWords = (s) => s.split(",").map(x => x.trim().toLowerCase()).filter(Boolean);
 
 const TEMPERAMENT_OPTIONS = [
   "Calm and cooperative", "Anxious or worried", "Fearful or hesitant",
@@ -199,10 +198,6 @@ const TEMPERAMENT_AI_MAP = [
    optional and additive: an empty profile adds nothing to the exported JSON,
    so existing encounter consumers keep working unchanged.
    ===================================================================== */
-const STUDENT_YEAR_OPTIONS = [
-  "Year 1", "Year 2", "Year 3", "Year 4",
-  "Intern / PGY-1", "Resident / PGY-2+", "Other / Custom"
-];
 const SPECIALTY_OPTIONS = [
   "Internal Medicine", "Family Medicine", "Emergency Medicine", "Pediatrics",
   "Surgery", "Obstetrics and Gynecology", "Psychiatry", "Neurology",
@@ -374,15 +369,6 @@ const YEAR_CONFIG = {
     ]
   }
 };
-/* Compute the maximum total for a year by summing the non-N/A domains (each
-   worth up to 4). This matches the stated max totals (M1 = 6 scored x 4 = 24,
-   M2-M4 = 7 scored x 4 = 28) and keeps the two in sync if modes ever change. */
-function yearMaxTotal(yearKey) {
-  const cfg = YEAR_CONFIG[yearKey];
-  if (!cfg) return 0;
-  return RUBRIC_DOMAINS.reduce((sum, d) => sum + (cfg.domainModes[d.key] === "na" ? 0 : 4), 0);
-}
-
 /* Who the learner is. Every field is optional. "year" is the M1-M4 selection
    that drives the year-appropriate rubric; specialty is faculty free choice. */
 function blankStudentProfile() {
@@ -626,9 +612,6 @@ function fileAttach(obj, key, ariaLabel) {
 function textArea(obj, key, rows) {
   return h("textarea", { rows: String(rows || 2), value: obj[key] ?? "", oninput: (e) => { obj[key] = e.target.value; touch(); } });
 }
-function wordsInput(obj, key) {
-  return h("input", { type: "text", value: (obj[key] || []).join(", "), oninput: (e) => { obj[key] = splitWords(e.target.value); touch(); } });
-}
 function selectInput(obj, key, options, afterChange) {
   const s = h("select", { onchange: (e) => { obj[key] = e.target.value; touch(); if (afterChange) afterChange(); } },
     options.map(o => { const [v, l] = Array.isArray(o) ? o : [o, o]; const op = h("option", { value: v }, v === "" ? (l || "Choose\u2026") : l); if (obj[key] === v) op.selected = true; return op; }));
@@ -857,9 +840,9 @@ function toEncounterProfile(p) {
   if (learner) profile.studentProfile = learner;    // additive: learner metadata for faculty reference
   const grading = assessmentForExport(p);
   if (grading) profile.assessment = grading;        // additive: grading criteria stored for faculty reference
-  // Exactly one rubric is exported, mirroring what the UI shows: the Pediatrics
-  // rubric when Specialty = Pediatrics, otherwise the general M1-M4 rubric.
-  // Never both, so stale scores from one never ride along with the other.
+  // Exactly one rubric is exported, mirroring what the UI shows: the informational
+  // Pediatrics rubric when Specialty = Pediatrics, otherwise the general M1-M4
+  // rubric. Never both.
   if (studentProfile(p).specialty === PEDS_SPECIALTY) {
     profile.rubric = pedsRubricForExport();          // additive: informational Pediatrics rubric
   } else {
