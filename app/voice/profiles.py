@@ -209,7 +209,7 @@ def pick_voice(p: Persona, preset: Preset, catalog: Optional[list[Voice]] = None
             s += 1.5           # a voice verified for the patient's own language
         elif v.accent in _NEUTRAL_ACCENTS:
             s += 1.0
-        if v.name.lower() == preset.voice_name.lower():
+        if v.short_name == preset.voice_name.lower():
             s += 2.5           # hand-picked voice for this preset
         return s
 
@@ -264,7 +264,7 @@ def preset_table() -> list[dict]:
     cat = load_catalog()
     out = []
     for pr in PRESETS:
-        v = next((x for x in cat if x.name.lower() == pr.voice_name.lower()), None)
+        v = next((x for x in cat if x.short_name == pr.voice_name.lower()), None)
         out.append({"key": pr.key, "label": pr.label, "example": pr.example,
                     "voice_id": v.voice_id if v else "", "voice_name": pr.voice_name,
                     "stability": pr.stability, "style": pr.style, "speed": pr.speed,

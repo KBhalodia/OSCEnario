@@ -32,6 +32,11 @@ class Voice(BaseModel):
     category: str = "premade"
     preview_url: Optional[str] = None
 
+    @property
+    def short_name(self) -> str:
+        """'Will - Relaxed Optimist' -> 'will' (the live API appends a tagline to the name)."""
+        return self.name.split(" - ")[0].strip().lower()
+
 
 def _v(voice_id, name, gender, age, accent, description):
     return Voice(voice_id=voice_id, name=name, gender=gender, age=age, accent=accent,
@@ -58,7 +63,7 @@ BUILTIN: list[Voice] = [
     _v("nPczCjzI2devNBz1zQrb", "Brian", "male", "middle_aged", "american", "deep, resonant"),
     _v("onwK4e9ZLuTAKqWW03F9", "Daniel", "male", "middle_aged", "british", "steady, measured"),
     _v("pFZP5JQG7iQjIQuC4Bku", "Lily", "female", "middle_aged", "british", "velvety, warm"),
-    _v("pqHfZKP75CyOjeRgpyeV", "Bill", "male", "old", "american", "wise, mature, crisp"),
+    _v("pqHfZKP75CvOlQylNhV4", "Bill", "male", "old", "american", "wise, mature, crisp"),
 ]
 
 

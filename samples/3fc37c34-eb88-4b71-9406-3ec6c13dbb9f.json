@@ -35,7 +35,7 @@
     "portrait_path": "portraits/3fc37c34-eb88-4b71-9406-3ec6c13dbb9f.png",
     "voice": {
       "provider": "elevenlabs",
-      "voice_id": "pqHfZKP75CyOjeRgpyeV",
+      "voice_id": "pqHfZKP75CvOlQylNhV4",
       "model_id": "eleven_flash_v2_5",
       "stability": 0.45,
       "similarity_boost": 0.75,

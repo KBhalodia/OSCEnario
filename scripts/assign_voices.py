@@ -44,7 +44,7 @@ def refresh() -> None:
     catalog.save_catalog(voices)
     catalog.reset_cache()
     print(f"Cached {len(voices)} voices -> {catalog.CATALOG_PATH.name}")
-    names = {v.name.lower() for v in voices}
+    names = {v.short_name for v in voices}
     for p in PRESETS:
         if p.voice_name.lower() not in names:
             print(f"  ! preset {p.key}: voice '{p.voice_name}' not in this account; "

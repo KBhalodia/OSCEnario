@@ -114,7 +114,7 @@ frontend/               Vite + React: PatientAvatar, usePushToTalk, useVoicePlay
 Run it:
 ```
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
-echo 'export ELEVENLABS_API_KEY=...' >> .env          # optional; Polly/browser voice otherwise
+printf '\nexport ELEVENLABS_API_KEY=...\n' >> .env  # optional; leading \n in case .env lacks a final newline
 .venv/bin/python -m scripts.assign_voices --refresh --samples samples   # once the key works
 .venv/bin/uvicorn app.dev_server:app --port 8000
 cd frontend && npm install && npm run dev               # http://localhost:5173 (Chrome for voice input)
