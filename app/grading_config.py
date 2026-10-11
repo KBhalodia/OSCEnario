@@ -34,6 +34,7 @@ def build() -> dict:
             "label": lv["label"],
             "expectations": lv["grading"]["expectations"],
             "patient_difficulty": lv["patient"]["notes"],
+            "asks_diagnosis": bool(lv.get("asks_diagnosis")),
             "domains": [{"key": d["key"], "name": d["name"], "mode": modes.get(d["key"], "core"),
                          "mode_label": MODE_LABELS[modes.get(d["key"], "core")]} for d in rubric["domains"]],
             "max_total": 4 * sum(modes.get(d["key"], "core") != "na" for d in rubric["domains"]),

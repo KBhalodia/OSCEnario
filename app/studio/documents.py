@@ -78,10 +78,9 @@ def load_document(path: str | Path, kind: DocumentKind | str, doc_id: str,
     path = Path(path)
     kind = DocumentKind(kind)
     if path.suffix.lower() in IMAGE_EXT:
-        if llm is None or not vision_model:
-            raise ValueError("Images need an LLM to read them (pass llm + vision_model).")
-        summary = describe_image(path, llm, vision_model)
-        return SourceDocument(id=doc_id, name=path.name, kind=kind, file_path=stored_path,
-                              text=summary, summary=summary)
+        # Images (X-ray, ECG, audiogram) are NOT read by the AI: an AI read of an arbitrary image can be
+        # wrong and would be treated as ground truth. The only interpretation is what faculty write in the
+        # file's summary; students see just the image.
+        return SourceDocument(id=doc_id, name=path.name, kind=kind, file_path=stored_path, text="", summary="")
     return SourceDocument(id=doc_id, name=path.name, kind=kind, file_path=stored_path,
                           text=extract_text(path))

@@ -15,14 +15,14 @@ export default function NetIdGate() {
     setActiveNetId(normalizeNetId(draft));
   };
   return (
-    <Card title="Who are you?" hint="Demo sign-in: type your NetID. This is not real Rutgers authentication.">
+    <Card title="Sign in with your NetID" hint="Demo sign-in for the prototype. There is no password and this is not Rutgers authentication.">
       <div className="flex max-w-sm gap-2">
         <input className={input} value={draft} onChange={(e) => setDraft(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} placeholder="abc123" />
         <button className={btn.primary} type="button" onClick={go}>
           Continue
         </button>
       </div>
-      {err && <p className="mt-2 text-sm text-rose-600">{err}</p>}
+      {err && <p className="mt-2 text-sm text-danger">{err}</p>}
     </Card>
   );
 }

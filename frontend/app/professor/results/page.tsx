@@ -10,12 +10,13 @@ import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import AppShell, { Card, ErrorNote, Field, Pill, Spinner, btn, input } from "../../components/AppShell";
 import FeedbackReport from "../../components/FeedbackReport";
+import DiagnosisPill from "../../components/DiagnosisPill";
 import { api, type Assignment, type AssignmentResults, type EncounterDetail, type Feedback } from "@/lib/api";
 import { FACULTY_ID } from "@/lib/identity";
 
 export default function ResultsPage() {
   return (
-    <Suspense fallback={<AppShell title="Assignments & Results"><Spinner label="Loading…" /></AppShell>}>
+    <Suspense fallback={<AppShell title="Results" crumb="Results"><Spinner label="Loading…" /></AppShell>}>
       <Inner />
     </Suspense>
   );
@@ -40,33 +41,33 @@ function AllAssignments() {
       .catch((e) => setError(e.message));
   }, []);
   return (
-    <AppShell title="Assignments & Results">
+    <AppShell title="Results" crumb="Results">
       <ErrorNote error={error} />
       {rows === null ? (
         <Spinner label="Loading…" />
       ) : rows.length === 0 ? (
         <Card>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-ink-2">
             No assignments yet. Open a published patient in the{" "}
-            <Link href="/studio" className="text-teal-700 underline">
-              Patient Studio
+            <Link href="/studio" className="text-primary underline">
+              patient studio
             </Link>{" "}
             and assign it.
           </p>
         </Card>
       ) : (
         <Card title="Assignments">
-          <ul className="flex flex-col divide-y divide-slate-100">
+          <ul className="flex flex-col divide-y divide-line">
             {rows.map((a) => (
               <li key={a.id} className="flex flex-wrap items-center gap-3 py-3">
-                <span className="font-medium text-slate-900">{a.patient_name}</span>
+                <span className="font-medium text-ink">{a.patient_name}</span>
                 <Pill tone="teal">{a.level}</Pill>
-                <span className="text-xs text-slate-500">
+                <span className="text-xs text-ink-2">
                   {a.student_ids.length ? a.student_ids.join(", ") : "Everyone"}
                   {a.due_date ? ` · due ${a.due_date}` : ""}
                 </span>
-                <Link className="ml-auto text-sm text-teal-700 hover:underline" href={`/professor/results?assignment=${a.id}`}>
-                  See attempts →
+                <Link className="ml-auto text-sm text-primary hover:underline" href={`/professor/results?assignment=${a.id}`}>
+                  See attempts
                 </Link>
               </li>
             ))}
@@ -87,9 +88,9 @@ function Attempts({ id }: { id: string }) {
       .catch((e) => setError(e.message));
   }, [id]);
   return (
-    <AppShell title="Assignments & Results">
-      <Link href="/professor/results" className="text-sm text-teal-700 hover:underline">
-        ← All assignments
+    <AppShell title="Results" crumb="Results">
+      <Link href="/professor/results" className="text-sm text-primary hover:underline">
+        All assignments
       </Link>
       <div className="mt-4 flex flex-col gap-4">
         <ErrorNote error={error} />
@@ -98,25 +99,26 @@ function Attempts({ id }: { id: string }) {
         ) : (
           <Card title={`${r.assignment.patient_name} · ${r.assignment.level_label}`} hint={`${r.attempts.length} attempt(s)`}>
             {r.attempts.length === 0 ? (
-              <p className="text-sm text-slate-500">No attempts yet.</p>
+              <p className="text-sm text-ink-2">No attempts yet.</p>
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="text-left text-xs uppercase tracking-wide text-slate-500">
+                    <tr className="text-left text-xs text-ink-2">
                       <th className="py-2 pr-3">Student</th>
                       <th className="py-2 pr-3">Started</th>
                       <th className="py-2 pr-3">Score</th>
                       <th className="py-2 pr-3">EPAs</th>
+                      <th className="py-2 pr-3">Diagnosis</th>
                       <th className="py-2 pr-3">Flags</th>
                       <th />
                     </tr>
                   </thead>
                   <tbody>
                     {r.attempts.map((a) => (
-                      <tr key={a.encounter_id} className="border-t border-slate-100">
+                      <tr key={a.encounter_id} className="border-t border-line">
                         <td className="py-2 pr-3 font-mono">{a.student_id ?? "—"}</td>
-                        <td className="py-2 pr-3 text-slate-500">{a.started_at ? new Date(a.started_at).toLocaleString() : ""}</td>
+                        <td className="py-2 pr-3 text-ink-2">{a.started_at ? new Date(a.started_at).toLocaleString() : ""}</td>
                         <td className="py-2 pr-3 font-semibold">{a.total != null ? `${a.total}/${a.max_total}` : <Pill tone="amber">{a.status}</Pill>}</td>
                         <td className="py-2 pr-3">
                           <div className="flex flex-wrap gap-1">
@@ -127,10 +129,13 @@ function Attempts({ id }: { id: string }) {
                             ))}
                           </div>
                         </td>
+                        <td className="py-2 pr-3">
+                          <DiagnosisPill verdict={a.diagnosis} />
+                        </td>
                         <td className="py-2 pr-3">{a.needs_review && <Pill tone="rose">Needs review</Pill>}</td>
                         <td className="py-2 text-right">
                           {a.status === "completed" && (
-                            <Link className="text-teal-700 hover:underline" href={`/professor/results?encounter=${a.encounter_id}`}>
+                            <Link className="text-primary hover:underline" href={`/professor/results?encounter=${a.encounter_id}`}>
                               Review
                             </Link>
                           )}
@@ -183,10 +188,10 @@ function Attempt({ id }: { id: string }) {
   };
 
   return (
-    <AppShell title="Review attempt">
+    <AppShell title="Review attempt" crumb="Results">
       {d?.assignment_id && (
-        <Link href={`/professor/results?assignment=${d.assignment_id}`} className="text-sm text-teal-700 hover:underline">
-          ← Back to attempts
+        <Link href={`/professor/results?assignment=${d.assignment_id}`} className="text-sm text-primary hover:underline">
+          Back to attempts
         </Link>
       )}
       <div className="mt-4 grid grid-cols-1 gap-6 xl:grid-cols-3">
@@ -230,14 +235,14 @@ function Attempt({ id }: { id: string }) {
                   </Field>
                 ))}
                 {fb.needs_review && (
-                  <label className="flex items-center gap-2 text-sm text-slate-700">
+                  <label className="flex items-center gap-2 text-sm text-ink">
                     <input type="checkbox" checked={clear} onChange={(e) => setClear(e.target.checked)} /> Mark as reviewed (clear the flag)
                   </label>
                 )}
                 <button className={btn.primary} type="button" onClick={save}>
                   Save review
                 </button>
-                {saved && <p className="text-sm text-emerald-700">Saved.</p>}
+                {saved && <p className="text-sm text-ok">Saved.</p>}
               </div>
             </Card>
           </div>

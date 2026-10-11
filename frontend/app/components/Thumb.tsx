@@ -14,8 +14,8 @@ export default function Thumb({ name, portrait, size = 48 }: { name: string; por
     .join("");
   return (
     <span
-      className="flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-slate-200 text-sm font-semibold text-slate-600"
-      style={{ width: size, height: size }}
+      className="flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#e8eaed] font-medium text-ink-2"
+      style={{ width: size, height: size, fontSize: Math.round(size * 0.36) }}
     >
       {src && ok ? (
         // eslint-disable-next-line @next/next/no-img-element

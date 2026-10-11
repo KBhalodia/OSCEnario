@@ -11,6 +11,7 @@ type Props = {
   levelRef?: MutableRefObject<number>; // 0..1 loudness from useVoicePlayer
   trust?: number; // optional, purely visual mood hint
   size?: number;
+  color?: string; // solid circle behind initials when there is no photo (call style)
 };
 
 const MOOD = ["Guarded", "Wary", "Opening up", "At ease"];
@@ -34,7 +35,7 @@ function initials(name: string) {
  * The patient's portrait with a subtle, audio-driven sound ring while speaking.
  * No cartoon mouth on a real photo; animation is a glow around it.
  */
-export function PatientAvatar({ name, portraitUrl, state, levelRef, trust, size = 168 }: Props) {
+export function PatientAvatar({ name, portraitUrl, state, levelRef, trust, size = 168, color }: Props) {
   const ringRef = useRef<HTMLDivElement>(null);
   const [failedUrl, setFailedUrl] = useState<string | null>(null);
   const imgOk = failedUrl !== portraitUrl;
@@ -60,12 +61,16 @@ export function PatientAvatar({ name, portraitUrl, state, levelRef, trust, size 
           // eslint-disable-next-line @next/next/no-img-element
           <img className="pa__img" src={portraitUrl} alt={name} onError={() => setFailedUrl(portraitUrl ?? null)} />
         ) : (
-          <div className="pa__placeholder" aria-hidden>
-            <svg viewBox="0 0 64 64" className="pa__silhouette">
-              <circle cx="32" cy="24" r="12" />
-              <path d="M10 60c0-12 10-20 22-20s22 8 22 20z" />
-            </svg>
-            <span className="pa__initials">{initials(name)}</span>
+          <div className="pa__placeholder" aria-hidden style={color ? { background: color } : undefined}>
+            {!color && (
+              <svg viewBox="0 0 64 64" className="pa__silhouette">
+                <circle cx="32" cy="24" r="12" />
+                <path d="M10 60c0-12 10-20 22-20s22 8 22 20z" />
+              </svg>
+            )}
+            <span className="pa__initials" style={color ? { color: "#fff", fontWeight: 400 } : undefined}>
+              {initials(name)}
+            </span>
           </div>
         )}
         {state === "thinking" && (

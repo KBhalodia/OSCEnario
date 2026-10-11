@@ -42,6 +42,9 @@ class FakeLLM:
             return copy.deepcopy(RECORDS["Yvette Armstrong"])
         if tool_name == "objective_links":
             return {"links": []}
+        if tool_name == "diagnosis_check":
+            return {"verdict": "correct", "matched": "Type 2 Diabetes", "differential_hits": [],
+                    "explanation": "Thirst, tiredness and his labs point to diabetes."}
         if tool_name == "encounter_feedback":
             dom = lambda k, sc: {"key": k, "score": sc, "rationale": "r", "evidence": [  # noqa: E731
                 {"turn": 1, "quote": "what brings you in"}], "strength_demonstrated": "",
@@ -94,6 +97,15 @@ def run():
                    files={"file": ("audiogram.png", b"\x89PNG fake", "image/png")})
         assert r.status_code == 200, r.text
         assert "checklist_needs_attachment" not in {i["code"] for i in r.json()["issues"]}
+        # images are never read by the AI: the chart item has no text; faculty's summary is kept for grading
+        r = c.post(f"/patients/{gid}/documents",
+                   data={"kind": "patient_record", "name": "Chest X-ray", "doc_type": "imaging",
+                         "summary": "Faculty read: normal chest film"},
+                   files={"file": ("cxr.png", b"\x89PNG fake", "image/png")}).json()
+        xr = next(a for a in r["patient"]["artifacts"] if a["title"].endswith("Chest X-ray"))
+        assert xr["text"] is None and xr["type"] == "imaging" and xr["file_path"].endswith(".png")
+        doc = next(d for d in r["patient"]["documents"] if d["name"] == "Chest X-ray")
+        assert doc["summary"] == "Faculty read: normal chest film" and doc["doc_type"] == "imaging"
 
         # publish is blocked by the BMI error until forced
         assert c.post(f"/patients/{gid}/publish").status_code == 409
@@ -141,6 +153,43 @@ def run():
         res = c.get(f"/assignments/{a['id']}/results").json()
         assert len(res["attempts"]) == 1 and res["attempts"][0]["total"] == fb["total"]
         assert [x["id"] for x in c.get("/encounters?student_id=s1").json()] == [eid]
+
+        # ---- classes: create, join with code, assign inside the class, M3 diagnosis question
+        cl = c.post("/classes", json={"name": "Nutrition counseling", "section": "Fall 2026", "created_by": "prof1"}).json()
+        assert len(cl["code"]) == 7 and cl["patients"] == []
+        assert c.post("/classes/join", json={"code": "nope", "student_id": "s9"}).status_code == 404
+        j = c.post("/classes/join", json={"code": cl["code"].upper(), "student_id": "S9"}).json()
+        assert "student_ids" not in j
+        assert c.get(f"/classes/{cl['id']}", params={"student_id": "zz"}).status_code == 403
+        a3 = c.post("/assignments", json={"patient_id": WYATT, "class_id": cl["id"], "level": "M3"}).json()
+        assert a3["asks_diagnosis"] and a3["class_name"] == "Nutrition counseling"
+        assert [x["id"] for x in c.get("/assignments", params={"student_id": "s9"}).json()] == [a3["id"]]
+        assert c.get("/assignments", params={"student_id": "outsider"}).json() == []
+        assert c.post("/encounters", json={"assignment_id": a3["id"], "student_id": "outsider"}).status_code == 403
+        cls_view = c.get("/classes", params={"student_id": "s9"}).json()[0]
+        assert cls_view["patients"][0]["name"] == "Wyatt Nelson" and "primary_diagnosis" not in cls_view["patients"][0]
+        br = c.get(f"/assignments/{a3['id']}/brief").json()
+        assert br["asks_diagnosis"] and br["learning_goals"] and len(br["domains"]) == 7
+        assert "primary_diagnosis" not in json.dumps(br) and "expected_discoveries" not in json.dumps(br)
+        e3 = c.post("/encounters", json={"assignment_id": a3["id"], "student_id": "s9"}).json()
+        assert "primary_diagnosis" not in e3["patient"]
+        c.post(f"/encounters/{e3['encounter_id']}/message", json={"message": "Hi, what brings you in?"})
+        c.post(f"/encounters/{e3['encounter_id']}/message",
+               json={"message": "Tell me more", "response_ms": 18000, "interrupted": True})
+        tr = c.get(f"/encounters/{e3['encounter_id']}").json()["transcript"]
+        assert tr[2]["response_ms"] == 18000 and tr[2]["interrupted"] and "offset_s" in tr[0]
+        fb3 = c.post(f"/encounters/{e3['encounter_id']}/end",
+                     json={"diagnosis": "T2DM", "differential": ["prediabetes"], "reasoning": "thirst"}).json()
+        assert fb3["diagnosis"]["verdict"] == "correct" and fb3["diagnosis"]["expected"]
+        assert fb3["communication"]["pacing"]["long_pauses"] == [3]
+        assert fb3["communication"]["pacing"]["interrupted_turns"] == [3]
+        assert "diagnosis" not in fb       # M1 isn't asked
+        assert c.get(f"/assignments/{a3['id']}/results").json()["attempts"][0]["diagnosis"] == "correct"
+
+        # ---- delete: assigned patients can't be deleted; unassigned drafts can
+        assert c.delete(f"/patients/{WYATT}").status_code == 409
+        assert c.delete(f"/patients/{gid}").json()["deleted"] == gid
+        assert c.get(f"/patients/{gid}").status_code == 404
 
         # attempts limit
         c.post("/encounters", json={"assignment_id": a["id"], "student_id": "s1"})

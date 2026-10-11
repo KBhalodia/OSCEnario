@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// One typed client for the Twinverse backend (FastAPI, app/main.py).
+// One typed client for the OSCEnario backend (FastAPI, app/main.py).
 // Every page talks to the backend through this file, so there is exactly one
 // place to change the URL or an endpoint.
 //
@@ -151,13 +151,15 @@ export type PatientProfile = {
     checklist_rubric_ids: string[];
     opening_trust: number;
     difficulty_notes: string;
+    patient_names_diagnosis: boolean;
   };
   primary_diagnosis: string;
   secondary_diagnoses: string[];
   facts: Fact[];
   artifacts: Artifact[];
   objectives: Objective[];
-  documents: { id: string; name: string; kind: string; file_path?: string | null; summary: string }[];
+  documents: { id: string; name: string; kind: string; file_path?: string | null; summary: string; doc_type?: string }[];
+  faculty_brief?: { background: string; notes: string; personality: string; summary: string } | null;
   assumptions: string[];
   [k: string]: unknown;
 };
@@ -178,7 +180,11 @@ export type Rubric = { id: string; title: string; type: string; max_points?: num
 export type Assignment = {
   id: string;
   patient_id: string;
+  class_id?: string | null;
+  class_name?: string | null;
+  asks_diagnosis?: boolean;
   patient_name: string;
+  patient_portrait?: string | null;
   title: string;
   level: string;
   level_label: string;
@@ -204,6 +210,7 @@ export type EncounterStart = {
   encounter_id: string;
   level: string;
   level_label: string;
+  asks_diagnosis: boolean;
   patient: PatientSummary;
   chart: ChartView;
 };
@@ -234,7 +241,66 @@ export type EncounterRow = {
   max_total: number | null;
 };
 
-export type TranscriptTurn = { n: number; speaker: "student" | "patient"; text: string; at: string };
+export type TranscriptTurn = {
+  n: number;
+  speaker: "student" | "patient";
+  text: string;
+  at: string;
+  offset_s?: number;
+  response_ms?: number | null;
+  interrupted?: boolean;
+};
+
+export type Pacing = {
+  measured_turns: number;
+  median_pause_s: number | null;
+  longest_pause_s: number | null;
+  long_pauses: number[];
+  interrupted_turns: number[];
+  note: string;
+};
+
+export type DiagnosisResult = {
+  asked: boolean;
+  submitted: string;
+  differential: string[];
+  reasoning: string;
+  expected: string[];
+  verdict: "correct" | "partially_correct" | "incorrect" | "not_answered" | "not_graded";
+  matched: string;
+  differential_hits: string[];
+  explanation: string;
+};
+
+export type ClassCard = {
+  id: string;
+  name: string;
+  section: string;
+  description: string;
+  student_role: string;
+  code: string;
+  created_by?: string | null;
+  created_at: string;
+  patient_ids: string[];
+  student_ids?: string[];
+  patients: PatientSummary[];
+  assignment_count: number;
+  student_count: number;
+};
+
+export type AssignmentBrief = {
+  assignment: Pick<Assignment, "id" | "title" | "patient_name" | "level" | "level_label" | "due_date" | "instructions" | "max_attempts" | "class_name">;
+  patient: PatientSummary;
+  student_role: string;
+  setting: string;
+  expectations: string;
+  asks_diagnosis: boolean;
+  domains: { key: string; name: string; mode: string; what_good_looks_like: string }[];
+  learning_goals: string[];
+  checklists: { id: string; title: string; sections: string[] }[];
+};
+
+export type DocMeta = { name: string; type: string; summary: string };
 
 export type Evidence = { turn: number; quote: string };
 
@@ -304,6 +370,7 @@ export type Feedback = {
   needs_review: boolean;
   review_reasons: string[];
   faculty_notes: string;
+  diagnosis?: DiagnosisResult | null;
   faculty_review?: { notes: string; reviewed_by: string | null; reviewed_at: string | null };
 };
 
@@ -336,6 +403,7 @@ export type AssignmentResults = {
     domain_scores: Record<string, string> | null;
     epas: { id: string; estimated_label: string | null; meets_target: boolean | null }[] | null;
     checklists: { id: string; score: number; max_points: number }[] | null;
+    diagnosis?: string | null;
   }[];
 };
 
@@ -355,6 +423,33 @@ export type FacultyInput = {
 
 export type DocKind = "patient_record" | "reference";
 
+/** Document labels faculty pick when uploading. Reference types never reach the student's chart. */
+export const DOC_TYPES: { value: string; label: string; reference?: boolean }[] = [
+  { value: "lab_report", label: "Lab report" },
+  { value: "imaging", label: "Imaging (X-ray, CT, MRI)" },
+  { value: "ecg", label: "ECG" },
+  { value: "audiogram", label: "Audiogram" },
+  { value: "prior_note", label: "Prior note or record" },
+  { value: "medication_list", label: "Medication list" },
+  { value: "other_record", label: "Other patient record" },
+  { value: "guideline", label: "Guideline (grading only)", reference: true },
+  { value: "syllabus", label: "Syllabus or course notes (grading only)", reference: true },
+  { value: "reference", label: "Other reference (grading only)", reference: true },
+];
+export const REFERENCE_TYPES = new Set(DOC_TYPES.filter((d) => d.reference).map((d) => d.value));
+
+export type UploadDoc = { file: File; name: string; type: string; summary: string };
+
+export const STUDENT_ROLES = [
+  "Medical student",
+  "Dietetics student",
+  "Nursing student",
+  "Physician assistant student",
+  "Pharmacy student",
+  "Speech-language pathology student",
+  "Physical therapy student",
+];
+
 // ------------------------------- calls --------------------------------------
 
 export const api = {
@@ -368,18 +463,32 @@ export const api = {
   savePatient: (p: PatientProfile) =>
     request<{ patient: PatientProfile; issues: Issue[] }>(`/patients/${encodeURIComponent(p.id)}`, json("PUT", p)),
   importSamples: () => request<{ imported_count: number }>("/patients/import", { method: "POST" }),
-  generate: (brief: FacultyInput, files: { file: File; kind: DocKind }[], checklistIds: string[]) => {
+  generate: (brief: FacultyInput, files: UploadDoc[], checklistIds: string[], classId?: string | null) => {
     const fd = new FormData();
     fd.append("brief", JSON.stringify(brief));
-    fd.append("kinds", JSON.stringify(files.map((f) => f.kind)));
+    fd.append("kinds", JSON.stringify(files.map((f) => (REFERENCE_TYPES.has(f.type) ? "reference" : "patient_record"))));
+    fd.append("doc_meta", JSON.stringify(files.map((f) => ({ name: f.name, type: f.type, summary: f.summary }))));
     fd.append("checklist_rubric_ids", JSON.stringify(checklistIds));
+    if (classId) fd.append("class_id", classId);
     for (const f of files) fd.append("files", f.file, f.file.name);
     return request<{ patient: PatientProfile; issues: Issue[] }>("/patients/generate", { method: "POST", body: fd });
   },
-  addDocument: (id: string, file: File, kind: DocKind) => {
+  regenerate: (id: string, brief: FacultyInput, files: UploadDoc[], checklistIds: string[]) => {
+    const fd = new FormData();
+    fd.append("brief", JSON.stringify(brief));
+    fd.append("doc_meta", JSON.stringify(files.map((f) => ({ name: f.name, type: f.type, summary: f.summary }))));
+    fd.append("checklist_rubric_ids", JSON.stringify(checklistIds));
+    for (const f of files) fd.append("files", f.file, f.file.name);
+    return request<{ patient: PatientProfile; issues: Issue[] }>(`/patients/${encodeURIComponent(id)}/regenerate`, { method: "POST", body: fd });
+  },
+  deletePatient: (id: string) => request<{ deleted: string }>(`/patients/${encodeURIComponent(id)}`, { method: "DELETE" }),
+  addDocument: (id: string, file: File, kind: DocKind, meta?: Partial<DocMeta>) => {
     const fd = new FormData();
     fd.append("file", file, file.name);
     fd.append("kind", kind);
+    if (meta?.name) fd.append("name", meta.name);
+    if (meta?.type) fd.append("doc_type", meta.type);
+    if (meta?.summary) fd.append("summary", meta.summary);
     return request<{ patient: PatientProfile; issues: Issue[] }>(`/patients/${encodeURIComponent(id)}/documents`, {
       method: "POST",
       body: fd,
@@ -401,9 +510,31 @@ export const api = {
       { method: "POST" },
     ),
 
+  // Classes
+  classes: (q: { created_by?: string; student_id?: string } = {}) => {
+    const p = new URLSearchParams(Object.entries(q).filter(([, v]) => v) as [string, string][]);
+    return request<ClassCard[]>(`/classes${p.toString() ? `?${p}` : ""}`);
+  },
+  klass: (id: string, studentId?: string) =>
+    request<ClassCard>(`/classes/${encodeURIComponent(id)}${studentId ? `?student_id=${encodeURIComponent(studentId)}` : ""}`),
+  createClass: (c: { name: string; section?: string; description?: string; student_role?: string; created_by?: string }) =>
+    request<ClassCard>("/classes", json("POST", c)),
+  updateClass: (id: string, c: { name?: string; section?: string; description?: string; student_role?: string }) =>
+    request<ClassCard>(`/classes/${encodeURIComponent(id)}`, json("PUT", c)),
+  joinClass: (code: string, studentId: string) => request<ClassCard>("/classes/join", json("POST", { code, student_id: studentId })),
+  resetCode: (id: string) => request<{ code: string }>(`/classes/${encodeURIComponent(id)}/code`, { method: "POST" }),
+  addClassPatient: (id: string, patientId: string) =>
+    request<ClassCard>(`/classes/${encodeURIComponent(id)}/patients`, json("POST", { patient_id: patientId })),
+  removeClassPatient: (id: string, patientId: string) =>
+    request<ClassCard>(`/classes/${encodeURIComponent(id)}/patients/${encodeURIComponent(patientId)}`, { method: "DELETE" }),
+  removeStudent: (id: string, studentId: string) =>
+    request<ClassCard>(`/classes/${encodeURIComponent(id)}/students/${encodeURIComponent(studentId)}`, { method: "DELETE" }),
+
   // Assignments
+  brief: (id: string) => request<AssignmentBrief>(`/assignments/${encodeURIComponent(id)}/brief`),
   createAssignment: (a: {
     patient_id: string;
+    class_id?: string | null;
     level: string;
     student_ids: string[];
     title?: string;
@@ -413,7 +544,7 @@ export const api = {
     created_by?: string | null;
     instructions?: string;
   }) => request<Assignment>("/assignments", json("POST", a)),
-  assignments: (q: { student_id?: string; created_by?: string } = {}) => {
+  assignments: (q: { student_id?: string; created_by?: string; class_id?: string } = {}) => {
     const p = new URLSearchParams(Object.entries(q).filter(([, v]) => v) as [string, string][]);
     return request<Assignment[]>(`/assignments${p.toString() ? `?${p}` : ""}`);
   },
@@ -423,9 +554,10 @@ export const api = {
   // Encounters
   startEncounter: (b: { assignment_id?: string; patient_id?: string; student_id?: string; level?: string; preview?: boolean }) =>
     request<EncounterStart>("/encounters", json("POST", b)),
-  send: (id: string, message: string) =>
-    request<TurnResponse>(`/encounters/${encodeURIComponent(id)}/message`, json("POST", { message })),
-  end: (id: string) => request<Feedback>(`/encounters/${encodeURIComponent(id)}/end`, { method: "POST" }),
+  send: (id: string, message: string, timing?: { response_ms: number | null; interrupted: boolean }) =>
+    request<TurnResponse>(`/encounters/${encodeURIComponent(id)}/message`, json("POST", { message, ...(timing ?? {}) })),
+  end: (id: string, answer?: { diagnosis: string; differential: string[]; reasoning: string }) =>
+    request<Feedback>(`/encounters/${encodeURIComponent(id)}/end`, answer ? json("POST", answer) : { method: "POST" }),
   encounters: (q: { student_id?: string; assignment_id?: string } = {}) => {
     const p = new URLSearchParams(Object.entries(q).filter(([, v]) => v) as [string, string][]);
     return request<EncounterRow[]>(`/encounters${p.toString() ? `?${p}` : ""}`);

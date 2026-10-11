@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 
 from ..bedrock import LLM, assistant_msg, fast_model, user_msg
 from ..schemas import (
-    Artifact, Disclosure, EncounterState, Fact, PatientProfile,
+    Artifact, Disclosure, EncounterState, Fact, FactCategory, PatientProfile,
     ProfileStatus, ReleaseTrigger, Speaker, Turn,
 )
 from .. import levels
@@ -208,9 +208,19 @@ def chart_view(profile: PatientProfile, state: EncounterState) -> dict:
     disclosed = [profile.fact(fid) for fid in state.disclosed_fact_ids]
     groups: dict[str, list[dict]] = {}
     for f in disclosed:
-        if f.show_in_chart:
+        # Diagnoses are what the student must work out (OSCE prep): never put them in the chart.
+        if f.show_in_chart and f.category != FactCategory.diagnosis:
             groups.setdefault(f.category.value, []).append({"id": f.id, "text": f.content, "topic": f.topic})
-    arts = [a.model_dump(mode="json") for a in profile.artifacts if a.id in state.released_artifact_ids]
+    arts = []
+    for a in profile.artifacts:
+        if a.id in state.released_artifact_ids:
+            d = a.model_dump(mode="json")
+            # never hand the student a diagnosis row (e.g. the referral's "Primary diagnosis")
+            d["items"] = [i for i in d["items"] if "diagnos" not in i["label"].lower()]
+            # an image is shown as the image alone: any read of it would give the interpretation away
+            if (a.file_path or "").lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".webp")):
+                d["text"] = None
+            arts.append(d)
     locked = [{"id": a.id, "title": a.title, "type": a.type.value}
               for a in profile.artifacts if a.id not in state.released_artifact_ids]
     p = profile.persona

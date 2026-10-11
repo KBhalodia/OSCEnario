@@ -191,6 +191,7 @@ class EncounterSettings(BaseModel):
     checklist_rubric_ids: list[str] = []      # extra points checklists, e.g. pediatric_hearing_treatment_checklist
     opening_trust: int = Field(1, ge=0, le=3) # guarded patients (Walter, Dominic) can start at 0
     difficulty_notes: str = ""                # set per encounter from the year level (levels.py)
+    patient_names_diagnosis: bool = False     # False (OSCE prep): patient describes symptoms, never the clinical label
 
 
 class FacultyBrief(BaseModel):
@@ -214,7 +215,8 @@ class SourceDocument(BaseModel):
     kind: DocumentKind = DocumentKind.reference
     file_path: Optional[str] = None     # relative to uploads/
     text: str = ""
-    summary: str = ""                   # for images: what Claude saw (ECG, X-ray)
+    summary: str = ""                   # for images: what Claude saw (ECG, X-ray); or faculty's note
+    doc_type: str = ""                  # faculty label: lab_report, imaging, ecg, audiogram, prior_note, guideline...
 
 
 class ProfileStatus(str, Enum):
@@ -280,6 +282,8 @@ class Turn(BaseModel):
     disclosed_fact_ids: list[str] = []
     released_artifact_ids: list[str] = []
     tags: list[str] = []                      # router tags: open_question, empathy, jargon, off_script...
+    response_ms: Optional[int] = None         # student turns: pause after the patient finished speaking
+    interrupted: bool = False                 # student turns: started talking while the patient was still speaking
 
 
 class EncounterState(BaseModel):

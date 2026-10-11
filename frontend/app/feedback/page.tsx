@@ -15,7 +15,7 @@ import { useActiveNetId } from "@/lib/identity";
 
 export default function FeedbackPage() {
   return (
-    <Suspense fallback={<AppShell title="My Feedback"><Spinner label="Loading…" /></AppShell>}>
+    <Suspense fallback={<AppShell title="Feedback" crumb="Feedback"><Spinner label="Loading…" /></AppShell>}>
       <Inner />
     </Suspense>
   );
@@ -26,7 +26,7 @@ function Inner() {
   const encounterId = useSearchParams().get("encounter");
   if (!netId)
     return (
-      <AppShell title="My Feedback">
+      <AppShell title="Feedback" crumb="Feedback">
         <NetIdGate />
       </AppShell>
     );
@@ -44,31 +44,31 @@ function List({ netId }: { netId: string }) {
   }, [netId]);
 
   return (
-    <AppShell title="My Feedback">
+    <AppShell title="Feedback" crumb="Feedback">
       <ErrorNote error={error} />
       {rows === null ? (
         <Spinner label="Loading…" />
       ) : rows.length === 0 ? (
         <Card>
-          <p className="text-sm text-slate-500">
-            No encounters yet. <Link className="text-teal-700 underline" href="/student">Start one from your assignments.</Link>
+          <p className="text-sm text-ink-2">
+            No encounters yet. <Link className="text-primary underline" href="/student">Start one from your assignments.</Link>
           </p>
         </Card>
       ) : (
         <Card title={`Encounters for ${netId}`}>
-          <ul className="flex flex-col divide-y divide-slate-100">
+          <ul className="flex flex-col divide-y divide-line">
             {rows.map((r) => (
               <li key={r.id} className="flex flex-wrap items-center gap-3 py-3">
-                <span className="font-medium text-slate-900">{r.patient_name || "Patient"}</span>
+                <span className="font-medium text-ink">{r.patient_name || "Patient"}</span>
                 <Pill tone="teal">{r.level}</Pill>
-                <span className="text-xs text-slate-500">{new Date(r.created_at).toLocaleString()}</span>
+                <span className="text-xs text-ink-2">{new Date(r.created_at).toLocaleString()}</span>
                 <span className="ml-auto flex items-center gap-3">
                   {r.status === "completed" ? (
                     <>
-                      <span className="text-sm font-semibold text-slate-800">
+                      <span className="text-sm font-semibold text-ink">
                         {r.total}/{r.max_total}
                       </span>
-                      <Link className="text-sm text-teal-700 hover:underline" href={`/feedback?encounter=${r.id}`}>
+                      <Link className="text-sm text-primary hover:underline" href={`/feedback?encounter=${r.id}`}>
                         View feedback
                       </Link>
                     </>
@@ -95,9 +95,9 @@ function One({ id }: { id: string }) {
       .catch((e) => setError(e.message));
   }, [id]);
   return (
-    <AppShell title="My Feedback">
-      <Link href="/feedback" className="text-sm text-teal-700 hover:underline">
-        ← All encounters
+    <AppShell title="Feedback" crumb="Feedback">
+      <Link href="/feedback" className="text-sm text-primary hover:underline">
+        All encounters
       </Link>
       <div className="mt-4">
         <ErrorNote error={error} />
@@ -107,7 +107,7 @@ function One({ id }: { id: string }) {
           <FeedbackReport fb={d.feedback} transcript={d.transcript} />
         ) : (
           <Card>
-            <p className="text-sm text-slate-500">This encounter hasn&apos;t been graded yet.</p>
+            <p className="text-sm text-ink-2">This encounter hasn&apos;t been graded yet.</p>
           </Card>
         )}
       </div>

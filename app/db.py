@@ -8,7 +8,7 @@ import sqlite3
 from pathlib import Path
 
 DB_PATH = Path(os.environ.get("VPE_DB_PATH", Path(__file__).resolve().parent.parent / "twinverse.db"))
-TABLES = ("patients", "encounters", "assignments", "feedback")
+TABLES = ("patients", "encounters", "assignments", "feedback", "classes")
 
 
 def get_connection():
@@ -56,7 +56,7 @@ def list_records(table):
     return [json.loads(row["data"]) for row in rows]
 
 
-def delete_record(table, record_id):
+def delete_record(table, record_id):  # noqa: D401
     _check(table)
     with get_connection() as conn:
         conn.execute(f"DELETE FROM {table} WHERE id = ?", (record_id,))

@@ -74,6 +74,27 @@ def findings(profile: PatientProfile, state: EncounterState) -> list[dict]:
     return out
 
 
+LONG_PAUSE_S = 15        # silence after the patient finished, before the student spoke
+QUICK_S = 1.0            # answered almost instantly: often not listening to the end
+
+
+def _pacing(student: list) -> dict:
+    """Timing measured in the browser: pause after the patient finished speaking, and interruptions.
+    Reported and used as evidence for listening/rapport, never scored on its own."""
+    gaps = [t.response_ms / 1000 for t in student if t.response_ms is not None]
+    gaps_sorted = sorted(gaps)
+    median = gaps_sorted[len(gaps_sorted) // 2] if gaps_sorted else None
+    return {"pacing": {
+        "measured_turns": len(gaps),
+        "median_pause_s": round(median, 1) if median is not None else None,
+        "longest_pause_s": round(max(gaps), 1) if gaps else None,
+        "long_pauses": [t.n for t in student if t.response_ms is not None and t.response_ms / 1000 >= LONG_PAUSE_S],
+        "interrupted_turns": [t.n for t in student if t.interrupted],
+        "note": ("Pauses of a few seconds after the patient shares something are normal and can be good listening. "
+                 f"Pauses of {LONG_PAUSE_S}s or more, or talking over the patient, are flagged for reflection."),
+    }}
+
+
 def communication_stats(state: EncounterState) -> dict:
     student = [t for t in state.turns if t.speaker == Speaker.student]
     tags = [set(t.tags) for t in student]
@@ -88,7 +109,7 @@ def communication_stats(state: EncounterState) -> dict:
                 unaddressed.append(t.n)
 
     questions = sum(bool(QUESTION_TAGS & s) for s in tags)
-    return {
+    return {**_pacing(student), 
         "student_turns": len(student),
         "questions": questions,
         "open_questions": count("open_question"),

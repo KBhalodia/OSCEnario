@@ -1,5 +1,5 @@
 """
-Twinverse API: teacher portal (Studio + assignments), student portal (encounters +
+OSCEnario API: teacher portal (Studio + assignments), student portal (encounters +
 feedback), grading config, and the voice routes when the voice module is present.
 
 Run:  uvicorn app.main:app --reload --port 8000      (docs at http://localhost:8000/docs)
@@ -10,6 +10,7 @@ load/save records and call the engine, generator, levels and feedback functions.
 from __future__ import annotations
 
 import json
+import secrets
 import shutil
 import uuid
 from contextlib import asynccontextmanager
@@ -24,16 +25,17 @@ from pydantic import BaseModel, Field, ValidationError
 
 from app import levels
 from app.bedrock import get_llm, smart_model
-from app.db import get_record, init_db, list_records, save_record
+from app.db import delete_record, get_record, init_db, list_records, save_record
 from app.encounter import engine
+from app.feedback.diagnosis import grade_diagnosis
 from app.feedback.engine import build_feedback
 from app.linking import link_objectives
 from app.rules import validate
 from app.schemas import (
-    DocumentKind, EncounterState, PatientProfile, ProfileStatus, SourceDocument,
+    DocumentKind, EncounterState, FactCategory, PatientProfile, ProfileStatus, SourceDocument,
 )
 from app.studio.documents import IMAGE_EXT, load_document
-from app.studio.generator import FacultyInput, _document_artifacts, generate_profile
+from app.studio.generator import REFERENCE_DOC_TYPES, FacultyInput, _document_artifacts, generate_profile
 
 ROOT = Path(__file__).resolve().parent.parent
 SAMPLES_DIR = ROOT / "samples"
@@ -72,7 +74,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="Twinverse API", version="2.0.0", lifespan=lifespan)
+app = FastAPI(title="OSCEnario API", version="2.0.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -157,13 +159,35 @@ async def _save_upload(file: UploadFile) -> tuple[Path, str]:
     return dest, dest.name
 
 
-def _load_doc(path: Path, stored: str, kind: str, doc_id: str, llm) -> SourceDocument:
+def _load_doc(path: Path, stored: str, kind: str, doc_id: str, llm, meta: Optional[dict] = None) -> SourceDocument:
+    """meta (Studio upload form): {"name", "type", "summary"}. The type decides the kind:
+    guideline/syllabus/reference -> reference material; anything else -> about this patient."""
+    meta = meta or {}
+    dtype = (meta.get("type") or "").strip()
+    if dtype:
+        kind = "reference" if dtype in REFERENCE_DOC_TYPES else "patient_record"
     try:
         doc = load_document(path, kind, doc_id, llm=llm, vision_model=smart_model(), stored_path=stored)
     except ValueError as e:
         raise HTTPException(400, str(e))
-    doc.name = stored.split("_", 1)[-1]
+    doc.name = (meta.get("name") or "").strip() or stored.split("_", 1)[-1]
+    doc.doc_type = dtype
+    if (meta.get("summary") or "").strip():
+        doc.summary = meta["summary"].strip()
+    if Path(stored).suffix.lower() in IMAGE_EXT:
+        doc.text = doc.summary     # faculty's read only; never shown to students
     return doc
+
+
+def _parse_json_form(raw: str, what: str):
+    try:
+        return json.loads(raw or "[]")
+    except ValueError:
+        raise HTTPException(422, f"Bad {what}: expected JSON")
+
+
+def _patient_assignments(patient_id: str) -> list[dict]:
+    return [a for a in list_records("assignments") if a.get("patient_id") == patient_id]
 
 
 # --------------------------------------------------------------------------
@@ -172,7 +196,7 @@ def _load_doc(path: Path, stored: str, kind: str, doc_id: str, llm) -> SourceDoc
 
 @app.get("/")
 def home():
-    return {"message": "Twinverse backend is running!", "docs": "/docs"}
+    return {"message": "OSCEnario backend is running!", "docs": "/docs"}
 
 
 @app.get("/config/grading")
@@ -260,6 +284,8 @@ async def generate_patient(
     files: list[UploadFile] = File(default=[]),
     kinds: str = Form("[]", description='JSON list, one per file: "patient_record" or "reference"'),
     checklist_rubric_ids: str = Form("[]", description="JSON list of checklist rubric ids to attach"),
+    doc_meta: str = Form("[]", description='JSON list, one per file: {"name", "type", "summary"}'),
+    class_id: Optional[str] = Form(None, description="Add the new patient to this class"),
     llm=Depends(llm_dep),
 ):
     """The judge demo: a short description (+ optional files) -> full draft patient. ~30-90 s."""
@@ -270,11 +296,13 @@ async def generate_patient(
     except (ValidationError, ValueError) as e:
         raise HTTPException(422, f"Bad form data: {e}")
 
+    metas = _parse_json_form(doc_meta, "doc_meta")
     docs = []
     for i, f in enumerate(files, start=1):
         path, stored = await _save_upload(f)
         kind = kind_list[i - 1] if i - 1 < len(kind_list) else "reference"
-        docs.append(_load_doc(path, stored, kind, f"d{i}", llm))
+        docs.append(_load_doc(path, stored, kind, f"d{i}", llm, metas[i - 1] if i - 1 < len(metas) else None))
+    cls = _load_class(class_id) if class_id else None
     try:
         profile, _ = generate_profile(fi, docs, llm)
     except HTTPException:
@@ -284,16 +312,72 @@ async def generate_patient(
     profile.settings.checklist_rubric_ids = [c for c in checklists if (RUBRIC_DIR / f"{c}.json").exists()]
     with_voice(profile)
     save_profile(profile)
+    if cls is not None and profile.id not in cls["patient_ids"]:
+        cls["patient_ids"].append(profile.id)
+        save_record("classes", cls["id"], cls)
     return {"patient": profile.model_dump(mode="json"), "issues": _issues(profile)}
+
+
+@app.post("/patients/{patient_id}/regenerate")
+async def regenerate_patient(
+    patient_id: str,
+    brief: str = Form(...),
+    files: list[UploadFile] = File(default=[]),
+    doc_meta: str = Form("[]"),
+    checklist_rubric_ids: Optional[str] = Form(None),
+    llm=Depends(llm_dep),
+):
+    """'Edit description': rebuild a patient from a changed brief, keeping its id, classes, documents
+    and photo. Not allowed once students have been assigned it (their results refer to it)."""
+    old = load_profile(patient_id)
+    if _patient_assignments(patient_id):
+        raise HTTPException(409, "This patient is already assigned. Duplicate it instead of rebuilding it.")
+    try:
+        fi = FacultyInput.model_validate_json(brief)
+    except ValidationError as e:
+        raise HTTPException(422, f"Bad brief: {e}")
+    metas = _parse_json_form(doc_meta, "doc_meta")
+    docs = list(old.documents)
+    for i, f in enumerate(files, start=1):
+        path, stored = await _save_upload(f)
+        docs.append(_load_doc(path, stored, "reference", f"d{len(docs) + 1}", llm,
+                              metas[i - 1] if i - 1 < len(metas) else None))
+    try:
+        profile, _ = generate_profile(fi, docs, llm, patient_id=patient_id)
+    except Exception as e:
+        raise _ai_error(e)
+    profile.version = old.version + 1
+    profile.persona.portrait_path = profile.persona.portrait_path or old.persona.portrait_path
+    profile.settings.checklist_rubric_ids = (
+        json.loads(checklist_rubric_ids) if checklist_rubric_ids else old.settings.checklist_rubric_ids)
+    with_voice(profile)
+    save_profile(profile)
+    return {"patient": profile.model_dump(mode="json"), "issues": _issues(profile)}
+
+
+@app.delete("/patients/{patient_id}")
+def delete_patient(patient_id: str):
+    """Delete a patient nobody has been assigned (drafts, test cases)."""
+    load_profile(patient_id)
+    if _patient_assignments(patient_id):
+        raise HTTPException(409, "This patient is assigned to students, so it can't be deleted.")
+    for c in list_records("classes"):
+        if patient_id in c.get("patient_ids", []):
+            c["patient_ids"].remove(patient_id)
+            save_record("classes", c["id"], c)
+    delete_record("patients", patient_id)
+    return {"deleted": patient_id}
 
 
 @app.post("/patients/{patient_id}/documents")
 async def add_document(patient_id: str, file: UploadFile = File(...),
-                       kind: str = Form("patient_record"), llm=Depends(llm_dep)):
+                       kind: str = Form("patient_record"), name: str = Form(""),
+                       doc_type: str = Form(""), summary: str = Form(""), llm=Depends(llm_dep)):
     """Attach a lab report / ECG / X-ray / guideline after creation. Patient records become chart items."""
     p = load_profile(patient_id)
     path, stored = await _save_upload(file)
-    doc = _load_doc(path, stored, kind, f"d{len(p.documents) + 1}", llm)
+    doc = _load_doc(path, stored, kind, f"d{len(p.documents) + 1}", llm,
+                    {"name": name, "type": doc_type, "summary": summary})
     p.documents.append(doc)
     if doc.kind == DocumentKind.patient_record:
         _document_artifacts(p, [doc])
@@ -341,11 +425,158 @@ def publish_patient(patient_id: str, force: bool = False):
 
 
 # --------------------------------------------------------------------------
+# Classes: faculty group patients and students; students join with a code
+# --------------------------------------------------------------------------
+
+CODE_ALPHABET = "abcdefghjkmnpqrstuvwxyz23456789"   # no 0/o, 1/l/i
+
+
+def _new_code() -> str:
+    taken = {c.get("code") for c in list_records("classes")}
+    while True:
+        code = "".join(secrets.choice(CODE_ALPHABET) for _ in range(7))
+        if code not in taken:
+            return code
+
+
+def _load_class(class_id: str) -> dict:
+    c = get_record("classes", class_id)
+    if c is None:
+        raise HTTPException(404, "Class not found")
+    return c
+
+
+def _class_card(c: dict, faculty: bool) -> dict:
+    """Class plus what its card shows. Students get no patient details (names/faces only)."""
+    pats = []
+    for pid in c.get("patient_ids", []):
+        d = get_record("patients", pid)
+        if d:
+            p = PatientProfile.model_validate(d)
+            pats.append(_summary(p) if faculty else _student_summary(p))
+    asg = [a for a in list_records("assignments") if a.get("class_id") == c["id"]]
+    out = {**c, "patients": pats, "assignment_count": len(asg), "student_count": len(c.get("student_ids", []))}
+    if not faculty:
+        out.pop("student_ids", None)
+        out["patients"] = [x for x in pats if any(a["patient_id"] == x["id"] for a in asg)]
+    return out
+
+
+class ClassCreate(BaseModel):
+    name: str = Field(min_length=1)
+    section: str = ""
+    description: str = ""
+    student_role: str = ""
+    created_by: Optional[str] = None
+
+
+class ClassUpdate(BaseModel):
+    name: Optional[str] = None
+    section: Optional[str] = None
+    description: Optional[str] = None
+    student_role: Optional[str] = None
+
+
+class JoinRequest(BaseModel):
+    code: str
+    student_id: str = Field(min_length=1)
+
+
+@app.post("/classes")
+def create_class(req: ClassCreate):
+    c = {"id": uuid.uuid4().hex[:10], **req.model_dump(), "code": _new_code(), "created_at": now(),
+         "patient_ids": [], "student_ids": []}
+    save_record("classes", c["id"], c)
+    return _class_card(c, faculty=True)
+
+
+@app.get("/classes")
+def get_classes(created_by: Optional[str] = None, student_id: Optional[str] = None):
+    out = list_records("classes")
+    if created_by:
+        out = [c for c in out if c.get("created_by") == created_by]
+    if student_id:
+        out = [c for c in out if student_id in c.get("student_ids", [])]
+    out.sort(key=lambda c: c.get("created_at", ""))
+    return [_class_card(c, faculty=not student_id) for c in out]
+
+
+@app.get("/classes/{class_id}")
+def get_class(class_id: str, student_id: Optional[str] = None):
+    c = _load_class(class_id)
+    if student_id and student_id not in c.get("student_ids", []):
+        raise HTTPException(403, "Join this class with its code first.")
+    return _class_card(c, faculty=not student_id)
+
+
+@app.put("/classes/{class_id}")
+def update_class(class_id: str, req: ClassUpdate):
+    c = _load_class(class_id)
+    c.update({k: v for k, v in req.model_dump().items() if v is not None})
+    save_record("classes", class_id, c)
+    return _class_card(c, faculty=True)
+
+
+@app.post("/classes/join")
+def join_class(req: JoinRequest):
+    code = req.code.strip().lower().replace("-", "").replace(" ", "")
+    c = next((x for x in list_records("classes") if x.get("code") == code), None)
+    if c is None:
+        raise HTTPException(404, "No class has that code. Check it with your instructor.")
+    sid = req.student_id.strip().lower()
+    if sid not in c["student_ids"]:
+        c["student_ids"].append(sid)
+        save_record("classes", c["id"], c)
+    return _class_card(c, faculty=False)
+
+
+@app.post("/classes/{class_id}/code")
+def reset_code(class_id: str):
+    c = _load_class(class_id)
+    c["code"] = _new_code()
+    save_record("classes", class_id, c)
+    return {"code": c["code"]}
+
+
+class ClassPatient(BaseModel):
+    patient_id: str
+
+
+@app.post("/classes/{class_id}/patients")
+def add_class_patient(class_id: str, req: ClassPatient):
+    c = _load_class(class_id)
+    load_profile(req.patient_id)
+    if req.patient_id not in c["patient_ids"]:
+        c["patient_ids"].append(req.patient_id)
+        save_record("classes", class_id, c)
+    return _class_card(c, faculty=True)
+
+
+@app.delete("/classes/{class_id}/patients/{patient_id}")
+def remove_class_patient(class_id: str, patient_id: str):
+    c = _load_class(class_id)
+    if patient_id in c["patient_ids"]:
+        c["patient_ids"].remove(patient_id)
+        save_record("classes", class_id, c)
+    return _class_card(c, faculty=True)
+
+
+@app.delete("/classes/{class_id}/students/{student_id}")
+def remove_class_student(class_id: str, student_id: str):
+    c = _load_class(class_id)
+    if student_id in c["student_ids"]:
+        c["student_ids"].remove(student_id)
+        save_record("classes", class_id, c)
+    return _class_card(c, faculty=True)
+
+
+# --------------------------------------------------------------------------
 # Teacher portal: assignments
 # --------------------------------------------------------------------------
 
 class AssignmentCreate(BaseModel):
     patient_id: str
+    class_id: Optional[str] = None
     title: str = ""
     level: str = "M2"
     student_ids: list[str] = []
@@ -363,18 +594,41 @@ def create_assignment(req: AssignmentCreate):
         raise HTTPException(400, "Publish the patient before assigning it.")
     if req.level not in levels.level_names():
         raise HTTPException(400, f"Unknown level {req.level}; use one of {levels.level_names()}")
+    if req.class_id:
+        c = _load_class(req.class_id)
+        if p.id not in c["patient_ids"]:
+            c["patient_ids"].append(p.id)
+            save_record("classes", c["id"], c)
     a = {"id": uuid.uuid4().hex[:10], **req.model_dump(), "created_at": now(),
-         "patient_name": p.persona.name, "level_label": levels.get_level(req.level)["label"]}
+         "patient_name": p.persona.name, "patient_portrait": p.persona.portrait_path,
+         "level_label": levels.get_level(req.level)["label"],
+         "asks_diagnosis": bool(levels.get_level(req.level).get("asks_diagnosis")),
+         "class_name": (get_record("classes", req.class_id) or {}).get("name") if req.class_id else None}
     a["title"] = a["title"] or f"{p.persona.name} ({req.level})"
     save_record("assignments", a["id"], a)
     return a
 
 
+def _student_may_take(a: dict, student_id: Optional[str]) -> bool:
+    """Class assignments: class members (all of them, or the listed subset). Older assignments
+    without a class: the listed students, or everyone if none are listed."""
+    if not student_id:
+        return True
+    if a.get("class_id"):
+        c = get_record("classes", a["class_id"]) or {}
+        if student_id not in c.get("student_ids", []):
+            return False
+    return not a.get("student_ids") or student_id in a["student_ids"]
+
+
 @app.get("/assignments")
-def get_assignments(student_id: Optional[str] = None, created_by: Optional[str] = None):
+def get_assignments(student_id: Optional[str] = None, created_by: Optional[str] = None,
+                    class_id: Optional[str] = None):
     out = list_records("assignments")
+    if class_id:
+        out = [a for a in out if a.get("class_id") == class_id]
     if student_id:
-        out = [a for a in out if not a.get("student_ids") or student_id in a["student_ids"]]   # empty = everyone
+        out = [a for a in out if _student_may_take(a, student_id)]
     if created_by:
         out = [a for a in out if a.get("created_by") == created_by]
     return sorted(out, key=lambda a: a.get("created_at", ""), reverse=True)
@@ -386,6 +640,38 @@ def get_assignment(assignment_id: str):
     if a is None:
         raise HTTPException(404, "Assignment not found")
     return a
+
+
+@app.get("/assignments/{assignment_id}/brief")
+def assignment_brief(assignment_id: str):
+    """What a student sees before the encounter: how they'll be graded and the learning goals (titles
+    only: the expected findings would give the case away). Nothing clinical about the patient."""
+    a = get_assignment(assignment_id)
+    p = load_profile(a["patient_id"])
+    lv = levels.get_level(a["level"])
+    modes = lv["grading"]["domains"]
+    rubric = json.loads((RUBRIC_DIR / f"{p.settings.rubric_id}.json").read_text())
+    checklists = []
+    for cid in {*p.settings.checklist_rubric_ids, *a.get("checklist_rubric_ids", [])}:
+        f = RUBRIC_DIR / f"{cid}.json"
+        if f.exists():
+            r = json.loads(f.read_text())
+            checklists.append({"id": cid, "title": r.get("title", cid),
+                               "sections": [s["name"] for s in r.get("sections", [])]})
+    return {
+        "assignment": {k: a.get(k) for k in ("id", "title", "patient_name", "level", "level_label", "due_date",
+                                             "instructions", "max_attempts", "class_name")},
+        "patient": _student_summary(p),
+        "student_role": p.settings.student_role,
+        "setting": p.settings.setting,
+        "expectations": lv["grading"]["expectations"],
+        "asks_diagnosis": bool(lv.get("asks_diagnosis")),
+        "domains": [{"key": d["key"], "name": d["name"], "mode": modes.get(d["key"], "core"),
+                     "what_good_looks_like": d.get("descriptors", {}).get("4", "")}
+                    for d in rubric["domains"]],
+        "learning_goals": [o.objective for o in levels.graded_objectives(p, a["level"])],
+        "checklists": checklists,
+    }
 
 
 @app.get("/assignments/{assignment_id}/results")
@@ -407,6 +693,7 @@ def assignment_results(assignment_id: str):
                              "meets_target": x["meets_target"]} for x in fb.get("epas", [])],
             "checklists": fb and [{"id": c["id"], "score": c["score"], "max_points": c["max_points"]}
                                   for c in fb.get("checklists", [])],
+            "diagnosis": fb and (fb.get("diagnosis") or {}).get("verdict"),
         })
     return {"assignment": a, "attempts": sorted(rows, key=lambda r: r["started_at"] or "")}
 
@@ -425,6 +712,14 @@ class EncounterCreate(BaseModel):
 
 class MessageRequest(BaseModel):
     message: str = Field(min_length=1)
+    response_ms: Optional[int] = Field(None, ge=0, description="pause after the patient finished speaking")
+    interrupted: bool = Field(False, description="student started talking while the patient was speaking")
+
+
+class EndRequest(BaseModel):
+    diagnosis: Optional[str] = None            # M3/M4: working diagnosis typed at the end
+    differential: list[str] = []
+    reasoning: str = ""
 
 
 def _profile_for(rec: dict) -> PatientProfile:
@@ -441,7 +736,7 @@ def create_encounter(req: EncounterCreate):
     a = None
     if req.assignment_id:
         a = get_assignment(req.assignment_id)
-        if req.student_id and a.get("student_ids") and req.student_id not in a["student_ids"]:
+        if req.student_id and not _student_may_take(a, req.student_id):
             raise HTTPException(403, "This assignment isn't assigned to that student.")
         if a.get("max_attempts"):
             done = [e for e in list_records("encounters")
@@ -467,6 +762,7 @@ def create_encounter(req: EncounterCreate):
     save_record("encounters", state.id, rec)
     return {"encounter_id": state.id, "level": state.level,
             "level_label": levels.get_level(state.level)["label"],
+            "asks_diagnosis": bool(levels.get_level(state.level).get("asks_diagnosis")),
             "patient": _student_summary(p), "chart": engine.chart_view(p, state)}
 
 
@@ -493,7 +789,10 @@ def get_encounter(encounter_id: str):
     rec = load_encounter(encounter_id)
     p = _profile_for(rec)
     s = _state(rec)
-    transcript = [{"n": t.n, "speaker": t.speaker.value, "text": t.text, "at": t.at.isoformat()}
+    t0 = s.started_at
+    transcript = [{"n": t.n, "speaker": t.speaker.value, "text": t.text, "at": t.at.isoformat(),
+                   "offset_s": max(0, int((t.at - t0).total_seconds())),
+                   "response_ms": t.response_ms, "interrupted": t.interrupted}
                   for t in s.turns if t.speaker.value != "system"]
     return {**{k: rec.get(k) for k in ("id", "patient_id", "student_id", "assignment_id", "level",
                                        "status", "created_at", "ended_at")},
@@ -521,20 +820,24 @@ def send_message(encounter_id: str, request: MessageRequest, llm=Depends(llm_dep
         raise HTTPException(400, str(e))
     except Exception as e:
         raise _ai_error(e)
+    st = next((t for t in reversed(s.turns) if t.speaker.value == "student"), None)
+    if st is not None:
+        st.response_ms, st.interrupted = request.response_ms, request.interrupted
     rec["state"] = s.model_dump(mode="json")
     save_record("encounters", encounter_id, rec)
     return {
         "reply": r.reply, "turn": s.turns[-1].n, "trust": r.trust, "deflected": r.deflected, "tags": r.tags,
         "new_facts": [{"id": f, "text": p.fact(f).content, "category": p.fact(f).category.value}
-                      for f in r.new_fact_ids if p.fact(f).show_in_chart],
+                      for f in r.new_fact_ids
+                      if p.fact(f).show_in_chart and p.fact(f).category != FactCategory.diagnosis],
         "new_artifacts": [a.model_dump(mode="json") for a in p.artifacts if a.id in r.new_artifact_ids],
         "chart": engine.chart_view(p, s),
     }
 
 
 @app.post("/encounters/{encounter_id}/end")
-def end_encounter(encounter_id: str, llm=Depends(llm_dep)):
-    """Ends the encounter and grades it (one AI call). Returns the feedback report."""
+def end_encounter(encounter_id: str, body: Optional[EndRequest] = None, llm=Depends(llm_dep)):
+    """Ends the encounter and grades it (one AI call; M3/M4 add one for the diagnosis)."""
     rec = load_encounter(encounter_id)
     existing = get_record("feedback", encounter_id)
     if existing:
@@ -552,6 +855,15 @@ def end_encounter(encounter_id: str, llm=Depends(llm_dep)):
         rec["status"] = "grading_failed"       # can retry POST /end
         save_record("encounters", encounter_id, rec)
         raise _ai_error(e)
+    if levels.get_level(rec.get("level")).get("asks_diagnosis"):
+        b = body or EndRequest()
+        try:
+            fb["diagnosis"] = grade_diagnosis(p, b.diagnosis, b.differential, b.reasoning, llm)
+        except Exception:     # the rubric report still stands if this extra check fails
+            fb["diagnosis"] = {"asked": True, "submitted": b.diagnosis or "", "differential": b.differential,
+                               "reasoning": b.reasoning, "expected": [p.primary_diagnosis],
+                               "verdict": "not_graded", "matched": "", "differential_hits": [],
+                               "explanation": "The diagnosis check didn't run. Your instructor can review it."}
     fb["faculty_review"] = {"notes": "", "reviewed_by": None, "reviewed_at": None}
     save_record("feedback", encounter_id, fb)
     return fb

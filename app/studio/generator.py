@@ -148,7 +148,10 @@ def _faculty_text(fi: FacultyInput) -> str:
 
 
 def build_prompt(fi: FacultyInput, patient_docs: list[SourceDocument], reference_ctx: str) -> str:
-    docs = "\n\n".join(f"--- {d.name} ---\n{d.text[:15000]}" for d in patient_docs) or "(none)"
+    docs = "\n\n".join(
+        f"--- {d.name}{f' ({d.doc_type})' if d.doc_type else ''} ---\n"
+        f"{f'Faculty note: {d.summary}' + chr(10) if d.summary and d.summary != d.text else ''}{d.text[:15000]}"
+        for d in patient_docs) or "(none)"
     return f"""STUDENT ROLE: {fi.student_role}
 ENCOUNTER GOAL: {fi.encounter_goal or 'Patient interview and counseling appropriate to the student role'}
 SETTING: {fi.setting or 'Outpatient clinic'}
@@ -200,19 +203,41 @@ def mark_origins(profile: PatientProfile, corpus: str) -> PatientProfile:
     return profile
 
 
+# Faculty document labels (Studio upload form). Reference types never become chart items.
+DOC_TYPE_TO_ARTIFACT = {
+    "lab_report": ArtifactType.lab_report, "imaging": ArtifactType.imaging, "ecg": ArtifactType.ecg,
+    "audiogram": ArtifactType.other, "prior_note": ArtifactType.prior_note,
+    "medication_list": ArtifactType.prior_note, "other_record": ArtifactType.other,
+}
+DOC_TYPE_LABEL = {
+    "lab_report": "Lab report", "imaging": "Imaging", "ecg": "ECG", "audiogram": "Audiogram",
+    "prior_note": "Prior note", "medication_list": "Medication list", "other_record": "Record",
+}
+REFERENCE_DOC_TYPES = {"guideline", "syllabus", "reference"}
+
+
+def _is_image(file_path) -> bool:
+    return bool(file_path) and Path(str(file_path)).suffix.lower() in {".png", ".jpg", ".jpeg", ".gif", ".webp"}
+
+
 def _document_artifacts(profile: PatientProfile, patient_docs: list[SourceDocument]) -> None:
     """Every uploaded patient document also becomes a chart item the student can open."""
     n = len(profile.artifacts)
     for d in patient_docs:
         n += 1
         low = d.name.lower()
-        atype = (ArtifactType.ecg if "ecg" in low or "ekg" in low else
+        atype = DOC_TYPE_TO_ARTIFACT.get(d.doc_type) or (
+                 ArtifactType.ecg if "ecg" in low or "ekg" in low else
                  ArtifactType.imaging if any(w in low for w in ("xray", "x-ray", "ct", "mri", "scan")) else
                  ArtifactType.lab_report if any(w in low for w in ("lab", "cbc", "panel", "blood")) else
                  ArtifactType.prior_note)
+        title = Path(d.name).stem.replace("_", " ")
+        label = DOC_TYPE_LABEL.get(d.doc_type, "")
+        if label and label.split()[0].lower() not in title.lower():   # e.g. "Audiogram: right ear"
+            title = f"{label}: {title}"
         profile.artifacts.append(Artifact(
-            id=f"a{n:03d}", type=atype, title=Path(d.name).stem.replace("_", " "),
-            text=d.text[:8000], file_path=d.file_path, origin=Origin.faculty,
+            id=f"a{n:03d}", type=atype, title=title,
+            text=None if _is_image(d.file_path) else d.text[:8000], file_path=d.file_path, origin=Origin.faculty,
             release=ReleaseRule(trigger=ReleaseTrigger.on_request,
                                 request_keywords=[atype.value.replace("_", " "), Path(d.name).stem])))
 

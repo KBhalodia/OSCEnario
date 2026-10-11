@@ -28,7 +28,8 @@
         "epa_targets": {
           "EPA1": 2
         }
-      }
+      },
+      "asks_diagnosis": false
     },
     "M2": {
       "label": "Year 2 (pre-clinical)",
@@ -52,7 +53,8 @@
           "EPA1": 2,
           "EPA2": 2
         }
-      }
+      },
+      "asks_diagnosis": false
     },
     "M3": {
       "label": "Year 3 (clinical)",
@@ -79,7 +81,8 @@
           "EPA9": 2,
           "EPA10": 2
         }
-      }
+      },
+      "asks_diagnosis": true
     },
     "M4": {
       "label": "Year 4 (advanced clinical)",
@@ -106,7 +109,8 @@
           "EPA9": 3,
           "EPA10": 3
         }
-      }
+      },
+      "asks_diagnosis": true
     }
   },
   "framework": "aamc_core_epas"
