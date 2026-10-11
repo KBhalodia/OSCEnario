@@ -220,17 +220,6 @@ def rubric_list():
     return out
 
 
-@app.post("/rubrics/import")
-async def rubric_import(file: UploadFile = File(...), llm=Depends(llm_dep)):
-    """Faculty upload a checklist rubric (DOCX/PDF/TXT) -> stored as data/rubrics/<id>.json."""
-    from app.studio.rubric_import import import_checklist
-    path, _ = await _save_upload(file)
-    try:
-        return import_checklist(path, llm=llm, model=smart_model())
-    except ValueError as e:
-        raise HTTPException(400, str(e))
-
-
 # --------------------------------------------------------------------------
 # Teacher portal: patients (Studio)
 # --------------------------------------------------------------------------
@@ -283,7 +272,6 @@ async def generate_patient(
                                        "personality, notes, summary, student_role, encounter_goal"),
     files: list[UploadFile] = File(default=[]),
     kinds: str = Form("[]", description='JSON list, one per file: "patient_record" or "reference"'),
-    checklist_rubric_ids: str = Form("[]", description="JSON list of checklist rubric ids to attach"),
     doc_meta: str = Form("[]", description='JSON list, one per file: {"name", "type", "summary"}'),
     class_id: Optional[str] = Form(None, description="Add the new patient to this class"),
     llm=Depends(llm_dep),
@@ -292,7 +280,6 @@ async def generate_patient(
     try:
         fi = FacultyInput.model_validate_json(brief)
         kind_list = json.loads(kinds or "[]")
-        checklists = json.loads(checklist_rubric_ids or "[]")
     except (ValidationError, ValueError) as e:
         raise HTTPException(422, f"Bad form data: {e}")
 
@@ -309,7 +296,6 @@ async def generate_patient(
         raise
     except Exception as e:
         raise _ai_error(e)
-    profile.settings.checklist_rubric_ids = [c for c in checklists if (RUBRIC_DIR / f"{c}.json").exists()]
     with_voice(profile)
     save_profile(profile)
     if cls is not None and profile.id not in cls["patient_ids"]:
@@ -324,7 +310,6 @@ async def regenerate_patient(
     brief: str = Form(...),
     files: list[UploadFile] = File(default=[]),
     doc_meta: str = Form("[]"),
-    checklist_rubric_ids: Optional[str] = Form(None),
     llm=Depends(llm_dep),
 ):
     """'Edit description': rebuild a patient from a changed brief, keeping its id, classes, documents
@@ -348,8 +333,6 @@ async def regenerate_patient(
         raise _ai_error(e)
     profile.version = old.version + 1
     profile.persona.portrait_path = profile.persona.portrait_path or old.persona.portrait_path
-    profile.settings.checklist_rubric_ids = (
-        json.loads(checklist_rubric_ids) if checklist_rubric_ids else old.settings.checklist_rubric_ids)
     with_voice(profile)
     save_profile(profile)
     return {"patient": profile.model_dump(mode="json"), "issues": _issues(profile)}
@@ -580,7 +563,6 @@ class AssignmentCreate(BaseModel):
     title: str = ""
     level: str = "M2"
     student_ids: list[str] = []
-    checklist_rubric_ids: list[str] = []
     due_date: Optional[str] = None
     max_attempts: Optional[int] = None
     created_by: Optional[str] = None
@@ -651,13 +633,6 @@ def assignment_brief(assignment_id: str):
     lv = levels.get_level(a["level"])
     modes = lv["grading"]["domains"]
     rubric = json.loads((RUBRIC_DIR / f"{p.settings.rubric_id}.json").read_text())
-    checklists = []
-    for cid in {*p.settings.checklist_rubric_ids, *a.get("checklist_rubric_ids", [])}:
-        f = RUBRIC_DIR / f"{cid}.json"
-        if f.exists():
-            r = json.loads(f.read_text())
-            checklists.append({"id": cid, "title": r.get("title", cid),
-                               "sections": [s["name"] for s in r.get("sections", [])]})
     return {
         "assignment": {k: a.get(k) for k in ("id", "title", "patient_name", "level", "level_label", "due_date",
                                              "instructions", "max_attempts", "class_name")},
@@ -670,7 +645,6 @@ def assignment_brief(assignment_id: str):
                      "what_good_looks_like": d.get("descriptors", {}).get("4", "")}
                     for d in rubric["domains"]],
         "learning_goals": [o.objective for o in levels.graded_objectives(p, a["level"])],
-        "checklists": checklists,
     }
 
 
@@ -691,8 +665,6 @@ def assignment_results(assignment_id: str):
             "domain_scores": fb and {d["key"]: d["score"] for d in fb["domains"]},
             "epas": fb and [{"id": x["id"], "estimated_label": x["estimated_label"],
                              "meets_target": x["meets_target"]} for x in fb.get("epas", [])],
-            "checklists": fb and [{"id": c["id"], "score": c["score"], "max_points": c["max_points"]}
-                                  for c in fb.get("checklists", [])],
             "diagnosis": fb and (fb.get("diagnosis") or {}).get("verdict"),
         })
     return {"assignment": a, "attempts": sorted(rows, key=lambda r: r["started_at"] or "")}
@@ -723,12 +695,8 @@ class EndRequest(BaseModel):
 
 
 def _profile_for(rec: dict) -> PatientProfile:
-    """Patient as it was when the encounter started, plus the assignment's checklists."""
-    p = load_profile(rec["patient_id"])
-    for cid in rec.get("checklist_rubric_ids", []):
-        if cid not in p.settings.checklist_rubric_ids:
-            p.settings.checklist_rubric_ids.append(cid)
-    return p
+    """The patient this encounter is about."""
+    return load_profile(rec["patient_id"])
 
 
 @app.post("/encounters")
@@ -756,7 +724,6 @@ def create_encounter(req: EncounterCreate):
     rec = {
         "id": state.id, "patient_id": p.id, "student_id": req.student_id,
         "assignment_id": req.assignment_id, "level": state.level, "preview": req.preview,
-        "checklist_rubric_ids": (a or {}).get("checklist_rubric_ids", []),
         "status": "active", "created_at": now(), "state": state.model_dump(mode="json"),
     }
     save_record("encounters", state.id, rec)

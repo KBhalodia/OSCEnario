@@ -1,5 +1,5 @@
 """
-Display-ready grading config for the frontend (levels, rubric, EPAs, checklists),
+Display-ready grading config for the frontend (levels, rubric, EPAs),
 built from the same data files the backend grades with. Served at GET /config/grading
 and exported to frontend_contract/ by scripts/export_frontend_config.py.
 """
@@ -42,14 +42,6 @@ def build() -> dict:
                             for eid, t in lv["grading"].get("epa_targets", {}).items()],
         })
 
-    checklists = []
-    for f in sorted((ROOT / "data" / "rubrics").glob("*.json")):
-        r = json.loads(f.read_text())
-        if r.get("type") == "checklist":
-            checklists.append({"id": r["id"], "title": r["title"], "max_points": r["max_points"],
-                               "sections": [{"id": s["id"], "name": s["name"], "points": s["points"],
-                                             "items": s["items"]} for s in r["sections"]]})
-
     return {
         "_about": "Generated from backend/data by scripts/export_frontend_config.py. Do not edit by hand; "
                   "change the backend data files and re-export.",
@@ -66,5 +58,4 @@ def build() -> dict:
         "entrustment": {"framework": fw["title"], "source": fw["source"], "scale": fw["scale"],
                         "epas": [{"id": e["id"], "title": e["title"], "observable": e["observable"],
                                   "simulation_note": e.get("simulation_note", "")} for e in fw["epas"]]},
-        "checklist_rubrics": checklists,
     }

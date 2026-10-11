@@ -54,11 +54,11 @@ class FakeLLM:
                     "clinical_reasoning_and_synthesis", "professionalism_safety_closure"]
             return {"domains": [dom(k, "3") for k in keys], "skill_items": [], "strengths": ["a"],
                     "areas_for_improvement": ["b"], "next_attempt_suggestions": ["1", "2", "3"],
-                    "summary": "ok", "entrustment": [], "checklist_items": []}
+                    "summary": "ok", "entrustment": []}
         raise AssertionError(tool_name)
 
     def call_text(self, **_):
-        return "Audiogram: bilateral moderate sensorineural hearing loss"
+        return "unused"
 
 
 app.dependency_overrides[llm_dep] = lambda: FakeLLM()
@@ -69,7 +69,7 @@ def run():
         assert c.get("/health").json()["ok"]
         cfg = c.get("/config/grading").json()
         assert [l["key"] for l in cfg["levels"]] == ["M1", "M2", "M3", "M4"]
-        assert any(r["id"] == "pediatric_hearing_treatment_checklist" for r in c.get("/rubrics").json())
+        assert [r["id"] for r in c.get("/rubrics").json()] == ["encounter_evaluation_rubric"]
 
         # ---- teacher: seed patients
         r = c.post("/patients/import").json()
@@ -81,22 +81,16 @@ def run():
         # ---- teacher: generate a new patient with a patient-record document
         brief = {"name": "Yvette Armstrong", "age": 64, "gender": "female",
                  "notes": "Stage II hypertension (BP 155/110 mmHg). BMI is 34.", "summary": "Hypertension"}
-        r = c.post("/patients/generate", data={"brief": json.dumps(brief), "kinds": '["patient_record"]',
-                                               "checklist_rubric_ids": '["pediatric_hearing_treatment_checklist"]'},
+        r = c.post("/patients/generate", data={"brief": json.dumps(brief), "kinds": '["patient_record"]'},
                    files=[("files", ("bmp_lab.txt", b"BMP 2026-09: Sodium 138 mEq/L, Potassium 4.5", "text/plain"))])
         assert r.status_code == 200, r.text
         gen = r.json()["patient"]
         gid = gen["id"]
-        assert gen["status"] == "draft" and gen["settings"]["checklist_rubric_ids"]
+        assert gen["status"] == "draft"
         assert any(a["title"] == "bmp lab" for a in gen["artifacts"])
         codes = {i["code"] for i in r.json()["issues"]}
-        assert "bmi_mismatch" in codes and "checklist_needs_attachment" in codes
+        assert "bmi_mismatch" in codes
 
-        # add an audiogram afterwards -> warning disappears
-        r = c.post(f"/patients/{gid}/documents", data={"kind": "patient_record"},
-                   files={"file": ("audiogram.png", b"\x89PNG fake", "image/png")})
-        assert r.status_code == 200, r.text
-        assert "checklist_needs_attachment" not in {i["code"] for i in r.json()["issues"]}
         # images are never read by the AI: the chart item has no text; faculty's summary is kept for grading
         r = c.post(f"/patients/{gid}/documents",
                    data={"kind": "patient_record", "name": "Chest X-ray", "doc_type": "imaging",

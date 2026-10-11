@@ -133,8 +133,7 @@ def communication_stats(state: EncounterState) -> dict:
 # B. Rubric part (LLM)
 # --------------------------------------------------------------------------
 
-def feedback_schema(rubric: dict, epa_ids: list[str] | None = None,
-                    checklist_item_ids: list[str] | None = None) -> dict:
+def feedback_schema(rubric: dict, epa_ids: list[str] | None = None) -> dict:
     S = {"type": "string"}
     scores = [str(s) for s in rubric.get("allowed_scores", [4, 3, 2, 1, "N/A"])]
     evidence = {"type": "array", "items": {"type": "object", "properties": {
@@ -160,13 +159,8 @@ def feedback_schema(rubric: dict, epa_ids: list[str] | None = None,
             "level": {"type": "integer", "enum": [0, 1, 2, 3, 4, 5],
                       "description": "Supervision level this encounter's evidence supports; 0 = not enough evidence"},
             "rationale": S, "evidence": evidence}, "required": ["epa", "level", "rationale", "evidence"]}},
-        "checklist_items": {"type": "array", "items": {"type": "object", "properties": {
-            "item_id": {"type": "string", "enum": checklist_item_ids or ["none"]},
-            "status": {"type": "string", "enum": ["achieved", "partial", "not_achieved"]},
-            "turn": {"type": "integer"}, "quote": S, "comment": S},
-            "required": ["item_id", "status", "comment"]}},
     }, "required": ["domains", "skill_items", "strengths", "areas_for_improvement",
-                    "next_attempt_suggestions", "summary", "entrustment", "checklist_items"]}
+                    "next_attempt_suggestions", "summary", "entrustment"]}
 
 
 SYSTEM = """You are an experienced clinical educator grading a student's simulated patient interview.
@@ -191,9 +185,7 @@ Rules:
   evidence supports, as a faculty observer would. A simulated interview shows only part of each EPA (see each
   EPA's simulation note), so be conservative: never above 3 from one simulated encounter, and use 0 when the
   encounter gives too little evidence. Cite turns and exact student quotes. Do not let the target level bias
-  the estimate.
-- CHECKLIST RUBRICS (if any): judge every checklist item as achieved / partial / not_achieved. Achieved or
-  partial needs a turn number and an exact student quote showing it."""
+  the estimate."""
 
 
 def _transcript(state: EncounterState) -> str:
@@ -260,25 +252,6 @@ def build_feedback(profile: PatientProfile, state: EncounterState, llm: LLM,
         for e in focus) or "(none)"
     scale_txt = "\n".join(f"  {x['level']} {x['label']}: {x['meaning']}" for x in framework["scale"])
 
-    checklists = []
-    for cid in profile.settings.checklist_rubric_ids:
-        try:
-            checklists.append(load_rubric(cid))
-        except OSError:
-            pass
-    na = {c["id"]: attachments.checklist_applicability(profile, c) for c in checklists}
-
-    def _line(c: dict, i: dict) -> str:
-        miss = na[c["id"]].get(i["id"])
-        tail = (" -- NOT APPLICABLE (no " + ", ".join(attachments.label(m) for m in miss) +
-                " in this patient's chart; skip it)") if miss else ""
-        return f"    [{c['id']}:{i['id']}] {i['text']}{tail}"
-
-    checklist_txt = "\n\n".join(
-        f"{c['title']} ({c['max_points']} points)\n" + "\n".join(
-            f"  {sec['name']} ({sec['points']} pts)\n" + "\n".join(_line(c, i) for i in sec["items"])
-            for sec in c["sections"]) for c in checklists) or "(none)"
-
     rubric_txt = "\n".join(
         f"- {d['key']} ({d['name']}) [mode for this level: {modes.get(d['key'], 'core')}]\n" +
         "\n".join(f"    {s}: {txt}" for s, txt in d["descriptors"].items())
@@ -303,9 +276,6 @@ SKILL ITEMS TO JUDGE (actions, not information):
 COMMUNICATION STATS (from per-turn tagging):
 {json.dumps(stats, indent=1)}
 
-CHECKLIST RUBRICS (grade each item; ids in brackets):
-{checklist_txt}
-
 ENTRUSTMENT FRAMEWORK: {framework['title']}
 Supervision scale:
 {scale_txt}
@@ -319,9 +289,7 @@ TRANSCRIPT (turn numbers in brackets):
 {_transcript(state)}"""
 
     out = llm.call_json(model=model or smart_model(), system=SYSTEM,
-                        schema=feedback_schema(rubric, [e["id"] for e in focus],
-                                               [f"{c['id']}:{i['id']}" for c in checklists
-                                                for sec in c["sections"] for i in sec["items"]]),
+                        schema=feedback_schema(rubric, [e["id"] for e in focus]),
                         tool_name="encounter_feedback", user=user, max_tokens=6000)
 
     # ---- enforce the rules in code -------------------------------------
@@ -364,49 +332,6 @@ TRANSCRIPT (turn numbers in brackets):
             "faculty_confirmed_level": None,
         })
 
-    # ---- checklist rubrics: points computed in code ---------------------
-    by_item = {c.get("item_id"): c for c in out.get("checklist_items", [])}
-    checklist_out = []
-    for c in checklists:
-        secs, earned_total, possible_total, excluded = [], 0.0, 0.0, []
-        for sec in c["sections"]:
-            share = sec["points"] / len(sec["items"])
-            items, earned, possible = [], 0.0, 0.0
-            for it in sec["items"]:
-                missing = na[c["id"]].get(it["id"]) or []
-                if missing:
-                    need = ", ".join(attachments.label(m) for m in missing)
-                    items.append({"id": it["id"], "text": it["text"], "status": "not_applicable",
-                                  "points": 0, "max_points": 0, "evidence": [],
-                                  "comment": f"Not scored: no {need} attached to this patient."})
-                    excluded.append({"section": sec["name"], "item": it["text"], "missing": need,
-                                     "points_removed": round(share, 1)})
-                    continue
-                possible += share
-                j = dict(by_item.get(f"{c['id']}:{it['id']}") or {"status": "not_achieved", "comment": "Not observed."})
-                status = j.get("status", "not_achieved")
-                ev = [{"turn": j.get("turn"), "quote": j.get("quote", "")}] if j.get("quote") else []
-                holder = {"evidence": ev}
-                verify_evidence([holder], state)
-                if status != "not_achieved" and not holder["evidence"]:
-                    status = "not_achieved"
-                    j["comment"] = (j.get("comment", "") + " (No verifiable evidence in the transcript.)").strip()
-                pts = share if status == "achieved" else share / 2 if status == "partial" else 0.0
-                earned += pts
-                items.append({"id": it["id"], "text": it["text"], "status": status,
-                              "points": round(pts, 1), "max_points": round(share, 1),
-                              "evidence": holder["evidence"], "comment": j.get("comment", "")})
-            earned_total += earned
-            possible_total += possible
-            secs.append({"id": sec["id"], "name": sec["name"], "points": round(possible, 1),
-                         "original_points": sec["points"], "earned": round(earned, 1),
-                         "applicable": possible > 0, "items": items})
-        checklist_out.append({
-            "id": c["id"], "title": c["title"], "score": round(earned_total, 1),
-            "max_points": round(possible_total, 1), "original_max_points": c["max_points"],
-            "percent": round(100 * earned_total / possible_total) if possible_total else None,
-            "excluded": excluded, "sections": secs})
-
     numeric = [int(d["score"]) for d in domains if d["score"] != "N/A"]
     triggers = set(rubric.get("scoring", {}).get("review_trigger_domain_ids", []))
     review_reasons = [f"{d['name']} scored 1" for d in domains if d["id"] in triggers and d["score"] == "1"]
@@ -436,7 +361,6 @@ TRANSCRIPT (turn numbers in brackets):
         "max_total": 4 * len(numeric),
         "domains": domains,
         "objectives": found,
-        "checklists": checklist_out,
         "entrustment_framework": framework["title"],
         "epas": epas,
         "epas_not_assessed": epa_skipped,

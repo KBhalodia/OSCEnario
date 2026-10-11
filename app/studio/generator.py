@@ -206,11 +206,11 @@ def mark_origins(profile: PatientProfile, corpus: str) -> PatientProfile:
 # Faculty document labels (Studio upload form). Reference types never become chart items.
 DOC_TYPE_TO_ARTIFACT = {
     "lab_report": ArtifactType.lab_report, "imaging": ArtifactType.imaging, "ecg": ArtifactType.ecg,
-    "audiogram": ArtifactType.other, "prior_note": ArtifactType.prior_note,
+    "prior_note": ArtifactType.prior_note,
     "medication_list": ArtifactType.prior_note, "other_record": ArtifactType.other,
 }
 DOC_TYPE_LABEL = {
-    "lab_report": "Lab report", "imaging": "Imaging", "ecg": "ECG", "audiogram": "Audiogram",
+    "lab_report": "Lab report", "imaging": "Imaging", "ecg": "ECG",
     "prior_note": "Prior note", "medication_list": "Medication list", "other_record": "Record",
 }
 REFERENCE_DOC_TYPES = {"guideline", "syllabus", "reference"}
@@ -233,7 +233,7 @@ def _document_artifacts(profile: PatientProfile, patient_docs: list[SourceDocume
                  ArtifactType.prior_note)
         title = Path(d.name).stem.replace("_", " ")
         label = DOC_TYPE_LABEL.get(d.doc_type, "")
-        if label and label.split()[0].lower() not in title.lower():   # e.g. "Audiogram: right ear"
+        if label and label.split()[0].lower() not in title.lower():   # e.g. "Imaging: chest film"
             title = f"{label}: {title}"
         profile.artifacts.append(Artifact(
             id=f"a{n:03d}", type=atype, title=title,

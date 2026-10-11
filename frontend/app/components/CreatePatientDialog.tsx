@@ -5,7 +5,7 @@
 
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
-import { api, type FacultyInput, type PatientProfile, type Rubric, type UploadDoc } from "@/lib/api";
+import { api, type FacultyInput, type PatientProfile, type UploadDoc } from "@/lib/api";
 import { Field, Spinner, btn, input } from "./AppShell";
 import { DocsPicker, RolePicker, docsReady } from "./Forms";
 
@@ -57,15 +57,10 @@ export default function CreatePatientDialog({
     editing ? briefFromPatient(editing) : { ...EMPTY, student_role: defaultRole || EMPTY.student_role },
   );
   const [docs, setDocs] = useState<UploadDoc[]>([]);
-  const [rubrics, setRubrics] = useState<Rubric[]>([]);
-  const [checklists, setChecklists] = useState<string[]>(editing?.settings.checklist_rubric_ids ?? []);
   const [busy, setBusy] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    api.rubrics().then((r) => setRubrics(r.filter((x) => x.type !== "domain_rubric"))).catch(() => {});
-  }, []);
   useEffect(() => {
     if (!busy) return;
     const t = setInterval(() => setElapsed((s) => s + 1), 1000);
@@ -83,7 +78,7 @@ export default function CreatePatientDialog({
     setElapsed(0);
     setBusy(true);
     try {
-      const r = editing ? await api.regenerate(editing.id, form, docs, checklists) : await api.generate(form, docs, checklists, classId);
+      const r = editing ? await api.regenerate(editing.id, form, docs) : await api.generate(form, docs, classId);
       onDone(r.patient);
     } catch (e) {
       setError((e as Error).message);
@@ -160,25 +155,6 @@ export default function CreatePatientDialog({
               <p className="mt-2 text-xs text-ink-3">Already attached: {editing.documents.map((d) => d.name).join(", ")}</p>
             )}
           </div>
-
-          {rubrics.length > 0 && (
-            <div>
-              <p className="text-[15px] font-medium text-ink">Extra checklist rubrics</p>
-              <div className="mt-2 flex flex-col gap-2">
-                {rubrics.map((r) => (
-                  <label key={r.id} className="flex items-center gap-3 text-sm text-ink">
-                    <input
-                      type="checkbox"
-                      className="h-4 w-4 accent-[#0b57d0]"
-                      checked={checklists.includes(r.id)}
-                      onChange={(e) => setChecklists((c) => (e.target.checked ? [...c, r.id] : c.filter((x) => x !== r.id)))}
-                    />
-                    {r.title}
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
         </fieldset>
 
         <div className="flex flex-wrap items-center gap-3 border-t border-line px-6 py-4 sm:px-8">

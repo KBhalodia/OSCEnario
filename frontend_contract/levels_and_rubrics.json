@@ -1,0 +1,529 @@
+{
+  "_about": "Generated from backend/data by scripts/export_frontend_config.py. Do not edit by hand; change the backend data files and re-export.",
+  "levels": [
+    {
+      "key": "M1",
+      "label": "Year 1 (pre-clinical)",
+      "expectations": "First-year student. Expect a clear introduction, respectful and empathetic tone, open questions, and a basic history of the main concern. Do not expect clinical reasoning, a differential, or a management plan; a simple closing is enough. EPA focus: EPA 1 (history-taking) at direct supervision.",
+      "patient_difficulty": "This student is a beginner. Be cooperative and forthcoming. Answer clearly and directly, stay on one main concern, and if the student seems stuck, gently mention why you came in. Still don't share sensitive things until asked kindly.",
+      "asks_diagnosis": false,
+      "domains": [
+        {
+          "key": "opening_and_purpose",
+          "name": "Opening and purpose",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "rapport_respect_empathy",
+          "name": "Rapport, respect, and empathy",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "information_gathering",
+          "name": "Information gathering",
+          "mode": "lenient",
+          "mode_label": "Graded against this year's expectations"
+        },
+        {
+          "key": "listening_and_response_to_cues",
+          "name": "Listening and response to cues",
+          "mode": "lenient",
+          "mode_label": "Graded against this year's expectations"
+        },
+        {
+          "key": "explanation_and_shared_decisions",
+          "name": "Explanation and shared decisions",
+          "mode": "lenient",
+          "mode_label": "Graded against this year's expectations"
+        },
+        {
+          "key": "clinical_reasoning_and_synthesis",
+          "name": "Clinical reasoning and synthesis",
+          "mode": "na",
+          "mode_label": "Not expected at this year (always N/A)"
+        },
+        {
+          "key": "professionalism_safety_closure",
+          "name": "Professionalism, safety, and closure",
+          "mode": "lenient",
+          "mode_label": "Graded against this year's expectations"
+        }
+      ],
+      "max_total": 24,
+      "epa_targets": [
+        {
+          "id": "EPA1",
+          "title": "Gather a history and perform a physical examination",
+          "target_level": 2,
+          "target_label": "Direct supervision"
+        }
+      ]
+    },
+    {
+      "key": "M2",
+      "label": "Year 2 (pre-clinical)",
+      "expectations": "Second-year student. Expect a structured history with logical follow-up, response to obvious cues, and a clear, jargon-free explanation. Basic clinical reasoning (recognising the key problems) is expected but a full differential is not. EPA focus: EPA 1 and early EPA 2 (naming likely problems), both at direct supervision.",
+      "patient_difficulty": "Behave as described in your profile. Answer what is asked; don't volunteer much beyond your main concern.",
+      "asks_diagnosis": false,
+      "domains": [
+        {
+          "key": "opening_and_purpose",
+          "name": "Opening and purpose",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "rapport_respect_empathy",
+          "name": "Rapport, respect, and empathy",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "information_gathering",
+          "name": "Information gathering",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "listening_and_response_to_cues",
+          "name": "Listening and response to cues",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "explanation_and_shared_decisions",
+          "name": "Explanation and shared decisions",
+          "mode": "lenient",
+          "mode_label": "Graded against this year's expectations"
+        },
+        {
+          "key": "clinical_reasoning_and_synthesis",
+          "name": "Clinical reasoning and synthesis",
+          "mode": "lenient",
+          "mode_label": "Graded against this year's expectations"
+        },
+        {
+          "key": "professionalism_safety_closure",
+          "name": "Professionalism, safety, and closure",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        }
+      ],
+      "max_total": 28,
+      "epa_targets": [
+        {
+          "id": "EPA1",
+          "title": "Gather a history and perform a physical examination",
+          "target_level": 2,
+          "target_label": "Direct supervision"
+        },
+        {
+          "id": "EPA2",
+          "title": "Prioritize a differential diagnosis following a clinical encounter",
+          "target_level": 2,
+          "target_label": "Direct supervision"
+        }
+      ]
+    },
+    {
+      "key": "M3",
+      "label": "Year 3 (clinical)",
+      "expectations": "Third-year clinical student. Expect a complete, well-sequenced history including psychosocial context, attention to subtle cues and deflections, patient-centred explanation with teach-back, a coherent assessment that recognises uncertainty, and a clear shared plan with follow-up. EPA focus: EPA 1 approaching indirect supervision; EPA 2, 3, 9 and 10 at direct supervision.",
+      "patient_difficulty": "Be more guarded than usual. Give short answers until the student builds rapport. Mention a second, smaller worry partway through if it fits your profile. Don't make it easy to get sensitive information.",
+      "asks_diagnosis": true,
+      "domains": [
+        {
+          "key": "opening_and_purpose",
+          "name": "Opening and purpose",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "rapport_respect_empathy",
+          "name": "Rapport, respect, and empathy",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "information_gathering",
+          "name": "Information gathering",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "listening_and_response_to_cues",
+          "name": "Listening and response to cues",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "explanation_and_shared_decisions",
+          "name": "Explanation and shared decisions",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "clinical_reasoning_and_synthesis",
+          "name": "Clinical reasoning and synthesis",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "professionalism_safety_closure",
+          "name": "Professionalism, safety, and closure",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        }
+      ],
+      "max_total": 28,
+      "epa_targets": [
+        {
+          "id": "EPA1",
+          "title": "Gather a history and perform a physical examination",
+          "target_level": 3,
+          "target_label": "Indirect supervision"
+        },
+        {
+          "id": "EPA2",
+          "title": "Prioritize a differential diagnosis following a clinical encounter",
+          "target_level": 2,
+          "target_label": "Direct supervision"
+        },
+        {
+          "id": "EPA3",
+          "title": "Recommend and interpret common diagnostic and screening tests",
+          "target_level": 2,
+          "target_label": "Direct supervision"
+        },
+        {
+          "id": "EPA9",
+          "title": "Collaborate as a member of an interprofessional team",
+          "target_level": 2,
+          "target_label": "Direct supervision"
+        },
+        {
+          "id": "EPA10",
+          "title": "Recognize a patient requiring urgent or emergent care and initiate evaluation and management",
+          "target_level": 2,
+          "target_label": "Direct supervision"
+        }
+      ]
+    },
+    {
+      "key": "M4",
+      "label": "Year 4 (advanced clinical)",
+      "expectations": "Final-year student, near-independent practice. Hold to a high bar: efficient, hypothesis-driven history; explicit handling of uncertainty and red flags; motivational and shared decision-making; safety-netting and coordination with other services. Minor gaps should lower the score. EPA focus: EPA 1, 2, 3, 9 and 10 at indirect supervision (the AAMC day-one-of-residency expectation).",
+      "patient_difficulty": "Be a challenging but realistic patient: guarded, a little vague about timelines, emotionally affected, and with competing concerns and priorities. Push back once on advice that doesn't fit your life. Never invent facts; challenge comes from how you talk, not from new information.",
+      "asks_diagnosis": true,
+      "domains": [
+        {
+          "key": "opening_and_purpose",
+          "name": "Opening and purpose",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "rapport_respect_empathy",
+          "name": "Rapport, respect, and empathy",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "information_gathering",
+          "name": "Information gathering",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "listening_and_response_to_cues",
+          "name": "Listening and response to cues",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "explanation_and_shared_decisions",
+          "name": "Explanation and shared decisions",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "clinical_reasoning_and_synthesis",
+          "name": "Clinical reasoning and synthesis",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        },
+        {
+          "key": "professionalism_safety_closure",
+          "name": "Professionalism, safety, and closure",
+          "mode": "core",
+          "mode_label": "Graded with the rubric as written"
+        }
+      ],
+      "max_total": 28,
+      "epa_targets": [
+        {
+          "id": "EPA1",
+          "title": "Gather a history and perform a physical examination",
+          "target_level": 3,
+          "target_label": "Indirect supervision"
+        },
+        {
+          "id": "EPA2",
+          "title": "Prioritize a differential diagnosis following a clinical encounter",
+          "target_level": 3,
+          "target_label": "Indirect supervision"
+        },
+        {
+          "id": "EPA3",
+          "title": "Recommend and interpret common diagnostic and screening tests",
+          "target_level": 3,
+          "target_label": "Indirect supervision"
+        },
+        {
+          "id": "EPA9",
+          "title": "Collaborate as a member of an interprofessional team",
+          "target_level": 3,
+          "target_label": "Indirect supervision"
+        },
+        {
+          "id": "EPA10",
+          "title": "Recognize a patient requiring urgent or emergent care and initiate evaluation and management",
+          "target_level": 3,
+          "target_label": "Indirect supervision"
+        }
+      ]
+    }
+  ],
+  "domain_modes": {
+    "core": "Graded with the rubric as written",
+    "lenient": "Graded against this year's expectations",
+    "na": "Not expected at this year (always N/A)"
+  },
+  "rubric": {
+    "id": "encounter_evaluation_rubric",
+    "title": "Patient Encounter Performance Rubric",
+    "instructions": "Rate the student’s performance as supported by the encounter. Rate only what the scenario makes possible to observe; use N/A when a criterion is not appropriate.",
+    "rating_scale": [
+      {
+        "score": 4,
+        "label": "Strong",
+        "meaning": "Consistent, effective, appropriate"
+      },
+      {
+        "score": 3,
+        "label": "Competent",
+        "meaning": "Usually effective; minor gaps"
+      },
+      {
+        "score": 2,
+        "label": "Developing",
+        "meaning": "Partly effective; important gaps"
+      },
+      {
+        "score": 1,
+        "label": "Unsafe or absent",
+        "meaning": "Not demonstrated, misleading, or harmful"
+      }
+    ],
+    "domains": [
+      {
+        "id": 1,
+        "key": "opening_and_purpose",
+        "name": "Opening and purpose",
+        "triggers_review_if_score_1": false,
+        "descriptors": {
+          "4": "Introduces self and role; establishes purpose and agenda; confirms the patient’s immediate concern; sets expectations.",
+          "3": "Opens clearly and establishes a workable focus.",
+          "2": "Opening is understandable but misses role, agenda, or patient priorities.",
+          "1": "Begins abruptly, creates confusion, or lacks a clinically appropriate purpose."
+        }
+      },
+      {
+        "id": 2,
+        "key": "rapport_respect_empathy",
+        "name": "Rapport, respect, and empathy",
+        "triggers_review_if_score_1": false,
+        "descriptors": {
+          "4": "Uses attentive, nonjudgmental, culturally responsive language; acknowledges emotion and patient perspective; builds trust.",
+          "3": "Consistently respectful and responsive; patient appears heard.",
+          "2": "Generally respectful but responses feel formulaic, rushed, or insufficiently attuned.",
+          "1": "Dismissive, judgmental, confusing, or emotionally unsafe communication."
+        }
+      },
+      {
+        "id": 3,
+        "key": "information_gathering",
+        "name": "Information gathering",
+        "triggers_review_if_score_1": false,
+        "descriptors": {
+          "4": "Uses open questions, focused follow-up, clarification, and appropriate sequencing; explores relevant history, context, risks, and goals.",
+          "3": "Gathers most relevant information with logical follow-up.",
+          "2": "Gathers some relevant information but is incomplete, disorganized, or overly leading.",
+          "1": "Misses essential information or cannot sustain a useful history."
+        }
+      },
+      {
+        "id": 4,
+        "key": "listening_and_response_to_cues",
+        "name": "Listening and response to cues",
+        "triggers_review_if_score_1": false,
+        "descriptors": {
+          "4": "Recognizes verbal cues, uncertainty, concerns, questions, and changes in the patient’s story; avoids interrupting or ignoring information.",
+          "3": "Tracks the patient’s narrative and follows up appropriately.",
+          "2": "Responds to obvious cues but overlooks subtler concerns or inconsistencies.",
+          "1": "Ignores, contradicts, or prematurely redirects important information."
+        }
+      },
+      {
+        "id": 5,
+        "key": "explanation_and_shared_decisions",
+        "name": "Explanation and shared decisions",
+        "triggers_review_if_score_1": false,
+        "descriptors": {
+          "4": "Explains findings or next steps clearly; checks understanding; invites questions; incorporates preferences and readiness when relevant.",
+          "3": "Provides clear, patient-centered explanations and checks understanding.",
+          "2": "Explanation is partly clear but uses jargon, gives limited rationale, or does not check understanding.",
+          "1": "Provides inaccurate, overly technical, coercive, or absent explanation when needed."
+        }
+      },
+      {
+        "id": 6,
+        "key": "clinical_reasoning_and_synthesis",
+        "name": "Clinical reasoning and synthesis",
+        "triggers_review_if_score_1": true,
+        "descriptors": {
+          "4": "Identifies important findings; distinguishes relevant from irrelevant information; recognizes red flags or uncertainty; forms a plausible assessment or differential when appropriate.",
+          "3": "Reasoning is clinically coherent and appropriately cautious.",
+          "2": "Recognizes some key findings but misses connections, alternatives, or uncertainty.",
+          "1": "Reasoning is unsupported, unsafe, internally inconsistent, or absent when required."
+        }
+      },
+      {
+        "id": 7,
+        "key": "professionalism_safety_closure",
+        "name": "Professionalism, safety, and closure",
+        "triggers_review_if_score_1": true,
+        "descriptors": {
+          "4": "Maintains boundaries; protects privacy; communicates limitations; summarizes; confirms next steps, follow-up, or escalation when relevant.",
+          "3": "Professional and safe throughout; closes with a clear shared plan.",
+          "2": "Mostly professional but closure, limitations, or safety-netting is incomplete.",
+          "1": "Creates safety risk, overstates certainty, breaches boundaries, or ends without an appropriate plan."
+        }
+      }
+    ],
+    "interpretation": "Use the total as a discussion aid, not a pass/fail grade. A score of 1 in professionalism, safety, or clinical reasoning should trigger review even when the total is high."
+  },
+  "entrustment": {
+    "framework": "AAMC Core Entrustable Professional Activities for Entering Residency",
+    "source": "Association of American Medical Colleges (AAMC), Core EPAs for Entering Residency. Day-one-of-residency expectation: perform the Core EPAs without direct supervision.",
+    "scale": [
+      {
+        "level": 1,
+        "label": "Observe only",
+        "meaning": "Not yet trusted to perform this activity; may observe."
+      },
+      {
+        "level": 2,
+        "label": "Direct supervision",
+        "meaning": "May perform with a supervisor physically present and ready to step in."
+      },
+      {
+        "level": 3,
+        "label": "Indirect supervision",
+        "meaning": "May perform with a supervisor quickly available; findings are reviewed afterwards."
+      },
+      {
+        "level": 4,
+        "label": "Unsupervised",
+        "meaning": "May perform independently."
+      },
+      {
+        "level": 5,
+        "label": "Supervises others",
+        "meaning": "May supervise and teach others."
+      }
+    ],
+    "epas": [
+      {
+        "id": "EPA1",
+        "title": "Gather a history and perform a physical examination",
+        "observable": "partial",
+        "simulation_note": "History-taking and communication only; no physical exam in this simulation."
+      },
+      {
+        "id": "EPA2",
+        "title": "Prioritize a differential diagnosis following a clinical encounter",
+        "observable": "partial",
+        "simulation_note": "Only if the student states an assessment or differential during the encounter."
+      },
+      {
+        "id": "EPA3",
+        "title": "Recommend and interpret common diagnostic and screening tests",
+        "observable": "partial",
+        "simulation_note": "Reviewing the chart's labs and vitals, explaining them, and suggesting follow-up tests."
+      },
+      {
+        "id": "EPA4",
+        "title": "Enter and discuss orders and prescriptions",
+        "observable": "no",
+        "simulation_note": ""
+      },
+      {
+        "id": "EPA5",
+        "title": "Document a clinical encounter in the patient record",
+        "observable": "no",
+        "simulation_note": "Possible extension: post-encounter note."
+      },
+      {
+        "id": "EPA6",
+        "title": "Provide an oral presentation of a clinical encounter",
+        "observable": "no",
+        "simulation_note": "Possible extension: post-encounter case presentation."
+      },
+      {
+        "id": "EPA7",
+        "title": "Form clinical questions and retrieve evidence to advance patient care",
+        "observable": "no",
+        "simulation_note": ""
+      },
+      {
+        "id": "EPA8",
+        "title": "Give or receive a patient handover to transition care responsibility",
+        "observable": "no",
+        "simulation_note": ""
+      },
+      {
+        "id": "EPA9",
+        "title": "Collaborate as a member of an interprofessional team",
+        "observable": "partial",
+        "simulation_note": "Appropriate referrals and coordination with other professionals and community resources."
+      },
+      {
+        "id": "EPA10",
+        "title": "Recognize a patient requiring urgent or emergent care and initiate evaluation and management",
+        "observable": "partial",
+        "simulation_note": "Recognising and acting on red-flag symptoms the patient reports."
+      },
+      {
+        "id": "EPA11",
+        "title": "Obtain informed consent for tests and/or procedures",
+        "observable": "no",
+        "simulation_note": ""
+      },
+      {
+        "id": "EPA12",
+        "title": "Perform general procedures of a physician",
+        "observable": "no",
+        "simulation_note": ""
+      },
+      {
+        "id": "EPA13",
+        "title": "Identify system failures and contribute to a culture of safety and improvement",
+        "observable": "no",
+        "simulation_note": ""
+      }
+    ]
+  }
+}

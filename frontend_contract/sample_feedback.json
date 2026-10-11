@@ -1,0 +1,628 @@
+{
+  "feedback": {
+    "_about": "EXAMPLE of the object returned after an encounter (built by the real feedback engine with scripted AI answers).",
+    "encounter_id": "eade41df-70ba-4af7-873e-4b7ed602c932",
+    "patient_id": "4d619156-3250-4212-8399-129f3280fab1",
+    "patient_name": "Wyatt Nelson",
+    "student_id": "student-123",
+    "assignment_id": "assignment-abc",
+    "level": "M3",
+    "level_label": "Year 3 (clinical)",
+    "rubric": "Patient Encounter Performance Rubric",
+    "generated_at": "2026-10-10T20:25:33.913135+00:00",
+    "total": 19,
+    "max_total": 28,
+    "domains": [
+      {
+        "key": "opening_and_purpose",
+        "score": "4",
+        "rationale": "Introduced self, role and purpose, and asked for the patient's concern.",
+        "evidence": [
+          {
+            "turn": 1,
+            "quote": "I'm a dietetics student working with your care team"
+          }
+        ],
+        "strength_demonstrated": "Clear role and purpose.",
+        "important_gap_or_missed_opportunity": "Could set an agenda for the visit.",
+        "safety_or_accuracy_concern": "",
+        "id": 1,
+        "name": "Opening and purpose",
+        "mode": "core",
+        "evidence_verified": true
+      },
+      {
+        "key": "rapport_respect_empathy",
+        "score": "3",
+        "rationale": "Acknowledged fatigue empathetically; later question was abrupt.",
+        "evidence": [
+          {
+            "turn": 3,
+            "quote": "That sounds exhausting"
+          }
+        ],
+        "strength_demonstrated": "Validated the patient's tiredness.",
+        "important_gap_or_missed_opportunity": "The bowel question came without any framing.",
+        "safety_or_accuracy_concern": "",
+        "id": 2,
+        "name": "Rapport, respect, and empathy",
+        "mode": "core",
+        "evidence_verified": true
+      },
+      {
+        "key": "information_gathering",
+        "score": "3",
+        "rationale": "Good open dietary recall; did not explore medications or sleep.",
+        "evidence": [
+          {
+            "turn": 3,
+            "quote": "walk me through what you ate yesterday"
+          }
+        ],
+        "strength_demonstrated": "Effective 24-hour recall prompt.",
+        "important_gap_or_missed_opportunity": "Medication adherence was not asked about.",
+        "safety_or_accuracy_concern": "",
+        "id": 3,
+        "name": "Information gathering",
+        "mode": "core",
+        "evidence_verified": true
+      },
+      {
+        "key": "listening_and_response_to_cues",
+        "score": "2",
+        "rationale": "Did not follow up when the patient deflected about constipation.",
+        "evidence": [
+          {
+            "turn": 5,
+            "quote": "Do you have constipation?"
+          }
+        ],
+        "strength_demonstrated": "",
+        "important_gap_or_missed_opportunity": "Patient deflected at turn 6 and the topic was dropped.",
+        "safety_or_accuracy_concern": "",
+        "id": 4,
+        "name": "Listening and response to cues",
+        "mode": "core",
+        "evidence_verified": true
+      },
+      {
+        "key": "explanation_and_shared_decisions",
+        "score": "2",
+        "rationale": "Mentioned swaps but gave no explanation and did not check understanding.",
+        "evidence": [
+          {
+            "turn": 9,
+            "quote": "a couple of easy swaps for practice days"
+          }
+        ],
+        "strength_demonstrated": "Tied advice to the patient's sport.",
+        "important_gap_or_missed_opportunity": "No teach-back or explanation of why.",
+        "safety_or_accuracy_concern": "",
+        "id": 5,
+        "name": "Explanation and shared decisions",
+        "mode": "core",
+        "evidence_verified": true
+      },
+      {
+        "key": "clinical_reasoning_and_synthesis",
+        "score": "2",
+        "rationale": "Reviewed labs but did not connect HbA1c or lipids to diet.",
+        "evidence": [
+          {
+            "turn": 7,
+            "quote": "look at your recent lab results"
+          }
+        ],
+        "strength_demonstrated": "Requested relevant labs.",
+        "important_gap_or_missed_opportunity": "Did not interpret the results with the patient.",
+        "safety_or_accuracy_concern": "",
+        "id": 6,
+        "name": "Clinical reasoning and synthesis",
+        "mode": "core",
+        "evidence_verified": true
+      },
+      {
+        "key": "professionalism_safety_closure",
+        "score": "3",
+        "rationale": "Respectful and closed with a follow-up plan.",
+        "evidence": [
+          {
+            "turn": 9,
+            "quote": "meet again in two weeks"
+          }
+        ],
+        "strength_demonstrated": "Clear follow-up.",
+        "important_gap_or_missed_opportunity": "No summary of what was discussed.",
+        "safety_or_accuracy_concern": "",
+        "id": 7,
+        "name": "Professionalism, safety, and closure",
+        "mode": "core",
+        "evidence_verified": true
+      }
+    ],
+    "objectives": [
+      {
+        "id": "o1",
+        "objective": "Apply the Nutrition Care Process and develop an appropriate PES statement.",
+        "items": [
+          {
+            "id": "o1.d1",
+            "text": "Poor adherence to current medications",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [],
+            "comment": ""
+          },
+          {
+            "id": "o1.d2",
+            "text": "Limited intake of fiber-rich foods",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [],
+            "comment": ""
+          },
+          {
+            "id": "o1.d3",
+            "text": "Irregular meal patterns and poor hydration",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [
+              "f028"
+            ]
+          },
+          {
+            "id": "o1.d4",
+            "text": "Social and environmental barriers to healthy eating",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [
+              "f074",
+              "f061",
+              "f041"
+            ]
+          }
+        ],
+        "found": 0,
+        "total": 4
+      },
+      {
+        "id": "o2",
+        "objective": "Develop evidence-based nutrition interventions.",
+        "items": [
+          {
+            "id": "o2.d1",
+            "text": "Preference for processed foods and sugary beverages",
+            "status": "found",
+            "turn": 4,
+            "fact_ids": [
+              "f070"
+            ]
+          },
+          {
+            "id": "o2.d2",
+            "text": "Lack of meal preparation skills",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [
+              "f059",
+              "f040"
+            ]
+          },
+          {
+            "id": "o2.d3",
+            "text": "Need for strategies to incorporate fiber without increasing bulking",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [],
+            "comment": ""
+          },
+          {
+            "id": "o2.d4",
+            "text": "Social dining pressure at sports events",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [],
+            "comment": ""
+          }
+        ],
+        "found": 1,
+        "total": 4
+      },
+      {
+        "id": "o3",
+        "objective": "Integrate medication management with nutrition care.",
+        "items": [
+          {
+            "id": "o3.d1",
+            "text": "Side effects of medications causing non-adherence",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [
+              "f056"
+            ]
+          },
+          {
+            "id": "o3.d2",
+            "text": "Nutrition strategies to reduce gastrointestinal discomfort",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [],
+            "comment": ""
+          },
+          {
+            "id": "o3.d3",
+            "text": "Need for consistent medication timing with meals",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [
+              "f028",
+              "f019"
+            ]
+          }
+        ],
+        "found": 0,
+        "total": 3
+      },
+      {
+        "id": "o4",
+        "objective": "Use motivational interviewing to address lifestyle and behavioral barriers.",
+        "items": [
+          {
+            "id": "o4.d1",
+            "text": "Internal conflict about health goals versus comfort behaviors",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [],
+            "comment": ""
+          },
+          {
+            "id": "o4.d2",
+            "text": "Self-efficacy barriers to change",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [],
+            "comment": ""
+          },
+          {
+            "id": "o4.d3",
+            "text": "Potential to use sports as motivation for dietary changes",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [],
+            "comment": ""
+          }
+        ],
+        "found": 0,
+        "total": 3
+      },
+      {
+        "id": "o5",
+        "objective": "Consider interprofessional and community resources.",
+        "items": [
+          {
+            "id": "o5.d1",
+            "text": "Need for coordination with sports medicine and school health services",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [],
+            "comment": ""
+          },
+          {
+            "id": "o5.d2",
+            "text": "Access to school nutrition programs and community health resources",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [],
+            "comment": ""
+          },
+          {
+            "id": "o5.d3",
+            "text": "Peer support networks that can reinforce healthy behaviors",
+            "status": "missed",
+            "turn": null,
+            "fact_ids": [
+              "f006"
+            ]
+          }
+        ],
+        "found": 0,
+        "total": 3
+      }
+    ],
+    "entrustment_framework": "AAMC Core Entrustable Professional Activities for Entering Residency",
+    "epas": [
+      {
+        "id": "EPA1",
+        "title": "Gather a history and perform a physical examination",
+        "simulation_note": "History-taking and communication only; no physical exam in this simulation.",
+        "target_level": 3,
+        "target_label": "Indirect supervision",
+        "estimated_level": 2,
+        "estimated_label": "Direct supervision",
+        "meets_target": false,
+        "rationale": "Solid opening and dietary history, but missed cues and key history areas; would need a supervisor present.",
+        "evidence": [
+          {
+            "turn": 3,
+            "quote": "walk me through what you ate yesterday"
+          }
+        ],
+        "rubric_domains": [
+          {
+            "key": "opening_and_purpose",
+            "name": "Opening and purpose",
+            "score": "4"
+          },
+          {
+            "key": "rapport_respect_empathy",
+            "name": "Rapport, respect, and empathy",
+            "score": "3"
+          },
+          {
+            "key": "information_gathering",
+            "name": "Information gathering",
+            "score": "3"
+          },
+          {
+            "key": "listening_and_response_to_cues",
+            "name": "Listening and response to cues",
+            "score": "2"
+          },
+          {
+            "key": "explanation_and_shared_decisions",
+            "name": "Explanation and shared decisions",
+            "score": "2"
+          },
+          {
+            "key": "professionalism_safety_closure",
+            "name": "Professionalism, safety, and closure",
+            "score": "3"
+          }
+        ],
+        "faculty_confirmed_level": null
+      },
+      {
+        "id": "EPA2",
+        "title": "Prioritize a differential diagnosis following a clinical encounter",
+        "simulation_note": "Only if the student states an assessment or differential during the encounter.",
+        "target_level": 2,
+        "target_label": "Direct supervision",
+        "estimated_level": null,
+        "estimated_label": "Insufficient evidence",
+        "meets_target": null,
+        "rationale": "Not assessed.",
+        "evidence": [],
+        "rubric_domains": [
+          {
+            "key": "clinical_reasoning_and_synthesis",
+            "name": "Clinical reasoning and synthesis",
+            "score": "2"
+          }
+        ],
+        "faculty_confirmed_level": null
+      },
+      {
+        "id": "EPA3",
+        "title": "Recommend and interpret common diagnostic and screening tests",
+        "simulation_note": "Reviewing the chart's labs and vitals, explaining them, and suggesting follow-up tests.",
+        "target_level": 2,
+        "target_label": "Direct supervision",
+        "estimated_level": 2,
+        "estimated_label": "Direct supervision",
+        "meets_target": true,
+        "rationale": "Asked for labs but did not interpret them.",
+        "evidence": [
+          {
+            "turn": 7,
+            "quote": "look at your recent lab results"
+          }
+        ],
+        "rubric_domains": [
+          {
+            "key": "explanation_and_shared_decisions",
+            "name": "Explanation and shared decisions",
+            "score": "2"
+          },
+          {
+            "key": "clinical_reasoning_and_synthesis",
+            "name": "Clinical reasoning and synthesis",
+            "score": "2"
+          }
+        ],
+        "faculty_confirmed_level": null
+      },
+      {
+        "id": "EPA9",
+        "title": "Collaborate as a member of an interprofessional team",
+        "simulation_note": "Appropriate referrals and coordination with other professionals and community resources.",
+        "target_level": 2,
+        "target_label": "Direct supervision",
+        "estimated_level": null,
+        "estimated_label": "Insufficient evidence",
+        "meets_target": null,
+        "rationale": "Not assessed.",
+        "evidence": [],
+        "rubric_domains": [
+          {
+            "key": "professionalism_safety_closure",
+            "name": "Professionalism, safety, and closure",
+            "score": "3"
+          }
+        ],
+        "faculty_confirmed_level": null
+      },
+      {
+        "id": "EPA10",
+        "title": "Recognize a patient requiring urgent or emergent care and initiate evaluation and management",
+        "simulation_note": "Recognising and acting on red-flag symptoms the patient reports.",
+        "target_level": 2,
+        "target_label": "Direct supervision",
+        "estimated_level": null,
+        "estimated_label": "Insufficient evidence",
+        "meets_target": null,
+        "rationale": "Not assessed.",
+        "evidence": [],
+        "rubric_domains": [
+          {
+            "key": "listening_and_response_to_cues",
+            "name": "Listening and response to cues",
+            "score": "2"
+          },
+          {
+            "key": "clinical_reasoning_and_synthesis",
+            "name": "Clinical reasoning and synthesis",
+            "score": "2"
+          },
+          {
+            "key": "professionalism_safety_closure",
+            "name": "Professionalism, safety, and closure",
+            "score": "3"
+          }
+        ],
+        "faculty_confirmed_level": null
+      }
+    ],
+    "epas_not_assessed": [],
+    "communication": {
+      "student_turns": 5,
+      "questions": 4,
+      "open_questions": 2,
+      "closed_questions": 2,
+      "leading_questions": 0,
+      "open_question_ratio": 0.5,
+      "empathy_or_reflection": 1,
+      "jargon_turns": [],
+      "judgmental_turns": [],
+      "introduced_self": true,
+      "closed_encounter": true,
+      "checked_understanding": false,
+      "deflections_not_followed_up": [
+        6
+      ],
+      "off_script_turns": [],
+      "final_trust": 1,
+      "chart_items_opened": 2
+    },
+    "strengths": [
+      "Clear introduction of your role and purpose.",
+      "Good open-ended 24-hour diet recall.",
+      "Linked advice to Wyatt's soccer."
+    ],
+    "areas_for_improvement": [
+      "Follow up when the patient deflects.",
+      "Ask about medications and how he takes them.",
+      "Explain lab results in plain language and check understanding."
+    ],
+    "next_attempt_suggestions": [
+      "Before sensitive topics, normalise them: 'Lots of teens I see have trouble going to the bathroom regularly. Has that ever happened to you?'",
+      "Ask: 'How do you usually take your metformin on school days?'",
+      "After reviewing labs, say what one number means and ask Wyatt to explain it back."
+    ],
+    "summary": "A warm, well-structured start with a strong diet recall. The biggest gap was dropping the constipation topic after Wyatt deflected, and not connecting his labs to his diet.",
+    "needs_review": false,
+    "review_reasons": [],
+    "unverified_quotes_dropped": 0,
+    "interpretation": "Use the total as a discussion aid, not a pass/fail grade. A score of 1 in professionalism, safety, or clinical reasoning should trigger review even when the total is high.",
+    "faculty_notes": ""
+  },
+  "transcript": [
+    {
+      "n": 1,
+      "speaker": "student",
+      "text": "Hi Wyatt, I'm a dietetics student working with your care team. What brings you in today?",
+      "tags": [
+        "introduction",
+        "open_question"
+      ],
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": []
+    },
+    {
+      "n": 2,
+      "speaker": "patient",
+      "text": "I'm always thirsty and tired. My mom made me come.",
+      "tags": [],
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": []
+    },
+    {
+      "n": 3,
+      "speaker": "student",
+      "text": "That sounds exhausting. Can you walk me through what you ate yesterday?",
+      "tags": [
+        "empathy",
+        "open_question"
+      ],
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": []
+    },
+    {
+      "n": 4,
+      "speaker": "patient",
+      "text": "Uh, pizza at lunch, a couple sodas, chips after practice. Normal stuff.",
+      "tags": [],
+      "disclosed_fact_ids": [
+        "f070"
+      ],
+      "released_artifact_ids": []
+    },
+    {
+      "n": 5,
+      "speaker": "student",
+      "text": "Do you have constipation?",
+      "tags": [
+        "closed_question"
+      ],
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": []
+    },
+    {
+      "n": 6,
+      "speaker": "patient",
+      "text": "I don't really want to talk about that.",
+      "tags": [
+        "deflected"
+      ],
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": []
+    },
+    {
+      "n": 7,
+      "speaker": "student",
+      "text": "Is it okay if I look at your recent lab results?",
+      "tags": [
+        "closed_question"
+      ],
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": [
+        "a004"
+      ]
+    },
+    {
+      "n": 8,
+      "speaker": "patient",
+      "text": "Sure, I guess.",
+      "tags": [],
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": []
+    },
+    {
+      "n": 9,
+      "speaker": "student",
+      "text": "Thanks Wyatt. Let's talk about a couple of easy swaps for practice days and meet again in two weeks.",
+      "tags": [
+        "closing"
+      ],
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": []
+    },
+    {
+      "n": 10,
+      "speaker": "patient",
+      "text": "Okay. That's fine.",
+      "tags": [],
+      "disclosed_fact_ids": [],
+      "released_artifact_ids": []
+    }
+  ]
+}

@@ -219,60 +219,6 @@ def test_epa_entrustment_rules():
     assert [x["id"] for x in fb1["epas"]] == ["EPA1"] and fb1["epas"][0]["target_level"] == 2
 
 
-def test_checklist_parser_reads_pediatric_layout():
-    from app.studio.rubric_import import parse_checklist_text
-    text = """SPLP 6510 Aural Rehabilitation
-Introduce yourself to the client (10 points)
-Behave in a professional manner
-Engage in a Needs Assessment with the client (30 points)
-Review the following info with the client:
-Age at diagnosis of deafness
-Device use
-Answer any questions (5 pts)"""
-    r = parse_checklist_text(text)
-    assert [x["points"] for x in r["sections"]] == [10, 30, 5] and r["max_points"] == 45
-    assert r["sections"][1]["items"][1]["text"] == "Review the following info with the client: Device use"
-    assert r["sections"][2]["items"][0]["text"] == "Answer any questions"   # section with no sub-items
-
-
-def test_checklist_points_computed_in_code_with_verified_evidence():
-    p, s = _run_encounter("M2")
-    p.settings.checklist_rubric_ids = ["pediatric_hearing_treatment_checklist"]
-    fake = _fake_feedback("3")
-    cid = "pediatric_hearing_treatment_checklist"
-    fake["checklist_items"] = [
-        {"item_id": f"{cid}:s1.i1", "status": "achieved", "turn": 1,
-         "quote": "I'm a dietetics student", "comment": "introduced self"},                # 10/2 = 5
-        {"item_id": f"{cid}:s1.i2", "status": "achieved", "turn": 3,
-         "quote": "you are doing great", "comment": "invented quote"},                     # -> 0
-        {"item_id": f"{cid}:s2.i1", "status": "partial", "turn": 3,
-         "quote": "walk me through what you usually eat", "comment": "partly"},           # 30/5/2 = 3
-    ]
-    llm = FakeLLM(feedback=fake)
-    fb = build_feedback(p, s, llm, model="x")
-    c = fb["checklists"][0]
-    # Wyatt has no audiogram: the 30-point audiogram section is skipped, not failed
-    assert c["original_max_points"] == 100 and c["max_points"] == 70 and c["score"] == 8.0
-    assert {x["item"] for x in c["excluded"]} == {i["text"] for i in c["sections"][2]["items"]}
-    assert c["sections"][2]["applicable"] is False
-    s1 = c["sections"][0]["items"]
-    assert s1[0]["status"] == "achieved" and s1[1]["status"] == "not_achieved"
-    assert "No verifiable evidence" in s1[1]["comment"]
-    assert "Speech Banana" in llm.prompts["encounter_feedback"]
-
-
-def test_attachment_present_makes_section_gradable_again():
-    from app.rules import validate
-    p, s = _run_encounter("M2")
-    p.settings.checklist_rubric_ids = ["pediatric_hearing_treatment_checklist"]
-    assert any(i.code == "checklist_needs_attachment" and "audiogram" in i.message for i in validate(p))
-    p.documents.append(SourceDocument(id="d9", name="audiogram_2026.png", kind=DocumentKind.patient_record,
-                                      text="Audiogram: bilateral moderate sensorineural hearing loss, 45-60 dB HL"))
-    assert not any(i.code == "checklist_needs_attachment" for i in validate(p))
-    fb = build_feedback(p, s, FakeLLM(feedback=_fake_feedback("3")), model="x")
-    assert fb["checklists"][0]["max_points"] == 100 and not fb["checklists"][0]["excluded"]
-
-
 def test_epa3_not_assessed_without_test_results():
     p, s = _run_encounter("M3")
     p.artifacts = [a for a in p.artifacts if a.type.value not in ("lab_report", "ecg", "imaging")]

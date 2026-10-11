@@ -44,7 +44,6 @@ export function RolePicker({ value, onChange }: { value: string; onChange: (v: s
 const guessType = (name: string) => {
   const n = name.toLowerCase();
   if (/ecg|ekg/.test(n)) return "ecg";
-  if (/audiogram|hearing/.test(n)) return "audiogram";
   if (/x-?ray|ct|mri|ultrasound|scan/.test(n)) return "imaging";
   if (/lab|cbc|bmp|cmp|panel|a1c|lipid/.test(n)) return "lab_report";
   if (/med|rx/.test(n)) return "medication_list";

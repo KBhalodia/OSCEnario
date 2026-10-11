@@ -29,7 +29,6 @@ import {
   type Issue,
   type Level,
   type PatientProfile,
-  type Rubric,
 } from "@/lib/api";
 import { FACULTY_ID } from "@/lib/identity";
 import { VoiceControls, voiceApi, type Persona as VoicePersona, type VoiceProfile } from "@/lib/voice";
@@ -720,7 +719,6 @@ function AssignTab({
   const [classId, setClassId] = useState<string>(defaultClass ?? "");
   const [picked, setPicked] = useState<string[]>([]);
   const [levels, setLevels] = useState<Level[]>([]);
-  const [rubrics, setRubrics] = useState<Rubric[]>([]);
   const [level, setLevel] = useState("M2");
   const [students, setStudents] = useState("");
   useEffect(() => {
@@ -736,13 +734,11 @@ function AssignTab({
   const [attempts, setAttempts] = useState("");
   const [due, setDue] = useState("");
   const [instructions, setInstructions] = useState("");
-  const [checklists, setChecklists] = useState<string[]>(p.settings.checklist_rubric_ids);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState<Assignment | null>(null);
 
   useEffect(() => {
     api.gradingConfig().then((c) => setLevels(c.levels)).catch(() => {});
-    api.rubrics().then((r) => setRubrics(r.filter((x) => x.type !== "domain_rubric"))).catch(() => {});
   }, []);
 
   const chosen = levels.find((l) => l.key === level);
@@ -761,7 +757,6 @@ function AssignTab({
         class_id: classId || null,
         level,
         student_ids: ids,
-        checklist_rubric_ids: checklists,
         max_attempts: attempts ? Number(attempts) : null,
         due_date: due || null,
         instructions,
@@ -859,24 +854,6 @@ function AssignTab({
           <Field label="Instructions (optional)">
             <textarea className={input} rows={2} value={instructions} onChange={(e) => setInstructions(e.target.value)} placeholder="First nutrition visit. Find out what's getting in the way of her plan." />
           </Field>
-          {rubrics.length > 0 && (
-            <div>
-              <p className="text-[13px] font-medium text-ink-2">Checklist rubrics</p>
-              <div className="mt-2 flex flex-col gap-2">
-                {rubrics.map((r) => (
-                  <label key={r.id} className="flex items-center gap-3 text-sm text-ink">
-                    <input
-                      type="checkbox"
-                      className="h-4 w-4 accent-[#0b57d0]"
-                      checked={checklists.includes(r.id)}
-                      onChange={(e) => setChecklists((c) => (e.target.checked ? [...c, r.id] : c.filter((x) => x !== r.id)))}
-                    />
-                    {r.title}
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
           <ErrorNote error={error} />
           {done && (
             <Notice tone="ok">

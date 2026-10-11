@@ -43,8 +43,6 @@ def main() -> None:
     ap.add_argument("--goal", default="")
     ap.add_argument("--doc", action="append", default=[],
                     help="path[:patient_record|reference] (default reference)")
-    ap.add_argument("--checklist", action="append", default=[],
-                    help="extra checklist rubric: an id in data/rubrics/ or a .docx/.pdf to import")
     ap.add_argument("--out", default="generated")
     a = ap.parse_args()
 
@@ -75,16 +73,6 @@ def main() -> None:
     profile, issues = generate_profile(fi, docs, llm)
     print(f"done in {time.time() - t:.0f}s")
 
-    for spec in a.checklist:
-        if Path(spec).suffix.lower() in (".docx", ".pdf", ".txt", ".md"):
-            from app.studio.rubric_import import import_checklist
-            r = import_checklist(spec, llm=llm, model=smart_model())
-            print(f"imported checklist '{r['title']}' ({r['max_points']} points) as {r['id']}")
-            spec = r["id"]
-        profile.settings.checklist_rubric_ids.append(spec)
-    if a.checklist:
-        from app.rules import validate
-        issues = validate(profile)          # re-check now that checklists are attached
 
     out = Path(a.out); out.mkdir(exist_ok=True)
     path = out / f"{profile.id}.json"

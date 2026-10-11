@@ -1,15 +1,10 @@
 """
-Does a rubric item need an attachment the patient doesn't have?
+Which kinds of test results does a patient's chart hold (labs, X-ray, ECG...)?
 
-    available_kinds(profile)                 -> {"labs", "audiogram", ...}
-    required_kinds(text)                     -> kinds a rubric line depends on
-    checklist_applicability(profile, rubric) -> {item_id: [missing kinds]}  (empty list = applicable)
+    available_kinds(profile) -> {"labs", "imaging", ...}
 
-Driven by data/artifact_requirements.json. Used by:
-  - the feedback engine: items needing a missing attachment are "not_applicable"
-    and their points leave the maximum, so students aren't graded on the impossible
-  - the Studio validator: tells faculty which rubric parts will be skipped and
-    what to upload to include them
+Driven by data/artifact_requirements.json. The feedback engine uses it to skip EPA 3
+(interpret tests) when the chart has no test results at all.
 """
 from __future__ import annotations
 
@@ -35,11 +30,6 @@ def _has_word(text: str, word: str) -> bool:
     return re.search(rf"(?<![a-z]){re.escape(w)}(?![a-z])", text) is not None
 
 
-def required_kinds(text: str) -> set[str]:
-    t = text.lower()
-    return {k for k, spec in kinds().items() if any(_has_word(t, w) for w in spec["rubric_words"])}
-
-
 def available_kinds(profile: PatientProfile) -> set[str]:
     have: set[str] = set()
     for a in profile.artifacts:
@@ -56,19 +46,3 @@ def available_kinds(profile: PatientProfile) -> set[str]:
             blob = f"{d.name} {d.text[:3000]}".lower()
             have |= {k for k, spec in kinds().items() if any(_has_word(blob, w) for w in spec["artifact_words"])}
     return have
-
-
-def checklist_applicability(profile: PatientProfile, rubric: dict) -> dict[str, list[str]]:
-    """Section wording applies to all of its items ("Review the client's audiogram" -> every item)."""
-    have = available_kinds(profile)
-    out: dict[str, list[str]] = {}
-    for sec in rubric.get("sections", []):
-        sec_needs = required_kinds(sec["name"])
-        for it in sec["items"]:
-            needs = sec_needs | required_kinds(it["text"])
-            out[it["id"]] = sorted(needs - have)
-    return out
-
-
-def label(kind: str) -> str:
-    return kinds().get(kind, {}).get("label", kind)

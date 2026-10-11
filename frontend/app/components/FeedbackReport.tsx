@@ -3,7 +3,7 @@
 // Renders the backend's feedback report (POST /encounters/{id}/end).
 // Every quote shown here was checked by the backend against the real transcript.
 
-import { Check, Circle, CircleDashed, Minus } from "lucide-react";
+import { Check, Circle } from "lucide-react";
 import type { DiagnosisResult, Evidence, Feedback, Pacing, TranscriptTurn } from "@/lib/api";
 import { Card, Pill } from "./AppShell";
 import DiagnosisPill from "./DiagnosisPill";
@@ -205,47 +205,6 @@ export default function FeedbackReport({ fb, transcript }: { fb: Feedback; trans
           )}
         </Card>
       )}
-
-      {fb.checklists.map((c) => (
-        <Card key={c.id} title={c.title} hint={`${c.score} of ${c.max_points} points (${c.percent}%)`}>
-          {c.excluded.length > 0 && (
-            <p className="mb-4 rounded-lg bg-shell px-4 py-3 text-[13px] leading-5 text-ink-2">
-              {c.original_max_points - c.max_points} points aren&apos;t counted because this patient has no{" "}
-              {Array.from(new Set(c.excluded.map((x) => x.missing))).join(" or ")} to review.
-            </p>
-          )}
-          <ul className="flex flex-col gap-4">
-            {c.sections
-              .filter((s) => s.applicable)
-              .map((s) => (
-                <li key={s.id}>
-                  <div className="flex items-baseline gap-3">
-                    <p className="text-[15px] text-ink">{s.name}</p>
-                    <span className="ml-auto text-sm text-ink-2">
-                      {s.earned}/{s.points}
-                    </span>
-                  </div>
-                  <ul className="mt-1.5 flex flex-col gap-1">
-                    {s.items.map((it) => (
-                      <li key={it.id} className="flex items-start gap-2.5 text-sm leading-5 text-ink-2">
-                        {it.status === "achieved" ? (
-                          <Check size={16} className="mt-0.5 shrink-0 text-ok" />
-                        ) : it.status === "partial" ? (
-                          <CircleDashed size={15} className="mt-0.5 shrink-0 text-[#b06000]" />
-                        ) : it.status === "not_applicable" ? (
-                          <Minus size={15} className="mt-0.5 shrink-0 text-ink-3" />
-                        ) : (
-                          <Circle size={14} className="mt-[3px] shrink-0 text-[#c4c7c5]" />
-                        )}
-                        {it.text}
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-          </ul>
-        </Card>
-      ))}
 
       <Card title="Communication">
         <dl className="grid grid-cols-2 gap-4 text-sm sm:grid-cols-3 lg:grid-cols-6">

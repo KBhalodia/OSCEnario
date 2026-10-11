@@ -136,7 +136,7 @@ class LearningObjective(BaseModel):
     objective: str
     expected_discoveries: list[ExpectedDiscovery] = []
     possible_patient_reactions: list[str] = []
-    points: Optional[int] = None              # for checklist-style rubrics (pediatric docx)
+    points: Optional[int] = None
     min_level: Optional[str] = None           # lowest year level this is graded at ("M1".."M4"); None = all
 
 
@@ -188,7 +188,6 @@ class EncounterSettings(BaseModel):
     encounter_goal: str = "Nutrition assessment and counseling (Nutrition Care Process)"
     setting: str = "Outpatient clinic"
     rubric_id: str = "encounter_evaluation_rubric"
-    checklist_rubric_ids: list[str] = []      # extra points checklists, e.g. pediatric_hearing_treatment_checklist
     opening_trust: int = Field(1, ge=0, le=3) # guarded patients (Walter, Dominic) can start at 0
     difficulty_notes: str = ""                # set per encounter from the year level (levels.py)
     patient_names_diagnosis: bool = False     # False (OSCE prep): patient describes symptoms, never the clinical label
@@ -216,7 +215,7 @@ class SourceDocument(BaseModel):
     file_path: Optional[str] = None     # relative to uploads/
     text: str = ""
     summary: str = ""                   # for images: what Claude saw (ECG, X-ray); or faculty's note
-    doc_type: str = ""                  # faculty label: lab_report, imaging, ecg, audiogram, prior_note, guideline...
+    doc_type: str = ""                  # faculty label: lab_report, imaging, ecg, prior_note, guideline...
 
 
 class ProfileStatus(str, Enum):

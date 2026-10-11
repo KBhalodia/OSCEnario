@@ -261,35 +261,6 @@ def check_faculty_numbers(p: PatientProfile) -> list[Issue]:
     return []
 
 
-def check_checklist_attachments(p: PatientProfile) -> list[Issue]:
-    """Warn faculty when part of an attached checklist rubric can't be graded for this patient."""
-    import json as _json
-    from pathlib import Path as _Path
-    from . import attachments
-    issues = []
-    rubric_dir = _Path(__file__).resolve().parents[1] / "data" / "rubrics"
-    for rid in p.settings.checklist_rubric_ids:
-        try:
-            rubric = _json.loads((rubric_dir / f"{rid}.json").read_text(encoding="utf-8"))
-        except OSError:
-            issues.append(Issue(severity="error", code="checklist_missing",
-                                message=f"Checklist rubric '{rid}' was not found."))
-            continue
-        app_ = attachments.checklist_applicability(p, rubric)
-        for sec in rubric["sections"]:
-            miss = sorted({m for it in sec["items"] for m in app_.get(it["id"], [])})
-            n = sum(bool(app_.get(it["id"])) for it in sec["items"])
-            if miss:
-                need = ", ".join(attachments.label(m) for m in miss)
-                pts = round(sec["points"] * n / len(sec["items"]), 1)
-                issues.append(Issue(
-                    severity="warning", code="checklist_needs_attachment",
-                    message=f"{rubric['title']}: \u201c{sec['name']}\u201d ({pts:g} of {sec['points']} pts) "
-                            f"will be skipped because no {need} is attached. Upload one as a patient record "
-                            f"to grade it."))
-    return issues
-
-
 def check_disclosure_balance(p: PatientProfile) -> list[Issue]:
     tiers = defaultdict(int)
     for f in p.facts:
@@ -305,7 +276,7 @@ def check_disclosure_balance(p: PatientProfile) -> list[Issue]:
 
 
 CHECKS = [check_faculty_drift, check_faculty_numbers, check_bmi, check_med_indications, check_vitals_agree,
-          check_duplicates, check_misplaced_rows, check_objectives, check_checklist_attachments,
+          check_duplicates, check_misplaced_rows, check_objectives,
           check_disclosure_balance]
 
 

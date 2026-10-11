@@ -780,16 +780,6 @@ function GradingPreview({ brief }: { brief: AssignmentBrief }) {
                 </li>
               ))}
           </ul>
-          {brief.checklists.map((c) => (
-            <div key={c.id} className="mt-4">
-              <p className="font-medium text-ink">{c.title}</p>
-              <ul className="mt-1 flex list-disc flex-col gap-0.5 pl-5">
-                {c.sections.map((x, i) => (
-                  <li key={i}>{x}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
       )}
     </div>

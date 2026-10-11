@@ -148,7 +148,6 @@ export type PatientProfile = {
     encounter_goal: string;
     setting: string;
     rubric_id: string;
-    checklist_rubric_ids: string[];
     opening_trust: number;
     difficulty_notes: string;
     patient_names_diagnosis: boolean;
@@ -189,7 +188,6 @@ export type Assignment = {
   level: string;
   level_label: string;
   student_ids: string[];
-  checklist_rubric_ids: string[];
   due_date?: string | null;
   max_attempts?: number | null;
   created_by?: string | null;
@@ -297,7 +295,6 @@ export type AssignmentBrief = {
   asks_diagnosis: boolean;
   domains: { key: string; name: string; mode: string; what_good_looks_like: string }[];
   learning_goals: string[];
-  checklists: { id: string; title: string; sections: string[] }[];
 };
 
 export type DocMeta = { name: string; type: string; summary: string };
@@ -330,23 +327,6 @@ export type Feedback = {
     found: number;
     total: number;
     items: { id: string; text: string; status: string; turn: number | null; comment?: string }[];
-  }[];
-  checklists: {
-    id: string;
-    title: string;
-    score: number;
-    max_points: number;
-    original_max_points: number;
-    percent: number;
-    excluded: { section: string; item: string; missing: string; points_removed: number }[];
-    sections: {
-      id: string;
-      name: string;
-      points: number;
-      earned: number;
-      applicable: boolean;
-      items: { id: string; text: string; status: string; points: number; max_points: number; evidence?: Evidence[] }[];
-    }[];
   }[];
   epas: {
     id: string;
@@ -402,7 +382,6 @@ export type AssignmentResults = {
     needs_review: boolean | null;
     domain_scores: Record<string, string> | null;
     epas: { id: string; estimated_label: string | null; meets_target: boolean | null }[] | null;
-    checklists: { id: string; score: number; max_points: number }[] | null;
     diagnosis?: string | null;
   }[];
 };
@@ -428,7 +407,6 @@ export const DOC_TYPES: { value: string; label: string; reference?: boolean }[] 
   { value: "lab_report", label: "Lab report" },
   { value: "imaging", label: "Imaging (X-ray, CT, MRI)" },
   { value: "ecg", label: "ECG" },
-  { value: "audiogram", label: "Audiogram" },
   { value: "prior_note", label: "Prior note or record" },
   { value: "medication_list", label: "Medication list" },
   { value: "other_record", label: "Other patient record" },
@@ -463,21 +441,19 @@ export const api = {
   savePatient: (p: PatientProfile) =>
     request<{ patient: PatientProfile; issues: Issue[] }>(`/patients/${encodeURIComponent(p.id)}`, json("PUT", p)),
   importSamples: () => request<{ imported_count: number }>("/patients/import", { method: "POST" }),
-  generate: (brief: FacultyInput, files: UploadDoc[], checklistIds: string[], classId?: string | null) => {
+  generate: (brief: FacultyInput, files: UploadDoc[], classId?: string | null) => {
     const fd = new FormData();
     fd.append("brief", JSON.stringify(brief));
     fd.append("kinds", JSON.stringify(files.map((f) => (REFERENCE_TYPES.has(f.type) ? "reference" : "patient_record"))));
     fd.append("doc_meta", JSON.stringify(files.map((f) => ({ name: f.name, type: f.type, summary: f.summary }))));
-    fd.append("checklist_rubric_ids", JSON.stringify(checklistIds));
     if (classId) fd.append("class_id", classId);
     for (const f of files) fd.append("files", f.file, f.file.name);
     return request<{ patient: PatientProfile; issues: Issue[] }>("/patients/generate", { method: "POST", body: fd });
   },
-  regenerate: (id: string, brief: FacultyInput, files: UploadDoc[], checklistIds: string[]) => {
+  regenerate: (id: string, brief: FacultyInput, files: UploadDoc[]) => {
     const fd = new FormData();
     fd.append("brief", JSON.stringify(brief));
     fd.append("doc_meta", JSON.stringify(files.map((f) => ({ name: f.name, type: f.type, summary: f.summary }))));
-    fd.append("checklist_rubric_ids", JSON.stringify(checklistIds));
     for (const f of files) fd.append("files", f.file, f.file.name);
     return request<{ patient: PatientProfile; issues: Issue[] }>(`/patients/${encodeURIComponent(id)}/regenerate`, { method: "POST", body: fd });
   },
@@ -538,7 +514,6 @@ export const api = {
     level: string;
     student_ids: string[];
     title?: string;
-    checklist_rubric_ids?: string[];
     due_date?: string | null;
     max_attempts?: number | null;
     created_by?: string | null;

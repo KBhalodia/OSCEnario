@@ -1,4 +1,4 @@
-# Twinverse frontend (teacher portal + student portal + voice encounter)
+# OSCEnario frontend
 
 One Next.js app that combines the three frontend branches:
 

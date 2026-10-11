@@ -88,19 +88,6 @@ def main() -> None:
     for d in fb["domains"]:
         ev = "; ".join(f"t{e['turn']}: \"{e['quote']}\"" for e in d["evidence"][:2])
         print(f"  {d['score']:>3}  {d['name']} [{d['mode']}]  {ev}")
-    for c in fb.get("checklists", []):
-        adj = f" (out of {c['original_max_points']}; {c['original_max_points'] - c['max_points']:g} skipped)" \
-            if c["max_points"] != c["original_max_points"] else ""
-        print(f"\n  Checklist: {c['title']}  {c['score']}/{c['max_points']} points{adj}")
-        for x in c.get("excluded", []):
-            print(f"    skipped: {x['item']} (no {x['missing']})")
-        for sec in c["sections"]:
-            if not sec["applicable"]:
-                continue
-            print(f"    {sec['earned']:>5}/{sec['points']:<5} {sec['name']}")
-            for i in sec["items"]:
-                if i["status"] not in ("achieved", "not_applicable"):
-                    print(f"            {i['status'].replace('_', ' ')}: {i['text']}")
     if fb.get("epas"):
         print(f"\n  Entrustment ({fb['entrustment_framework']}):")
         for e in fb["epas"]:
