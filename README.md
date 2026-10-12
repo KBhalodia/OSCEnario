@@ -122,14 +122,6 @@ The tests use a fake model, so they run offline and cost nothing. `test_api.py` 
 - The patient's voice is generated from the reply text. ElevenLabs is used for text-to-speech only, never its conversational agents, so the grounding engine stays in charge of what the patient says.
 - API keys live only in the backend's `.env`.
 
-## What it doesn't do yet
-
-- **No real sign-in.** Students type a NetID and faculty use a single demo account.
-- **Single machine.** Data lives in a local SQLite file and uploads in a local folder, so teammates don't share patients unless they share the machine.
-- **No physical exam or procedures.** OSCEnario covers history-taking and communication stations, plus the diagnosis step at M3 and M4.
-- **AI quality varies.** Generated cases need faculty review, which is why AI-added facts are marked and publishing runs consistency checks first. Grading is an aid for faculty, not a replacement.
-- **Untested at scale.** We haven't measured learning outcomes; a pilot with a real OSCE-prep course would be the next step.
-
 ## Credits
 
 - Sample patients come from the organizers' Virtual Health Simulation dataset ([joeljames270/virtual-patient-profiles-sample](https://huggingface.co/datasets/joeljames270/virtual-patient-profiles-sample)).
